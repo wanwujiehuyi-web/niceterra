@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>微观路线实验页 · Micro Route Lab</title>
+    <link rel="icon" href="data:," />
+    <meta name="description" content="Matter Explorer 微观路线实验页：把 30 条微观路线逐层渲染成三维几何，并显示尺度、证据等级与文献来源。" />
+    <style>:root{--ink:#e8eef8;--ink-dim:#9fb0c8;--ink-faint:#6d7f99;--panel:#0a101ad1;--panel-edge:#7fd3ff38;--accent:#7fd3ff;--accent-warm:#ffcf8a;--ok:#8fe3a0;--warn:#ffb27f;--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}*{box-sizing:border-box}html,body{height:100%;color:var(--ink);-webkit-font-smoothing:antialiased;background:#070b12;margin:0;padding:0;font-family:Segoe UI,Microsoft YaHei,PingFang SC,sans-serif;overflow:hidden}#lab-canvas{width:100%;height:100%;display:block;position:fixed;inset:0}.mono{font-variant-numeric:tabular-nums;font-family:Cascadia Mono,JetBrains Mono,Consolas,monospace}#hud{border:1px solid var(--panel-edge);background:var(--panel);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);scrollbar-width:thin;border-radius:14px;width:430px;max-height:calc(100vh - 36px);padding:18px 18px 14px;position:fixed;top:18px;left:18px;overflow-y:auto;box-shadow:0 18px 46px #00000075}.hud-kicker{letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-size:10px}#hud-route{letter-spacing:.01em;color:#f4f9ff;margin:6px 0 2px;font-size:24px;line-height:1.18}#hud-route-en{color:var(--ink-faint);letter-spacing:.06em;font-size:11px}#hud-domain{color:var(--accent);letter-spacing:.08em;border:1px solid #7fd3ff59;border-radius:999px;margin-top:8px;padding:2px 8px;font-size:11px;display:inline-block}.hud-block{border-top:1px solid #7fd3ff1f;margin-top:14px;padding-top:12px}.hud-row{grid-template-columns:74px 1fr;align-items:start;gap:8px;margin:5px 0;font-size:12px;line-height:1.5;display:grid}.hud-row .k{color:var(--ink-faint);letter-spacing:.04em}.hud-row .v{color:var(--ink);word-break:break-word}#hud-level{color:#f4f9ff;font-size:13px}#hud-scale{color:var(--accent);font-size:13px}#hud-evidence{color:var(--ok);border:1px solid #8fe3a066;border-radius:6px;padding:1px 8px;font-size:11.5px;display:inline-block}#hud-evidence[data-evidence-kind=numerical-simulation]{color:var(--accent);border-color:#7fd3ff66}#hud-evidence[data-evidence-kind=analytic]{color:var(--accent-warm);border-color:#ffcf8a73}#hud-evidence[data-evidence-kind=teaching-approximation],#hud-evidence[data-evidence-kind=generated-appearance]{color:var(--warn);border-color:#ffb27f73}#hud-mode{color:var(--ink-dim);font-size:11.5px}#hud-mode[data-mode=measured-lattice]{color:var(--ok)}#hud-mode[data-mode=procedural],#hud-mode[data-mode=glb-placeholder]{color:var(--warn)}#hud-source{font-size:12px}#hud-doi{color:var(--accent);font-size:11.5px;text-decoration:none;display:inline-block}#hud-doi:hover{text-decoration:underline}#hud-uncertainty,#hud-limitations{color:var(--ink-dim);font-size:11.5px}#hud-stats{color:var(--ink-faint);font-size:11px}.hud-actions{flex-wrap:wrap;gap:8px;display:flex}.hud-actions button,.chip,.dot{appearance:none;color:var(--ink);cursor:pointer;background:#7fd3ff14;border:1px solid #7fd3ff47;border-radius:8px;padding:7px 12px;font-size:12px;transition:background .14s,border-color .14s,transform .14s}.hud-actions button:hover,.chip:hover,.dot:hover{background:#7fd3ff33;border-color:#7fd3ff99}.hud-actions button:active{transform:translateY(1px)}#btn-exit{color:#ffd7b8;background:#ffb27f14;border-color:#ffb27f59;margin-left:auto}.chips{flex-wrap:wrap;gap:6px;margin-top:8px;display:flex}.chip{border-radius:999px;padding:5px 10px;font-size:11.5px}.chip.active{border-color:var(--accent);color:#fff;background:#7fd3ff4d}.hud-select{color:var(--ink-faint);align-items:center;gap:8px;margin-top:10px;font-size:11.5px;display:flex}#route-select{min-width:0;color:var(--ink);background:#070b12e6;border:1px solid #7fd3ff47;border-radius:8px;flex:1;padding:6px 8px;font-size:11.5px}.level-dots{flex-wrap:wrap;gap:5px;margin-top:10px;display:flex}.dot{width:30px;height:24px;color:var(--ink-dim);border-radius:6px;padding:0;font-size:10.5px}.dot.active{background:var(--accent);border-color:var(--accent);color:#06202d;font-weight:700}.dot:after{content:attr(data-level);display:inline}.dot{font-size:0}.dot:after{font-size:10.5px}.hud-error{color:#ffc9c9;white-space:pre-wrap;background:#ff5a5a1f;border:1px solid #ff787880;border-radius:8px;margin-top:12px;padding:8px 10px;font-size:11.5px}.hud-foot{color:var(--ink-faint);margin-top:12px;font-size:10px;line-height:1.5}.scale-bar{border:1px solid var(--panel-edge);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);pointer-events:none;background:#070b12b8;border-radius:12px;flex-direction:column;align-items:center;gap:6px;padding:10px 16px;display:flex;position:fixed;bottom:26px;left:50%;transform:translate(-50%)}#scale-bar-track{background:#7fd3ff29;border-radius:999px;width:260px;height:8px;overflow:hidden}#scale-bar-fill{background:linear-gradient(90deg, #7fd3ff8c, var(--accent));border-radius:999px;width:26%;height:100%;transition:width .22s}#scale-bar-label{color:#f4f9ff;letter-spacing:.04em;font-size:12px}#scale-bar-detail{color:var(--ink-faint);font-size:10.5px}.badge{color:var(--ink-faint);pointer-events:none;background:#070b12b3;border:1px solid #7fd3ff2e;border-radius:8px;padding:6px 10px;font-size:10.5px;position:fixed;bottom:18px;right:18px}.lab-hint{max-width:280px;color:var(--ink-faint);pointer-events:none;background:#070b129e;border:1px solid #7fd3ff29;border-radius:10px;padding:10px 12px;font-size:10.5px;line-height:1.55;position:fixed;top:18px;right:18px}@media (width<=900px){#hud{width:calc(100vw - 24px);max-height:46vh}.lab-hint{display:none}.scale-bar{bottom:12px}}</style>
+    <script type="module" crossorigin src="/assets/route-lab-Baj4Hfpz.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/three.module-BM-6qIyv.js">
+    <link rel="modulepreload" crossorigin href="/assets/micro-routes-7FiCXHuF.js">
+    <link rel="modulepreload" crossorigin href="/assets/lattices-CASb_9kQ.js">
+  </head>
+  <body>
+    <canvas id="lab-canvas" aria-label="微观路线三维视图"></canvas>
+
+    <aside id="hud" aria-live="polite">
+      <div class="hud-kicker">Micro Route Lab · 微观路线实验页</div>
+      <h1 id="hud-route">加载中…</h1>
+      <div id="hud-route-en" class="mono">—</div>
+      <div id="hud-domain">—</div>
+
+      <section class="hud-block">
+        <div class="hud-row"><span class="k">层级</span><span id="hud-level" class="v">—</span></div>
+        <div class="hud-row"><span class="k">层 id</span><span id="hud-level-id" class="v mono">—</span></div>
+        <div class="hud-row"><span class="k">尺度</span><span id="hud-scale" class="v mono">—</span></div>
+        <div class="hud-row"><span class="k">尺度标签</span><span id="hud-scale-label" class="v mono">—</span></div>
+        <div class="hud-row"><span class="k">证据等级</span><span id="hud-evidence" class="v">—</span></div>
+        <div class="hud-row"><span class="k">几何来源</span><span id="hud-mode" class="v">—</span></div>
+        <div class="hud-row"><span class="k">几何类型</span><span id="hud-geometry" class="v mono">—</span></div>
+        <div class="hud-row" id="hud-asset-row" hidden><span class="k">GLB 资产</span><span id="hud-asset" class="v mono">—</span></div>
+      </section>
+
+      <section class="hud-block">
+        <div class="hud-row"><span class="k">来源</span><span id="hud-source" class="v">—</span></div>
+        <div class="hud-row"><span class="k">DOI / URL</span><a id="hud-doi" class="v mono" target="_blank" rel="noreferrer">—</a></div>
+        <div class="hud-row"><span class="k">版本</span><span id="hud-version" class="v mono">—</span></div>
+        <div class="hud-row"><span class="k">不确定性</span><span id="hud-uncertainty" class="v">—</span></div>
+        <div class="hud-row"><span class="k">限制</span><span id="hud-limitations" class="v">—</span></div>
+        <div class="hud-row"><span class="k">渲染</span><span id="hud-stats" class="v mono">—</span></div>
+      </section>
+
+      <section class="hud-block hud-actions">
+        <button id="btn-prev" type="button">← 上一级</button>
+        <button id="btn-next" type="button">下一级 →</button>
+        <button id="btn-exit" type="button">退出</button>
+      </section>
+
+      <section class="hud-block">
+        <div class="hud-kicker">快速切换 · 10 条代表路线</div>
+        <div id="route-chips" class="chips"></div>
+        <label class="hud-select">全部 30 条路线<select id="route-select"></select></label>
+        <div id="level-dots" class="level-dots" aria-label="层级快捷跳转"></div>
+      </section>
+
+      <div id="hud-error" class="hud-error" hidden></div>
+      <div class="hud-foot">
+        1 场景单位 = 当前层 scaleMeters；晶格数据单位为 Å（科学数据层）。<br />
+        「实测结构」来自 CIF 原子坐标；「教学示意」是程序化几何，不能当作测量证据。
+      </div>
+    </aside>
+
+    <div class="scale-bar">
+      <div id="scale-bar-track"><div id="scale-bar-fill"></div></div>
+      <div id="scale-bar-label" class="mono">—</div>
+      <div id="scale-bar-detail" class="mono">—</div>
+    </div>
+
+    <div class="lab-hint">
+      鼠标拖拽旋转 · 滚轮缩放 · ← / → 切换层级 · Esc 退出。<br />
+      每一层都标注了尺度、证据等级与文献来源。
+    </div>
+
+    <div id="lab-badge" class="badge mono">WebGL 初始化…</div>
+
+  </body>
+</html>

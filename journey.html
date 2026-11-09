@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>连续尺度旅程 · ScaleJourney 预览</title>
+    <link rel="icon" href="data:," />
+    <style>:root{--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}*{box-sizing:border-box}html,body{background:#05070c;height:100%;margin:0;overflow:hidden}#journey-canvas{width:100%;height:100%;display:block;position:fixed;inset:0}#hud{color:#d8e6f3;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);background:#070e18db;border:1px solid #6eaadc47;border-radius:14px;width:404px;max-height:calc(100% - 36px);padding:16px 18px;font:12.5px/1.55 Segoe UI,PingFang SC,Microsoft YaHei,sans-serif;position:fixed;top:18px;left:18px;overflow:auto}#hud h1{letter-spacing:.02em;color:#eaf4ff;margin:0 0 2px;font-size:15px}#hud p.lead{color:#8fb0c8;margin:0 0 12px;font-size:11.5px}dl{grid-template-columns:84px 1fr;gap:4px 10px;margin:0 0 12px;display:grid}dt{color:#7f9cb4}dd{color:#d9ecff;font-variant-numeric:tabular-nums;word-break:break-word;margin:0}#entries{grid-template-columns:1fr 1fr;gap:6px;margin:10px 0 4px;display:grid}button{color:#cfe6f8;font:inherit;cursor:pointer;background:#14263ae6;border:1px solid #6eaadc4d;border-radius:8px;padding:6px 8px}button:hover{background:#203e5cf2}button.active{color:#eaf8ff;background:#1c4e6ef2;border-color:#6fd6ff}.hint{color:#8fb0c8;border-top:1px solid #6eaadc2e;margin-top:10px;padding-top:10px;font-size:11.5px}#legend{color:#9db8cf;background:#070e18cc;border:1px solid #6eaadc38;border-radius:12px;padding:10px 14px;font:11.5px/1.6 Segoe UI,PingFang SC,Microsoft YaHei,sans-serif;position:fixed;bottom:18px;right:18px}#legend b{color:#d8e6f3;font-weight:600}.bad{color:#ffb3c8}.ok{color:#9fe3b3}</style>
+    <script type="module" crossorigin src="/assets/journey-CBSc0urc.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/three.module-BM-6qIyv.js">
+    <link rel="modulepreload" crossorigin href="/assets/lattices-CASb_9kQ.js">
+    <link rel="modulepreload" crossorigin href="/assets/engine-BpIReOJy.js">
+    <link rel="modulepreload" crossorigin href="/assets/journey-DsGVYOS4.js">
+  </head>
+  <body>
+    <canvas id="journey-canvas"></canvas>
+    <aside id="hud">
+      <h1>连续尺度旅程 · ScaleJourney</h1>
+      <p class="lead">同一台相机、同一个场景图：岩/土/叶/水 → 细胞 → 分子 → 原子，全程不换屏、不重建。</p>
+      <dl>
+        <dt>入口</dt><dd id="hud-entry">未进入</dd>
+        <dt>scale</dt><dd id="hud-scale">—</dd>
+        <dt>聚焦层</dt><dd id="hud-layer">—</dd>
+        <dt>层栈 path</dt><dd id="hud-path">—</dd>
+        <dt>过渡</dt><dd id="hud-transition">—</dd>
+        <dt>可见层</dt><dd id="hud-visible">—</dd>
+        <dt>anchor</dt><dd id="hud-anchor">—</dd>
+        <dt>anchor 误差</dt><dd id="hud-anchor-error">—</dd>
+        <dt>near / far</dt><dd id="hud-near-far">—</dd>
+        <dt>主场景</dt><dd id="hud-host">—</dd>
+        <dt>资产</dt><dd id="hud-assets">—</dd>
+        <dt>降级资产</dt><dd id="hud-degraded">—</dd>
+        <dt>激活耗时</dt><dd id="hud-activation">—</dd>
+        <dt>状态</dt><dd id="hud-status">—</dd>
+      </dl>
+      <div id="entries">
+        <button type="button" data-entry="rock">岩石 → 原子</button>
+        <button type="button" data-entry="soil">土壤 → 原子</button>
+        <button type="button" data-entry="leaf">叶片 → 原子</button>
+        <button type="button" data-entry="water">水面 → 原子</button>
+        <button type="button" id="btn-exit">退出旅程（Esc）</button>
+        <button type="button" id="btn-auto">自动推进（空格）</button>
+      </div>
+      <div class="hint">
+        滚轮连续缩放；点击按钮切换入口；点击桌面上的物体可进入该层；
+        刷新恢复由 preview 内存态演示；<b>?assets=missing</b> 把所有资产探测变成 404 以验证降级。
+      </div>
+    </aside>
+    <div id="legend">
+      <b>滚轮</b> 连续缩放 · <b>空格</b> 自动推进 · <b>Esc</b> 退出旅程 · <b>R</b> 重进当前入口
+      <br />画布数据集：data-scale / data-layer / data-path / data-anchor-error / data-assets / data-degraded / data-transition
+    </div>
+  </body>
+</html>

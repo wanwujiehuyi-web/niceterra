@@ -1,0 +1,134 @@
+[
+  {
+    "asset": "forest_ground_04",
+    "channel": "Diffuse",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_04/forest_ground_04_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "6ad9df4d731a238299806f739a26af83",
+    "file": "textures\\forest_ground_04-color.jpg",
+    "sha256": "50a4dda30875020c64385261aa7e00e2155b592302fa6794165f58fae73cbd2c",
+    "bytes": 1113899
+  },
+  {
+    "asset": "forest_ground_04",
+    "channel": "nor_gl",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_04/forest_ground_04_nor_gl_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "a010a0802c2d9a930c6f00d3b1f196d2",
+    "file": "textures\\forest_ground_04-normal.jpg",
+    "sha256": "9c3a0200e02ce40edffbbf9f5f623ef08ea9b1b7812b556182ec978f88887151",
+    "bytes": 1326812
+  },
+  {
+    "asset": "forest_ground_04",
+    "channel": "Rough",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forest_ground_04/forest_ground_04_rough_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "b5c7ba5c16f00261e9a765d52cf7e0ac",
+    "file": "textures\\forest_ground_04-roughness.jpg",
+    "sha256": "89d4d50395eb92824a64132c4bc8a5a09009071e0b325ab66dc3104c7a3090ed",
+    "bytes": 627507
+  },
+  {
+    "asset": "river_small_rocks",
+    "channel": "Diffuse",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/river_small_rocks/river_small_rocks_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "723ee7172c9d0e98d286473ef443033c",
+    "file": "textures\\river_small_rocks-color.jpg",
+    "sha256": "adbcaae1f1445d5b49797c71ea2c3f43ccaf7b109f933a427f0d0993d1dbbc51",
+    "bytes": 1028735
+  },
+  {
+    "asset": "river_small_rocks",
+    "channel": "nor_gl",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/river_small_rocks/river_small_rocks_nor_gl_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "e12850ba2aa71fe93a45ddd8ad03b6f4",
+    "file": "textures\\river_small_rocks-normal.jpg",
+    "sha256": "983f99bd61cdcdeb3d2ebe0cbba851fd58f249d38f9e76a25084a558ee56e8e6",
+    "bytes": 1365737
+  },
+  {
+    "asset": "river_small_rocks",
+    "channel": "Rough",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/river_small_rocks/river_small_rocks_rough_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "29add24dad5c5bb8fa5d4cce4c4ced4a",
+    "file": "textures\\river_small_rocks-roughness.jpg",
+    "sha256": "c5cd1953e559339c588f01d21509eff8894cd49f03da193b1dbb3161483a8113",
+    "bytes": 642685
+  },
+  {
+    "asset": "grass_path_3",
+    "channel": "Diffuse",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grass_path_3/grass_path_3_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "c4a7eb198fdc7773e56abd8b640a98c8",
+    "file": "textures\\grass_path_3-color.jpg",
+    "sha256": "71b0a514bbb65a0ec2731e82b6bad0bb3a1e089cb671cf697bfe53f75f5da943",
+    "bytes": 646551
+  },
+  {
+    "asset": "grass_path_3",
+    "channel": "nor_gl",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grass_path_3/grass_path_3_nor_gl_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "f02d1a46aa4da024741e00deac01e7d8",
+    "file": "textures\\grass_path_3-normal.jpg",
+    "sha256": "473bf439c266ffe357409fb0fb4758ed6cd1d6889df588f42e174b7cb6481cc5",
+    "bytes": 829401
+  },
+  {
+    "asset": "grass_path_3",
+    "channel": "Rough",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/grass_path_3/grass_path_3_rough_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "0dccd70ba83c5d13df7c90e55745ec33",
+    "file": "textures\\grass_path_3-roughness.jpg",
+    "sha256": "660682fb61634be28416f2a45adb54329d2e8ce743ef225e40ee9a7a999c17e7",
+    "bytes": 589060
+  },
+  {
+    "asset": "leafy_grass",
+    "channel": "Diffuse",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_diff_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "0dbc071e91d6905edfcfbe8eb785a1ab",
+    "file": "textures\\leafy_grass-color.jpg",
+    "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a",
+    "bytes": 1195394
+  },
+  {
+    "asset": "leafy_grass",
+    "channel": "nor_gl",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_nor_gl_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "8279e096e204ea326d57a318869f99df",
+    "file": "textures\\leafy_grass-normal.jpg",
+    "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6",
+    "bytes": 1466049
+  },
+  {
+    "asset": "leafy_grass",
+    "channel": "Rough",
+    "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_rough_1k.jpg",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "originalMd5": "05f6bb1383e12b327727d313c5899cf2",
+    "file": "textures\\leafy_grass-roughness.jpg",
+    "sha256": "0c2a1d91aacb8e54a496051b59854e51e456fe858abeade778e308359ef16463",
+    "bytes": 511385
+  }
+]
