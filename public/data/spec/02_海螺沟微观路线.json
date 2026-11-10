@@ -72,6 +72,13 @@
           "fov": "0.4 nm",
           "model": "非完美晶格局部模型",
           "evidence": "L4"
+        },
+        {
+          "levelId": "sio2-md",
+          "label": "硅氧网络 · 分子运动",
+          "fov": "1 nm",
+          "model": "MD-lite 分子动力学示意（晶格谐振，可暂停）",
+          "evidence": "L4"
         }
       ]
     },

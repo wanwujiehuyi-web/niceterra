@@ -131,7 +131,7 @@ export const ROUTES: RouteEntry[] = [
     name: '湿溪石—生物膜—硅藻—生物硅',
     siteId: 'SITE-HLG-STREAM-01',
     status: 'PLANNED',
-    summary: '旗舰路线，9 层。从一块迎水面的湿石进入到硅藻壳体与生物硅循环。',
+    summary: '旗舰路线，10 层。从一块迎水面的湿石进入到硅藻壳体、生物硅循环与硅氧网络的分子运动。',
     levels: [
       { levelId: 'wet-rock', name: '湿溪石', scale: '20 cm · 近景摄影测量与 PBR', kind: 'object' },
       { levelId: 'biofilm-matrix', name: '生物膜基质', scale: '200 μm · EPS、孔隙、细胞附着', kind: 'micro' },
@@ -141,7 +141,8 @@ export const ROUTES: RouteEntry[] = [
       { levelId: 'wall-section', name: '壳壁剖面', scale: '200 nm · 孔道、壁厚、水合生物硅', kind: 'micro' },
       { levelId: 'silica-aggregation', name: '生物硅聚集', scale: '20 nm · 纳米聚集与短程结构', kind: 'micro' },
       { levelId: 'condensation', name: '硅酸缩合', scale: '2 nm · 可暂停机制动画', kind: 'micro' },
-      { levelId: 'local-sio', name: '局部硅氧结构', scale: '0.4 nm · 非完美晶格局部模型', kind: 'micro' }
+      { levelId: 'local-sio', name: '局部硅氧结构', scale: '0.4 nm · 非完美晶格局部模型', kind: 'micro' },
+      { levelId: 'sio2-md', name: '硅氧网络 · 分子运动', scale: '1 nm · MD-lite 分子动力学示意（可暂停）', kind: 'micro' }
     ]
   },
   {

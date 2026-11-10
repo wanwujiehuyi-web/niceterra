@@ -150,7 +150,9 @@ const cases = [
   { name: 'forest', load: (m) => m.createForestTier({ lowQuality: false, onProgress: (d, t, l) => console.log('  forest ' + d + '/' + t + ' ' + l) }) },
   { name: 'stream', load: (m) => m.createStreamTier({ lowQuality: false, onProgress: (d, t, l) => console.log('  stream ' + d + '/' + t + ' ' + l) }) },
   { name: 'micro-wet-rock', load: (m) => m.createMicroTierA({ lowQuality: false, levelId: 'wet-rock' }) },
-  { name: 'micro-local-sio', load: (m) => m.createMicroTierA({ lowQuality: false, levelId: 'local-sio' }) }
+  { name: 'micro-local-sio', load: (m) => m.createMicroTierA({ lowQuality: false, levelId: 'local-sio' }) },
+  { name: 'micro-sio2-md', load: (m) => m.createMicroTierA({ lowQuality: false, levelId: 'sio2-md' }) },
+  { name: 'micro-sio2-md-low', load: (m) => m.createMicroTierA({ lowQuality: true, levelId: 'sio2-md' }) }
 ];
 
 const virtual = {

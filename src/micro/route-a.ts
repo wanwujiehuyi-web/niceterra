@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { loadGLB, fitObject } from '../core/gltf';
+import { MdLite, structureForMaterial, AMPLITUDE_EXAGGERATION } from './md-lite';
 import type {
   ColorStatus,
   EvidenceLevel,
@@ -319,8 +320,33 @@ export const ROUTE_A: MicroRouteSpec = {
       colorNote: '球棍编码色：Si/O/H，仅模型编码，不代表真实颜色；图例标注声明的编码',
       evidenceNote: 'L4：局部模型，非实测结构',
       sources: ['SRC-DIATOM-2008'],
-      actions: { up: '—（路线终点）', down: '缩小 → 硅酸缩合 2 nm', reset: '复位视角' },
+      actions: { up: '放大 → 硅氧网络·分子运动 1 nm', down: '缩小 → 硅酸缩合 2 nm', reset: '复位视角' },
       views: ['cluster', 'defect']
+    },
+    {
+      levelId: 'sio2-md',
+      title: '硅氧网络 · 分子运动',
+      index: 10,
+      fovLabel: '1 nm',
+      fovMeters: 1e-9,
+      imaging: 'mechanism-diagram',
+      colorStatus: 'schematic',
+      evidence: 'L4',
+      limitation:
+        '分子动力学示意（MD-lite）：SiO₄ 四面体片段做温度参数化晶格谐振，振幅夸大 ' +
+        AMPLITUDE_EXAGGERATION +
+        '× 以便可见；动画速率不代表真实时间尺度（真实键振动 ~10¹³ Hz）。opal-A 的长程无序与结构水未完整建模。',
+      sampleStatus: 'PLANNED',
+      parentObjectId: PARENT_OBJECT_ID,
+      scaleBarMeters: 2e-10,
+      geometrySource:
+        'MD-lite opal-A 片段：SiO4 四面体角共享网络（Si–O 0.161 nm、O–Si–O 109.47°）+ 谐振运动引擎（A ∝ √(k_B·T/k)）',
+      colorNote:
+        'CPK 元素配色（Si 米黄 / O 红），球半径取 1.15×共价半径为视觉约定；编码色不代表真实颜色、非荧光',
+      evidenceNote: 'L4：分子动力学示意（MD-lite），非全原子力场模拟、非实测结构',
+      sources: ['SRC-OPAL-A', 'SRC-QUARTZ-GEOMETRY'],
+      actions: { up: '—（分子层终点）', down: '缩小 → 局部硅氧结构 0.4 nm', reset: '复位视角' },
+      views: ['overview']
     }
   ]
 };
@@ -2170,6 +2196,63 @@ function buildLocalSio(ctx: MicroBuildContext, spec: MicroLevelSpec): LevelRunti
 }
 
 /* ------------------------------------------------------------------ */
+/* Level 10 — 硅氧网络·分子运动 / 1 nm: MD-lite pausable molecular motion */
+/* ------------------------------------------------------------------ */
+
+function buildSioMd(_ctx: MicroBuildContext, spec: MicroLevelSpec): LevelRuntime {
+  const group = new THREE.Group();
+  const fov = spec.fovMeters ?? 1e-9;
+  const structure = structureForMaterial('silica-opal');
+  if (!structure) throw new Error('sio2-md: silica-opal structure missing');
+  // 1 field unit = 1 nm: fragment spans ~0.6 nm, camera distance = 1.6 × fov matches peers.
+  const md = new MdLite(structure, { temperatureK: 298, speed: 1, paused: false }, 1, 1010);
+  group.add(md.group);
+
+  addLights(group, {
+    ambient: 0.6,
+    key: { color: 0xffffff, intensity: 2.0, position: [-2.2, 2.6, 2.4] },
+    fill: { color: 0x7d95ff, intensity: 0.45, position: [2.4, 0.2, 1.2] },
+    rim: { color: 0x9fe6ff, intensity: 0.8, position: [0.6, 1.4, -2.6] }
+  });
+
+  const camera = makeCamera(fov, {
+    dir: [0.3, 0.42, 1],
+    distance: 1.7,
+    fovDeg: 34,
+    background: 0x04060c
+  });
+
+  return {
+    group,
+    update: (dt) => md.update(dt),
+    dispose: () => md.dispose(),
+    camera,
+    activeViewId: 'overview',
+    views: [
+      {
+        id: 'overview',
+        label: '四面体网络',
+        apply: () => {
+          camera.position = [0.3 * fov * 1.7, 0.42 * fov * 1.7, 1.7 * fov];
+          camera.target = [0.15, 0, 0.15];
+          camera.up = [0, 1, 0];
+        }
+      }
+    ],
+    legend: [
+      { color: 0xf0c8a0, text: 'Si（CPK 编码色）' },
+      { color: 0xff0d0d, text: 'O（CPK 编码色）' },
+      { color: 0x9aa0a6, text: 'Si–O 键' }
+    ],
+    legendTitle: '1 nm · MD-lite 晶格谐振（T=298 K，振幅×' + AMPLITUDE_EXAGGERATION + '）',
+    pausable: true,
+    pause: () => md.pause(),
+    resume: () => md.resume(),
+    isPaused: () => md.isPaused()
+  };
+}
+
+/* ------------------------------------------------------------------ */
 /* Dispatch, lifecycle and WorldTier adapter                            */
 /* ------------------------------------------------------------------ */
 
@@ -2184,7 +2267,8 @@ const BUILDERS: Record<string, LevelBuilder> = {
   'wall-section': buildWallSection,
   'silica-aggregation': buildSilicaAggregation,
   condensation: buildCondensation,
-  'local-sio': buildLocalSio
+  'local-sio': buildLocalSio,
+  'sio2-md': buildSioMd
 };
 
 const activeBuilds = new Set<MicroLevelABuild>();

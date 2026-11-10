@@ -43,7 +43,7 @@
     "data": "数据视图（图表/地图），退出连续物理缩放"
   },
   "physicalScaleRule": "fovMeters != null ⇒ physicalScale=true；数据视图或无物理视场层 ⇒ false（不得编比例尺）。",
-  "dataViewRule": "isDataView=true 仅用于数据图表/样带地图（chronosequence、gene-evidence、debris-transect、community-data）；phosphorus-process 为机制图、condensation 为机制动画、local-sio 为局部结构模型，均不是数据视图。",
+  "dataViewRule": "isDataView=true 仅用于数据图表/样带地图（chronosequence、gene-evidence、debris-transect、community-data）；phosphorus-process 为机制图、condensation 为机制动画、local-sio 为局部结构模型、sio2-md 为 MD-lite 分子动力学示意动画，均不是数据视图。",
   "orderNote": "order 仅用于展示排序，不是分享主键；分享链接使用 routeId + levelId。",
   "routes": [
     {
@@ -55,9 +55,9 @@
       "flagship": true,
       "sampleStatus": "PLANNED",
       "intent": "从一块湿溪石进入生物膜、硅藻壳体与生物硅形成机制，连续理解 20 cm 到 0.4 nm 的尺度。",
-      "levelCount": 9,
+      "levelCount": 10,
       "startLevelId": "wet-rock",
-      "endLevelId": "local-sio",
+      "endLevelId": "sio2-md",
       "levelOrder": [
         "wet-rock",
         "biofilm-matrix",
@@ -67,7 +67,8 @@
         "wall-section",
         "silica-aggregation",
         "condensation",
-        "local-sio"
+        "local-sio",
+        "sio2-md"
       ],
       "dataViewLevelIds": [],
       "evidenceSummary": {
@@ -501,6 +502,51 @@
             "CLM-DIATOM-SILICA"
           ],
           "previousLevelId": "condensation",
+          "nextLevelId": "sio2-md"
+        },
+        {
+          "fovMeters": 1e-9,
+          "fovLabel": "1 nm",
+          "fovStatus": "KNOWN",
+          "view": null,
+          "dataViewType": null,
+          "isDataView": false,
+          "parentObjectId": "ROCK-HLG-01",
+          "sampleId": "SAMPLE-HLG-ROCK-01",
+          "parentPosition": {
+            "coordinateStatus": "PARENT_RELATIVE",
+            "frame": "siteLocal",
+            "localPosition": [
+              30,
+              -16,
+              "zWater+0.12"
+            ],
+            "note": "设计溪线节点 (30,-16)；z=zWater+0.12 为设计水面相对高度"
+          },
+          "sampleStatus": "PLANNED",
+          "assetId": null,
+          "assetCandidates": [],
+          "geometrySource": "MD-lite opal-A 片段：SiO4 四面体角共享网络（Si–O 0.161 nm、O–Si–O 109.47°）+ 温度参数化晶格谐振（A ∝ √(k_B·T/k)）",
+          "placeholder": true,
+          "license": "UNKNOWN（待资产登记复核）",
+          "physicalScale": true,
+          "viewKind": "mechanism",
+          "order": 10,
+          "levelId": "sio2-md",
+          "label": "硅氧网络 · 分子运动",
+          "model": "分子动力学示意（MD-lite）：晶格谐振，振幅夸大 12×；动画速率不代表真实时间尺度（真实键振动 ~10^13 Hz）",
+          "imaging": "mechanism-diagram",
+          "colorStatus": "schematic",
+          "evidenceLevel": "L4",
+          "evidenceLevels": [
+            "L4"
+          ],
+          "evidenceNote": "L4：分子动力学示意（MD-lite），非全原子力场模拟、非实测结构",
+          "limitation": "opal-A 长程无序与结构水未完整建模；CPK 为编码色；可暂停。",
+          "claimIds": [
+            "CLM-DIATOM-SILICA"
+          ],
+          "previousLevelId": "local-sio",
           "nextLevelId": null
         }
       ]
