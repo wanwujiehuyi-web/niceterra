@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>v2 lab · sites (dev only)</title>
+<style>
+  html,body{margin:0;height:100%;background:#0b0f12;overflow:hidden;font:12px/1.45 Consolas,"Noto Sans SC",monospace;color:#dfe8f2}
+  #stage{position:relative;margin:0 auto;background:#0f0f0f}
+  canvas{display:block;width:100%;height:100%}
+  #hud{position:fixed;left:10px;top:10px;background:rgba(8,14,20,.72);padding:8px 11px;border-radius:7px;white-space:pre;pointer-events:none;max-width:calc(100vw - 340px);z-index:3}
+  #panel{position:fixed;right:10px;top:10px;width:308px;background:rgba(8,14,20,.78);border:1px solid #22303c;border-radius:7px;padding:9px 11px;white-space:pre-wrap;z-index:3;pointer-events:none;max-height:calc(100vh - 20px);overflow:hidden}
+  #devbadge{position:fixed;left:10px;bottom:10px;background:#5a2a05;color:#ffd9a8;border:1px solid #b06a1e;border-radius:5px;padding:4px 8px;letter-spacing:.06em;z-index:3}
+  #panel b{color:#9fd3ff;font-weight:600}
+  #hud b{color:#9fd3ff}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="hud"></div>
+<div id="panel"></div>
+<div id="devbadge">DEV ONLY · 自查页，非产品截图 · WARP 帧率不作性能证据</div>
+<script type="module" src="/src/labs/sites.ts"></script>
+</body>
+</html>

@@ -1,0 +1,3334 @@
+{
+ "generated": "2026-11-10T08:39:11.494Z",
+ "source": "D:/niceterra/deploy/app/assets",
+ "count": 194,
+ "totalMB": 235.9,
+ "assets": [
+  {
+   "path": "alpine-spruce.glb",
+   "role": "tree/flora-prop",
+   "bytes": 3798952,
+   "tris": 155638,
+   "sizeM": [
+    2.35,
+    3.5,
+    2.27
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 2658,
+   "longestM": 3.5
+  },
+  {
+   "path": "web/moss-cushion-v18.glb",
+   "role": "ground-detail",
+   "bytes": 3454484,
+   "tris": 337728,
+   "sizeM": [
+    0.3,
+    0.29,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 965,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/alpenrose-v20.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 3439372,
+   "tris": 300822,
+   "sizeM": [
+    0.8,
+    0.67,
+    0.8
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1449,
+   "longestM": 0.8
+  },
+  {
+   "path": "detail/moss-sprig-v8.glb",
+   "role": "ground-detail",
+   "bytes": 3344100,
+   "tris": 348102,
+   "sizeM": [
+    0.25,
+    0.25,
+    0.25
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 906,
+   "longestM": 0.25
+  },
+  {
+   "path": "web/spruce-branch-cluster-v21.glb",
+   "role": "tree/flora-prop",
+   "bytes": 3203792,
+   "tris": 253958,
+   "sizeM": [
+    0.45,
+    0.35,
+    0.44
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1534,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/spruce-branch-cluster-v21-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 3176020,
+   "tris": 246382,
+   "sizeM": [
+    0.45,
+    0.35,
+    0.44
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1534,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/red-squirrel-v21.glb",
+   "role": "fauna",
+   "bytes": 3107556,
+   "tris": 106092,
+   "sizeM": [
+    0.15,
+    0.3,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 2347,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/red-squirrel-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 3086480,
+   "tris": 101124,
+   "sizeM": [
+    0.15,
+    0.3,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 2347,
+   "longestM": 0.3
+  },
+  {
+   "path": "r10/r10-alpine-wildflowers.glb",
+   "role": "hero-prop (aholo Lux3D)",
+   "bytes": 2946468,
+   "tris": 281922,
+   "sizeM": [
+    18527.24,
+    18022.88,
+    18249.05
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 516,
+   "longestM": 18527.24,
+   "fit": {
+    "targetSize": 0.6,
+    "note": "V1 targetSize 0.6 (flower clump)"
+   }
+  },
+  {
+   "path": "web/alpine-turf-patch-v21.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2886792,
+   "tris": 238550,
+   "sizeM": [
+    0.3,
+    0.15,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1269,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/alpine-turf-patch-v21-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2882944,
+   "tris": 237354,
+   "sizeM": [
+    0.3,
+    0.15,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1269,
+   "longestM": 0.3
+  },
+  {
+   "path": "detail/sedge-tuft-v12.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 2832136,
+   "tris": 326912,
+   "sizeM": [
+    0.72,
+    0.7,
+    0.73
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 648,
+   "longestM": 0.73
+  },
+  {
+   "path": "web/soil-aggregate-v18.glb",
+   "role": "ground-detail",
+   "bytes": 2820620,
+   "tris": 180514,
+   "sizeM": [
+    0.3,
+    0.3,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1646,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/mycelium-network-v18.glb",
+   "role": "ground-detail",
+   "bytes": 2742408,
+   "tris": 229468,
+   "sizeM": [
+    0.15,
+    0.15,
+    0.15
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1173,
+   "longestM": 0.15
+  },
+  {
+   "path": "web/alpine-cushion-cluster-v21.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2600204,
+   "tris": 194860,
+   "sizeM": [
+    0.3,
+    0.18,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1305,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/alpine-cushion-cluster-v21-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2596372,
+   "tris": 193558,
+   "sizeM": [
+    0.3,
+    0.18,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1305,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/alpine-pine-v20.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2564588,
+   "tris": 230856,
+   "sizeM": [
+    3.34,
+    3.5,
+    2.4
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1044,
+   "longestM": 3.5
+  },
+  {
+   "path": "web/birch-v20.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2544104,
+   "tris": 76790,
+   "sizeM": [
+    6.6,
+    12,
+    6.88
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1964,
+   "longestM": 12
+  },
+  {
+   "path": "r10/r10-fir-sapling.glb",
+   "role": "hero-prop (aholo Lux3D)",
+   "bytes": 2503696,
+   "tris": 233360,
+   "sizeM": [
+    162256,
+    262136,
+    161680
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 523,
+   "longestM": 262136,
+   "fit": {
+    "targetSize": 3.2,
+    "note": "V1 targetSize 3.2 (young fir)"
+   }
+  },
+  {
+   "path": "detail/macro-soil-v7.glb",
+   "role": "ground-detail",
+   "bytes": 2447428,
+   "tris": 205626,
+   "sizeM": [
+    0.25,
+    0.23,
+    0.25
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1128,
+   "longestM": 0.25
+  },
+  {
+   "path": "detail/embedded-gravel-v10.glb",
+   "role": "ground-detail",
+   "bytes": 2179592,
+   "tris": 192334,
+   "sizeM": [
+    0.15,
+    0.15,
+    0.01
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 843,
+   "longestM": 0.15
+  },
+  {
+   "path": "web/larch-v20.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2140336,
+   "tris": 137858,
+   "sizeM": [
+    7.45,
+    12,
+    6.99
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1220,
+   "longestM": 12
+  },
+  {
+   "path": "detail/lichen-surface-v8.glb",
+   "role": "ground-detail",
+   "bytes": 2127856,
+   "tris": 144972,
+   "sizeM": [
+    0.35,
+    0.27,
+    0.34
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1141,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/glacier-serac-v21.glb",
+   "role": "rock/geology-prop",
+   "bytes": 2104152,
+   "tris": 64260,
+   "sizeM": [
+    0.3,
+    0.3,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1658,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/common-reed-cluster-v21.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 2075468,
+   "tris": 114920,
+   "sizeM": [
+    0.78,
+    1.2,
+    0.65
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1262,
+   "longestM": 1.2
+  },
+  {
+   "path": "web/common-reed-cluster-v21-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 2052336,
+   "tris": 109938,
+   "sizeM": [
+    0.78,
+    1.2,
+    0.65
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1262,
+   "longestM": 1.2
+  },
+  {
+   "path": "web/rock-microstructure-v18.glb",
+   "role": "rock/geology-prop",
+   "bytes": 2051992,
+   "tris": 74602,
+   "sizeM": [
+    0.12,
+    0.12,
+    0.12
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1519,
+   "longestM": 0.12
+  },
+  {
+   "path": "web/r7-sorbus-hemsleyana.glb",
+   "role": "tree/flora-prop",
+   "bytes": 2024252,
+   "tris": 134098,
+   "sizeM": [
+    4.09,
+    6,
+    4.03
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1003,
+   "longestM": 6
+  },
+  {
+   "path": "web/sedge-tuft-v12.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 2022308,
+   "tris": 241086,
+   "sizeM": [
+    0.72,
+    0.7,
+    0.73
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 228,
+   "longestM": 0.73
+  },
+  {
+   "path": "detail/macro-moss-v7.glb",
+   "role": "ground-detail",
+   "bytes": 1992740,
+   "tris": 161116,
+   "sizeM": [
+    0.45,
+    0.36,
+    0.45
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1004,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/r6-birch-autumn-r6.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1986172,
+   "tris": 216432,
+   "sizeM": [
+    10.42,
+    12,
+    11.16
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 108,
+   "longestM": 12
+  },
+  {
+   "path": "web/sedge-tuft-v12-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 1970260,
+   "tris": 230212,
+   "sizeM": [
+    0.72,
+    0.7,
+    0.73
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 228,
+   "longestM": 0.73
+  },
+  {
+   "path": "web/stream-cobble-cluster-v21.glb",
+   "role": "other",
+   "bytes": 1958296,
+   "tris": 87832,
+   "sizeM": [
+    0.35,
+    0.35,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1404,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/stream-cobble-cluster-v21-lod.glb",
+   "role": "other",
+   "bytes": 1939236,
+   "tris": 83180,
+   "sizeM": [
+    0.35,
+    0.35,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1404,
+   "longestM": 0.35
+  },
+  {
+   "path": "r10/r10-wet-mossy-boulder.glb",
+   "role": "hero-prop (aholo Lux3D)",
+   "bytes": 1845576,
+   "tris": 163530,
+   "sizeM": [
+    14745.15,
+    12100.95,
+    14730.75
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1145,
+   "longestM": 14745.15,
+   "fit": {
+    "targetSize": 2.4,
+    "note": "V1 r10-assets.ts targetSize 2.4 (foreground hero rock)"
+   }
+  },
+  {
+   "path": "web/alpine-bee-v18.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1825068,
+   "tris": 105260,
+   "sizeM": [
+    0.02,
+    0.01,
+    0.02
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1100,
+   "longestM": 0.02
+  },
+  {
+   "path": "web/alpine-bee-v18-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1810320,
+   "tris": 101818,
+   "sizeM": [
+    0.02,
+    0.01,
+    0.02
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1100,
+   "longestM": 0.02
+  },
+  {
+   "path": "detail/willow-stems-v13.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 1803800,
+   "tris": 177566,
+   "sizeM": [
+    0.89,
+    0.9,
+    0.82
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 574,
+   "longestM": 0.9
+  },
+  {
+   "path": "web/edelweiss-cluster-v21.glb",
+   "role": "other",
+   "bytes": 1750348,
+   "tris": 101816,
+   "sizeM": [
+    0.26,
+    0.32,
+    0.24
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1060,
+   "longestM": 0.32
+  },
+  {
+   "path": "detail/crystal-grain-v8.glb",
+   "role": "micro-layer",
+   "bytes": 1732552,
+   "tris": 126132,
+   "sizeM": [
+    0.18,
+    0.16,
+    0.16
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 945,
+   "longestM": 0.18
+  },
+  {
+   "path": "r10/r10-mossy-fallen-log.glb",
+   "role": "hero-prop (aholo Lux3D)",
+   "bytes": 1732112,
+   "tris": 172086,
+   "sizeM": [
+    19660.2,
+    9346.2,
+    12145.2
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 643,
+   "longestM": 19660.2,
+   "fit": {
+    "targetSize": 2,
+    "note": "V1 targetSize 2.0 (fallen log)"
+   }
+  },
+  {
+   "path": "web/alpine-spruce.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1712888,
+   "tris": 102124,
+   "sizeM": [
+    2.35,
+    3.5,
+    2.27
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 864,
+   "longestM": 3.5,
+   "fit": {
+    "targetSize": 3.5,
+    "note": "native 3.5 m single spruce (hero tree)"
+   }
+  },
+  {
+   "path": "web/alpine-larch-v3.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1708124,
+   "tris": 122326,
+   "sizeM": [
+    10.58,
+    15,
+    9.5
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 862,
+   "longestM": 15
+  },
+  {
+   "path": "web/driftwood-root-v21.glb",
+   "role": "other",
+   "bytes": 1672704,
+   "tris": 91676,
+   "sizeM": [
+    0.85,
+    0.75,
+    0.78
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1062,
+   "longestM": 0.85
+  },
+  {
+   "path": "web/mountain-hare-v20.glb",
+   "role": "fauna",
+   "bytes": 1670396,
+   "tris": 53744,
+   "sizeM": [
+    0.26,
+    0.7,
+    0.56
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1292,
+   "longestM": 0.7
+  },
+  {
+   "path": "web/driftwood-root-v21-lod.glb",
+   "role": "other",
+   "bytes": 1660364,
+   "tris": 88374,
+   "sizeM": [
+    0.85,
+    0.75,
+    0.78
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1062,
+   "longestM": 0.85
+  },
+  {
+   "path": "web/embedded-gravel-v10.glb",
+   "role": "ground-detail",
+   "bytes": 1616472,
+   "tris": 190170,
+   "sizeM": [
+    0.15,
+    0.15,
+    0.01
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 300,
+   "longestM": 0.15
+  },
+  {
+   "path": "detail/submerged-plant-v9.glb",
+   "role": "other",
+   "bytes": 1615064,
+   "tris": 125186,
+   "sizeM": [
+    0.17,
+    0.22,
+    0.16
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 762,
+   "longestM": 0.22
+  },
+  {
+   "path": "detail/leaf-tissue-v8.glb",
+   "role": "other",
+   "bytes": 1609832,
+   "tris": 164434,
+   "sizeM": [
+    0.12,
+    0.11,
+    0.08
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 514,
+   "longestM": 0.12
+  },
+  {
+   "path": "web/edelweiss-v20.glb",
+   "role": "other",
+   "bytes": 1607748,
+   "tris": 87310,
+   "sizeM": [
+    0.19,
+    0.22,
+    0.13
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 993,
+   "longestM": 0.22
+  },
+  {
+   "path": "detail/pine-cone-v12.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1565352,
+   "tris": 156694,
+   "sizeM": [
+    0.12,
+    0.15,
+    0.12
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 516,
+   "longestM": 0.15
+  },
+  {
+   "path": "web/mossy-granite-slab-v21.glb",
+   "role": "ground-detail",
+   "bytes": 1548072,
+   "tris": 81532,
+   "sizeM": [
+    0.28,
+    0.19,
+    0.28
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1019,
+   "longestM": 0.28
+  },
+  {
+   "path": "web/eurasian-beaver-v21.glb",
+   "role": "other",
+   "bytes": 1542420,
+   "tris": 83308,
+   "sizeM": [
+    0.9,
+    1.18,
+    1.83
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 949,
+   "longestM": 1.83
+  },
+  {
+   "path": "web/mossy-granite-slab-v21-lod.glb",
+   "role": "ground-detail",
+   "bytes": 1536524,
+   "tris": 78056,
+   "sizeM": [
+    0.28,
+    0.19,
+    0.28
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1019,
+   "longestM": 0.28
+  },
+  {
+   "path": "detail/shelf-fungus-v12.glb",
+   "role": "other",
+   "bytes": 1522172,
+   "tris": 122546,
+   "sizeM": [
+    0.31,
+    0.32,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 755,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/r6-spruce-hero-r6.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1518328,
+   "tris": 144374,
+   "sizeM": [
+    10.26,
+    14.99,
+    10.58
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 294,
+   "longestM": 14.99
+  },
+  {
+   "path": "web/plant-cell-v18.glb",
+   "role": "micro-layer",
+   "bytes": 1513128,
+   "tris": 43738,
+   "sizeM": [
+    0.15,
+    0.14,
+    0.15
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1176,
+   "longestM": 0.15
+  },
+  {
+   "path": "web/eurasian-beaver-v21-lod.glb",
+   "role": "other",
+   "bytes": 1512324,
+   "tris": 77274,
+   "sizeM": [
+    0.9,
+    1.18,
+    1.83
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 949,
+   "longestM": 1.83
+  },
+  {
+   "path": "web/diatom-v18.glb",
+   "role": "micro-layer",
+   "bytes": 1500556,
+   "tris": 65440,
+   "sizeM": [
+    0,
+    0,
+    0
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1079,
+   "longestM": 0
+  },
+  {
+   "path": "web/alpine-shrub-v5.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1492860,
+   "tris": 155394,
+   "sizeM": [
+    1.2,
+    1.03,
+    1.19
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 236,
+   "longestM": 1.2
+  },
+  {
+   "path": "web/alpine-shrub-v5-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1487096,
+   "tris": 154328,
+   "sizeM": [
+    1.2,
+    1.03,
+    1.19
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 236,
+   "longestM": 1.2
+  },
+  {
+   "path": "web/r7-betula-utilis.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1470444,
+   "tris": 117076,
+   "sizeM": [
+    9.42,
+    15,
+    10.22
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 550,
+   "longestM": 15
+  },
+  {
+   "path": "detail/bark-flake-v11.glb",
+   "role": "other",
+   "bytes": 1456496,
+   "tris": 107456,
+   "sizeM": [
+    0.35,
+    0.2,
+    0.34
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 725,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/r7-abies-fabri.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1451824,
+   "tris": 182924,
+   "sizeM": [
+    15.76,
+    25,
+    15.4
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 174,
+   "longestM": 25
+  },
+  {
+   "path": "detail/macro-slate-v7.glb",
+   "role": "ground-detail",
+   "bytes": 1436440,
+   "tris": 89302,
+   "sizeM": [
+    0.3,
+    0.3,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 872,
+   "longestM": 0.3
+  },
+  {
+   "path": "web/hero-spruce-v4.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1431408,
+   "tris": 175930,
+   "sizeM": [
+    4.24,
+    8,
+    3.74
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 204,
+   "longestM": 8
+  },
+  {
+   "path": "detail/fern-curl-v12.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 1418272,
+   "tris": 59542,
+   "sizeM": [
+    0.09,
+    0.18,
+    0.07
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 987,
+   "longestM": 0.18
+  },
+  {
+   "path": "web/brown-bear-v21.glb",
+   "role": "other",
+   "bytes": 1407792,
+   "tris": 85624,
+   "sizeM": [
+    2,
+    3.31,
+    3.8
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 846,
+   "longestM": 3.8
+  },
+  {
+   "path": "web/mossrock-hero-v16.glb",
+   "role": "ground-detail",
+   "bytes": 1405248,
+   "tris": 65466,
+   "sizeM": [
+    0.32,
+    0.23,
+    0.32
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1020,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/mossrock-hero-v16-lod.glb",
+   "role": "ground-detail",
+   "bytes": 1395268,
+   "tris": 62286,
+   "sizeM": [
+    0.32,
+    0.23,
+    0.32
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1020,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/brown-bear-v21-lod.glb",
+   "role": "other",
+   "bytes": 1391988,
+   "tris": 81472,
+   "sizeM": [
+    2,
+    3.31,
+    3.79
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 846,
+   "longestM": 3.79
+  },
+  {
+   "path": "web/r7-betula-insignis.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1388984,
+   "tris": 145844,
+   "sizeM": [
+    10.26,
+    15,
+    10.22
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 243,
+   "longestM": 15
+  },
+  {
+   "path": "web/willow-stems-v13.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 1376424,
+   "tris": 168030,
+   "sizeM": [
+    0.89,
+    0.9,
+    0.82
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 198,
+   "longestM": 0.9
+  },
+  {
+   "path": "web/eurasian-otter-v21.glb",
+   "role": "fauna",
+   "bytes": 1364344,
+   "tris": 38012,
+   "sizeM": [
+    0.9,
+    1.21,
+    0.45
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1104,
+   "longestM": 1.21
+  },
+  {
+   "path": "web/water-lily-pad-v21.glb",
+   "role": "other",
+   "bytes": 1358484,
+   "tris": 64502,
+   "sizeM": [
+    0.25,
+    0.06,
+    0.25
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 875,
+   "longestM": 0.25
+  },
+  {
+   "path": "web/granite-cliff-v3.glb",
+   "role": "rock/geology-prop",
+   "bytes": 1357136,
+   "tris": 156226,
+   "sizeM": [
+    206.15,
+    200,
+    195.57
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 305,
+   "longestM": 206.15,
+   "fit": {
+    "targetSize": 200,
+    "note": "native 206 m massif chunk; scale for valley wall"
+   }
+  },
+  {
+   "path": "detail/macro-rootwood-v7.glb",
+   "role": "ground-detail",
+   "bytes": 1356740,
+   "tris": 64004,
+   "sizeM": [
+    0.85,
+    0.32,
+    0.31
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 885,
+   "longestM": 0.85
+  },
+  {
+   "path": "web/eurasian-otter-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 1346220,
+   "tris": 33736,
+   "sizeM": [
+    0.9,
+    1.21,
+    0.45
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1104,
+   "longestM": 1.21
+  },
+  {
+   "path": "web/water-lily-pad-v21-lod.glb",
+   "role": "other",
+   "bytes": 1339996,
+   "tris": 61304,
+   "sizeM": [
+    0.25,
+    0.06,
+    0.25
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 875,
+   "longestM": 0.25
+  },
+  {
+   "path": "web/boreal-owl-v21.glb",
+   "role": "fauna",
+   "bytes": 1325804,
+   "tris": 51362,
+   "sizeM": [
+    0.29,
+    0.42,
+    0.26
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 954,
+   "longestM": 0.42
+  },
+  {
+   "path": "web/boreal-owl-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 1310136,
+   "tris": 48444,
+   "sizeM": [
+    0.29,
+    0.42,
+    0.26
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 954,
+   "longestM": 0.42
+  },
+  {
+   "path": "web/great-spotted-woodpecker-v21.glb",
+   "role": "fauna",
+   "bytes": 1305136,
+   "tris": 62156,
+   "sizeM": [
+    0.13,
+    0.23,
+    0.07
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 868,
+   "longestM": 0.23
+  },
+  {
+   "path": "web/great-spotted-woodpecker-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 1289980,
+   "tris": 58698,
+   "sizeM": [
+    0.13,
+    0.23,
+    0.07
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 868,
+   "longestM": 0.23
+  },
+  {
+   "path": "web/dragonfly-perch-v21.glb",
+   "role": "other",
+   "bytes": 1284588,
+   "tris": 27432,
+   "sizeM": [
+    0.11,
+    0.09,
+    0.04
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1075,
+   "longestM": 0.11
+  },
+  {
+   "path": "web/wild-boar-v21.glb",
+   "role": "other",
+   "bytes": 1281880,
+   "tris": 71846,
+   "sizeM": [
+    1.5,
+    3.22,
+    3.9
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 788,
+   "longestM": 3.9
+  },
+  {
+   "path": "web/red-fox-v21.glb",
+   "role": "fauna",
+   "bytes": 1271480,
+   "tris": 53290,
+   "sizeM": [
+    0.9,
+    0.95,
+    0.89
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 895,
+   "longestM": 0.95
+  },
+  {
+   "path": "web/wild-boar-v21-lod.glb",
+   "role": "other",
+   "bytes": 1262496,
+   "tris": 67750,
+   "sizeM": [
+    1.5,
+    3.22,
+    3.9
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 788,
+   "longestM": 3.9
+  },
+  {
+   "path": "web/dragonfly-perch-v21-lod.glb",
+   "role": "other",
+   "bytes": 1260032,
+   "tris": 22222,
+   "sizeM": [
+    0.11,
+    0.09,
+    0.04
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 1075,
+   "longestM": 0.11
+  },
+  {
+   "path": "web/red-fox-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 1258364,
+   "tris": 50146,
+   "sizeM": [
+    0.9,
+    0.95,
+    0.89
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 895,
+   "longestM": 0.95
+  },
+  {
+   "path": "web/eurasian-wolf-v21.glb",
+   "role": "other",
+   "bytes": 1252852,
+   "tris": 44596,
+   "sizeM": [
+    1.59,
+    3.38,
+    3.39
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 932,
+   "longestM": 3.39
+  },
+  {
+   "path": "web/eurasian-wolf-v21-lod.glb",
+   "role": "other",
+   "bytes": 1238636,
+   "tris": 41456,
+   "sizeM": [
+    1.6,
+    3.38,
+    3.39
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 932,
+   "longestM": 3.39
+  },
+  {
+   "path": "web/pine-cone-v12.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1232032,
+   "tris": 152802,
+   "sizeM": [
+    0.12,
+    0.15,
+    0.12
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 204,
+   "longestM": 0.15
+  },
+  {
+   "path": "detail/cave-wall-v9.glb",
+   "role": "other",
+   "bytes": 1225084,
+   "tris": 92852,
+   "sizeM": [
+    1.2,
+    0.89,
+    1.05
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 642,
+   "longestM": 1.2
+  },
+  {
+   "path": "detail/decayed-wood-v11.glb",
+   "role": "other",
+   "bytes": 1203980,
+   "tris": 75242,
+   "sizeM": [
+    0.65,
+    0.26,
+    0.32
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 656,
+   "longestM": 0.65
+  },
+  {
+   "path": "web/alpine-marmot-v20.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1186368,
+   "tris": 62092,
+   "sizeM": [
+    0.29,
+    0.6,
+    0.45
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 775,
+   "longestM": 0.6
+  },
+  {
+   "path": "web/granite-cliff-v3-lod.glb",
+   "role": "rock/geology-prop",
+   "bytes": 1166988,
+   "tris": 116534,
+   "sizeM": [
+    206.15,
+    200,
+    195.57
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 305,
+   "longestM": 206.15
+  },
+  {
+   "path": "web/submerged-plant-v9.glb",
+   "role": "other",
+   "bytes": 1131004,
+   "tris": 124250,
+   "sizeM": [
+    0.17,
+    0.22,
+    0.16
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 291,
+   "longestM": 0.22
+  },
+  {
+   "path": "web/green-frog-v21.glb",
+   "role": "fauna",
+   "bytes": 1129132,
+   "tris": 36660,
+   "sizeM": [
+    0.11,
+    0.09,
+    0.11
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 880,
+   "longestM": 0.11
+  },
+  {
+   "path": "web/green-frog-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 1128324,
+   "tris": 36112,
+   "sizeM": [
+    0.11,
+    0.09,
+    0.11
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 880,
+   "longestM": 0.11
+  },
+  {
+   "path": "web/soil-profile-v6.glb",
+   "role": "ground-detail",
+   "bytes": 1109024,
+   "tris": 108468,
+   "sizeM": [
+    0.33,
+    0.45,
+    0.24
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 360,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/r7-fargesia-bamboo.glb",
+   "role": "other",
+   "bytes": 1103248,
+   "tris": 93134,
+   "sizeM": [
+    1.39,
+    2.5,
+    1.59
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 360,
+   "longestM": 2.5
+  },
+  {
+   "path": "web/boulder-hero-v16.glb",
+   "role": "rock/geology-prop",
+   "bytes": 1097044,
+   "tris": 51270,
+   "sizeM": [
+    0.35,
+    0.3,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 779,
+   "longestM": 0.35,
+   "fit": {
+    "targetSize": 0.35,
+    "note": "native 0.35 m rock; scale to 0.5-1.5 m in creek"
+   }
+  },
+  {
+   "path": "web/willow-stems-v13-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 1091156,
+   "tris": 113670,
+   "sizeM": [
+    0.89,
+    0.9,
+    0.82
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 198,
+   "longestM": 0.9
+  },
+  {
+   "path": "web/boulder-hero-v16-lod.glb",
+   "role": "rock/geology-prop",
+   "bytes": 1086824,
+   "tris": 48338,
+   "sizeM": [
+    0.35,
+    0.3,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 779,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/red-deer-stag-v21.glb",
+   "role": "fauna",
+   "bytes": 1086344,
+   "tris": 31730,
+   "sizeM": [
+    2.5,
+    2.77,
+    1.42
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 852,
+   "longestM": 2.77
+  },
+  {
+   "path": "web/red-deer-stag-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 1072264,
+   "tris": 28652,
+   "sizeM": [
+    2.5,
+    2.77,
+    1.41
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 852,
+   "longestM": 2.77
+  },
+  {
+   "path": "web/grey-heron-v21.glb",
+   "role": "fauna",
+   "bytes": 1041036,
+   "tris": 36466,
+   "sizeM": [
+    0.6,
+    1,
+    0.34
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 752,
+   "longestM": 1
+  },
+  {
+   "path": "web/shelf-fungus-v12.glb",
+   "role": "other",
+   "bytes": 1037924,
+   "tris": 119412,
+   "sizeM": [
+    0.31,
+    0.32,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 292,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/meadow-flower-v3.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 1023432,
+   "tris": 94098,
+   "sizeM": [
+    0.45,
+    0.29,
+    0.44
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 259,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/meadow-flower-v3-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 1022784,
+   "tris": 93966,
+   "sizeM": [
+    0.45,
+    0.29,
+    0.44
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 259,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/root-bank-v5.glb",
+   "role": "other",
+   "bytes": 1012124,
+   "tris": 100832,
+   "sizeM": [
+    0.5,
+    0.43,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 329,
+   "longestM": 0.5
+  },
+  {
+   "path": "web/grey-heron-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 1008892,
+   "tris": 31116,
+   "sizeM": [
+    0.6,
+    1,
+    0.34
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 752,
+   "longestM": 1
+  },
+  {
+   "path": "web/pine-cone-v12-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 1005924,
+   "tris": 106388,
+   "sizeM": [
+    0.12,
+    0.15,
+    0.12
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 204,
+   "longestM": 0.15
+  },
+  {
+   "path": "web/bark-flake-v11.glb",
+   "role": "other",
+   "bytes": 997988,
+   "tris": 106446,
+   "sizeM": [
+    0.35,
+    0.2,
+    0.34
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 280,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/eurasian-lynx-v21.glb",
+   "role": "other",
+   "bytes": 977680,
+   "tris": 38002,
+   "sizeM": [
+    1,
+    0.98,
+    0.31
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 719,
+   "longestM": 1
+  },
+  {
+   "path": "bank-grass.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 969144,
+   "tris": 39754,
+   "sizeM": [
+    0.45,
+    0.38,
+    0.44
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 602,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/eurasian-lynx-v21-lod.glb",
+   "role": "other",
+   "bytes": 967768,
+   "tris": 35614,
+   "sizeM": [
+    1,
+    0.98,
+    0.31
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 719,
+   "longestM": 1
+  },
+  {
+   "path": "web/r7-moss-mat.glb",
+   "role": "ground-detail",
+   "bytes": 961724,
+   "tris": 78862,
+   "sizeM": [
+    0.15,
+    0.09,
+    0.15
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 343,
+   "longestM": 0.15
+  },
+  {
+   "path": "web/shelf-fungus-v12-lod.glb",
+   "role": "other",
+   "bytes": 941604,
+   "tris": 98184,
+   "sizeM": [
+    0.31,
+    0.32,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 292,
+   "longestM": 0.32
+  },
+  {
+   "path": "detail/ribbon-grass-v10.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 941560,
+   "tris": 84944,
+   "sizeM": [
+    0.21,
+    0.25,
+    0.22
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 348,
+   "longestM": 0.25
+  },
+  {
+   "path": "web/golden-eagle-v21.glb",
+   "role": "other",
+   "bytes": 937056,
+   "tris": 29960,
+   "sizeM": [
+    2,
+    1.18,
+    0.71
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 727,
+   "longestM": 2
+  },
+  {
+   "path": "web/chamois-v20.glb",
+   "role": "other",
+   "bytes": 931796,
+   "tris": 21012,
+   "sizeM": [
+    1.3,
+    1.35,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 780,
+   "longestM": 1.35
+  },
+  {
+   "path": "web/root-bank-v5-lod.glb",
+   "role": "other",
+   "bytes": 928244,
+   "tris": 83202,
+   "sizeM": [
+    0.5,
+    0.43,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 329,
+   "longestM": 0.5
+  },
+  {
+   "path": "web/spruce-branch-v6.glb",
+   "role": "tree/flora-prop",
+   "bytes": 919120,
+   "tris": 102374,
+   "sizeM": [
+    0.35,
+    0.31,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 239,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/mallard-duck-v21.glb",
+   "role": "fauna",
+   "bytes": 898388,
+   "tris": 29034,
+   "sizeM": [
+    0.57,
+    0.55,
+    0.27
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 689,
+   "longestM": 0.57
+  },
+  {
+   "path": "web/mallard-duck-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 886836,
+   "tris": 26580,
+   "sizeM": [
+    0.57,
+    0.55,
+    0.27
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 689,
+   "longestM": 0.57
+  },
+  {
+   "path": "web/rock-ptarmigan-v20.glb",
+   "role": "rock/geology-prop",
+   "bytes": 884288,
+   "tris": 24398,
+   "sizeM": [
+    0.35,
+    0.34,
+    0.17
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 701,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/songbird-v18.glb",
+   "role": "fauna",
+   "bytes": 865164,
+   "tris": 27920,
+   "sizeM": [
+    0.14,
+    0.13,
+    0.12
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 666,
+   "longestM": 0.14
+  },
+  {
+   "path": "web/broadleaf-v18.glb",
+   "role": "other",
+   "bytes": 864104,
+   "tris": 23338,
+   "sizeM": [
+    0.12,
+    0.12,
+    0.03
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 704,
+   "longestM": 0.12
+  },
+  {
+   "path": "web/songbird-v18-lod.glb",
+   "role": "fauna",
+   "bytes": 858576,
+   "tris": 26306,
+   "sizeM": [
+    0.14,
+    0.13,
+    0.12
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 666,
+   "longestM": 0.14
+  },
+  {
+   "path": "detail/layered-slate-v10.glb",
+   "role": "other",
+   "bytes": 852940,
+   "tris": 47834,
+   "sizeM": [
+    0.35,
+    0.06,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 526,
+   "longestM": 0.35
+  },
+  {
+   "path": "detail/eroded-granite-v10.glb",
+   "role": "rock/geology-prop",
+   "bytes": 851972,
+   "tris": 31816,
+   "sizeM": [
+    0.18,
+    0.14,
+    0.18
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 647,
+   "longestM": 0.18
+  },
+  {
+   "path": "detail/underwater-stone-v9.glb",
+   "role": "rock/geology-prop",
+   "bytes": 847992,
+   "tris": 49180,
+   "sizeM": [
+    0.25,
+    0.2,
+    0.25
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 528,
+   "longestM": 0.25
+  },
+  {
+   "path": "web/white-throated-dipper-v21.glb",
+   "role": "other",
+   "bytes": 821448,
+   "tris": 28668,
+   "sizeM": [
+    0.2,
+    0.19,
+    0.08
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 619,
+   "longestM": 0.2
+  },
+  {
+   "path": "web/decayed-wood-v11.glb",
+   "role": "other",
+   "bytes": 816024,
+   "tris": 77308,
+   "sizeM": [
+    0.65,
+    0.26,
+    0.32
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 263,
+   "longestM": 0.65
+  },
+  {
+   "path": "wet-boulder.glb",
+   "role": "rock/geology-prop",
+   "bytes": 815860,
+   "tris": 32592,
+   "sizeM": [
+    0.8,
+    0.55,
+    0.79
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 628,
+   "longestM": 0.8
+  },
+  {
+   "path": "creek-fern.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 810664,
+   "tris": 54608,
+   "sizeM": [
+    1.14,
+    1,
+    1.11
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 428,
+   "longestM": 1.14
+  },
+  {
+   "path": "web/white-throated-dipper-v21-lod.glb",
+   "role": "other",
+   "bytes": 809692,
+   "tris": 25976,
+   "sizeM": [
+    0.2,
+    0.19,
+    0.08
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 619,
+   "longestM": 0.2
+  },
+  {
+   "path": "web/bark-flake-v11-lod.glb",
+   "role": "other",
+   "bytes": 806900,
+   "tris": 69376,
+   "sizeM": [
+    0.35,
+    0.2,
+    0.34
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 280,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/fern-curl-v12.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 806172,
+   "tris": 61710,
+   "sizeM": [
+    0.09,
+    0.18,
+    0.07
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 375,
+   "longestM": 0.18
+  },
+  {
+   "path": "web/river-boulder-hero-v21-lod.glb",
+   "role": "rock/geology-prop",
+   "bytes": 793760,
+   "tris": 25420,
+   "sizeM": [
+    0.35,
+    0.3,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 621,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/fractured-outcrop-v5.glb",
+   "role": "other",
+   "bytes": 788052,
+   "tris": 74010,
+   "sizeM": [
+    0.32,
+    0.16,
+    0.31
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 275,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/river-boulder-hero-v21.glb",
+   "role": "rock/geology-prop",
+   "bytes": 778132,
+   "tris": 23056,
+   "sizeM": [
+    0.35,
+    0.3,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 621,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/brook-trout-v18-lod.glb",
+   "role": "fauna",
+   "bytes": 771572,
+   "tris": 11746,
+   "sizeM": [
+    0.35,
+    0.14,
+    0.08
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 675,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/brook-trout-v18.glb",
+   "role": "fauna",
+   "bytes": 768344,
+   "tris": 11570,
+   "sizeM": [
+    0.35,
+    0.14,
+    0.08
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 675,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/fire-salamander-v21-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 765116,
+   "tris": 13490,
+   "sizeM": [
+    0.18,
+    0.06,
+    0.08
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 664,
+   "longestM": 0.18
+  },
+  {
+   "path": "web/alpine-ibex-v20.glb",
+   "role": "tree/flora-prop",
+   "bytes": 761272,
+   "tris": 21586,
+   "sizeM": [
+    1.4,
+    1.92,
+    1.06
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 607,
+   "longestM": 1.92
+  },
+  {
+   "path": "web/fire-salamander-v21.glb",
+   "role": "tree/flora-prop",
+   "bytes": 757024,
+   "tris": 12284,
+   "sizeM": [
+    0.18,
+    0.06,
+    0.08
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 664,
+   "longestM": 0.18
+  },
+  {
+   "path": "web/ribbon-grass-v10.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 740776,
+   "tris": 87542,
+   "sizeM": [
+    0.21,
+    0.25,
+    0.22
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 137,
+   "longestM": 0.25
+  },
+  {
+   "path": "detail/fallen-twig-v12.glb",
+   "role": "other",
+   "bytes": 728960,
+   "tris": 19748,
+   "sizeM": [
+    0.65,
+    0.14,
+    0.33
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 581,
+   "longestM": 0.65
+  },
+  {
+   "path": "detail/dead-snag-v13.glb",
+   "role": "tree/flora-prop",
+   "bytes": 715188,
+   "tris": 32820,
+   "sizeM": [
+    0.83,
+    2.2,
+    0.69
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 479,
+   "longestM": 2.2
+  },
+  {
+   "path": "web/fern-curl-v12-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 699716,
+   "tris": 42606,
+   "sizeM": [
+    0.09,
+    0.18,
+    0.07
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 375,
+   "longestM": 0.18
+  },
+  {
+   "path": "detail/snow-ice-v9.glb",
+   "role": "other",
+   "bytes": 690680,
+   "tris": 33336,
+   "sizeM": [
+    1,
+    0.69,
+    0.72
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 462,
+   "longestM": 1
+  },
+  {
+   "path": "web/fractured-outcrop-v5-lod.glb",
+   "role": "other",
+   "bytes": 648200,
+   "tris": 48268,
+   "sizeM": [
+    0.32,
+    0.16,
+    0.31
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 275,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/decayed-wood-v11-lod.glb",
+   "role": "other",
+   "bytes": 645056,
+   "tris": 47672,
+   "sizeM": [
+    0.65,
+    0.26,
+    0.32
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 263,
+   "longestM": 0.65
+  },
+  {
+   "path": "web/roe-deer-v21-lod.glb",
+   "role": "fauna",
+   "bytes": 641796,
+   "tris": 18148,
+   "sizeM": [
+    1.3,
+    3.33,
+    2.83
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 513,
+   "longestM": 3.33
+  },
+  {
+   "path": "web/roe-deer-v21.glb",
+   "role": "fauna",
+   "bytes": 639288,
+   "tris": 18432,
+   "sizeM": [
+    1.3,
+    3.33,
+    2.83
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 1,
+   "imageKB": 513,
+   "longestM": 3.33
+  },
+  {
+   "path": "web/broken-stump-v5.glb",
+   "role": "other",
+   "bytes": 627440,
+   "tris": 53974,
+   "sizeM": [
+    1.04,
+    0.9,
+    1.04
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 277,
+   "longestM": 1.04
+  },
+  {
+   "path": "web/r7-diatom.glb",
+   "role": "micro-layer",
+   "bytes": 625892,
+   "tris": 48372,
+   "sizeM": [
+    0.16,
+    0.08,
+    0.16
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 264,
+   "longestM": 0.16
+  },
+  {
+   "path": "web/bank-grass-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 560612,
+   "tris": 38192,
+   "sizeM": [
+    0.45,
+    0.38,
+    0.44
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 210,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/bank-grass.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 560612,
+   "tris": 38192,
+   "sizeM": [
+    0.45,
+    0.38,
+    0.44
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 210,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/layered-slate-v10.glb",
+   "role": "other",
+   "bytes": 552932,
+   "tris": 49996,
+   "sizeM": [
+    0.35,
+    0.06,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 221,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/underwater-stone-v9.glb",
+   "role": "rock/geology-prop",
+   "bytes": 538708,
+   "tris": 51350,
+   "sizeM": [
+    0.25,
+    0.2,
+    0.25
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 214,
+   "longestM": 0.25
+  },
+  {
+   "path": "web/broken-stump-v5-lod.glb",
+   "role": "other",
+   "bytes": 520912,
+   "tris": 33222,
+   "sizeM": [
+    1.04,
+    0.9,
+    1.04
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 277,
+   "longestM": 1.04
+  },
+  {
+   "path": "web/moss-bank-v3.glb",
+   "role": "ground-detail",
+   "bytes": 502944,
+   "tris": 39782,
+   "sizeM": [
+    0.45,
+    0.15,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 221,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/fern-frond-v6.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 502156,
+   "tris": 45516,
+   "sizeM": [
+    0.6,
+    0.56,
+    0.52
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 186,
+   "longestM": 0.6
+  },
+  {
+   "path": "web/eroded-granite-v10.glb",
+   "role": "rock/geology-prop",
+   "bytes": 495292,
+   "tris": 33112,
+   "sizeM": [
+    0.18,
+    0.14,
+    0.18
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 292,
+   "longestM": 0.18
+  },
+  {
+   "path": "fallen-log.glb",
+   "role": "tree/flora-prop",
+   "bytes": 468576,
+   "tris": 11592,
+   "sizeM": [
+    2.5,
+    0.57,
+    0.63
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 383,
+   "longestM": 2.5
+  },
+  {
+   "path": "web/creek-fern.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 464192,
+   "tris": 39248,
+   "sizeM": [
+    1.14,
+    1,
+    1.11
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 156,
+   "longestM": 1.14
+  },
+  {
+   "path": "web/creek-fern-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 463468,
+   "tris": 39066,
+   "sizeM": [
+    1.14,
+    1,
+    1.11
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 156,
+   "longestM": 1.14
+  },
+  {
+   "path": "web/moss-bank-v3-lod.glb",
+   "role": "ground-detail",
+   "bytes": 428980,
+   "tris": 26256,
+   "sizeM": [
+    0.45,
+    0.15,
+    0.3
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 221,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/dead-snag-v13.glb",
+   "role": "tree/flora-prop",
+   "bytes": 428420,
+   "tris": 34616,
+   "sizeM": [
+    0.83,
+    2.2,
+    0.69
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 188,
+   "longestM": 2.2
+  },
+  {
+   "path": "web/wet-boulder.glb",
+   "role": "rock/geology-prop",
+   "bytes": 417844,
+   "tris": 27900,
+   "sizeM": [
+    0.8,
+    0.55,
+    0.79
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 257,
+   "longestM": 0.8
+  },
+  {
+   "path": "web/river-gravel-v5.glb",
+   "role": "ground-detail",
+   "bytes": 412992,
+   "tris": 34986,
+   "sizeM": [
+    0.35,
+    0.1,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 168,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/wet-moss-v6.glb",
+   "role": "ground-detail",
+   "bytes": 396052,
+   "tris": 29482,
+   "sizeM": [
+    0.45,
+    0.3,
+    0.45
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 218,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/fallen-twig-v12.glb",
+   "role": "other",
+   "bytes": 386796,
+   "tris": 20662,
+   "sizeM": [
+    0.65,
+    0.14,
+    0.33
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 242,
+   "longestM": 0.65
+  },
+  {
+   "path": "web/wet-boulder-lod.glb",
+   "role": "rock/geology-prop",
+   "bytes": 383856,
+   "tris": 19886,
+   "sizeM": [
+    0.8,
+    0.55,
+    0.79
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 257,
+   "longestM": 0.8
+  },
+  {
+   "path": "web/fern-frond-v6-lod.glb",
+   "role": "foliage-card-or-clump",
+   "bytes": 381676,
+   "tris": 24778,
+   "sizeM": [
+    0.6,
+    0.56,
+    0.52
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 186,
+   "longestM": 0.6
+  },
+  {
+   "path": "web/dead-snag-v13-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 357956,
+   "tris": 22082,
+   "sizeM": [
+    0.83,
+    2.2,
+    0.69
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 188,
+   "longestM": 2.2
+  },
+  {
+   "path": "web/r7-snag.glb",
+   "role": "tree/flora-prop",
+   "bytes": 355664,
+   "tris": 17614,
+   "sizeM": [
+    0.87,
+    2.5,
+    0.79
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 229,
+   "longestM": 2.5
+  },
+  {
+   "path": "web/river-gravel-v5-lod.glb",
+   "role": "ground-detail",
+   "bytes": 355048,
+   "tris": 24112,
+   "sizeM": [
+    0.35,
+    0.1,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 168,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/fallen-twig-v12-lod.glb",
+   "role": "other",
+   "bytes": 354616,
+   "tris": 14668,
+   "sizeM": [
+    0.65,
+    0.14,
+    0.33
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 242,
+   "longestM": 0.65
+  },
+  {
+   "path": "web/riffle-bed-v6.glb",
+   "role": "other",
+   "bytes": 351748,
+   "tris": 29964,
+   "sizeM": [
+    0.85,
+    0.26,
+    0.84
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 159,
+   "longestM": 0.85
+  },
+  {
+   "path": "web/wet-moss-v6-lod.glb",
+   "role": "ground-detail",
+   "bytes": 320700,
+   "tris": 15012,
+   "sizeM": [
+    0.45,
+    0.3,
+    0.45
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 218,
+   "longestM": 0.45
+  },
+  {
+   "path": "web/r7-redstone.glb",
+   "role": "micro-layer",
+   "bytes": 308132,
+   "tris": 19456,
+   "sizeM": [
+    0.8,
+    0.46,
+    0.8
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 193,
+   "longestM": 0.8
+  },
+  {
+   "path": "web/r6-fallen-log-r6.glb",
+   "role": "tree/flora-prop",
+   "bytes": 298312,
+   "tris": 24488,
+   "sizeM": [
+    0.85,
+    0.4,
+    0.4
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 88,
+   "longestM": 0.85
+  },
+  {
+   "path": "web/r6-lichen-boulder-r6.glb",
+   "role": "ground-detail",
+   "bytes": 260500,
+   "tris": 18754,
+   "sizeM": [
+    0.35,
+    0.34,
+    0.35
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 105,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/riffle-bed-v6-lod.glb",
+   "role": "other",
+   "bytes": 259604,
+   "tris": 14190,
+   "sizeM": [
+    0.85,
+    0.26,
+    0.84
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 159,
+   "longestM": 0.85
+  },
+  {
+   "path": "web/fallen-log.glb",
+   "role": "tree/flora-prop",
+   "bytes": 241844,
+   "tris": 11674,
+   "sizeM": [
+    2.5,
+    0.57,
+    0.63
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 161,
+   "longestM": 2.5
+  },
+  {
+   "path": "web/r7-biofilm-rock.glb",
+   "role": "micro-layer",
+   "bytes": 235132,
+   "tris": 10372,
+   "sizeM": [
+    0.35,
+    0.14,
+    0.29
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 167,
+   "longestM": 0.35
+  },
+  {
+   "path": "web/stream-slate-v3.glb",
+   "role": "other",
+   "bytes": 223060,
+   "tris": 14358,
+   "sizeM": [
+    0.32,
+    0.14,
+    0.27
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 131,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/fallen-log-lod.glb",
+   "role": "tree/flora-prop",
+   "bytes": 213436,
+   "tris": 6490,
+   "sizeM": [
+    2.5,
+    0.57,
+    0.63
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 161,
+   "longestM": 2.5
+  },
+  {
+   "path": "web/stream-slate-v3-lod.glb",
+   "role": "other",
+   "bytes": 189020,
+   "tris": 7872,
+   "sizeM": [
+    0.32,
+    0.14,
+    0.27
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 131,
+   "longestM": 0.32
+  },
+  {
+   "path": "web/r6-mushroom-cluster-r6.glb",
+   "role": "other",
+   "bytes": 161892,
+   "tris": 14682,
+   "sizeM": [
+    0.18,
+    0.18,
+    0.17
+   ],
+   "generator": "glTF-Transform v4.5.1",
+   "skins": 0,
+   "anims": 0,
+   "images": 2,
+   "imageKB": 38,
+   "longestM": 0.18
+  }
+ ]
+}

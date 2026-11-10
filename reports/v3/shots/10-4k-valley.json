@@ -1,0 +1,8 @@
+{
+  "width": 3840,
+  "height": 2160,
+  "dpr": 2,
+  "tier": "valley",
+  "renderer": "WebGL2 · 软件光栅化（帧率不作性能证据） · ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), S",
+  "note": "SwiftShader software rasteriser; not a performance statement"
+}

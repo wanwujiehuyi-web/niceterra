@@ -1,0 +1,4 @@
+node_modules/
+dist/
+.cache/
+reports/v3/shots/*.png

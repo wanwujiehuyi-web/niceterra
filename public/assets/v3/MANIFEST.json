@@ -1,0 +1,141 @@
+{
+  "generated": "2026-11-10T09:21:13.886Z",
+  "generator": "nt2/tools/optimize-v3.mjs (glTF-Transform v4: dedup/prune/weld/textureCompress/quantize/draco) + metre-scale bake",
+  "count": 4,
+  "totalMB": 10.48,
+  "evidencePolicy": "全部 AI 生成物，evidenceLevel=L4（机制示意/视觉参考）；显微件的显示尺度倍率见 unitNote；不得宣称实测",
+  "assets": [
+    {
+      "path": "fir-mature.glb",
+      "title": "峨眉冷杉成熟树",
+      "role": "tree/hero-prop",
+      "bytes": 3343664,
+      "tris": 240760,
+      "bboxSizeM": [
+        13.165,
+        24,
+        13.3056
+      ],
+      "longestM": 24,
+      "images": 2,
+      "imageKB": 1309,
+      "maps": [
+        "Designer_Logic_PBR"
+      ],
+      "evidenceLevel": "L4",
+      "evidenceNote": "AI 生成（aholo Lux3D image-to-3D，参考图为 AI 生成 studio 图）→ 视觉参考，非实测；不得作为 L1/L2 证据或样地照片",
+      "coordinateStatus": "PARENT_RELATIVE（生成物体，无经纬度）",
+      "fit": {
+        "targetSize": 24,
+        "note": "GLB 已烘焙米制，targetSize 即最长轴；fitObject 仅做量化漂移校正"
+      },
+      "unitNote": "烘焙为真实米制：最长轴=树高 24 m",
+      "productLocation": "SITE-HLG-FOREST-01 成熟林 · LOD0 近景乔木（r3 树层替换/补充）",
+      "orientation": "Y-up，直立，原朝向",
+      "limits": "G1 网格在 <6 m 观察距离针叶会结成蜡状团块；建议 8–40 m 使用；无 normalMap",
+      "task": {
+        "taskType": "image-to-3d",
+        "consumedCredits": "待读"
+      }
+    },
+    {
+      "path": "fir-sapling.glb",
+      "title": "峨眉冷杉幼树（林下更新）",
+      "role": "tree/flora-prop",
+      "bytes": 3073976,
+      "tris": 243808,
+      "bboxSizeM": [
+        1.0875,
+        2.2,
+        1.0861
+      ],
+      "longestM": 2.2,
+      "images": 2,
+      "imageKB": 1346,
+      "maps": [
+        "Designer_Logic_PBR"
+      ],
+      "evidenceLevel": "L4",
+      "evidenceNote": "AI 生成（aholo Lux3D image-to-3D，参考图为 AI 生成 studio 图）→ 视觉参考，非实测；不得作为 L1/L2 证据或样地照片",
+      "coordinateStatus": "PARENT_RELATIVE（生成物体，无经纬度）",
+      "fit": {
+        "targetSize": 2.2,
+        "note": "GLB 已烘焙米制，targetSize 即最长轴；fitObject 仅做量化漂移校正"
+      },
+      "unitNote": "烘焙为真实米制：树高 2.2 m",
+      "productLocation": "SITE-HLG-FOREST-01 林下更新层（与竹灌、草本混植）",
+      "orientation": "Y-up，直立，原朝向",
+      "limits": "2–8 m 观察距离；细枝已并成片，勿贴脸",
+      "task": {
+        "taskType": "image-to-3d",
+        "consumedCredits": "待读"
+      }
+    },
+    {
+      "path": "fir-snag.glb",
+      "title": "冷杉枯立木 snag（带断裂枝）",
+      "role": "tree/hero-prop",
+      "bytes": 2333668,
+      "tris": 250024,
+      "bboxSizeM": [
+        3.4608,
+        11,
+        2.5285
+      ],
+      "longestM": 11,
+      "images": 2,
+      "imageKB": 1230,
+      "maps": [
+        "Designer_Logic_PBR"
+      ],
+      "evidenceLevel": "L4",
+      "evidenceNote": "AI 生成（aholo Lux3D image-to-3D，参考图为 AI 生成 studio 图）→ 视觉参考，非实测；不得作为 L1/L2 证据或样地照片",
+      "coordinateStatus": "PARENT_RELATIVE（生成物体，无经纬度）",
+      "fit": {
+        "targetSize": 11,
+        "note": "GLB 已烘焙米制，targetSize 即最长轴；fitObject 仅做量化漂移校正"
+      },
+      "unitNote": "烘焙为真实米制：高 11 m",
+      "productLocation": "SITE-HLG-FOREST-01 林窗/枯立木群（倒木与 snag 组合）",
+      "orientation": "Y-up，直立，原朝向",
+      "limits": "断口是生成形态，不指代具体树年龄；材积/腐朽度未建模",
+      "task": {
+        "taskType": "image-to-3d",
+        "consumedCredits": "待读"
+      }
+    },
+    {
+      "path": "wet-rock.glb",
+      "title": "湿溪石母体 ROCK-HLG-01",
+      "role": "rock/geology-prop",
+      "bytes": 2242948,
+      "tris": 184142,
+      "bboxSizeM": [
+        1.5977,
+        1.063,
+        1.6
+      ],
+      "longestM": 1.6,
+      "images": 2,
+      "imageKB": 1317,
+      "maps": [
+        "Designer_Logic_PBR"
+      ],
+      "evidenceLevel": "L4",
+      "evidenceNote": "AI 生成（aholo Lux3D image-to-3D，参考图为 AI 生成 studio 图）→ 视觉参考，非实测；不得作为 L1/L2 证据或样地照片",
+      "coordinateStatus": "PARENT_RELATIVE（生成物体，无经纬度）",
+      "fit": {
+        "targetSize": 1.6,
+        "note": "GLB 已烘焙米制，targetSize 即最长轴；fitObject 仅做量化漂移校正"
+      },
+      "unitNote": "烘焙为真实米制：宽 1.6 m",
+      "productLocation": "SITE-HLG-STREAM-01 本地点 (30,-16) 水面以上 0.12 m 的母体；路 A 第 1 层 wet-rock(20 cm) 的母体几何",
+      "orientation": "Y-up，湿线朝向相机可调 yaw",
+      "limits": "生物膜/苔藓是贴图表现，不是可采样几何；湿线高度是生成形态，需按实际水位改贴图而非几何",
+      "task": {
+        "taskType": "image-to-3d",
+        "consumedCredits": "待读"
+      }
+    }
+  ]
+}

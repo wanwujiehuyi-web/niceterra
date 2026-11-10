@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>v3 lab · micro route A (dev only)</title>
+<style>
+  html,body{margin:0;background:#0b0e11;color:#F6F6F4;font:13px/1.5 "Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif}
+  #stage{position:relative;width:960px;height:540px;overflow:hidden;background:#0b0e11}
+  #stage canvas{display:block;width:960px;height:540px}
+  #hud{position:absolute;left:10px;top:10px;max-width:400px;padding:10px 12px;border-radius:8px;
+    background:rgba(8,12,16,.78);border:1px solid rgba(210,216,208,.28);pointer-events:none;font-size:12px;line-height:1.5}
+  #hud h1{margin:0 0 4px;font-size:14px;font-weight:600;color:#F6F6F4}
+  #hud .row{color:#D2D8D0}
+  #hud .row b{color:#9fd3ff;font-weight:600}
+  #hud .limit{margin-top:6px;color:#E8C9A8}
+  #legend{margin-top:6px;display:flex;flex-wrap:wrap;gap:3px 10px}
+  #legend span{display:inline-flex;align-items:center;gap:4px;color:#D2D8D0;font-size:11px}
+  #legend i{width:10px;height:10px;border-radius:50%;display:inline-block;border:1px solid rgba(255,255,255,.5)}
+  #scalebar{position:absolute;left:18px;bottom:20px;pointer-events:none}
+  #scalebar-line{height:3px;background:#F6F6F4;border-radius:1px}
+  #scalebar-label{margin-top:3px;color:#F6F6F4;font:12px/1.4 Consolas,monospace;text-shadow:0 1px 2px #000}
+  #devtag{position:absolute;right:10px;top:10px;color:#E8C9A8;background:rgba(8,12,16,.72);
+    padding:3px 8px;border-radius:6px;font:11px/1.4 Consolas,monospace}
+  #controls{display:flex;flex-wrap:wrap;gap:8px;padding:10px 0 4px;width:960px}
+  #controls button{min-height:44px;min-width:44px;padding:0 12px;border-radius:8px;border:1px solid #3a4a55;
+    background:#16202a;color:#F6F6F4;font:13px/1 "Microsoft YaHei",sans-serif;cursor:pointer}
+  #controls button:hover{border-color:#C45C26}
+  #controls button.active{border-color:#C45C26;color:#FFD7B8}
+  #controls button:disabled{opacity:.45;cursor:default}
+  #hint{width:960px;color:#8f9aa3;font-size:12px;padding-bottom:14px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="hud"></div>
+  <div id="scalebar"><div id="scalebar-line"></div><div id="scalebar-label"></div></div>
+  <div id="devtag">DEV ONLY · labs/micro</div>
+</div>
+<div id="controls"></div>
+<div id="hint">← → 换层 · 空格 暂停（第 8 层）· 1/2 切视角 · URL: ?level=&amp;low=&amp;view= · window.__lab.capture()</div>
+<script type="module" src="/src/labs/micro.ts"></script>
+</body>
+</html>

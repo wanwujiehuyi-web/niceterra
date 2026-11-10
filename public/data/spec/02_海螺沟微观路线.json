@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "hailuogou-routes-2026-11-10",
+  "graph": "Place → Site/Habitat → ParentObject → Sample → Route → Level[]",
+  "routes": [
+    {
+      "routeId": "HLG-STREAM-BIOFILM-01",
+      "name": "湿溪石—生物膜—硅藻—生物硅",
+      "siteId": "SITE-HLG-STREAM-01",
+      "sampleStatus": "PLANNED",
+      "flagship": true,
+      "levels": [
+        {
+          "levelId": "wet-rock",
+          "label": "湿溪石",
+          "fov": "20 cm",
+          "model": "近景摄影测量与 PBR",
+          "evidence": "宏观待 L1；当前 DESIGN_ONLY/L2"
+        },
+        {
+          "levelId": "biofilm-matrix",
+          "label": "生物膜基质",
+          "fov": "200 μm",
+          "model": "EPS、孔隙、细胞附着",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "diatom-assemblage",
+          "label": "硅藻群落",
+          "fov": "50 μm",
+          "model": "附着群落形态示例",
+          "evidence": "L3+L4；非本地名录"
+        },
+        {
+          "levelId": "diatom-frustule",
+          "label": "完整硅藻壳",
+          "fov": "20 μm",
+          "model": "壳体、壳面、壳环",
+          "evidence": "L3+L4；未鉴定到种"
+        },
+        {
+          "levelId": "valve-detail",
+          "label": "壳面局部",
+          "fov": "2 μm",
+          "model": "孔纹、肋纹与曲率",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "wall-section",
+          "label": "壳壁剖面",
+          "fov": "200 nm",
+          "model": "孔道、壁厚、水合生物硅",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "silica-aggregation",
+          "label": "生物硅聚集",
+          "fov": "20 nm",
+          "model": "纳米聚集与短程结构",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "condensation",
+          "label": "硅酸缩合",
+          "fov": "2 nm",
+          "model": "可暂停机制动画",
+          "evidence": "L4；非分子动力学"
+        },
+        {
+          "levelId": "local-sio",
+          "label": "局部硅氧结构",
+          "fov": "0.4 nm",
+          "model": "非完美晶格局部模型",
+          "evidence": "L4"
+        }
+      ]
+    },
+    {
+      "routeId": "HLG-CHRONO-P-01",
+      "name": "冰退之后—土壤—根际—磷过程",
+      "siteId": "SITE-HLG-CHRONO-01",
+      "flagship": true,
+      "levels": [
+        {
+          "levelId": "chronosequence",
+          "label": "研究序列",
+          "view": "出露年份与研究样地",
+          "evidence": "L2"
+        },
+        {
+          "levelId": "soil-profile",
+          "label": "土壤剖面",
+          "view": "剖面、根系与有机质层",
+          "evidence": "L2；具体剖面待测"
+        },
+        {
+          "levelId": "rhizosphere",
+          "label": "根际观察窗",
+          "view": "根—土—微生物界面",
+          "evidence": "L2+L4"
+        },
+        {
+          "levelId": "aggregate",
+          "label": "土壤团聚体",
+          "view": "矿物、有机质与孔隙",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "microbial-interface",
+          "label": "微生物界面",
+          "view": "细胞与矿物表面",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "phosphorus-process",
+          "label": "磷过程",
+          "view": "矿物磷溶解与有机磷矿化",
+          "evidence": "L2 支撑机制；非实时模拟"
+        },
+        {
+          "levelId": "gene-evidence",
+          "label": "功能基因证据",
+          "view": "基因组数据视图，非连续物理缩放",
+          "evidence": "原始论文与数据复核后发布"
+        }
+      ]
+    },
+    {
+      "routeId": "HLG-MOSS-CHLOROPLAST-01",
+      "name": "苔藓—叶细胞—叶绿体—光合膜",
+      "siteId": "SITE-HLG-FOREST-01",
+      "levels": [
+        {
+          "levelId": "moss-cushion",
+          "fov": "10 cm",
+          "evidence": "L2 生境；种属待鉴定"
+        },
+        {
+          "levelId": "moss-leaf",
+          "fov": "1 mm",
+          "evidence": "L3+L4"
+        },
+        {
+          "levelId": "leaf-cell",
+          "fov": "50 μm",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "chloroplast",
+          "fov": "5 μm",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "thylakoid",
+          "fov": "100 nm",
+          "evidence": "L4"
+        }
+      ]
+    },
+    {
+      "routeId": "HLG-DEBRIS-MICROBE-01",
+      "name": "冰表碎屑—微生物群落",
+      "siteId": "SITE-HLG-GLACIER-01",
+      "levels": [
+        {
+          "levelId": "debris-transect",
+          "view": "冰舌表碛样带",
+          "evidence": "L2"
+        },
+        {
+          "levelId": "debris-particle",
+          "view": "厚度、稳定性与孔隙",
+          "evidence": "L2+L4"
+        },
+        {
+          "levelId": "microhabitat",
+          "view": "碎屑表面微生物微生境",
+          "evidence": "L4"
+        },
+        {
+          "levelId": "community-data",
+          "view": "群落组成与共存网络数据视图",
+          "evidence": "L2；网络不是物理连线"
+        }
+      ]
+    }
+  ]
+}

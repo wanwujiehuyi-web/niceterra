@@ -1,0 +1,16 @@
+﻿来源ID,名称,URL,允许用途,限制与许可
+SRC-GGFZH01,贡嘎山站 GGFZH01 永久样地公开记录,https://ggf.cern.ac.cn/ent/applyEntity?query_EQ_sourceId=GGFZH01&query_EQ_tableId=A_11&query_EQ_imageStation=GGF&data_row=222&pg=view,森林锚点、坡向、坡度、海拔,公开角点与样地资料；非本轮实测；垂直基准待核
+SRC-CAS-GONGGA,中国科学院成都山地所贡嘎山站资料,https://www.imde.cas.cn/jgsz/kyxt/202512/t20251231_8140129.html,区域地形、冰川与植被背景,区域资料，不替代样方测量
+SRC-FOREST,海螺沟峨眉冷杉原始林群落文献,https://www.cern.ac.cn/0q/ueditor/php/upload/file/20150910/1441864207520616.pdf,群落层级与文献参数,L2 文献复原，非当前每木调查
+SRC-BIOFILM-2016,The ecology and biogeochemistry of stream biofilms,https://doi.org/10.1038/nrmicro.2016.15,溪流生物膜机制,通用机制，不是海螺沟样本
+SRC-MATRIX-2010,The biofilm matrix,https://doi.org/10.1038/nrmicro2415,EPS 与基质,通用机制
+SRC-DIATOM-2008,"Diatoms, Biomineralization Processes, and Genomics",https://doi.org/10.1021/cr078253z,硅藻壳与生物硅,形态与机制参考，非本地名录
+SRC-DEBRIS-2023,Diversity and co-occurrence networks on two debris-covered glaciers,https://pubmed.ncbi.nlm.nih.gov/37186995/,海螺沟表碛微生物样带,按原文样地与时间使用，不推断当前丰度
+SRC-P-2023,贡嘎山冰川退缩区土壤-植物-微生物功能多样性对磷循环的协同作用,https://www.imde.cas.cn/yjld_2015/202401/P020240307542300978461.pdf,冰退序列与磷过程,保留研究出露年份与采样时间
+SRC-P-2025,成土早期微生物促进土壤磷生物有效性提升,https://ggf.cern.ac.cn/content?id=55546,功能基因路线候选,发布前核对原始论文
+IMG-B01,海螺沟冰川森林公园冬季景观，2025-01-19,https://commons.wikimedia.org/w/index.php?curid=194653111,冰川—森林—谷地参考,CC BY-SA 4.0；非首样方同期实测
+IMG-B02,海螺沟大冰瀑布、森林与云雾，2016-08-04,https://commons.wikimedia.org/w/index.php?curid=59916442,冰川结构与加载页视觉参考,CC BY-SA 4.0；历史照片，非当前边界
+IMG-B03,海螺沟沟谷、河流、坡面与森林，2026-05-20,https://www.forestry.gov.cn/c/www/dfdt/672150.jhtml,谷地与水系视觉参考,新闻图片，公开复用前另行核实授权
+IMG-B04,草海子步游道冷杉枝叶与林内逆光，2026-05-20,https://www.forestry.gov.cn/c/www/dfdt/672150.jhtml,林内光照与形态参考,新闻图片；不是 GGFZH01 同株
+IMG-B06,海螺沟冰川雨林中覆苔藓老根，2016-08-04,https://commons.wikimedia.org/w/index.php?curid=59915642,苔藓、老根与倒木参考,CC BY-SA 4.0；种属、厚度与密度未知
+IMG-B10,硅藻 SEM、伪彩色与荧光成像对照,https://pmc.ncbi.nlm.nih.gov/articles/PMC5101815/,成像方式与色彩声明参考,非贡嘎样本，不进入本地名录

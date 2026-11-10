@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>NiceTerra v2 lab · world (far/valley) — dev-only</title>
+<style>
+  html,body{margin:0;background:#07090c;color:#dbe6f0;font:12px/1.5 Consolas,"Microsoft YaHei",monospace}
+  #wrap{display:flex;align-items:flex-start;gap:12px;padding:12px}
+  #stage{width:960px;height:540px;background:#0b1116;border:1px solid #1d2b36;flex:0 0 auto}
+  #stage canvas{display:block;width:960px;height:540px}
+  #hud{white-space:pre-wrap;max-width:520px;background:rgba(8,14,20,.72);padding:10px 12px;border-radius:6px}
+  #hud b{color:#9fd3ff}
+  .note{color:#f0b27a}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stage"></div>
+  <div id="hud">boot…</div>
+</div>
+<script type="module" src="/src/labs/world.ts"></script>
+</body>
+</html>
