@@ -6,8 +6,9 @@
  */
 
 import { APP_META, MESSAGES, ROUTES, SITES, type Mode, type TabId } from './content';
+import { findMolecularObject } from '../micro/molecular';
 
-export type Tier = 'valley' | 'site' | 'object' | 'micro';
+export type Tier = 'valley' | 'site' | 'object' | 'micro' | 'molecular';
 export type CompareMode = 'off' | 'reference' | 'before';
 
 export interface AppState {
@@ -76,6 +77,15 @@ export function readLocation(search: string): Partial<AppState> {
       patch.routeId = routeOfLevel.routeId;
       patch.siteId = routeOfLevel.siteId;
       patch.tier = lvl?.kind === 'micro' ? 'micro' : lvl?.kind === 'object' ? 'object' : 'site';
+    } else {
+      // Universal molecular layer: mol-* levels resolve outside the four routes.
+      const mol = findMolecularObject(level);
+      if (mol) {
+        patch.levelId = level;
+        patch.routeId = null;
+        patch.siteId = mol.siteId;
+        patch.tier = 'molecular';
+      }
     }
   }
   const sample = q.get('sample');
@@ -103,6 +113,10 @@ export function toSearch(state: AppState): string {
 }
 
 export function routeLabel(state: AppState): string {
+  if (state.tier === 'molecular' && state.levelId) {
+    const mol = findMolecularObject(state.levelId);
+    if (mol) return mol.name + ' · ' + (mol.siteName ?? '谷地');
+  }
   const route = state.routeId ? ROUTES.find((r) => r.routeId === state.routeId) : undefined;
   const site = state.siteId ? SITES.find((s) => s.siteId === state.siteId) : undefined;
   const level = route && state.levelId ? route.levels.find((l) => l.levelId === state.levelId) : undefined;

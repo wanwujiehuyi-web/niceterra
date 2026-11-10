@@ -312,7 +312,9 @@ export class Shell {
     const site = siteById(state.siteId);
     const route = routeById(state.routeId);
     const level: ScienceLevel | undefined = levelFromScience(sci, state.levelId);
-    const levelLabel = route && state.levelId ? route.levels.find((l) => l.levelId === state.levelId)?.name ?? state.levelId : null;
+    const levelLabel = state.levelId
+      ? ((route ? route.levels.find((l) => l.levelId === state.levelId)?.name : undefined) ?? level?.label ?? state.levelId)
+      : null;
 
     const parts: string[] = [];
     parts.push('<h2>' + esc(levelLabel ?? (site ? site.name : APP_META.placeName)) + '</h2>');

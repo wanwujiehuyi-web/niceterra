@@ -15,6 +15,7 @@ import { loadScience } from './app/science';
 import { WorldApp } from './app/world-app';
 import { Shell } from './ui/shell';
 import { loadTierFor, tierKey, takeFromCache, putInCache, cacheSize, clearTierCache } from './app/tiers';
+import { findMolecularObject } from './micro/molecular';
 
 type LoadPhase =
   | 'idle'
@@ -184,7 +185,6 @@ async function enterWorld(resume = false): Promise<void> {
       const last = Store.lastSession();
       if (last?.siteId) selectSite(last.siteId);
     }
-    schedulePrefetch();
     if (!capability?.reducedMotion) startTour();
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
@@ -259,6 +259,14 @@ function selectRoute(routeId: string): void {
 }
 
 function selectLevel(levelId: string): void {
+  // Universal molecular layer: mol-* levels live outside the four flagship routes.
+  const mol = findMolecularObject(levelId);
+  if (mol) {
+    store.patch({ routeId: null, siteId: mol.siteId, levelId, tier: 'molecular' }, { history: false });
+    store.persist();
+    void applyTier('molecular');
+    return;
+  }
   const route = ROUTES.find((r) => r.levels.some((l) => l.levelId === levelId));
   if (!route) return;
   const level = route.levels.find((l) => l.levelId === levelId);
@@ -270,6 +278,16 @@ function selectLevel(levelId: string): void {
 
 function step(dir: 1 | -1): void {
   const state = store.get();
+  // Molecular terminal layer: up returns to the parent site (or valley), down is the end.
+  if (state.tier === 'molecular') {
+    if (dir === -1) {
+      if (state.siteId) selectSite(state.siteId);
+      else goValley();
+    } else {
+      shell.toast('分子层已是纵深终点。返回上一级回到母体对象。');
+    }
+    return;
+  }
   const route = state.routeId ? ROUTES.find((r) => r.routeId === state.routeId) : undefined;
   if (!route) {
     if (dir === 1) {
@@ -330,6 +348,9 @@ async function applyTier(tier: string): Promise<void> {
     activeTier = built.id;
     setPhase('interactive');
     syncWorld();
+    // Prefetch only once the swap has settled: two heavy builds at the same
+    // time made the software rasteriser take minutes instead of seconds.
+    window.setTimeout(() => schedulePrefetch(), 2500);
   } catch (err) {
     setPhase('recoverable-error');
     shell.toast('换层失败，已保留当前层：' + (err instanceof Error ? err.message : String(err)));

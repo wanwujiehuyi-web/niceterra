@@ -1072,29 +1072,29 @@ async function buildCore(opts: {
     },
     {
       id: 'anchor-stream-cascade',
-      label: '阶梯跌水 · 设计河床',
+      label: '阶梯跌水 · 深入分子层',
       kind: 'object',
       position: new THREE.Vector3(cascadeStation.x, cascadeStation.waterY + 0.1, cascadeStation.z),
       siteId: SITE_ID,
-      routeId: ROUTE_ID,
+      levelId: 'mol-stream-cascade',
       coordinateStatus: 'DESIGN_ONLY'
     },
     {
       id: 'anchor-stream-face',
-      label: '迎水面 · 流速与湿线',
+      label: '迎水面 · 流速与湿线 · 深入分子层',
       kind: 'object',
       position: samplePosition.clone().addScaledVector(upstream, 0.55),
       siteId: SITE_ID,
-      routeId: ROUTE_ID,
+      levelId: 'mol-stream-face',
       coordinateStatus: 'DESIGN_ONLY'
     },
     {
       id: 'anchor-stream-bar',
-      label: '边滩 · 砾石与砂',
+      label: '边滩 · 砾石与砂 · 深入分子层',
       kind: 'object',
       position: new THREE.Vector3(barX, heightAt(barX, barZ) + 0.3, barZ),
       siteId: SITE_ID,
-      routeId: ROUTE_ID,
+      levelId: 'mol-stream-bar',
       coordinateStatus: 'DESIGN_ONLY'
     }
   ];

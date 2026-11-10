@@ -20,6 +20,7 @@ import { createFarviewTier } from '../world/farview';
 import { createMicroTierA, ROUTE_A_ID } from '../micro/route-a';
 import { createForestTier } from '../sites/forest';
 import { createStreamTier } from '../sites/stream';
+import { createMolecularTier, findMolecularObject } from '../micro/molecular';
 
 export interface TierLoadOptions extends TierOptions {
   current: string;
@@ -53,6 +54,14 @@ export async function loadTierFor(tier: string, state: AppState, opts: TierLoadO
     const levelId = state.levelId ?? 'wet-rock';
     if (opts.current === 'micro-a:' + levelId) return null;
     return createMicroTierA({ lowQuality: opts.lowQuality, onProgress: progress, levelId });
+  }
+
+  if (tier === 'molecular') {
+    // Universal molecular layer: any registered object -> MD-lite terminal level.
+    const mol = findMolecularObject(state.levelId ?? '');
+    if (!mol) return null;
+    if (opts.current === 'molecular:' + mol.objectId) return null;
+    return createMolecularTier({ objectId: mol.objectId, lowQuality: opts.lowQuality });
   }
 
   if (tier === 'site' || tier === 'object') {

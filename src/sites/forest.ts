@@ -42,7 +42,8 @@ import {
 } from './shared';
 
 const SITE_ID = 'SITE-HLG-FOREST-01';
-const MOSS_ROUTE = 'HLG-MOSS-CHLOROPLAST-01';
+// Route C (HLG-MOSS-CHLOROPLAST-01) keeps its entry in the left rail; object anchors
+// point at the universal molecular layer until route C geometry is built (P2).
 const TILE_HALF = 60;
 const SEED = 20261110;
 
@@ -987,10 +988,10 @@ async function buildCore(opts: { lowQuality: boolean; heightAt: HeightFn; onProg
   const gapAnchor = new THREE.Vector3(GAPS[0].x, heightAt(GAPS[0].x, GAPS[0].z) + 2.2, GAPS[0].z);
 
   const anchors: TierAnchor[] = [
-    { id: 'anchor-forest-canopy', label: '林冠层 · 峨眉冷杉 25–38 m', kind: 'object', position: canopyAnchor, siteId: SITE_ID },
-    { id: 'anchor-forest-moss', label: '苔藓垫 · 10 cm 生境（种属待鉴定）', kind: 'sample', position: mossAnchor, siteId: SITE_ID, routeId: MOSS_ROUTE, levelId: 'moss-cushion' },
-    { id: 'anchor-forest-log', label: '倒木 · 腐朽阶段 I', kind: 'object', position: logAnchor, siteId: SITE_ID, routeId: MOSS_ROUTE },
-    { id: 'anchor-forest-seedling', label: '林下幼苗 · 更新层', kind: 'object', position: seedlingAnchor, siteId: SITE_ID },
+    { id: 'anchor-forest-canopy', label: '林冠层 · 峨眉冷杉 25–38 m · 深入分子层', kind: 'object', position: canopyAnchor, siteId: SITE_ID, levelId: 'mol-forest-canopy' },
+    { id: 'anchor-forest-moss', label: '苔藓垫 · 10 cm 生境（种属待鉴定）· 深入分子层', kind: 'sample', position: mossAnchor, siteId: SITE_ID, levelId: 'mol-forest-moss' },
+    { id: 'anchor-forest-log', label: '倒木 · 腐朽阶段 I · 深入分子层', kind: 'object', position: logAnchor, siteId: SITE_ID, levelId: 'mol-forest-log' },
+    { id: 'anchor-forest-seedling', label: '林下幼苗 · 更新层 · 深入分子层', kind: 'object', position: seedlingAnchor, siteId: SITE_ID, levelId: 'mol-forest-seedling' },
     { id: 'anchor-forest-gap', label: '林窗 · 冠层缺口', kind: 'object', position: gapAnchor, siteId: SITE_ID }
   ];
 

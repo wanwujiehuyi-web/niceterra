@@ -478,11 +478,15 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     },
   };
 
-  const anchorDefs: Array<{ id: string; label: string; kind: TierAnchor['kind']; s: number; u: number; siteId?: string }> = [
+  const anchorDefs: Array<{ id: string; label: string; kind: TierAnchor['kind']; s: number; u: number; siteId?: string; levelId?: string }> = [
     { id: 'SITE-HLG-FOREST-01', label: '峨眉冷杉成熟林（设计位置）', kind: 'site', s: 140, u: -430, siteId: 'SITE-HLG-FOREST-01' },
     { id: 'SITE-HLG-STREAM-01', label: '林溪与湿石（设计位置）', kind: 'site', s: -300, u: 120, siteId: 'SITE-HLG-STREAM-01' },
     { id: 'SITE-HLG-GLACIER-01', label: '冰舌与表碛（设计位置）', kind: 'site', s: 300, u: 30, siteId: 'SITE-HLG-GLACIER-01' },
     { id: 'SITE-HLG-CHRONO-01', label: '冰川退缩迹地（设计位置）', kind: 'site', s: -60, u: -210, siteId: 'SITE-HLG-CHRONO-01' },
+    // 谷地尺度对象锚点：直通分子层（通用分子层，MOLECULAR_LAYER_SPEC）
+    { id: 'anchor-valley-glacier', label: '表碛冰舌 · 深入分子层', kind: 'object', s: 60, u: 0, siteId: 'SITE-HLG-GLACIER-01', levelId: 'mol-valley-glacier' },
+    { id: 'anchor-valley-river', label: '冰前河道 · 深入分子层', kind: 'object', s: -300, u: 40, levelId: 'mol-valley-river' },
+    { id: 'anchor-valley-rockwall', label: '谷壁岩体 · 深入分子层', kind: 'object', s: -60, u: -160, levelId: 'mol-valley-rockwall' },
   ];
   const anchors: TierAnchor[] = anchorDefs.map((d) => {
     const surf = surfaceAt(d.s, centerX(d.s) + d.u, 0);
@@ -491,6 +495,7 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
       label: d.label,
       kind: d.kind,
       siteId: d.siteId,
+      levelId: d.levelId,
       position: new THREE.Vector3(centerX(d.s) + d.u, surf.y + 2, -d.s),
     };
   });
