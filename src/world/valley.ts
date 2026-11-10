@@ -579,6 +579,31 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     log('aholo erratic 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
   }
 
+  // Aholo Lux3D 冰塔（taskId 6033748，AI 生成视觉资产）：立在冰瀑陡坡上的
+  // 冰塔林，打破程序化冰瀑的“幕布感”。只放 ICEFALL 分类段（s 560–920）。
+  try {
+    const gltf = await loadGLB('/assets/aholo/serac-01-web.glb');
+    const src = gltf.scene;
+    const nSerac = low ? 4 : 16;
+    for (let k = 0; k < nSerac; k++) {
+      const inst = src.clone(true);
+      const s = 560 + hash1(k * 31.7) * 360;
+      const uRaw = centerX(s) + (hash1(k * 13.3) - 0.5) * 2 * valleyHalf(s) * 0.7;
+      const surf = surfaceAt(s, uRaw, 1);
+      if (surf.cls !== enumClass.ICEFALL && surf.cls !== enumClass.CREVASSE) continue;
+      fitObject(inst, { targetLongest: 14 + hash1(k * 7.7) * 26, groundY: surf.y - 2.5, yaw: hash1(k * 3.1) * 6.28 });
+      inst.position.x = uRaw;
+      inst.position.z = -s;
+      group.add(inst);
+      heroTrees.push(inst);
+    }
+    stats.assetsLoaded++;
+    log('aholo serac x' + nSerac);
+  } catch (err) {
+    stats.assetsFailed++;
+    log('aholo serac 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
+  }
+
   /* ---- 5. 机位与锚点 ---- */
   const poses: Record<string, TierCameraPose> = {
     A: {
