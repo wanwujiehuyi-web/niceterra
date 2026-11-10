@@ -116,14 +116,14 @@ const enumClass = {
 type SurfaceClass = (typeof enumClass)[keyof typeof enumClass];
 
 const CLASS_COLOR: Record<number, THREE.Color> = {
-  [enumClass.ROCK]: new THREE.Color(0x5f5a51),
-  [enumClass.FOREST]: new THREE.Color(0x33452b),
-  [enumClass.FIRN]: new THREE.Color(0xeef4fa),
-  [enumClass.ICEFALL]: new THREE.Color(0xcadff0),
-  [enumClass.DEBRIS]: new THREE.Color(0x6b6357),
-  [enumClass.MORAINE]: new THREE.Color(0x8d8577),
-  [enumClass.GRAVEL]: new THREE.Color(0x9b968b),
-  [enumClass.CREVASSE]: new THREE.Color(0x5a778e),
+  [enumClass.ROCK]: new THREE.Color(0x57524b),
+  [enumClass.FOREST]: new THREE.Color(0x3d5534),
+  [enumClass.FIRN]: new THREE.Color(0xf2f7fc),
+  [enumClass.ICEFALL]: new THREE.Color(0xd8eaf6),
+  [enumClass.DEBRIS]: new THREE.Color(0x5a5348),
+  [enumClass.MORAINE]: new THREE.Color(0x6e6759),
+  [enumClass.GRAVEL]: new THREE.Color(0x7d786c),
+  [enumClass.CREVASSE]: new THREE.Color(0x5f84a0),
 };
 
 interface Surface {
@@ -166,10 +166,12 @@ function surfaceAt(s: number, uRaw: number, detail: number): Surface {
       y = floor + bowl + (fbm2(uRaw * 0.01, s * 0.01) - 0.5) * 34;
       cls = enumClass.FIRN;
     } else if (s > 540) {
-      // ---- 2 冰瀑与裂隙：陡、横裂隙（沿 s 方向的锯齿）
+      // ---- 2 冰瀑与裂隙：陡、横裂隙（噪声抖动相位与宽度，避免幕布式等距条纹）
       const t2 = (s - 540) / 400;
-      const saw = Math.abs(Math.sin(s * 0.085)) * 26 * (0.4 + t2);
-      const crevasse = Math.abs(Math.sin(s * 0.085 + 0.6)) < 0.14;
+      const ph = s * 0.085 + (fbm2(uRaw * 0.013, s * 0.013) - 0.5) * 2.4;
+      const saw = Math.abs(Math.sin(ph)) * 26 * (0.4 + t2);
+      const cw = Math.max(0.05, 0.14 + (fbm2(uRaw * 0.05 + 9, s * 0.05) - 0.5) * 0.18);
+      const crevasse = Math.abs(Math.sin(ph + 0.6)) < cw;
       y = floor + Math.pow(Math.abs(t), 1.7) * 90 + saw + (fbm2(uRaw * 0.02, s * 0.02) - 0.5) * 30;
       cls = crevasse ? enumClass.CREVASSE : enumClass.ICEFALL;
     } else if (s > -30) {
@@ -204,7 +206,14 @@ function surfaceAt(s: number, uRaw: number, detail: number): Surface {
   }
 
   // 细节扰动（低频，别把要素边界搅碎）
-  if (detail > 0) y += (fbm2(uRaw * 0.0025, s * 0.0025) - 0.5) * 26 * detail;
+  if (detail > 0) {
+    y += (fbm2(uRaw * 0.0025, s * 0.0025) - 0.5) * 26 * detail;
+    // 岩壁脊状细节：棱线噪声让谷壁有岩脊与沟槽，而不是光滑斜坡（4K 复原）
+    if (cls === enumClass.ROCK) {
+      const ridge = 1 - Math.abs(2 * fbm2(uRaw * 0.011 + 5, s * 0.011) - 1);
+      y += (ridge - 0.55) * 16 * detail;
+    }
+  }
   return { y, cls };
 }
 
@@ -241,28 +250,40 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
   const group = new THREE.Group();
   group.name = 'VALLEY-HLG-MID';
 
+  /* ---- 0. 谷地自带灯光（与 forest/stream 同级强度；fallback 灯 rig 偏弱，
+   *        2 km 尺度的山坡在 ACES 下会整体压黑）。灯挂在 tier group 上，
+   *        换层时随 group 移除，不污染其他层。 ---- */
+  const hemi = new THREE.HemisphereLight(0xd8e8f6, 0x7d7562, 1.4);
+  group.add(hemi);
+  group.add(new THREE.AmbientLight(0x9fb2c2, 0.3));
+  const sun = new THREE.DirectionalLight(0xfff2da, 2.5);
+  sun.position.set(-0.55, 0.62, 0.55).multiplyScalar(1000);
+  group.add(sun);
+  const fill = new THREE.DirectionalLight(0xb6d0e6, 0.75);
+  fill.position.set(-0.6, 0.35, -0.7).multiplyScalar(1000);
+  group.add(fill);
+
   /* ---- 1. 地形网格（谷底 + 山坡 + 六类要素） ---- */
-  const ns = low ? 96 : 168;
-  const nu = low ? 72 : 128;
+  // 4K 复原档：~129k 顶点（约 5 m/顶点），低质量档保持 96×72。
+  const ns = low ? 96 : 448;
+  const nu = low ? 72 : 288;
   const positions = new Float32Array(ns * nu * 3);
   const colors = new Float32Array(ns * nu * 3);
-  const tmp = new THREE.Color();
+  const ys = new Float32Array(ns * nu);
+  const clsMap = new Uint8Array(ns * nu);
 
   for (let i = 0; i < ns; i++) {
     const s = S_MIN + (i / (ns - 1)) * (S_MAX - S_MIN);
     for (let j = 0; j < nu; j++) {
       const uRaw = -U_HALF + (j / (nu - 1)) * (U_HALF * 2);
       const surf = surfaceAt(s, uRaw, 1);
-      const k = (i * nu + j) * 3;
+      const vi = i * nu + j;
+      const k = vi * 3;
       positions[k] = uRaw;
       positions[k + 1] = surf.y;
       positions[k + 2] = -s;
-      const c = CLASS_COLOR[surf.cls];
-      const shade = 0.86 + 0.28 * fbm2(uRaw * 0.03 + 13, s * 0.03);
-      tmp.copy(c).multiplyScalar(shade);
-      colors[k] = tmp.r;
-      colors[k + 1] = tmp.g;
-      colors[k + 2] = tmp.b;
+      ys[vi] = surf.y;
+      clsMap[vi] = surf.cls;
     }
   }
 
@@ -276,6 +297,46 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
       // Winding must be counter-clockwise seen from above, otherwise the
       // whole valley is back-face culled and only the ridges stay visible.
       indices.push(a, b, d, b, e, d);
+    }
+  }
+
+  // 地形浮雕着色（4K 复原核心）：坡度变陡变深 + 凹地暗/脊线亮（近似 AO），
+  // 让 2 km 尺度的岩壁、冰瀑、碛垄在没有阴影贴图时仍有立体光影。
+  const tmp = new THREE.Color();
+  const SNOW = new Set<number>([enumClass.FIRN, enumClass.ICEFALL]);
+  for (let i = 0; i < ns; i++) {
+    for (let j = 0; j < nu; j++) {
+      const vi = i * nu + j;
+      const k = vi * 3;
+      const iL = Math.max(0, i - 1);
+      const iR = Math.min(ns - 1, i + 1);
+      const jD = Math.max(0, j - 1);
+      const jU = Math.min(nu - 1, j + 1);
+      const yC = ys[vi];
+      // 凹度：低于邻域均值为洼地（暗），高于为脊线（亮）
+      const avg = (ys[iL * nu + j] + ys[iR * nu + j] + ys[i * nu + jD] + ys[i * nu + jU]) / 4;
+      const concavity = Math.max(-1, Math.min(1, (yC - avg) / 14));
+      // 坡度：邻点高差 / 网格间距
+      const ds = (S_MAX - S_MIN) / (ns - 1);
+      const du = (U_HALF * 2) / (nu - 1);
+      const gx = (ys[i * nu + jU] - ys[i * nu + jD]) / (2 * du);
+      const gz = (ys[iR * nu + j] - ys[iL * nu + j]) / (2 * ds);
+      const slope = Math.min(1, Math.hypot(gx, gz));
+      const cls = clsMap[vi];
+      const c = CLASS_COLOR[cls];
+      // 基础色斑 + 凹度(±0.16) + 坡度(非雪类最多 -0.20)
+      let shade = 0.94 + 0.24 * fbm2(positions[k] * 0.03 + 13, -positions[k + 2] * 0.03);
+      shade += concavity * 0.16;
+      if (SNOW.has(cls)) {
+        shade += 0.05 * (1 - slope); // 雪：平处更亮
+        if (cls === enumClass.FIRN) shade += (hash1(vi * 3.7) - 0.5) * 0.05; // 雪面微闪
+      } else {
+        shade -= Math.pow(slope, 1.3) * 0.2; // 岩/碛：陡壁压深（克制，保曝光）
+      }
+      tmp.copy(c).multiplyScalar(Math.max(0.55, Math.min(1.35, shade)));
+      colors[k] = tmp.r;
+      colors[k + 1] = tmp.g;
+      colors[k + 2] = tmp.b;
     }
   }
 
@@ -302,15 +363,22 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
   group.add(terrain);
   log('terrain ' + ns + 'x' + nu + ' vertices, ' + (indices.length / 3) + ' tris');
 
-  /* ---- 2. 冰前河道（乳灰色冰川水，辫状 3 股） ---- */
+  /* ---- 2. 冰前河道（乳灰色冰川水，辫状 3 股，流纹滚动） ---- */
   const waterGroup = new THREE.Group();
   waterGroup.name = 'PROGLACIAL-STREAM';
+  // 程序化流纹：纵向拉伸噪声 → 法线扰动 + 乳白水花条纹（canvas，可序列化释放）
+  const waterTex = makeWaterStreakTexture();
+  waterTex.wrapS = waterTex.wrapT = THREE.RepeatWrapping;
+  waterTex.repeat.set(1, 6);
   const waterMat = new THREE.MeshStandardMaterial({
-    color: 0xc2ccd0,
-    roughness: 0.22,
+    color: 0xbcc8cc,
+    roughness: 0.16,
     metalness: 0.0,
     transparent: true,
-    opacity: 0.9,
+    opacity: 0.84,
+    normalMap: waterTex,
+    normalScale: new THREE.Vector2(0.42, 0.42),
+    envMapIntensity: 1.15,
   });
   const strands = [
     { off: 0, width: 13 },
@@ -354,18 +422,20 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
   const mistMat = new THREE.MeshBasicMaterial({
     map: mistTex,
     transparent: true,
-    opacity: 0.34,
+    opacity: 0.2,
     depthWrite: false,
     side: THREE.DoubleSide,
     color: 0xe8eef4,
   });
   const mistPlanes: MistLayer[] = [];
+  // 雾层避开 A 机位视轴（相机 y≈3094 朝上游看）：全部抬到粒雪盆高度以上，
+  // 只表达谷深与天气，不做整屏奶白色滤镜。
   const mistDefs = low
-    ? [{ y: 3140, z: -380, w: 1500, h: 420 }]
+    ? [{ y: 3540, z: -980, w: 1500, h: 420 }]
     : [
-        { y: 3060, z: 120, w: 1600, h: 380 },
-        { y: 3280, z: -420, w: 1500, h: 460 },
-        { y: 3540, z: -980, w: 1200, h: 360 },
+        { y: 3420, z: -520, w: 1600, h: 380 },
+        { y: 3620, z: -940, w: 1500, h: 460 },
+        { y: 3860, z: -1280, w: 1200, h: 360 },
       ];
   for (let i = 0; i < mistDefs.length; i++) {
     const d = mistDefs[i];
@@ -378,55 +448,68 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
   }
   log('mist layers ' + mistPlanes.length);
 
-  /* ---- 4. 森林坡面：程序化锥体实例（远） + 2 个 GLB hero 树（近） ---- */
+  /* ---- 4. 森林坡面：双层锥云杉剪影实例（远，4K 档 5200 株） + GLB hero 树（近） ---- */
   const forestGeomRef: THREE.BufferGeometry[] = [];
   const forestMatRef: THREE.Material[] = [];
   const placer = new THREE.Object3D();
-  const count = low ? 240 : 620;
-  const coneGeo = new THREE.ConeGeometry(1.6, 7.5, 6, 1);
-  coneGeo.translate(0, 3.75, 0);
-  const trunkGeo = new THREE.CylinderGeometry(0.18, 0.26, 2.4, 5);
-  const coneMat = new THREE.MeshStandardMaterial({ color: 0x2b3d24, roughness: 0.95 });
+  const count = low ? 600 : 5200;
+  // 云杉/冷杉剪影：下冠宽深绿 + 上冠窄稍浅 + 短 trunk；单株 3 实例共用矩阵
+  const coneLowGeo = new THREE.ConeGeometry(2.35, 5.6, 7, 1);
+  coneLowGeo.translate(0, 4.4, 0);
+  const coneHighGeo = new THREE.ConeGeometry(1.45, 4.6, 7, 1);
+  coneHighGeo.translate(0, 8.2, 0);
+  const trunkGeo = new THREE.CylinderGeometry(0.16, 0.3, 2.6, 5);
+  trunkGeo.translate(0, 1.3, 0);
+  const coneLowMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.95 });
+  const coneHighMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.92 });
   const trunkMat = new THREE.MeshStandardMaterial({ color: 0x3a3128, roughness: 0.95 });
-  forestGeomRef.push(coneGeo, trunkGeo);
-  forestMatRef.push(coneMat, trunkMat);
-  const cones = new THREE.InstancedMesh(coneGeo, coneMat, count);
-  const trunks = new THREE.InstancedMesh(trunkGeo, trunkMat, Math.ceil(count * 0.7));
+  forestGeomRef.push(coneLowGeo, coneHighGeo, trunkGeo);
+  forestMatRef.push(coneLowMat, coneHighMat, trunkMat);
+  const cones = new THREE.InstancedMesh(coneLowGeo, coneLowMat, count);
+  const conesHigh = new THREE.InstancedMesh(coneHighGeo, coneHighMat, count);
+  const trunks = new THREE.InstancedMesh(trunkGeo, trunkMat, count);
   cones.instanceMatrix.setUsage(THREE.StaticDrawUsage);
+  conesHigh.instanceMatrix.setUsage(THREE.StaticDrawUsage);
   trunks.instanceMatrix.setUsage(THREE.StaticDrawUsage);
+  const tint = new THREE.Color();
   let placed = 0;
-  let trunkPlaced = 0;
   for (let i = 0; i < count * 4 && placed < count; i++) {
     const s = S_MIN + hash1(i * 1.7) * (S_MAX - S_MIN);
     const half = valleyHalf(s);
     const sign = hash1(i * 3.1) > 0.5 ? 1 : -1;
-    const au = half + 20 + hash1(i * 5.3) * 420;
+    const au = half + 8 + hash1(i * 5.3) * 480;
     const uRaw = centerX(s) + sign * au;
     if (Math.abs(uRaw) > U_HALF - 20) continue;
-    const surf = surfaceAt(s, uRaw, 0);
+    const surf = surfaceAt(s, uRaw, 1);
     if (surf.cls !== enumClass.FOREST) continue;
-    const scale = 0.75 + hash1(i * 7.7) * 0.85;
-    placer.position.set(uRaw, surf.y - 0.6, -s);
-    placer.rotation.set(0, hash1(i * 9.1) * Math.PI * 2, 0);
-    placer.scale.setScalar(scale);
+    const scale = 0.55 + hash1(i * 7.7) * 1.35;
+    placer.position.set(uRaw, surf.y - 0.5, -s);
+    placer.rotation.set((hash1(i * 4.3) - 0.5) * 0.07, hash1(i * 9.1) * Math.PI * 2, (hash1(i * 6.7) - 0.5) * 0.07);
+    placer.scale.set(scale * (0.85 + hash1(i * 2.9) * 0.3), scale, scale * (0.85 + hash1(i * 3.7) * 0.3));
     placer.updateMatrix();
     cones.setMatrixAt(placed, placer.matrix);
-    if (trunkPlaced < trunks.count) {
-      placer.position.y = surf.y;
-      placer.scale.setScalar(scale * 1.05);
-      placer.updateMatrix();
-      trunks.setMatrixAt(trunkPlaced, placer.matrix);
-      trunkPlaced++;
-    }
+    conesHigh.setMatrixAt(placed, placer.matrix);
+    trunks.setMatrixAt(placed, placer.matrix);
+    // 每株色相抖动：暗绿 → 冷杉蓝绿 → 微黄绿，打破纯色地毯
+    const h = hash1(i * 11.3);
+    tint.setHSL(0.29 + h * 0.06, 0.34 + hash1(i * 13.1) * 0.18, 0.21 + hash1(i * 17.9) * 0.11);
+    cones.setColorAt(placed, tint);
+    tint.multiplyScalar(1.22);
+    conesHigh.setColorAt(placed, tint);
     placed++;
   }
   cones.count = placed;
-  trunks.count = trunkPlaced;
+  conesHigh.count = placed;
+  trunks.count = placed;
   cones.instanceMatrix.needsUpdate = true;
+  conesHigh.instanceMatrix.needsUpdate = true;
   trunks.instanceMatrix.needsUpdate = true;
+  if (cones.instanceColor) cones.instanceColor.needsUpdate = true;
+  if (conesHigh.instanceColor) conesHigh.instanceColor.needsUpdate = true;
   cones.castShadow = false;
   cones.receiveShadow = false;
   group.add(cones);
+  group.add(conesHigh);
   group.add(trunks);
   log('forest impostors ' + placed);
 
@@ -444,7 +527,7 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
         const inst = src.clone(true);
         const s = -300 + hash1(i * 31 + k * 17) * 520;
         const uRaw = centerX(s) + (hash1(i * 13 + k * 7) > 0.5 ? 1 : -1) * (valleyHalf(s) + 60 + hash1(i * 41 + k) * 120);
-        const surf = surfaceAt(s, uRaw, 0);
+        const surf = surfaceAt(s, uRaw, 1);
         fitObject(inst, { targetLongest: 9 + hash1(i * 5 + k) * 7, groundY: surf.y - 0.4, yaw: hash1(i + k) * 6.28 });
         inst.position.x = uRaw;
         inst.position.z = -s;
@@ -489,7 +572,7 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     { id: 'anchor-valley-rockwall', label: '谷壁岩体 · 深入分子层', kind: 'object', s: -60, u: -160, levelId: 'mol-valley-rockwall' },
   ];
   const anchors: TierAnchor[] = anchorDefs.map((d) => {
-    const surf = surfaceAt(d.s, centerX(d.s) + d.u, 0);
+    const surf = surfaceAt(d.s, centerX(d.s) + d.u, 1);
     return {
       id: d.id,
       label: d.label,
@@ -514,7 +597,7 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     '六要素  粒雪盆 / 冰瀑与裂隙 / 表碛冰舌 / 侧碛终碛 / 冰前河道 / 森林坡面',
     '几何    程序化地貌复原 L3/L4 · 冰界与表碛厚度 UNKNOWN（无实测）',
     '尺度    冰舌末端 ' + profileY(0) + ' m → 粒雪盆 ' + profileY(1200) + ' m，水平跨度 2.1 km（中景压缩）',
-    '资产    ' + stats.assetsLoaded + ' GLB 载入 / ' + stats.assetsFailed + ' 失败 · 树带用锥体实例 ' + placed,
+    '资产    ' + stats.assetsLoaded + ' GLB 载入 / ' + stats.assetsFailed + ' 失败 · 树带双层锥实例 ' + placed,
   ];
 
   const tier: ValleyTier = {
@@ -550,7 +633,7 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
         { id: 'DEBRIS', label: '表碛冰舌', evidenceLevel: 'L3', note: '凸起冰体 + 碎屑起伏；表碛厚度 UNKNOWN，形态按文献描述的覆盖型冰舌。' },
         { id: 'MORAINE', label: '侧碛与终碛', evidenceLevel: 'L4', note: '沿冰舌外缘的垄 + 前缘弧；位置待 DEM/野外核验。' },
         { id: 'STREAM', label: '冰前河道', evidenceLevel: 'L4', note: '辫状 3 股乳灰色水；流量与化学 UNKNOWN。' },
-        { id: 'FOREST', label: '森林坡面', evidenceLevel: 'L3', note: '林线 3560 m 附近，锥体实例表达林冠密度梯度；树种形态为程序化，非本地实测形态。' },
+        { id: 'FOREST', label: '森林坡面', evidenceLevel: 'L3', note: '林线 3560 m 附近，双层锥云杉剪影实例（4K 档约 5200 株，色相/尺寸抖动）表达林冠密度梯度；树种形态为程序化，非本地实测形态。' },
       ],
       limitations: [
         '冰舌边界、冰面地形、表碛厚度均无实测数据；本层是地貌形态复原，不得当作某年实测冰界。',
@@ -567,6 +650,8 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
         if (camera.near > 0.5) camera.near = 0.3;
         camera.updateProjectionMatrix();
       }
+      // 水面流纹滚动（米/秒量级视觉速率，不代表实测流速）
+      waterTex.offset.y -= Math.min(dt, 0.1) * 0.16;
       // 云雾漂移：只改 position，不分配对象
       const t = performance.now() * 0.001;
       for (let i = 0; i < mistPlanes.length; i++) {
@@ -574,11 +659,12 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
         m.mesh.position.x = Math.sin(t * 0.05 * m.speed * 0.05 + m.phase) * 90;
         m.mesh.position.y = m.baseY + Math.sin(t * 0.07 + m.phase) * 6;
       }
-      void dt;
     },
     setQuality(lowQuality: boolean): void {
       // 低质量：砍掉森林实例与云雾层，并降低地形细分（重建一次）
       cones.count = lowQuality ? Math.min(placed, Math.round(placed * 0.35)) : placed;
+      conesHigh.count = cones.count;
+      trunks.count = cones.count;
       const hideMist = lowQuality;
       for (const m of mistPlanes) m.mesh.visible = !hideMist || m === mistPlanes[0];
       waterGroup.visible = true;
@@ -589,12 +675,14 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
       terrainMat.dispose();
       for (const g of waterParts) g.dispose();
       waterMat.dispose();
+      waterTex.dispose();
       mistTex.dispose();
       mistMat.dispose();
       for (const m of mistPlanes) m.mesh.geometry.dispose();
       for (const g of forestGeomRef) g.dispose();
       for (const m of forestMatRef) m.dispose();
       cones.dispose();
+      conesHigh.dispose();
       trunks.dispose();
       for (const h of heroTrees) {
         h.traverse((c) => {
@@ -645,4 +733,35 @@ function makeMistTexture(): THREE.Texture {
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
   return tex;
+}
+
+/**
+ * 冰前河流水面纹理：纵向拉伸的 fbm 噪声，既当法线扰动（normalMap）也暗示
+ * 乳白冰川粉（rock flour）条纹。滚动 offset 即流动；视觉速率，非实测流速。
+ */
+function makeWaterStreakTexture(): THREE.Texture {
+  const size = 256;
+  const c = document.createElement('canvas');
+  c.width = size;
+  c.height = size;
+  const ctx = c.getContext('2d');
+  if (ctx) {
+    const img = ctx.createImageData(size, size);
+    for (let y = 0; y < size; y++) {
+      for (let x = 0; x < size; x++) {
+        // 纵向（y=流向）拉长 6 倍 → 流线型条纹
+        const n = fbm2(x * 0.045, y * 0.008);
+        const n2 = fbm2(x * 0.11 + 40, y * 0.02 + 9);
+        const v = Math.max(0, Math.min(1, 0.5 + (n - 0.5) * 1.6 + (n2 - 0.5) * 0.5));
+        const o = (y * size + x) * 4;
+        // normalMap 语义：x/y 通道存切线空间扰动（128 为中性）
+        img.data[o] = Math.round(128 + (v - 0.5) * 90);
+        img.data[o + 1] = Math.round(128 + (n2 - 0.5) * 70);
+        img.data[o + 2] = 255;
+        img.data[o + 3] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+  return new THREE.CanvasTexture(c);
 }

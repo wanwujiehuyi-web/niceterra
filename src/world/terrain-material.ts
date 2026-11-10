@@ -197,10 +197,14 @@ export function createTerrainMaterial(opts: TerrainMaterialOptions): THREE.MeshS
           float lum = dot(surf, vec3(0.2126, 0.7152, 0.0722));
           surf = mix(surf, vec3(lum), mix(0.45, 0.88, ice));
 
-          surf *= mix(0.78, 1.24, macro) * mix(0.92, 1.06, macro2);
-          surf = mix(surf, vec3(0.97, 0.98, 0.99), ice * 0.55);
+          // 只取纹理的“颗粒”（相对亮度），不取绝对明暗：PBR 反照率普遍偏暗，
+          // 直接相乘会把整片地形压黑。除均值归一后再调制强度。
+          vec3 grain = surf / max(lum, 0.10);
+          grain = mix(vec3(1.0), grain, 0.7);
+          float g = mix(0.86, 1.16, macro) * mix(0.94, 1.06, macro2);
 
-          diffuseColor.rgb *= surf;
+          diffuseColor.rgb *= grain * g;
+          diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.96, 0.975, 1.0), ice * 0.5);
         }`
       );
   };
