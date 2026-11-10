@@ -515,7 +515,7 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
 
   // 近景 hero 树：真 GLB（loadGLB + fitObject），数量随质量档变化
   const heroTrees: THREE.Object3D[] = [];
-  const heroUrls = ['/assets/v2/web/alpine-spruce.glb', '/assets/v2/web/alpine-pine-v20.glb'];
+  const heroUrls = ['/assets/aholo/fir-fabri-01-web.glb', '/assets/v2/web/alpine-spruce.glb', '/assets/v2/web/alpine-pine-v20.glb'];
   const heroSlots = low ? 2 : 6;
   for (let i = 0; i < heroUrls.length; i++) {
     try {
@@ -541,13 +541,52 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     }
   }
 
+  // Aholo Lux3D 冰川漂砾（taskId 6007319，G1 300k 面 → gltf-transform 减面+webp+meshopt，
+  // AI 生成视觉资产，非实测样本；散布在表碛冰舌与碛垄上，A 机位近处放 3 块大漂砾做尺度参照）
+  try {
+    const gltf = await loadGLB('/assets/aholo/glacial-erratic-01-web.glb');
+    const src = gltf.scene;
+    const n = low ? 4 : 10;
+    for (let k = 0; k < n; k++) {
+      const inst = src.clone(true);
+      const s = -40 + hash1(k * 23.7) * 560;
+      const uRaw = centerX(s) + (hash1(k * 11.3) - 0.5) * 2 * valleyHalf(s) * 0.85;
+      const surf = surfaceAt(s, uRaw, 1);
+      fitObject(inst, { targetLongest: 2.5 + hash1(k * 7.1) * 6.5, groundY: surf.y - 0.3, yaw: hash1(k * 5.9) * 6.28 });
+      inst.position.x = uRaw;
+      inst.position.z = -s;
+      group.add(inst);
+      heroTrees.push(inst); // 共用释放列表
+    }
+    // 近景 hero 漂砾：A 机位前方 120–270 m 的冰前砾石滩上，12–20 m 巨石
+    if (!low) {
+      for (let k = 0; k < 3; k++) {
+        const inst = src.clone(true);
+        const s = -300 + hash1(k * 41.3) * 120;
+        const uRaw = centerX(s) + (hash1(k * 17.7) - 0.5) * 140;
+        const surf = surfaceAt(s, uRaw, 1);
+        fitObject(inst, { targetLongest: 12 + hash1(k * 29.1) * 8, groundY: surf.y - 1.2, yaw: hash1(k * 13.9) * 6.28 });
+        inst.position.x = uRaw;
+        inst.position.z = -s;
+        group.add(inst);
+        heroTrees.push(inst);
+      }
+    }
+    stats.assetsLoaded++;
+    log('aholo erratic x' + n + (low ? '' : ' +3 hero'));
+  } catch (err) {
+    stats.assetsFailed++;
+    log('aholo erratic 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
+  }
+
   /* ---- 5. 机位与锚点 ---- */
   const poses: Record<string, TierCameraPose> = {
     A: {
       // 谷地总览：冰前砾石滩上回望表碛冰舌—冰瀑—粒雪盆
       // 注意 z = -s：相机在下游 s=-600 处（z=+600），朝上游（-z）看。
-      position: [centerX(-640) + 40, profileY(-640) + 230, 640],
-      target: [centerX(280), profileY(280) + 120, -280],
+      // 视线近平（+170/+30）：近景 hero 漂砾与砾石滩进入画面下缘，前景-中景-远景三层齐全。
+      position: [centerX(-640) + 40, profileY(-640) + 170, 640],
+      target: [centerX(240), profileY(240) + 30, -240],
     },
     B: {
       // 冰川到森林：贴着表碛冰舌侧缘，右壁针叶林入画
@@ -634,6 +673,7 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
         { id: 'MORAINE', label: '侧碛与终碛', evidenceLevel: 'L4', note: '沿冰舌外缘的垄 + 前缘弧；位置待 DEM/野外核验。' },
         { id: 'STREAM', label: '冰前河道', evidenceLevel: 'L4', note: '辫状 3 股乳灰色水；流量与化学 UNKNOWN。' },
         { id: 'FOREST', label: '森林坡面', evidenceLevel: 'L3', note: '林线 3560 m 附近，双层锥云杉剪影实例（4K 档约 5200 株，色相/尺寸抖动）表达林冠密度梯度；树种形态为程序化，非本地实测形态。' },
+        { id: 'ERRATIC', label: '冰川漂砾（AI 资产）', evidenceLevel: 'L4', note: 'Aholo Lux3D 文生 3D（taskId 6007319），AI 生成的视觉参照物，不是实测岩石样本；用于表达冰舌表面碎屑尺度。' },
       ],
       limitations: [
         '冰舌边界、冰面地形、表碛厚度均无实测数据；本层是地貌形态复原，不得当作某年实测冰界。',

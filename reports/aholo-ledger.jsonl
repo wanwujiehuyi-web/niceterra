@@ -1,0 +1,3 @@
+{"op": "create", "prompt": "一块巨型冰川漂砾花岗岩巨石，表面覆盖薄冰与灰褐色冰碛碎石粉，局部有深绿色苔藓，写实自然风化，海螺沟冰川地貌，孤立单体，置于透明背景", "style": "photorealistic", "version": "G1", "faceCount": 300000, "outputFormat": ["zip", "glb"], "resp_c": "0", "taskId": 6007319, "msg": "", "ts": "2026-11-10 23:05:36"}
+{"op": "create", "prompt": "一株峨眉冷杉，高山针叶常绿乔木，深绿色扁平针叶，塔形树冠层叠下垂枝条，灰褐色树皮，写实风格，海螺沟海拔3000米原始森林，孤立单株，透明背景", "style": "photorealistic", "version": "G1", "faceCount": 300000, "outputFormat": ["zip", "glb"], "resp_c": "0", "taskId": 6028344, "msg": "", "ts": "2026-11-10 23:28:22"}
+{"op": "create-image", "prompt": "无缝平铺纹理贴图，俯视正交视角：冰川粒雪表面，细腻雪粒与浅蓝色压密冰交替，含细微", "taskId": 6031285, "ts": "2026-11-10 23:38:12"}

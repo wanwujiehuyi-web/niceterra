@@ -20,6 +20,8 @@ export interface TerrainTextureSet {
   gravel: THREE.Texture;
   rockNormal: THREE.Texture;
   noise: THREE.Texture;
+  /** Aholo 多模态生图（taskId 6031285）：粒雪/压密冰无缝纹理，AI 生成视觉材质。 */
+  firn: THREE.Texture;
 }
 
 const BASE = '/textures/pbr/';
@@ -47,11 +49,12 @@ let cache: Promise<TerrainTextureSet> | null = null;
 export function loadTerrainTextures(): Promise<TerrainTextureSet> {
   if (cache) return cache;
   cache = (async () => {
-    const [rock, ground, gravel, rockNormal] = await Promise.all([
+    const [rock, ground, gravel, rockNormal, firn] = await Promise.all([
       load('rockface/albedo.jpg', true),
       load('moss/albedo.jpg', true),
       load('riverbed/albedo.jpg', true),
-      load('rockface/normal.png', false)
+      load('rockface/normal.png', false),
+      load('firn/albedo.jpg', true)
     ]);
     // A tiny procedural noise texture keeps the macro layer free of network cost.
     const size = 128;
@@ -97,7 +100,7 @@ export function loadTerrainTextures(): Promise<TerrainTextureSet> {
     noise.wrapS = THREE.RepeatWrapping;
     noise.wrapT = THREE.RepeatWrapping;
     noise.needsUpdate = true;
-    return { rock, ground, gravel, rockNormal, noise };
+    return { rock, ground, gravel, rockNormal, noise, firn };
   })();
   return cache;
 }
@@ -127,6 +130,7 @@ export function createTerrainMaterial(opts: TerrainMaterialOptions): THREE.MeshS
     uGravel: { value: opts.textures.gravel },
     uRockNormal: { value: opts.textures.rockNormal },
     uNoise: { value: opts.textures.noise },
+    uFirn: { value: opts.textures.firn },
     uMicro: { value: micro },
     uMacro: { value: 1 / macroSize },
     uSnowLine: { value: 4200 }
@@ -158,6 +162,7 @@ export function createTerrainMaterial(opts: TerrainMaterialOptions): THREE.MeshS
         uniform sampler2D uGravel;
         uniform sampler2D uRockNormal;
         uniform sampler2D uNoise;
+        uniform sampler2D uFirn;
         uniform float uMicro;
         uniform float uMacro;
         uniform float uSnowLine;
@@ -203,8 +208,14 @@ export function createTerrainMaterial(opts: TerrainMaterialOptions): THREE.MeshS
           grain = mix(vec3(1.0), grain, 0.7);
           float g = mix(0.86, 1.16, macro) * mix(0.94, 1.06, macro2);
 
+          // 粒雪/冰（Aholo 生图纹理 taskId 6031285）：大尺度重复（约 18 m），
+          // 只取相对颗粒，蓝冰脉与风蚀雪脊由此进入地表。
+          vec3 firnC = triplanar(uFirn, p * 0.2, bw);
+          float fl = dot(firnC, vec3(0.2126, 0.7152, 0.0722));
+          vec3 fgrain = firnC / max(fl, 0.10);
+
           diffuseColor.rgb *= grain * g;
-          diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.96, 0.975, 1.0), ice * 0.5);
+          diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * fgrain * vec3(0.99, 1.0, 1.01), ice * 0.9);
         }`
       );
   };
@@ -212,7 +223,7 @@ export function createTerrainMaterial(opts: TerrainMaterialOptions): THREE.MeshS
   // Hypothesis mode moves this uniform only; the science data is never edited.
   mat.userData.snowLineUniform = uniforms.uSnowLine;
   mat.userData.baselineSnowLine = uniforms.uSnowLine.value;
-  mat.customProgramCacheKey = () => 'terrain-triplanar-v1';
+  mat.customProgramCacheKey = () => 'terrain-triplanar-v2';
   return mat;
 }
 

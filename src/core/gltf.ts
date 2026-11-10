@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
 /**
  * Shared GLB loading for v2.
@@ -22,6 +23,7 @@ function loader(): GLTFLoader {
   draco.setDecoderPath('/draco/');
   gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(draco);
+  gltfLoader.setMeshoptDecoder(MeshoptDecoder);
   return gltfLoader;
 }
 
