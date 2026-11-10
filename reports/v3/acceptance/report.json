@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T12:23:12.964Z",
+  "generatedAt": "2026-11-10T13:34:21.313Z",
   "base": "http://127.0.0.1:5388",
   "renderer": "SwiftShader (WARP)",
   "counts": {
@@ -111,7 +111,7 @@
     {
       "id": "UX-01",
       "status": "PASS",
-      "evidence": "首屏 3 个按钮，其中主操作 1 个"
+      "evidence": "首屏 2 个按钮，其中主操作 1 个"
     },
     {
       "id": "LOAD-02",
@@ -121,7 +121,7 @@
     {
       "id": "PERF-07",
       "status": "NOT_RUN",
-      "evidence": "进入三维 2904 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
+      "evidence": "进入三维 6615 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
     },
     {
       "id": "A11Y-01",
@@ -146,7 +146,7 @@
     {
       "id": "UX-03",
       "status": "PASS",
-      "evidence": "选中同步耗时 7.9 ms，面板标题 湿溪石"
+      "evidence": "选中同步耗时 23.2 ms，面板标题 湿溪石"
     },
     {
       "id": "A11Y-08",

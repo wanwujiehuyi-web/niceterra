@@ -249,7 +249,7 @@ export class MdLite {
       const idxList = this.sphereIndex[el]!;
       idxList.forEach((atomIdx, i) => {
         const a = this.atoms[atomIdx];
-        const r = ELEMENTS[a.element].radius * 1.15; // 视觉半径略大于共价半径，声明见 colorNote
+        const r = ELEMENTS[a.element].radius * 0.6; // 球棍式：0.6×共价半径，键柱可见（视觉约定，声明见 colorNote）
         s.setScalar(r);
         m.compose(a.pos, q.identity(), s);
         mesh.setMatrixAt(i, m);

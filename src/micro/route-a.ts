@@ -342,7 +342,7 @@ export const ROUTE_A: MicroRouteSpec = {
       geometrySource:
         'MD-lite opal-A 片段：SiO4 四面体角共享网络（Si–O 0.161 nm、O–Si–O 109.47°）+ 谐振运动引擎（A ∝ √(k_B·T/k)）',
       colorNote:
-        'CPK 元素配色（Si 米黄 / O 红），球半径取 1.15×共价半径为视觉约定；编码色不代表真实颜色、非荧光',
+        'CPK 元素配色（Si 米黄 / O 红），球棍式渲染：球半径取 0.6×共价半径为视觉约定；编码色不代表真实颜色、非荧光',
       evidenceNote: 'L4：分子动力学示意（MD-lite），非全原子力场模拟、非实测结构',
       sources: ['SRC-OPAL-A', 'SRC-QUARTZ-GEOMETRY'],
       actions: { up: '—（分子层终点）', down: '缩小 → 局部硅氧结构 0.4 nm', reset: '复位视角' },
