@@ -214,7 +214,7 @@ export interface LayerPreset {
 
 /** 三档季节预设。全部是**制作档位**（L4），不是某天的卫星观测。 */
 export const LAYER_PRESETS: LayerPreset[] = [
-  { date: '2026-11-10', label: '初冬', snowlineM: 4750, treelineM: 3520, debrisLineM: 3900, snowCover: 1.0, hazeDensity: 0.000026, note: '11 月：雪线 4750 m，冰舌中下部裸冰+表碛，针叶林到 3520 m。' },
+  { date: '2026-11-10', label: '初冬', snowlineM: 4750, treelineM: 3520, debrisLineM: 3900, snowCover: 1.0, hazeDensity: 0.000013, note: '11 月：雪线 4750 m，冰舌中下部裸冰+表碛，针叶林到 3520 m。' },
   { date: '2026-07-15', label: '雨季盛夏', snowlineM: 5150, treelineM: 3820, debrisLineM: 4050, snowCover: 0.92, hazeDensity: 0.00005, note: '7 月：雪线最高、雾最重，表碛区扩大。' },
   { date: '2026-02-01', label: '隆冬', snowlineM: 3450, treelineM: 3000, debrisLineM: 3300, snowCover: 1.0, hazeDensity: 0.000016, note: '2 月：雪线压到 3450 m，山脊全白，远景观测窗口。' },
 ];
@@ -435,6 +435,12 @@ void main() {
   vec3 V = normalize(cameraPosition - P);
   float h = P.y;
   float slope = 1.0 - clamp(n.y, 0.0, 1.0);
+  // 片元导数面法线：顶点法线在 30m DEM 上被网格平滑，slope 永远到不了真实坡角，
+  // 雪线衰减因此失效。用 dFdx/dFdy 恢复每个三角面的真实坡度（贡嘎金字塔 40–55°）。
+  vec3 fN = cross(dFdx(P), dFdy(P));
+  fN = normalize(length(fN) > 1e-6 ? fN : n);
+  if (fN.y < 0.0) fN = -fN;
+  float fslope = 1.0 - clamp(fN.y, 0.0, 1.0);
 
   float lon = uRef.x + P.x / uRef.z;
   float lat = uRef.y - P.z / uRef.w;
@@ -447,39 +453,54 @@ void main() {
   float moraineMask = m.b * inRect;
 
   float patchNoise = fbm(P.xz * 0.0007);
+  // 岩带条痕（贡嘎金字塔的沉积岩层理）：提高对比，让露岩不只是均匀灰
   float streak = fbm(vec2((P.x + P.z) * 0.0016, P.y * 0.009));
-  vec3 rock = uRockColor * mix(0.70, 1.16, patchNoise) * mix(0.86, 1.12, streak);
-  rock *= mix(1.0, 0.70, smoothstep(0.42, 0.95, slope));
+  vec3 rock = uRockColor * mix(0.52, 1.06, patchNoise) * mix(0.70, 1.10, streak);
+  rock *= mix(1.0, 0.62, smoothstep(0.30, 0.80, fslope));
+
+  // 顺序：岩→冰碛→森林→雪→冰→表碛。森林必须盖过冰碛（四号营地前景坡是暗针叶林），
+  // 但冰/表碛掩膜在最后压住谷底的森林，避免把冰川槽谷底染绿。
+  vec3 moraineCol = uMoraineColor * mix(0.84, 1.12, fbm(P.xz * 0.008));
+  float moraineF = clamp(moraineMask, 0.0, 1.0);
+  vec3 albedo = mix(rock, moraineCol, moraineF * 0.85);
 
   float clump = fbm(P.xz * 0.0035);
-  float forest = smoothstep(uTreeline + 280.0, uTreeline - 340.0, h);
-  forest *= smoothstep(0.62, 0.40, slope);
-  forest *= smoothstep(0.26, 0.60, clump);
+  // A 机位前景坡 3400–4000 m：林线 3520 上下过渡带要读得出暗针叶林
+  //（参考 gongga-peak-closeup：前景整片暗林到 ~3600 m）。团块噪声只调制不归零。
+  float forest = smoothstep(uTreeline + 420.0, uTreeline - 380.0, h);
+  forest *= smoothstep(0.58, 0.32, fslope);
+  forest *= 0.35 + 0.65 * smoothstep(0.28, 0.60, clump);
+  forest *= 1.0 - 0.85 * clamp(iceMask + debrisMask, 0.0, 1.0);
   vec3 forestCol = uForestColor * mix(0.74, 1.20, fbm(P.xz * 0.02));
-  vec3 albedo = mix(rock, forestCol, clamp(forest, 0.0, 1.0));
+  albedo = mix(albedo, forestCol, clamp(forest, 0.0, 1.0));
 
   float sn = uSnowline + (fbm(P.xz * 0.0009) - 0.5) * uSnowNoise + (fbm(P.xz * 0.0041) - 0.5) * 90.0;
   float snow = smoothstep(sn - 150.0, sn + 170.0, h);
-  snow *= 1.0 - smoothstep(0.58, 0.92, slope);
+  // 真照片对照（gongga-peak-closeup.jpg）：金字塔坡面雪岩相间。
+  // 用片元面坡度 fslope：35°≈0.18、45°≈0.29、55°≈0.43，陡坡雪挂不住；
+  // 再乘顺坡肋条噪声，让同一坡面上雪/岩交替出棱。
+  snow *= 1.0 - smoothstep(0.15, 0.35, fslope);
+  float ribs = fbm(vec2((P.x - P.z) * 0.0011, P.y * 0.0045));
+  snow *= mix(0.30, 1.0, smoothstep(0.28, 0.72, ribs));
   snow = clamp(snow * uSnowCover, 0.0, 1.0);
-  vec3 snowCol = uSnowColor * (0.94 + 0.06 * fbm(P.xz * 0.03));
+  // 雪面风成微纹理（sastrugi 级别）：打破纯白黏土感
+  vec3 snowCol = uSnowColor * (0.88 + 0.12 * fbm(P.xz * 0.0035 + P.y * 0.0016));
   albedo = mix(albedo, snowCol, snow);
 
   vec3 iceCol = mix(uIceColor, uSnowColor, smoothstep(uSnowline - 200.0, uSnowline + 300.0, h));
-  float ice = clamp(iceMask, 0.0, 1.0) * (1.0 - 0.50 * smoothstep(0.50, 0.90, slope));
+  float ice = clamp(iceMask, 0.0, 1.0) * (1.0 - 0.50 * smoothstep(0.50, 0.90, fslope));
   albedo = mix(albedo, iceCol, ice * 0.96);
 
   float debris = clamp(debrisMask, 0.0, 1.0) * smoothstep(uDebrisLine + 280.0, uDebrisLine - 320.0, h);
   vec3 debrisCol = uDebrisColor * mix(0.80, 1.16, fbm(P.xz * 0.012));
   albedo = mix(albedo, debrisCol, debris * (1.0 - 0.40 * snow));
 
-  vec3 moraineCol = uMoraineColor * mix(0.84, 1.12, fbm(P.xz * 0.008));
-  albedo = mix(albedo, moraineCol, clamp(moraineMask, 0.0, 1.0) * (1.0 - 0.55 * snow));
-
-  float ndl = max(dot(n, uSunDir), 0.0);
+  // 光照法线混入面法线：山脊/沟槽出现明暗对比（参考片的岩棱立体感来源）
+  vec3 nL = normalize(mix(n, fN, 0.75));
+  float ndl = max(dot(nL, uSunDir), 0.0);
   float sky = 0.5 + 0.5 * n.y;
   vec3 amb = mix(uGroundColor, uSkyColor, sky);
-  vec3 lit = albedo * (uSunColor * ndl * 1.32 + amb * 0.66);
+  vec3 lit = albedo * (uSunColor * ndl * 1.32 + amb * 0.88);
   vec3 H = normalize(V + uSunDir);
   float spec = pow(max(dot(n, H), 0.0), 26.0) * (snow * 0.28 + ice * 0.44 + debris * 0.04);
   lit += uSunColor * spec * 0.55;
@@ -797,7 +818,9 @@ export async function createFarviewTier(opts: TierOptions): Promise<FarviewTier>
     uniforms,
     vertexShader: VERT,
     fragmentShader: FRAG,
-    side: THREE.FrontSide,
+    // DoubleSide：谷底机位（CAM-C）仰望时，陡壁三角面相对相机是背面，
+    // FrontSide 会被剔除成「漂浮碎带」。高度场没有悬垂，双面渲染安全。
+    side: THREE.DoubleSide,
     fog: false,
   });
 
@@ -806,6 +829,53 @@ export async function createFarviewTier(opts: TierOptions): Promise<FarviewTier>
   const terrainRoot = new THREE.Group();
   terrainRoot.name = 'GONGGA-DEM-LOD';
   group.add(terrainRoot);
+
+  // 远景专用天空穹顶：共享 SkySystem 云量 70%（谷地感），与 11 月晴朗贡嘎
+  // 参考片（gongga-peak-closeup.jpg，深蓝近无云）不符。本穹顶 depthTest=false
+  // 且 BackSide，WorldApp.ensureAtmosphere 检测到后自动隐藏共享天空。
+  const skyMat = new THREE.ShaderMaterial({
+    side: THREE.BackSide,
+    depthTest: false,
+    depthWrite: false,
+    fog: false,
+    toneMapped: false, // 直接输出目标蓝，避免 ACES 把天顶深蓝洗白
+    uniforms: {
+      uSunDir: uniforms.uSunDir,
+      uZenith: { value: new THREE.Color(0x1e4c9c) },
+      uHorizon: { value: new THREE.Color(0xc3d4e4) },
+    },
+    vertexShader: /* glsl */ `
+      varying vec3 vDir;
+      void main() {
+        vDir = normalize(position);
+        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+        gl_Position = projectionMatrix * mv;
+        gl_Position.z = gl_Position.w; // 钉在远平面
+      }
+    `,
+    fragmentShader: /* glsl */ `
+      varying vec3 vDir;
+      uniform vec3 uSunDir;
+      uniform vec3 uZenith;
+      uniform vec3 uHorizon;
+      void main() {
+        vec3 d = normalize(vDir);
+        float t = pow(clamp(d.y, 0.0, 1.0), 0.62);
+        vec3 col = mix(uHorizon, uZenith, t);
+        float c = max(dot(d, normalize(uSunDir)), 0.0);
+        col += vec3(1.0, 0.94, 0.80) * (pow(c, 220.0) * 1.4 + pow(c, 8.0) * 0.10);
+        gl_FragColor = vec4(col, 1.0);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }
+    `,
+  });
+  const skyGeo = new THREE.SphereGeometry(1, 48, 32);
+  const skyMesh = new THREE.Mesh(skyGeo, skyMat);
+  skyMesh.name = 'GONGGA-SKY-DOME';
+  skyMesh.frustumCulled = false;
+  skyMesh.renderOrder = -1000;
+  group.add(skyMesh);
 
   const step = low ? 2 : 1;
   const meshes: THREE.Mesh[] = [];
@@ -872,16 +942,25 @@ export async function createFarviewTier(opts: TierOptions): Promise<FarviewTier>
   let lowQ = low;
   let current = 0;
 
+  // 选档规则：相机落在哪一级范围内就用哪一级（最细的优先）。
+  // 旧规则用「相机到世界原点距离」推算屏幕误差——谷底机位离原点近会被误判成
+  // 需要最粗档，603 m 网格的巨大三角面在谷底视角里是漂浮碎带（C 机位事故）。
+  // 屏幕误差仍算，但只做 HUD 展示，不再参与选档。
+  function levelContains(lv: LoadedDem['levels'][number], x: number, z: number): boolean {
+    const b = lv.header.bounds;
+    const a = proj.toWorldXZ(b.west, b.north);
+    const c = proj.toWorldXZ(b.east, b.south);
+    return x >= Math.min(a.x, c.x) && x <= Math.max(a.x, c.x) && z >= Math.min(a.z, c.z) && z <= Math.max(a.z, c.z);
+  }
   function selectLevel(camera: THREE.PerspectiveCamera): void {
     const fov = (camera.fov || 45) * Math.PI / 180;
     const heightPx = (camera.view as unknown as { height?: number } | null)?.height ?? 540;
     const k = heightPx / (2 * Math.tan(fov / 2));
     const dist = Math.max(1, camera.position.length());
-    const budget = lowQ ? 3.2 : 1.8;
+    void (lowQ ? 3.2 : 1.8);
     let chosen = dem.levels.length - 1;
     for (let i = 0; i < dem.levels.length; i++) {
-      const err = (dem.levels[i].header.spacingM / dist) * k;
-      if (err <= budget) { chosen = i; break; }
+      if (levelContains(dem.levels[i], camera.position.x, camera.position.z)) { chosen = i; break; }
     }
     if (chosen !== current) {
       for (let i = 0; i < meshes.length; i++) meshes[i].visible = i === chosen;
@@ -965,11 +1044,15 @@ export async function createFarviewTier(opts: TierOptions): Promise<FarviewTier>
     hudLines,
     update(dt: number, camera: THREE.PerspectiveCamera): void {
       void dt;
-      if (camera.near > 2 || camera.far < 140000) {
-        camera.near = 2;
+      // near=2 / far=140000 的深度比会在 10 km 外产生 z-fighting（C 机位谷底
+      // 回望时远山飘带碎裂）。near 提到 25：A/B 机位最近地形 >300 m，C 机位
+      // 抬升 120 m 也安全，同时保住对数级精度余量。
+      if (camera.near > 25 || camera.far < 140000) {
+        camera.near = 25;
         camera.far = 140000;
         camera.updateProjectionMatrix();
       }
+      skyMesh.position.copy(camera.position);
       selectLevel(camera);
     },
     setQuality(lowQuality: boolean): void {
@@ -990,6 +1073,8 @@ export async function createFarviewTier(opts: TierOptions): Promise<FarviewTier>
     },
     dispose(): void {
       material.dispose();
+      skyMat.dispose();
+      skyGeo.dispose();
       mask.texture.dispose();
       for (const g of geometries) g.dispose();
       terrainRoot.children.slice().forEach((c) => {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T07:59:16.680Z",
+  "generatedAt": "2026-11-11T10:30:48.755Z",
   "base": "http://127.0.0.1:5388",
   "renderer": "SwiftShader (WARP)",
   "counts": {
@@ -121,7 +121,7 @@
     {
       "id": "PERF-07",
       "status": "NOT_RUN",
-      "evidence": "进入三维 3238 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
+      "evidence": "进入三维 3207 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
     },
     {
       "id": "A11Y-01",
@@ -146,7 +146,7 @@
     {
       "id": "UX-03",
       "status": "PASS",
-      "evidence": "选中同步耗时 5.5 ms，面板标题 湿溪石"
+      "evidence": "选中同步耗时 6.9 ms，面板标题 湿溪石"
     },
     {
       "id": "A11Y-08",
