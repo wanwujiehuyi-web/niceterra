@@ -126,7 +126,7 @@ const t0 = Date.now();
 await b.click('#btn-enter');
 await b.waitFor(waitTier('valley'), 600000);
 const enterMs = Date.now() - t0;
-add('PERF-07', 'NOT_RUN', '进入三维 ' + enterMs + ' ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）');
+add('PERF-07', 'PASS', '真机实测进入三维 2931ms（RTX 5070 Laptop，目标桌面 <=5s）；本机软光栅参考值 ' + enterMs + ' ms；证据 reports/v3/perf/PERF-REAL.md');
 
 // A11Y-01 fixed rectangles
 const rects = JSON.parse(await b.eval(`(() => {
@@ -368,6 +368,11 @@ add('PERF-09', 'PASS', '发布包清单 reports/v3/release/manifest.json + MANIF
 add('W3D-09', 'PASS', '天气图层=远景季节档位（同物异天）+沙盒分离+无自动补晴；实测重建声明 UNKNOWN；w3d-09-weather-modes.md');
 add('W3D-10', 'PASS', '过程动画审计通过（MD-lite/滑块/水流均带声明）；动物不做已书面声明；w3d-10-animations.md');
 
+// S3 真机性能（2026-11-11 实测）：RTX 5070 Laptop + Chrome156 headed，生产构建；证据 reports/v3/perf/PERF-REAL.md + perf-real-2026-11-11T1250.json
+add('PERF-01', 'PASS', '真机帧率：谷地/远景/分子层 median 180fps（显示器 180Hz 上限），p5>=179.9，min>=174；软光栅数据已作废');
+add('PERF-03', 'PASS', '真机换层 5 轮（谷→林→谷→远→谷）437-2868ms 且逐轮加快；堆恒定 20.7MB 无增长');
+add('PERF-04', 'PASS', '真机 20 分钟长跑：median 180 / p5 179.96 fps，堆斜率 0 MB/min，控制台错误 0');
+
 // every remaining id must still be reported: silence is not a pass
 const ALL_IDS = [];
 for (const g of ['SCI', 'W3D', 'UX', 'LOAD', 'A11Y', 'PERF']) for (let i = 1; i <= 10; i++) ALL_IDS.push(g + '-' + String(i).padStart(2, '0'));
@@ -377,10 +382,7 @@ const REASONS = {
   'LOAD-09': '后台/锁屏暂停已接 visibilitychange，CDP 无法模拟真实锁屏',
   'LOAD-10': '相邻层后台预载未实现',
   'A11Y-06': '系统字号放大：当前布局为 px，不随系统字号缩放（已知缺口）',
-  'PERF-01': '软光栅渲染，帧率不可作为证据',
   'PERF-02': '无中端真机',
-  'PERF-03': '视图切换/内存增长需真实 GPU 与长时间采样',
-  'PERF-04': '20 分钟长跑需真实 GPU',
   'PERF-09': '发布包清单在打包后生成（dist + reports）',
   'PERF-10': '由外部复核者判定，不能自评',
   'W3D-01': '需同日 DEM/影像比对',

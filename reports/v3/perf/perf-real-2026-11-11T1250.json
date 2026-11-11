@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-11-11T12:26:43.700Z",
+  "base": "http://127.0.0.1:5390",
+  "quick": false,
+  "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D18) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "gpuReal": true,
+  "display": {
+    "w": 1710,
+    "h": 986,
+    "dpr": 1.5,
+    "screen": [
+      1707,
+      1067
+    ]
+  },
+  "perf07_enterMs": 2931,
+  "perf01_valley": {
+    "n": 62,
+    "min": 174,
+    "p5": 179.98,
+    "median": 180,
+    "mean": 179.91
+  },
+  "perf01_far": {
+    "n": 59,
+    "min": 179,
+    "p5": 179.98,
+    "median": 180,
+    "mean": 179.99
+  },
+  "perf01_micro": {
+    "n": 53,
+    "min": 179,
+    "p5": 179.98,
+    "median": 180,
+    "mean": 179.98
+  },
+  "perf03_cycles": [
+    {
+      "cycle": 1,
+      "toForestMs": 1877,
+      "toValleyMs": 1819,
+      "toFarMs": 598,
+      "backValleyMs": 2868,
+      "heapMb": 20.7
+    },
+    {
+      "cycle": 2,
+      "toForestMs": 798,
+      "toValleyMs": 1720,
+      "toFarMs": 349,
+      "backValleyMs": 2570,
+      "heapMb": 20.7
+    },
+    {
+      "cycle": 3,
+      "toForestMs": 772,
+      "toValleyMs": 1902,
+      "toFarMs": 282,
+      "backValleyMs": 1355,
+      "heapMb": 20.7
+    },
+    {
+      "cycle": 4,
+      "toForestMs": 588,
+      "toValleyMs": 2639,
+      "toFarMs": 387,
+      "backValleyMs": 1269,
+      "heapMb": 20.7
+    },
+    {
+      "cycle": 5,
+      "toForestMs": 437,
+      "toValleyMs": 1514,
+      "toFarMs": 398,
+      "backValleyMs": 2813,
+      "heapMb": 20.7
+    }
+  ],
+  "perf04": {
+    "fps": {
+      "n": 1192,
+      "min": 1.27,
+      "p5": 179.96,
+      "median": 180,
+      "mean": 178.13
+    },
+    "heapFirst5": [
+      20.7,
+      20.7,
+      20.7,
+      20.7,
+      20.7
+    ],
+    "heapLast5": [
+      20.7,
+      20.7,
+      20.7,
+      20.7,
+      20.7
+    ],
+    "heapSlopeMbPerMin": 0,
+    "buckets": 1192
+  },
+  "consoleErrors": [],
+  "verdict": "DONE"
+}

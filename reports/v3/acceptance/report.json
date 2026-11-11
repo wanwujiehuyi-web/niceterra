@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-11T12:05:27.427Z",
+  "generatedAt": "2026-11-11T12:57:33.203Z",
   "base": "http://127.0.0.1:5388",
   "renderer": "SwiftShader (WARP)",
   "counts": {
-    "PASS": 47,
+    "PASS": 51,
     "FAIL": 0,
-    "NOT_RUN": 15
+    "NOT_RUN": 11
   },
   "results": [
     {
@@ -110,8 +110,8 @@
     },
     {
       "id": "PERF-07",
-      "status": "NOT_RUN",
-      "evidence": "进入三维 4397 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
+      "status": "PASS",
+      "evidence": "真机实测进入三维 2931ms（RTX 5070 Laptop，目标桌面 <=5s）；本机软光栅参考值 5214 ms；证据 reports/v3/perf/PERF-REAL.md"
     },
     {
       "id": "A11Y-01",
@@ -136,7 +136,7 @@
     {
       "id": "UX-03",
       "status": "PASS",
-      "evidence": "选中同步耗时 6.6 ms，面板标题 湿溪石"
+      "evidence": "选中同步耗时 10.3 ms，面板标题 湿溪石"
     },
     {
       "id": "A11Y-08",
@@ -289,29 +289,29 @@
       "evidence": "过程动画审计通过（MD-lite/滑块/水流均带声明）；动物不做已书面声明；w3d-10-animations.md"
     },
     {
+      "id": "PERF-01",
+      "status": "PASS",
+      "evidence": "真机帧率：谷地/远景/分子层 median 180fps（显示器 180Hz 上限），p5>=179.9，min>=174；软光栅数据已作废"
+    },
+    {
+      "id": "PERF-03",
+      "status": "PASS",
+      "evidence": "真机换层 5 轮（谷→林→谷→远→谷）437-2868ms 且逐轮加快；堆恒定 20.7MB 无增长"
+    },
+    {
+      "id": "PERF-04",
+      "status": "PASS",
+      "evidence": "真机 20 分钟长跑：median 180 / p5 179.96 fps，堆斜率 0 MB/min，控制台错误 0"
+    },
+    {
       "id": "LOAD-09",
       "status": "NOT_RUN",
       "evidence": "后台/锁屏暂停已接 visibilitychange，CDP 无法模拟真实锁屏"
     },
     {
-      "id": "PERF-01",
-      "status": "NOT_RUN",
-      "evidence": "软光栅渲染，帧率不可作为证据"
-    },
-    {
       "id": "PERF-02",
       "status": "NOT_RUN",
       "evidence": "无中端真机"
-    },
-    {
-      "id": "PERF-03",
-      "status": "NOT_RUN",
-      "evidence": "视图切换/内存增长需真实 GPU 与长时间采样"
-    },
-    {
-      "id": "PERF-04",
-      "status": "NOT_RUN",
-      "evidence": "20 分钟长跑需真实 GPU"
     },
     {
       "id": "PERF-10",

@@ -1,14 +1,14 @@
 {
   "schema": "niceterra.release-manifest.v1",
   "item": "PERF-09",
-  "generatedAt": "2026-11-11T12:06:44.172Z",
-  "gitHead": "bd8a63b3f6b901bca66423f2b036b76d5d971cc5",
+  "generatedAt": "2026-11-11T12:59:31.767Z",
+  "gitHead": "20cad7d12a4150cdb46f9413f7d4955679c06fcf",
   "sections": {
     "code": {
       "note": "dist/ 静态发布包（vite build，含 three r187 打包 JS/CSS、draco 解码器、GLB/DEM/纹理资产拷贝）",
       "root": "dist",
       "fileCount": 301,
-      "totalBytes": 348303642,
+      "totalBytes": 348310129,
       "files": [
         {
           "path": "assets/aholo/cliff-01-web.glb",
@@ -67,44 +67,44 @@
         {
           "path": "assets/draco_decoder-C32yEggz.wasm",
           "bytes": 285747,
-          "mtime": "2026-11-11T10:44:55.273Z",
+          "mtime": "2026-11-11T12:23:40.183Z",
           "sha256": "c55a594e8ffd18426d36b27fea9618af3df5e173640a3e56d46f09d76f0574f2"
         },
         {
           "path": "assets/draco_decoder-fzg4nYZr.js",
           "bytes": 719410,
-          "mtime": "2026-11-11T10:44:55.274Z",
+          "mtime": "2026-11-11T12:23:40.184Z",
           "sha256": "30e4d486fa020737af10e3c56197693e5b904bdc05b8bfa5d7b06751dec6da04"
         },
         {
           "path": "assets/draco_decoder-Z1_iN-Ht.wasm",
           "bytes": 192420,
-          "mtime": "2026-11-11T10:44:55.273Z",
+          "mtime": "2026-11-11T12:23:40.183Z",
           "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
         },
         {
           "path": "assets/draco_wasm_wrapper-DxJM36Ib.js",
           "bytes": 58763,
-          "mtime": "2026-11-11T10:44:55.274Z",
+          "mtime": "2026-11-11T12:23:40.184Z",
           "sha256": "e8049906ef3f8f75d3456c22a3f31bfdfe5b5b5bd09ccdec613b9e9a49d554d8"
         },
         {
           "path": "assets/draco_wasm_wrapper-fZCQGLGb.js",
           "bytes": 58456,
-          "mtime": "2026-11-11T10:44:55.275Z",
+          "mtime": "2026-11-11T12:23:40.184Z",
           "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
         },
         {
-          "path": "assets/index-BTa6y4V5.js",
-          "bytes": 879440,
-          "mtime": "2026-11-11T10:44:55.271Z",
-          "sha256": "861129708c73458c6e182cc1fcf8a0f73530f6471cd2e0974079298f27cf1b09"
+          "path": "assets/index-DMCPIEQl.js",
+          "bytes": 883730,
+          "mtime": "2026-11-11T12:23:40.182Z",
+          "sha256": "a3e2ee2684c12ce1379212975a9ef818fa4c287c482d057083e1a8505e958d4a"
         },
         {
-          "path": "assets/index-C3BWl4V-.css",
-          "bytes": 13075,
-          "mtime": "2026-11-11T10:44:55.275Z",
-          "sha256": "5cf52c6bdb42379599b7d00a8c994317af9ed18fa1e1777287f9aae4dcc873b7"
+          "path": "assets/index-G6raof-6.css",
+          "bytes": 13548,
+          "mtime": "2026-11-11T12:23:40.185Z",
+          "sha256": "f43f7895421e26b801abe12b9113d935420cc4445505b0782fa4381414dc6098"
         },
         {
           "path": "assets/poster/poster-hlg.jpg",
@@ -1410,9 +1410,9 @@
         },
         {
           "path": "index.html",
-          "bytes": 4227,
-          "mtime": "2026-11-11T10:44:55.276Z",
-          "sha256": "67ab60360d9dee3823bc49b02fd5ba99998b592d60dddd3e4795f3d7f428917b"
+          "bytes": 5951,
+          "mtime": "2026-11-11T12:23:40.185Z",
+          "sha256": "603ca2b3283bd6d4d8cbe0c5d6d80244ca48b39c032fd57ba55b7ed319807412"
         },
         {
           "path": "textures/flowers/daisy-card.png",
@@ -1903,8 +1903,8 @@
     "tests": {
       "note": "验收/冒烟/取证工具链（Node 脚本，CDP 驱动真实 Chrome）",
       "root": "tools",
-      "fileCount": 27,
-      "totalBytes": 138620,
+      "fileCount": 28,
+      "totalBytes": 150315,
       "files": [
         {
           "path": "a11y-audit.mjs",
@@ -1920,9 +1920,9 @@
         },
         {
           "path": "acceptance.mjs",
-          "bytes": 26061,
-          "mtime": "2026-11-11T11:53:32.790Z",
-          "sha256": "4f50c6db5f10c64584c6f27e7e4b43bd4d430e9813d6c2cb6cd3999f7a91a69c"
+          "bytes": 26493,
+          "mtime": "2026-11-11T12:54:17.598Z",
+          "sha256": "eb50e9941396ab5f3342d2e05ba7031b7e688d90e134c2b5e627b78650eb56e9"
         },
         {
           "path": "aholo_lux3d.py",
@@ -2015,6 +2015,12 @@
           "sha256": "aa26663ff72669c594a925a3951741d43a66fb0d558a1aa894acdeee326015d6"
         },
         {
+          "path": "perf-real.mjs",
+          "bytes": 11263,
+          "mtime": "2026-11-11T12:23:32.872Z",
+          "sha256": "5201a9667a1edadee6ac1ee121fc49d333ce280894a1407117d38f6484a24731"
+        },
+        {
           "path": "probe-plot.mjs",
           "bytes": 779,
           "mtime": "2026-11-10T13:51:26.894Z",
@@ -2073,8 +2079,8 @@
     "evidence": {
       "note": "照片对照、卫星比对、签核材料、验收报告与截图证据",
       "root": "reports",
-      "fileCount": 116,
-      "totalBytes": 57938732,
+      "fileCount": 119,
+      "totalBytes": 57946477,
       "files": [
         {
           "path": "aholo-ledger.jsonl",
@@ -2485,15 +2491,15 @@
         },
         {
           "path": "v3/acceptance/report.json",
-          "bytes": 10011,
-          "mtime": "2026-11-11T12:05:27.464Z",
-          "sha256": "bd16a6682f3415d90cb8c2e536ecd39b930a7d7c8c878c86fac48c49daed1e67"
+          "bytes": 10236,
+          "mtime": "2026-11-11T12:57:33.205Z",
+          "sha256": "0cbec7ebfc75c54b630400a381b87b5f7651893f04e2427b83e37036b70c8663"
         },
         {
           "path": "v3/acceptance/REPORT.md",
-          "bytes": 6303,
-          "mtime": "2026-11-11T12:05:27.464Z",
-          "sha256": "cd07f9ed44ff1d13496995aae16f31fde42d6bb0a6dbd878fbf53e18bf710de1"
+          "bytes": 6528,
+          "mtime": "2026-11-11T12:57:33.207Z",
+          "sha256": "b364e4aef6dadcee6c92d97db527db9b3f8ce54bbbe306d112b4c391b746112a"
         },
         {
           "path": "v3/acceptance/w3d-09-season-control.png",
@@ -2520,6 +2526,24 @@
           "sha256": "aac1b5f02ffb1726776709e5afee92da9eb9bb09612c95cab78ad3db1845316d"
         },
         {
+          "path": "v3/perf/perf-real-2026-11-11T1224.json",
+          "bytes": 516,
+          "mtime": "2026-11-11T12:24:29.229Z",
+          "sha256": "3379ba23cdb351f259cf8e20212f66915df869a4f4d4053b3fd3516772e8657d"
+        },
+        {
+          "path": "v3/perf/perf-real-2026-11-11T1250.json",
+          "bytes": 1883,
+          "mtime": "2026-11-11T12:50:33.306Z",
+          "sha256": "e63e4576320321c9ad323c0e3dfb93a2ccf5e700279098054f0831762eba0e6e"
+        },
+        {
+          "path": "v3/perf/PERF-REAL.md",
+          "bytes": 2521,
+          "mtime": "2026-11-11T12:53:23.735Z",
+          "sha256": "6b67d75d43dff72404fe2168ee1956e0ac22e37f095866c1c5e4bf80e0f94dc2"
+        },
+        {
           "path": "v3/README.md",
           "bytes": 3589,
           "mtime": "2026-11-10T12:25:15.502Z",
@@ -2527,15 +2551,15 @@
         },
         {
           "path": "v3/release/manifest.json",
-          "bytes": 106445,
-          "mtime": "2026-11-11T10:46:11.620Z",
-          "sha256": "2c7ce59f559887fb5707a7678d382103f9c6af1dff3725596f15b07c006eab3f"
+          "bytes": 109343,
+          "mtime": "2026-11-11T12:06:44.175Z",
+          "sha256": "02b5619e1ac400a141b317d7e4c4ef1c68ad80e01eccf2056cdfb05f0fb0380b"
         },
         {
           "path": "v3/release/MANIFEST.md",
-          "bytes": 2667,
-          "mtime": "2026-11-11T10:46:11.621Z",
-          "sha256": "fc24f83063a339d27f5ca731837dddd00bdb1162ab66f5d9e3d432ca455cf59d"
+          "bytes": 2289,
+          "mtime": "2026-11-11T12:06:44.175Z",
+          "sha256": "ac3e4eb61695f853a216dc7a9111708b20988287ad5b8b4c213af21007d78ac3"
         },
         {
           "path": "v3/shots/01-poster.png",
@@ -2576,19 +2600,19 @@
         {
           "path": "v3/shots/10-4k-valley.json",
           "bytes": 294,
-          "mtime": "2026-11-11T12:04:47.080Z",
+          "mtime": "2026-11-11T12:56:59.987Z",
           "sha256": "c4131c85bdec958d42465a6a46a6d860e34941b42c3b4c6708c36735adf65aac"
         },
         {
           "path": "v3/shots/10-4k-valley.png",
-          "bytes": 5837567,
-          "mtime": "2026-11-11T12:04:42.497Z"
+          "bytes": 5837434,
+          "mtime": "2026-11-11T12:56:59.330Z"
         },
         {
           "path": "v3/shots/11-mobile-valley.png",
-          "bytes": 566304,
-          "mtime": "2026-11-11T12:05:27.424Z",
-          "sha256": "1ff34edd0bf7436d655750f90537e0c4971bb416400470178bb1b5316a25bea4"
+          "bytes": 566292,
+          "mtime": "2026-11-11T12:57:33.202Z",
+          "sha256": "db6f8686ede56a51bfb896900943df885b45623391a42b510716fdfef80d2fd1"
         },
         {
           "path": "v3/shots/plot-camB.png",
@@ -2799,10 +2823,6 @@
       "note": "冰退迹地路线关系需目视签核"
     },
     {
-      "id": "PERF-07",
-      "note": "进入三维 4397 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
-    },
-    {
       "id": "LOAD-03",
       "note": "换层时长需在目标硬件上测；本机软光栅下不具代表性（点击瞬间 phase=loading-next-level）"
     },
@@ -2815,20 +2835,8 @@
       "note": "后台/锁屏暂停已接 visibilitychange，CDP 无法模拟真实锁屏"
     },
     {
-      "id": "PERF-01",
-      "note": "软光栅渲染，帧率不可作为证据"
-    },
-    {
       "id": "PERF-02",
       "note": "无中端真机"
-    },
-    {
-      "id": "PERF-03",
-      "note": "视图切换/内存增长需真实 GPU 与长时间采样"
-    },
-    {
-      "id": "PERF-04",
-      "note": "20 分钟长跑需真实 GPU"
     },
     {
       "id": "PERF-10",

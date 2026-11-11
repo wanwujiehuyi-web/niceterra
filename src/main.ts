@@ -17,6 +17,7 @@ import { Shell } from './ui/shell';
 import { loadTierFor, tierKey, takeFromCache, putInCache, cacheSize, clearTierCache } from './app/tiers';
 import { findMolecularObject } from './micro/molecular';
 import { LAYER_PRESETS, type FarviewTier } from './world/farview';
+import { installPerfSampler, type NtPerf } from './core/perf';
 
 type LoadPhase =
   | 'idle'
@@ -62,6 +63,9 @@ function setPhase(next: LoadPhase): void {
   phase = next;
   app!.dataset.phase = next;
 }
+
+// PERF 真机采样：仅 ?perf=1 启用，默认零开销（src/core/perf.ts）
+installPerfSampler();
 
 /* ------------------------------------------------------------------ boot */
 
@@ -573,6 +577,7 @@ declare global {
     __ntHypothesis?: { snowLineDeltaM: number; materialsTouched: number };
     __ntPreload?: { id: string; state: string; cacheSize: number };
     __ntTour?: string;
+    __ntPerf?: NtPerf;
   }
 }
 

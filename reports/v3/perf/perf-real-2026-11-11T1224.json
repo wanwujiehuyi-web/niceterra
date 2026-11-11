@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-11-11T12:24:04.338Z",
+  "base": "http://127.0.0.1:5390",
+  "quick": true,
+  "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Laptop GPU (0x00002D18) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "gpuReal": true,
+  "display": {
+    "w": 1710,
+    "h": 986,
+    "dpr": 1.5,
+    "screen": [
+      1707,
+      1067
+    ]
+  },
+  "perf07_enterMs": 3926,
+  "perf01_valley": {
+    "n": 16,
+    "min": 40.2,
+    "p5": 40.2,
+    "median": 180,
+    "mean": 171.27
+  },
+  "consoleErrors": [],
+  "verdict": "DONE"
+}
