@@ -125,7 +125,7 @@ add('LOAD-02', P.stages.length === 6 && !P.percentText ? 'PASS' : 'FAIL', '阶�
 // enter the world
 const t0 = Date.now();
 await b.click('#btn-enter');
-await b.waitFor(waitTier('valley'), 90000);
+await b.waitFor(waitTier('valley'), 600000);
 const enterMs = Date.now() - t0;
 add('PERF-07', 'NOT_RUN', '进入三维 ' + enterMs + ' ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）');
 
@@ -154,11 +154,11 @@ add('A11Y-07', /rgba\(\s*\d+,\s*\d+,\s*\d+,\s*1\)/.test(panelBg) || /rgb\(/.test
 
 // UX-02: three actions to the wet rock
 await b.click('[data-site="SITE-HLG-STREAM-01"]');
-await b.waitFor(waitTier('site-stream'), 120000);
+await b.waitFor(waitTier('site-stream'), 600000);
 await b.click('[data-route="HLG-STREAM-BIOFILM-01"]');
 await new Promise((r) => setTimeout(r, 400));
 await b.click('[data-level="wet-rock"]');
-await b.waitFor(waitTier('micro-A'), 90000);
+await b.waitFor(waitTier('micro-A'), 600000);
 const url1 = await b.eval('location.search');
 add('UX-02', /level=wet-rock/.test(url1) ? 'PASS' : 'FAIL', '样区→路线→层 三步可达，URL = ' + url1);
 
@@ -177,7 +177,7 @@ add('A11Y-08', /L[1-5]|UNKNOWN/.test(chip) ? 'PASS' : 'FAIL', '选中湿溪石�
 
 // UX-04: synchronised URL / title / evidence at depth 5
 await b.goto(BASE + '/?autostart=1&route=HLG-STREAM-BIOFILM-01&level=valve-detail');
-await b.waitFor(waitTier('micro-A'), 90000);
+await b.waitFor(waitTier('micro-A'), 600000);
 const ux4 = JSON.parse(await b.eval(`(() => {
   const panel = document.querySelector('#right .panel');
   return JSON.stringify({
@@ -191,7 +191,7 @@ add('UX-04', /level=valve-detail/.test(ux4.search) && /壳面局部/.test(ux4.ti
 
 // UX-05: reload keeps depth
 await b.goto(BASE + '/?autostart=1&route=HLG-STREAM-BIOFILM-01&level=valve-detail');
-await b.waitFor(waitTier('micro-A'), 90000);
+await b.waitFor(waitTier('micro-A'), 600000);
 const ux5 = await b.eval("document.querySelector('#right .panel h2').textContent");
 add('UX-05', /壳面局部/.test(ux5) ? 'PASS' : 'FAIL', '刷新后回到 ' + ux5);
 
@@ -206,7 +206,7 @@ add('UX-07', /valve-detail|wet-rock/.test(backUrl + fwdUrl) ? 'PASS' : 'FAIL', '
 
 // UX-09: double click must not build twice
 await b.goto(BASE + '/?autostart=1');
-await b.waitFor(waitTier('valley'), 90000);
+await b.waitFor(waitTier('valley'), 600000);
 const before = await b.eval('window.__ntBuilds || 0');
 await b.eval("(() => { const el = document.getElementById('btn-next'); el.click(); el.click(); el.click(); return true; })()");
 await new Promise((r) => setTimeout(r, 2500));
@@ -215,9 +215,9 @@ add('UX-09', after - before <= 1 ? 'PASS' : 'FAIL', '连点 3 次，构建次数
 
 // UX-08: exit restores the valley tier and the default camera pose
 await b.goto(BASE + '/?autostart=1&route=HLG-STREAM-BIOFILM-01&level=valve-detail');
-await b.waitFor(waitTier('micro-A'), 90000);
+await b.waitFor(waitTier('micro-A'), 600000);
 await b.eval("(() => { const el = document.getElementById('btn-exit'); el.click(); return true; })()");
-await b.waitFor(waitTier('valley'), 90000);
+await b.waitFor(waitTier('valley'), 600000);
 const ux8 = JSON.parse(await b.eval("(() => JSON.stringify({ tier: window.__nt.stats().tier, exitDisabled: document.getElementById('btn-exit').disabled, label: document.getElementById('bottom-status').textContent }))()"));
 add('UX-08', ux8.tier === 'valley' && ux8.exitDisabled ? 'PASS' : 'FAIL', '退出后 tier=' + ux8.tier + '，退到谷地按钮禁用=' + ux8.exitDisabled + '，状态 ' + ux8.label);
 
@@ -260,7 +260,7 @@ add('LOAD-06', staticOk.cards >= 4 && staticOk.retry ? 'PASS' : 'FAIL', '静态�
 
 // LOAD-08: context lost
 await b.goto(BASE + '/?autostart=1');
-await b.waitFor(waitTier('valley'), 90000);
+await b.waitFor(waitTier('valley'), 600000);
 const lost = await b.eval(`(() => {
   const gl = document.querySelector('#scene canvas').getContext('webgl2');
   const ext = gl && gl.getExtension('WEBGL_lose_context');
@@ -275,7 +275,7 @@ add('LOAD-08', lost === 'lost' && phase8 === 'context-lost' ? 'PASS' : 'FAIL', '
 // A11Y-09 reduced motion
 await b.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
 await b.goto(BASE + '/?autostart=1&quality=high');
-await b.waitFor(waitTier('valley'), 90000);
+await b.waitFor(waitTier('valley'), 600000);
 const rm = await b.eval("(() => ({ swapping: document.getElementById('scene').classList.contains('swapping'), anim: getComputedStyle(document.querySelector('#scene canvas')).animationName }))()");
 add('A11Y-09', rm.anim === 'none' ? 'PASS' : 'FAIL', '减少动态效果时换层动画 = ' + rm.anim);
 
@@ -309,7 +309,7 @@ add('PERF-05', existsSync(shot4k) ? 'PASS' : 'FAIL', '3840x2160 截图 + 元数�
 
 // SCI-10: hypothesis mode must produce an L5 copy without touching the baseline
 await b.goto(BASE + '/?autostart=1&route=HLG-STREAM-BIOFILM-01&level=wet-rock&mode=hypothesis');
-await b.waitFor(waitTier('micro-A'), 90000);
+await b.waitFor(waitTier('micro-A'), 600000);
 await b.waitFor("!!document.querySelector('#hyp-snow')", 20000);
 const hyp = JSON.parse(await b.eval(`(() => {
   const el = document.querySelector('#hyp-snow');
@@ -322,16 +322,23 @@ add('SCI-10', hyp.chip && hyp.hyp && baseline === 25 ? 'PASS' : 'FAIL',
   'L5 卡片=' + hyp.chip + '，改动材质 ' + (hyp.hyp ? hyp.hyp.materialsTouched : 0) + ' 个，claims 基线仍 ' + baseline + ' 条（未改写）');
 
 // LOAD-10: adjacent level prefetched into a bounded cache
-const pre = await b.eval("JSON.stringify(window.__ntPreload || null)");
-const preObj = pre ? JSON.parse(pre) : null;
-add('LOAD-10', preObj && preObj.state === 'prefetched' && preObj.cacheSize <= 2 ? 'PASS' : 'FAIL',
+// 预载在到层 1.4s 后启动，软渲染下构建可达分钟级 → 轮询等待而非单次采样
+let pre = '';
+let preObj = null;
+for (let i = 0; i < 150; i++) {
+  pre = await b.eval("JSON.stringify(window.__ntPreload || null)");
+  preObj = pre ? JSON.parse(pre) : null;
+  if (preObj && preObj.state === 'prefetched') break;
+  await new Promise((r) => setTimeout(r, 2000));
+}
+add('LOAD-10', preObj && preObj.state === 'prefetched' && (preObj.cacheSize ?? 9) <= 2 ? 'PASS' : 'FAIL',
   '预载状态 ' + pre + '（缓存上限 2）');
 
 // UX-06: a share link opens the same place in a fresh profile
 const share = BASE + '/?site=SITE-HLG-STREAM-01&route=HLG-STREAM-BIOFILM-01&level=diatom-frustule&tab=evidence';
 const fresh = await launch({ width: 1440, height: 1000 });
 await fresh.goto(share + '&autostart=1');
-await fresh.waitFor(waitTier('micro-A'), 90000);
+await fresh.waitFor(waitTier('micro-A'), 600000);
 const ux6 = JSON.parse(await fresh.eval("(() => JSON.stringify({ title: document.querySelector('#scene-meta .title').textContent, tab: document.querySelector('#right [aria-selected=true]').textContent, search: location.search }))()"));
 await fresh.close();
 add('UX-06', /完整硅藻壳/.test(ux6.title) && /level=diatom-frustule/.test(ux6.search) ? 'PASS' : 'FAIL', '新会话分享链接恢复到「' + ux6.title + '」，页签 ' + ux6.tab + '，URL 保留 level=diatom-frustule');
@@ -341,7 +348,7 @@ await b.close();
 // mobile pass
 const m = await launch({ width: 390, height: 844, dpr: 3, mobile: true });
 await m.goto(BASE + '/?autostart=1');
-await m.waitFor(waitTier('valley'), 90000);
+await m.waitFor(waitTier('valley'), 600000);
 const mob = JSON.parse(await m.eval("(() => { const ids = ['btn-prev','btn-next','btn-exit','toggle-sites','toggle-panel']; const out = []; for (const id of ids) { const el = document.getElementById(id); if (!el) { out.push([id, 0, 0, false]); continue; } const r = el.getBoundingClientRect(); out.push([id, Math.round(r.width), Math.round(r.height), r.top >= 0 && r.bottom <= innerHeight]); } return JSON.stringify(out); })()"));
 const mobOk = mob.every((c) => c[3] && c[1] >= 44 && c[2] >= 44);
 add('A11Y-04b', mobOk ? 'PASS' : 'FAIL', '390x844: ' + JSON.stringify(mob));

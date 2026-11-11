@@ -2,3 +2,4 @@
 {"op": "create", "prompt": "一株峨眉冷杉，高山针叶常绿乔木，深绿色扁平针叶，塔形树冠层叠下垂枝条，灰褐色树皮，写实风格，海螺沟海拔3000米原始森林，孤立单株，透明背景", "style": "photorealistic", "version": "G1", "faceCount": 300000, "outputFormat": ["zip", "glb"], "resp_c": "0", "taskId": 6028344, "msg": "", "ts": "2026-11-10 23:28:22"}
 {"op": "create-image", "prompt": "无缝平铺纹理贴图，俯视正交视角：冰川粒雪表面，细腻雪粒与浅蓝色压密冰交替，含细微", "taskId": 6031285, "ts": "2026-11-10 23:38:12"}
 {"op": "create", "prompt": "一座冰川冰瀑上的冰塔冰柱，淡蓝色压密冰川冰，锋利断裂棱角与裂隙，表面有风蚀沟槽和少量白色积雪，写实风格，海螺沟大冰瀑，孤立单体，透明背景", "style": "photorealistic", "version": "G1", "faceCount": 300000, "outputFormat": ["zip", "glb"], "resp_c": "0", "taskId": 6033748, "msg": "", "ts": "2026-11-10 23:49:19"}
+{"op": "create", "prompt": "一面巨大的花岗岩冰川磨光岩壁，深灰色片麻岩带冰川擦痕与垂直水流锈蚀条纹，岩缝中有少量高山杜鹃与苔藓，写实风格，贡嘎山海螺沟谷壁，孤立单体垂直岩壁模块，透明背景", "style": "photorealistic", "version": "G1", "faceCount": 300000, "outputFormat": ["zip", "glb"], "resp_c": "0", "taskId": 6035905, "msg": "", "ts": "2026-11-11 00:00:42"}

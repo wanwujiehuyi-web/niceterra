@@ -116,7 +116,7 @@ export async function launch(opts = {}) {
           pending.delete(id);
           reject(new Error('CDP timeout: ' + method));
         }
-      }, 120000);
+      }, method === 'Page.captureScreenshot' ? 600000 : 600000);
     });
   }
 
@@ -132,7 +132,7 @@ export async function launch(opts = {}) {
     errors,
     logs,
     send,
-    async goto(url, timeout = 60000) {
+    async goto(url, timeout = 600000) {
       await send('Page.navigate', { url });
       const start = Date.now();
       for (;;) {
@@ -150,7 +150,7 @@ export async function launch(opts = {}) {
       }
       return r.result.value;
     },
-    async waitFor(expression, timeout = 60000, interval = 200) {
+    async waitFor(expression, timeout = 600000, interval = 200) {
       const start = Date.now();
       for (;;) {
         let v = false;

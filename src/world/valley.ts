@@ -522,7 +522,8 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
       opts.onProgress?.(i, heroUrls.length + 1, '载入近景针叶树');
       const gltf = await loadGLB(heroUrls[i]);
       const src = gltf.scene;
-      const n = Math.ceil(heroSlots / heroUrls.length);
+      // Aholo 冷杉 134k 面，只放 1 株 hero；v2 库树轻量，分担其余机位
+      const n = heroUrls[i].includes('aholo') ? 1 : Math.ceil(heroSlots / (heroUrls.length - 1));
       for (let k = 0; k < n; k++) {
         const inst = src.clone(true);
         const s = -300 + hash1(i * 31 + k * 17) * 520;
@@ -602,6 +603,34 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
   } catch (err) {
     stats.assetsFailed++;
     log('aholo serac 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
+  }
+
+  // Aholo Lux3D 岩壁模块（taskId 6035905，AI 生成视觉资产）：嵌在林线以上的
+  // 陡坡 ROCK 面上，给谷壁冰川磨光岩壁的露头结构。
+  try {
+    const gltf = await loadGLB('/assets/aholo/cliff-01-web.glb');
+    const src = gltf.scene;
+    const nCliff = low ? 3 : 9;
+    for (let k = 0; k < nCliff; k++) {
+      const inst = src.clone(true);
+      const s = -200 + hash1(k * 47.3) * 1400;
+      const sign = hash1(k * 19.7) > 0.5 ? 1 : -1;
+      const half = valleyHalf(s);
+      const uRaw = centerX(s) + sign * (half + 140 + hash1(k * 23.9) * 320);
+      if (Math.abs(uRaw) > U_HALF - 40) continue;
+      const surf = surfaceAt(s, uRaw, 1);
+      if (surf.cls !== enumClass.ROCK || surf.y < 3650) continue; // 只放林线以上裸岩
+      fitObject(inst, { targetLongest: 45 + hash1(k * 31.1) * 45, groundY: surf.y - 6, yaw: (sign > 0 ? Math.PI : 0) + (hash1(k * 3.7) - 0.5) * 0.6 });
+      inst.position.x = uRaw;
+      inst.position.z = -s;
+      group.add(inst);
+      heroTrees.push(inst);
+    }
+    stats.assetsLoaded++;
+    log('aholo cliff x' + nCliff);
+  } catch (err) {
+    stats.assetsFailed++;
+    log('aholo cliff 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
   }
 
   /* ---- 5. 机位与锚点 ---- */
