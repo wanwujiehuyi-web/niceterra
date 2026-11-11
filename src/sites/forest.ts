@@ -795,6 +795,28 @@ async function buildCore(opts: { lowQuality: boolean; heightAt: HeightFn; onProg
     }
   }
 
+  // Aholo Lux3D 苔藓倒木（taskId 6381289，AI 生成视觉资产，非实测样本）：
+  // hero 倒木一株，补充程序化圆柱倒木的材质真实感
+  try {
+    const glb = await instantiateAsset(ASSETS.mossyLogAholo, {
+      targetLongest: 7.5,
+      groundY: 0,
+      yaw: 1.9,
+      castShadow: false,
+      receiveShadow: true
+    });
+    const wrapper = new THREE.Group();
+    wrapper.position.set(-22, heightAt(-22, 8) - 0.1, 8);
+    wrapper.add(glb.object);
+    wrapper.name = 'hero-aholo-mossy-log';
+    group.add(wrapper);
+    stats.assetsLoaded++;
+    stats.log.push('OK aholo mossy-fallen-log tris=' + glb.triangles);
+  } catch (err) {
+    stats.assetsFailed++;
+    stats.log.push('FAIL aholo mossy-fallen-log ' + String((err as Error).message).slice(0, 80));
+  }
+
   // snags: three forms — tall broken, short stub, leaning
   interface SnagPlan {
     x: number;

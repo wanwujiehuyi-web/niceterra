@@ -2,7 +2,7 @@ import { launch } from './cdp.mjs';
 const [url, out, tier] = process.argv.slice(2);
 const b = await launch({ width: 1440, height: 1000 });
 await b.goto(url);
-await b.waitFor("(() => { try { const s = window.__nt.stats(); return s.tier === " + JSON.stringify(tier || 'valley') + " && s.triangles > 0; } catch { return false; } })()", 120000);
+await b.waitFor("(() => { try { const s = window.__nt.stats(); return s.tier === " + JSON.stringify(tier || 'valley') + " && s.triangles > 0; } catch { return false; } })()", 600000);
 await new Promise(r => setTimeout(r, 1500));
 await b.shot(out);
 console.log('stats', await b.eval("JSON.stringify(window.__nt.stats())"));

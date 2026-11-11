@@ -17,6 +17,8 @@ export const ASSETS = {
   boulder: ASSET_ROOT + 'r10/r10-wet-mossy-boulder.glb',
   fallenLog: ASSET_ROOT + 'r10/r10-mossy-fallen-log.glb',
   biofilmRock: ASSET_ROOT + 'web/r7-biofilm-rock.glb',
+  wetRockAholo: '/assets/aholo/stream-wetrock-01-web.glb',
+  mossyLogAholo: '/assets/aholo/mossy-fallen-log-01-web.glb',
   underwaterStone: ASSET_ROOT + 'web/underwater-stone-v9.glb',
   mossMat: ASSET_ROOT + 'web/r7-moss-mat.glb',
   firSapling: ASSET_ROOT + 'r10/r10-fir-sapling.glb'

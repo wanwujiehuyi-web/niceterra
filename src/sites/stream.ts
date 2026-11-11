@@ -649,6 +649,33 @@ async function buildCore(opts: {
   stones.name = 'stream-stones';
   group.add(stones);
 
+  // Aholo Lux3D 溪流湿石（taskId 6380597，AI 生成视觉资产，非实测样本）：
+  // 半浸 hero 湿石沿溪散布，补充程序化石块的材质真实感
+  try {
+    const nWet = low ? 2 : 4;
+    for (let k = 0; k < nWet; k++) {
+      const st = stations[rng.int(3, rows - 4)];
+      const u = rng.range(-0.5, 0.5);
+      const px = st.x + st.nx * u * st.halfWidth;
+      const pz = st.z + st.nz * u * st.halfWidth;
+      const glb = await instantiateAsset(ASSETS.wetRockAholo, {
+        targetLongest: rng.range(0.5, 1.1),
+        groundY: st.waterY - rng.range(0.08, 0.2),
+        yaw: rng.range(0, 6.28),
+        castShadow: false,
+        receiveShadow: true
+      });
+      glb.object.position.x = px;
+      glb.object.position.z = pz;
+      group.add(glb.object);
+    }
+    stats.assetsLoaded++;
+    stats.log.push('OK aholo stream-wetrock x' + nWet);
+  } catch (err) {
+    stats.assetsFailed++;
+    stats.log.push('FAIL aholo stream-wetrock ' + String((err as Error).message).slice(0, 80));
+  }
+
   progress(3, 6, '湿石母体 ROCK-HLG-01');
 
   // ---------------------------------------------------------------- ROCK-HLG-01 (flagship parent)
