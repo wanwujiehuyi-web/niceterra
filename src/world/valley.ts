@@ -120,8 +120,8 @@ const CLASS_COLOR: Record<number, THREE.Color> = {
   [enumClass.FOREST]: new THREE.Color(0x3d5534),
   [enumClass.FIRN]: new THREE.Color(0xf2f7fc),
   [enumClass.ICEFALL]: new THREE.Color(0xd8eaf6),
-  [enumClass.DEBRIS]: new THREE.Color(0x5a5348),
-  [enumClass.MORAINE]: new THREE.Color(0x6e6759),
+  [enumClass.DEBRIS]: new THREE.Color(0x4a443b),
+  [enumClass.MORAINE]: new THREE.Color(0x5c574c),
   [enumClass.GRAVEL]: new THREE.Color(0x7d786c),
   [enumClass.CREVASSE]: new THREE.Color(0x5f84a0),
 };
@@ -605,33 +605,9 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     log('aholo serac 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
   }
 
-  // Aholo Lux3D 岩壁模块（taskId 6035905，AI 生成视觉资产）：嵌在林线以上的
-  // 陡坡 ROCK 面上，给谷壁冰川磨光岩壁的露头结构。
-  try {
-    const gltf = await loadGLB('/assets/aholo/cliff-01-web.glb');
-    const src = gltf.scene;
-    const nCliff = low ? 3 : 9;
-    for (let k = 0; k < nCliff; k++) {
-      const inst = src.clone(true);
-      const s = -200 + hash1(k * 47.3) * 1400;
-      const sign = hash1(k * 19.7) > 0.5 ? 1 : -1;
-      const half = valleyHalf(s);
-      const uRaw = centerX(s) + sign * (half + 140 + hash1(k * 23.9) * 320);
-      if (Math.abs(uRaw) > U_HALF - 40) continue;
-      const surf = surfaceAt(s, uRaw, 1);
-      if (surf.cls !== enumClass.ROCK || surf.y < 3650) continue; // 只放林线以上裸岩
-      fitObject(inst, { targetLongest: 45 + hash1(k * 31.1) * 45, groundY: surf.y - 6, yaw: (sign > 0 ? Math.PI : 0) + (hash1(k * 3.7) - 0.5) * 0.6 });
-      inst.position.x = uRaw;
-      inst.position.z = -s;
-      group.add(inst);
-      heroTrees.push(inst);
-    }
-    stats.assetsLoaded++;
-    log('aholo cliff x' + nCliff);
-  } catch (err) {
-    stats.assetsFailed++;
-    log('aholo cliff 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
-  }
+  // Aholo Lux3D 岩壁模块（taskId 6035905）：俯视取证发现 AI 生成件是平板状，
+  // 放在坡上读作平铺板块，视觉不合格——从谷地撤下，母版保留在 assets-src 供
+  // 未来近景层试用。2026-11-11 W3D-01 取证记录。
 
   /* ---- 5. 机位与锚点 ---- */
   const poses: Record<string, TierCameraPose> = {
@@ -651,6 +627,12 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
       // 冰瀑特写：裂隙与冰崖结构
       position: [centerX(380) - 320, 3520, -380],
       target: [centerX(720), 3980, -720],
+    },
+    T: {
+      // 垂直俯视：与卫星影像做形态学比对（W3D-01 取证机位）。
+      // target 沿谷轴下移 1000 m：视线 71° 俯角，roll 稳定，谷轴竖直。
+      position: [centerX(250), 5900, -250],
+      target: [centerX(250), 3000, -1250],
     },
   };
 

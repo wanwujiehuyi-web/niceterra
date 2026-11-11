@@ -1,0 +1,14 @@
+import { launch } from './cdp.mjs';
+const [url, out, tier, pose] = process.argv.slice(2);
+const b = await launch({ width: 1440, height: 1000 });
+await b.goto(url);
+await b.waitFor("(() => { try { const s = window.__nt.stats(); return s.tier === " + JSON.stringify(tier || 'valley') + " && s.triangles > 0; } catch { return false; } })()", 600000);
+if (pose) {
+  await b.eval("window.__nt.setPose(" + JSON.stringify(pose) + ")");
+  await new Promise(r => setTimeout(r, 12000));
+}
+await new Promise(r => setTimeout(r, 1500));
+await b.shot(out);
+console.log('stats', await b.eval("JSON.stringify(window.__nt.stats())"));
+console.log('errors', JSON.stringify(b.errors.slice(0,3)));
+await b.close();
