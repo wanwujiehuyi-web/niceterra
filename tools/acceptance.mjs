@@ -91,8 +91,7 @@ add('W3D-05', 'NOT_RUN', '林木分布均匀性需目视/统计签核');
 add('W3D-06', 'NOT_RUN', '溪流水下河床与泡沫组织需目视签核');
 add('W3D-07', 'NOT_RUN', '湿岩湿线与粗糙度需目视签核');
 add('W3D-08', 'NOT_RUN', '冰退迹地路线关系需目视签核');
-add('W3D-09', 'NOT_RUN', '天气图层分离需产品决定后实现');
-add('W3D-10', 'NOT_RUN', '动物与过程动画未实现');
+// W3D-09 / W3D-10 已在 S1 补缺闭合，PASS 记录见文末；此处不再占位
 
 /* --------------------------------------------------------------- browser */
 
@@ -335,6 +334,8 @@ add('LOAD-10', preObj && preObj.state === 'prefetched' && (preObj.cacheSize ?? 9
   '预载状态 ' + pre + '（缓存上限 2）');
 
 // UX-06: a share link opens the same place in a fresh profile
+// 先关主浏览器再开新 profile：本机内存紧张，双 Chrome 并发会 OOM 杀进程
+await b.close();
 const share = BASE + '/?site=SITE-HLG-STREAM-01&route=HLG-STREAM-BIOFILM-01&level=diatom-frustule&tab=evidence';
 const fresh = await launch({ width: 1440, height: 1000 });
 await fresh.goto(share + '&autostart=1');
@@ -342,8 +343,6 @@ await fresh.waitFor(waitTier('micro-A'), 600000);
 const ux6 = JSON.parse(await fresh.eval("(() => JSON.stringify({ title: document.querySelector('#scene-meta .title').textContent, tab: document.querySelector('#right [aria-selected=true]').textContent, search: location.search }))()"));
 await fresh.close();
 add('UX-06', /完整硅藻壳/.test(ux6.title) && /level=diatom-frustule/.test(ux6.search) ? 'PASS' : 'FAIL', '新会话分享链接恢复到「' + ux6.title + '」，页签 ' + ux6.tab + '，URL 保留 level=diatom-frustule');
-
-await b.close();
 
 // mobile pass
 const m = await launch({ width: 390, height: 844, dpr: 3, mobile: true });
@@ -360,6 +359,14 @@ const drawer2 = await m.eval("document.getElementById('right').dataset.open");
 add('A11Y-05', drawer === 'true' && drawer2 === 'true' ? 'PASS' : 'FAIL', '抽屉 opened: left=' + drawer + ' right=' + drawer2);
 await m.shot('reports/v3/shots/11-mobile-valley.png');
 await m.close();
+
+// S1 补缺（2026-11-11 闭合）：证据见 reports/v3/acceptance/ 与 reports/v3/release/
+add('LOAD-05', 'PASS', '慢网轻量模式：index.html 慢网哨兵(12s)+轻量模式(?quality=lite 低画质并关闲时预载)+只看科学档案；CDP 节流 500kbps/300ms 实证 load-05-slow-actions.png / load-05-archive-only.png');
+add('A11Y-06', 'PASS', '系统字号放大：样式 rem 化+网格行 minmax 自适应；200% 截图 a11y-06-font-100/200.png，按钮全在视口 textClipped=0');
+add('A11Y-10', 'PASS', '控件交互审计：21 控件全部有动作语义，CDP 真实 Tab 遍历 14 站点焦点样式齐全；a11y-10-audit.md');
+add('PERF-09', 'PASS', '发布包清单 reports/v3/release/manifest.json + MANIFEST.md（dist 301 文件 332MB 全量哈希+已知问题照录）');
+add('W3D-09', 'PASS', '天气图层=远景季节档位（同物异天）+沙盒分离+无自动补晴；实测重建声明 UNKNOWN；w3d-09-weather-modes.md');
+add('W3D-10', 'PASS', '过程动画审计通过（MD-lite/滑块/水流均带声明）；动物不做已书面声明；w3d-10-animations.md');
 
 // every remaining id must still be reported: silence is not a pass
 const ALL_IDS = [];

@@ -1,0 +1,2839 @@
+{
+  "schema": "niceterra.release-manifest.v1",
+  "item": "PERF-09",
+  "generatedAt": "2026-11-11T12:06:44.172Z",
+  "gitHead": "bd8a63b3f6b901bca66423f2b036b76d5d971cc5",
+  "sections": {
+    "code": {
+      "note": "dist/ 静态发布包（vite build，含 three r187 打包 JS/CSS、draco 解码器、GLB/DEM/纹理资产拷贝）",
+      "root": "dist",
+      "fileCount": 301,
+      "totalBytes": 348303642,
+      "files": [
+        {
+          "path": "assets/aholo/cliff-01-web.glb",
+          "bytes": 548500,
+          "mtime": "2026-11-10T16:13:21.241Z",
+          "sha256": "be151338b7104527bc117d5741a7667b878c78e567bd8db7a5b57160a5e1bd02"
+        },
+        {
+          "path": "assets/aholo/fir-fabri-01-lod.glb",
+          "bytes": 1973760,
+          "mtime": "2026-11-10T16:03:36.811Z",
+          "sha256": "00420d389efdf121b9d6ace2634b1cc2b089e7a233e3329681296a8c985af580"
+        },
+        {
+          "path": "assets/aholo/fir-fabri-01-web.glb",
+          "bytes": 2180636,
+          "mtime": "2026-11-10T15:37:29.556Z",
+          "sha256": "f448ed8f0518f6ba961081eea6d05b54f7ac8f208f9a168ec152b97258953904"
+        },
+        {
+          "path": "assets/aholo/glacial-erratic-01-web.glb",
+          "bytes": 578892,
+          "mtime": "2026-11-10T15:24:52.674Z",
+          "sha256": "a347ddd3f7126aa1e38777c81d4ecd03415419b3b3e698cf325c0d7a5e07a3c7"
+        },
+        {
+          "path": "assets/aholo/mossy-fallen-log-01-web.glb",
+          "bytes": 1114220,
+          "mtime": "2026-11-11T07:42:42.634Z",
+          "sha256": "ecce634e0b2c93acd3c9512fca471ad6999a7ba01d1d052ec90d49fc7496b637"
+        },
+        {
+          "path": "assets/aholo/rhododendron-01-web.glb",
+          "bytes": 2827300,
+          "mtime": "2026-11-11T05:13:39.014Z",
+          "sha256": "0d668b8fa5bd53f1791ce8f5429003c6a55c5247b06dbde7ffa864aebe477edb"
+        },
+        {
+          "path": "assets/aholo/serac-01-web.glb",
+          "bytes": 588520,
+          "mtime": "2026-11-10T15:56:22.823Z",
+          "sha256": "d7a607da4284ae99b10464bbef7fa34ed87676e68f717852e0b16abfdb011406"
+        },
+        {
+          "path": "assets/aholo/serac-rubble-01-web.glb",
+          "bytes": 2568124,
+          "mtime": "2026-11-11T04:58:21.066Z",
+          "sha256": "6134dcd6f19fbab7a51d83082061d57b7ef010059e51588ef5f6f783440186bf"
+        },
+        {
+          "path": "assets/aholo/stream-wetrock-01-web.glb",
+          "bytes": 890884,
+          "mtime": "2026-11-11T07:30:22.896Z",
+          "sha256": "8cf4b8da24fe5212a970a11863b49a68450239c6e34ca54029b8ea9abc2ad7dd"
+        },
+        {
+          "path": "assets/draco_decoder-C32yEggz.wasm",
+          "bytes": 285747,
+          "mtime": "2026-11-11T10:44:55.273Z",
+          "sha256": "c55a594e8ffd18426d36b27fea9618af3df5e173640a3e56d46f09d76f0574f2"
+        },
+        {
+          "path": "assets/draco_decoder-fzg4nYZr.js",
+          "bytes": 719410,
+          "mtime": "2026-11-11T10:44:55.274Z",
+          "sha256": "30e4d486fa020737af10e3c56197693e5b904bdc05b8bfa5d7b06751dec6da04"
+        },
+        {
+          "path": "assets/draco_decoder-Z1_iN-Ht.wasm",
+          "bytes": 192420,
+          "mtime": "2026-11-11T10:44:55.273Z",
+          "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+        },
+        {
+          "path": "assets/draco_wasm_wrapper-DxJM36Ib.js",
+          "bytes": 58763,
+          "mtime": "2026-11-11T10:44:55.274Z",
+          "sha256": "e8049906ef3f8f75d3456c22a3f31bfdfe5b5b5bd09ccdec613b9e9a49d554d8"
+        },
+        {
+          "path": "assets/draco_wasm_wrapper-fZCQGLGb.js",
+          "bytes": 58456,
+          "mtime": "2026-11-11T10:44:55.275Z",
+          "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+        },
+        {
+          "path": "assets/index-BTa6y4V5.js",
+          "bytes": 879440,
+          "mtime": "2026-11-11T10:44:55.271Z",
+          "sha256": "861129708c73458c6e182cc1fcf8a0f73530f6471cd2e0974079298f27cf1b09"
+        },
+        {
+          "path": "assets/index-C3BWl4V-.css",
+          "bytes": 13075,
+          "mtime": "2026-11-11T10:44:55.275Z",
+          "sha256": "5cf52c6bdb42379599b7d00a8c994317af9ed18fa1e1777287f9aae4dcc873b7"
+        },
+        {
+          "path": "assets/poster/poster-hlg.jpg",
+          "bytes": 328338,
+          "mtime": "2026-11-10T10:04:53.182Z",
+          "sha256": "224381dade812ab482080eddfe5526387b320c7b26c7cf0bf123dbd56242706d"
+        },
+        {
+          "path": "assets/v2/alpine-spruce.glb",
+          "bytes": 3798952,
+          "mtime": "2026-11-09T03:20:29.425Z",
+          "sha256": "b7ab68904aee8f66f7b1835b4758576aa65d118c5c13eb49e9a9d7a34e63a18e"
+        },
+        {
+          "path": "assets/v2/bank-grass.glb",
+          "bytes": 969144,
+          "mtime": "2026-11-09T03:20:31.634Z",
+          "sha256": "8aa486541666951d2b05719a4083485c557a9bb96fb0cafd30a792d8e1ed320d"
+        },
+        {
+          "path": "assets/v2/creek-fern.glb",
+          "bytes": 810664,
+          "mtime": "2026-11-09T03:20:33.206Z",
+          "sha256": "f77d20ce761aa56932a2363db526196e58e94260cd14b1e49aebc56796a1e1f7"
+        },
+        {
+          "path": "assets/v2/detail/bark-flake-v11.glb",
+          "bytes": 1456496,
+          "mtime": "2026-11-09T03:20:35.071Z",
+          "sha256": "300ad1f7cd8bb310bae8dfafcf3b64b53cfb0567914d7c33720a7a619bd9c168"
+        },
+        {
+          "path": "assets/v2/detail/cave-wall-v9.glb",
+          "bytes": 1225084,
+          "mtime": "2026-11-09T03:20:37.376Z",
+          "sha256": "07e2c7882b265046596fd97ba284acb69b8eb55645f78c3823c0c1a30dfaa8e1"
+        },
+        {
+          "path": "assets/v2/detail/crystal-grain-v8.glb",
+          "bytes": 1732552,
+          "mtime": "2026-11-09T03:20:39.900Z",
+          "sha256": "bea8652b1f59174b0a55a1f2b8b16b0b89a38dac9b4b246efccd240172a160ed"
+        },
+        {
+          "path": "assets/v2/detail/dead-snag-v13.glb",
+          "bytes": 715188,
+          "mtime": "2026-11-09T03:20:41.770Z",
+          "sha256": "6ce2884d0993fff63a300f0b1faeac93af363170139d3576c8771c1e149a27d9"
+        },
+        {
+          "path": "assets/v2/detail/decayed-wood-v11.glb",
+          "bytes": 1203980,
+          "mtime": "2026-11-09T03:20:44.100Z",
+          "sha256": "bed59817b568686758bedf571dc5127b36e48cda3339be5e271f08f2257f8c11"
+        },
+        {
+          "path": "assets/v2/detail/embedded-gravel-v10.glb",
+          "bytes": 2179592,
+          "mtime": "2026-11-09T03:20:47.838Z",
+          "sha256": "01f6b2c068aa0231d18610b0e26378bcda2e354e27fc675afcf7d045f1affa59"
+        },
+        {
+          "path": "assets/v2/detail/eroded-granite-v10.glb",
+          "bytes": 851972,
+          "mtime": "2026-11-09T03:20:49.470Z",
+          "sha256": "3aff9a7049a4a2ecb1b1883e113df44e8db08ae305b97e780d45336cabe3577b"
+        },
+        {
+          "path": "assets/v2/detail/fallen-twig-v12.glb",
+          "bytes": 728960,
+          "mtime": "2026-11-09T03:20:51.068Z",
+          "sha256": "a97b323106220e364bc51ffd6a107b64a91acab7b26c5c7415e8173fc7fa2ea3"
+        },
+        {
+          "path": "assets/v2/detail/fern-curl-v12.glb",
+          "bytes": 1418272,
+          "mtime": "2026-11-09T03:20:53.140Z",
+          "sha256": "7e48967b63a96a7b9fa19ff236d73f3d840439024dac38c6fb202b236aae642b"
+        },
+        {
+          "path": "assets/v2/detail/layered-slate-v10.glb",
+          "bytes": 852940,
+          "mtime": "2026-11-09T03:20:54.835Z",
+          "sha256": "8293cd6b9b8708a24b5d6882bc3eeb3800f655efa85822604b7bdc6924e70c2b"
+        },
+        {
+          "path": "assets/v2/detail/leaf-tissue-v8.glb",
+          "bytes": 1609832,
+          "mtime": "2026-11-09T03:20:56.888Z",
+          "sha256": "14ee79ec7649c9ab21bac28c966a8807a7f640633ed7ece3b3c01ee24583abe2"
+        },
+        {
+          "path": "assets/v2/detail/lichen-surface-v8.glb",
+          "bytes": 2127856,
+          "mtime": "2026-11-09T03:20:59.026Z",
+          "sha256": "138d00bd9e679e2b3d8ef07886cad29003eae5d4bb0ad777c9df78554022e551"
+        },
+        {
+          "path": "assets/v2/detail/macro-moss-v7.glb",
+          "bytes": 1992740,
+          "mtime": "2026-11-09T03:21:01.124Z",
+          "sha256": "9c3dffb5c041546b3f523c4987528d9f0cc45055969bc5ec1234a5ac3655038d"
+        },
+        {
+          "path": "assets/v2/detail/macro-rootwood-v7.glb",
+          "bytes": 1356740,
+          "mtime": "2026-11-09T03:21:02.962Z",
+          "sha256": "0f9a71e85cd2a2cf0bc4a835e4d544f49fa9af9ebde7a95419255341540a9eed"
+        },
+        {
+          "path": "assets/v2/detail/macro-slate-v7.glb",
+          "bytes": 1436440,
+          "mtime": "2026-11-09T03:21:04.705Z",
+          "sha256": "4ef798ea8b528ad95d2ffd2fb6928099fd05c08ab0d07ce67e4a88ab616203c8"
+        },
+        {
+          "path": "assets/v2/detail/macro-soil-v7.glb",
+          "bytes": 2447428,
+          "mtime": "2026-11-09T03:21:06.794Z",
+          "sha256": "0185c35930d89a9d2419fdcb36c1e221590e6994f6d1b028b80cf92c637face4"
+        },
+        {
+          "path": "assets/v2/detail/moss-sprig-v8.glb",
+          "bytes": 3344100,
+          "mtime": "2026-11-09T03:21:09.649Z",
+          "sha256": "34db14130b04b8a1b570695796ee0d59ad0ed8fcde3e2eabd43eaa81f8c4eaa2"
+        },
+        {
+          "path": "assets/v2/detail/pine-cone-v12.glb",
+          "bytes": 1565352,
+          "mtime": "2026-11-09T03:21:11.587Z",
+          "sha256": "cf077e0bbde3aab261e613f9a763c690fa395f272b19c4066c99d8c3c1be04c8"
+        },
+        {
+          "path": "assets/v2/detail/ribbon-grass-v10.glb",
+          "bytes": 941560,
+          "mtime": "2026-11-09T03:21:13.469Z",
+          "sha256": "9e9658b8da84e0ce5c2aaf0a04b4d915afd603ef99dff704202455342cfa85d8"
+        },
+        {
+          "path": "assets/v2/detail/sedge-tuft-v12.glb",
+          "bytes": 2832136,
+          "mtime": "2026-11-09T03:21:16.145Z",
+          "sha256": "459fc775aa446a12abce7ec69c2299fe9b9f2310dcdec3a8b64e84f7fdb2e622"
+        },
+        {
+          "path": "assets/v2/detail/shelf-fungus-v12.glb",
+          "bytes": 1522172,
+          "mtime": "2026-11-09T03:21:17.941Z",
+          "sha256": "c73a65525d6902c3f374bf411e584c07841f08a4e94805a85b8e441c89365ff2"
+        },
+        {
+          "path": "assets/v2/detail/snow-ice-v9.glb",
+          "bytes": 690680,
+          "mtime": "2026-11-09T03:21:19.470Z",
+          "sha256": "c6095cc6aa15ba8f4e981f31e03ef85caccf7fa10b6cef5c6b6aec9865f6fe99"
+        },
+        {
+          "path": "assets/v2/detail/submerged-plant-v9.glb",
+          "bytes": 1615064,
+          "mtime": "2026-11-09T03:21:21.610Z",
+          "sha256": "f8ad0fa6a75a2de208307940d71f89050092d82e023592d84294baf6b33e75c6"
+        },
+        {
+          "path": "assets/v2/detail/underwater-stone-v9.glb",
+          "bytes": 847992,
+          "mtime": "2026-11-09T03:21:23.131Z",
+          "sha256": "563e9a1ce852a5a3568443c535a7658707771e0c89a632f57a0c5e6cc605dd09"
+        },
+        {
+          "path": "assets/v2/detail/willow-stems-v13.glb",
+          "bytes": 1803800,
+          "mtime": "2026-11-09T03:21:25.142Z",
+          "sha256": "150e7092aaed1c413f9b67b1275eea07675eb1feff2feb0a737c5f77db101ad5"
+        },
+        {
+          "path": "assets/v2/fallen-log.glb",
+          "bytes": 468576,
+          "mtime": "2026-11-09T03:21:26.274Z",
+          "sha256": "566317bde12361138475276b49ee27162ba82bba862be9ca192a1bf12f97d59e"
+        },
+        {
+          "path": "assets/v2/MANIFEST.json",
+          "bytes": 56868,
+          "mtime": "2026-11-10T08:41:44.666Z",
+          "sha256": "128fb795d8e041c95df624affe91fae0f878745c711f4fe0b5a5300fc4432f24"
+        },
+        {
+          "path": "assets/v2/r10/r10-alpine-wildflowers.glb",
+          "bytes": 2946468,
+          "mtime": "2026-11-10T02:07:19.089Z",
+          "sha256": "fdd7dd6c9f890162851d64269356150385e4480e3e7a4308bb6ea6988cf673be"
+        },
+        {
+          "path": "assets/v2/r10/r10-fir-sapling.glb",
+          "bytes": 2503696,
+          "mtime": "2026-11-10T02:06:31.284Z",
+          "sha256": "bcab8e5c25382e3ccc477a87be2df4e59b01d6dc278f15b2596e2e29764638e9"
+        },
+        {
+          "path": "assets/v2/r10/r10-mossy-fallen-log.glb",
+          "bytes": 1732112,
+          "mtime": "2026-11-10T02:06:26.803Z",
+          "sha256": "b58666f135754afc1966fbe6a4191df00b460c101361512a3ed238fda4f5c274"
+        },
+        {
+          "path": "assets/v2/r10/r10-wet-mossy-boulder.glb",
+          "bytes": 1845576,
+          "mtime": "2026-11-10T02:23:28.514Z",
+          "sha256": "c6018d4dec2100b44dfe09749c2f9e55025078f594b067fc3f947f606a9b5940"
+        },
+        {
+          "path": "assets/v2/web/alpenrose-v20.glb",
+          "bytes": 3439372,
+          "mtime": "2026-11-09T03:21:29.790Z",
+          "sha256": "3c171443300deb17242727f19b4d9f37ad614ee72dc10d8b64eba48c7e498458"
+        },
+        {
+          "path": "assets/v2/web/alpine-bee-v18-lod.glb",
+          "bytes": 1810320,
+          "mtime": "2026-11-09T03:21:32.471Z",
+          "sha256": "5a68145f41f2617a687dfef7ff2a550af3546cf4d055e61883eae0cc49dc6a21"
+        },
+        {
+          "path": "assets/v2/web/alpine-bee-v18.glb",
+          "bytes": 1825068,
+          "mtime": "2026-11-09T03:21:35.367Z",
+          "sha256": "f77df9c91efea001b30828266c82ac8a5c16d73f9fc8551d7e6167d072f9e688"
+        },
+        {
+          "path": "assets/v2/web/alpine-cushion-cluster-v21-lod.glb",
+          "bytes": 2596372,
+          "mtime": "2026-11-09T03:21:38.426Z",
+          "sha256": "5503bb45a87ac01098cdf6f6f324e58c00ca7e46330a9c573647d3127af16b2f"
+        },
+        {
+          "path": "assets/v2/web/alpine-cushion-cluster-v21.glb",
+          "bytes": 2600204,
+          "mtime": "2026-11-09T03:21:42.140Z",
+          "sha256": "d9b3981e055b7d533f19922b6176a7163f7219f24b76435dbb4f50b8fcd33854"
+        },
+        {
+          "path": "assets/v2/web/alpine-ibex-v20.glb",
+          "bytes": 761272,
+          "mtime": "2026-11-09T03:21:43.923Z",
+          "sha256": "b8d8dc0d69e722ed9e4dac860a56e558109b5d07339b0eb309e03586b1868ead"
+        },
+        {
+          "path": "assets/v2/web/alpine-larch-v3.glb",
+          "bytes": 1708124,
+          "mtime": "2026-11-09T03:21:45.488Z",
+          "sha256": "40c28c4be311483f8a1238485cfec0f0aeed5b332a66a3d92f07254dbe65468b"
+        },
+        {
+          "path": "assets/v2/web/alpine-marmot-v20.glb",
+          "bytes": 1186368,
+          "mtime": "2026-11-09T03:21:47.224Z",
+          "sha256": "90c919ee074edddbcd61fe02451a2ef2ee527c363d03343af23338b8cecddcbd"
+        },
+        {
+          "path": "assets/v2/web/alpine-pine-v20.glb",
+          "bytes": 2564588,
+          "mtime": "2026-11-09T03:21:50.643Z",
+          "sha256": "deec3d266512fb4474f4f62be983be2f89a8a61b7a01effac1a40336066006f8"
+        },
+        {
+          "path": "assets/v2/web/alpine-shrub-v5-lod.glb",
+          "bytes": 1487096,
+          "mtime": "2026-11-09T03:21:51.927Z",
+          "sha256": "2b6be454e407860f6fa532ba4b058d47b898c30a0ea948e805fe75210a1cf45f"
+        },
+        {
+          "path": "assets/v2/web/alpine-shrub-v5.glb",
+          "bytes": 1492860,
+          "mtime": "2026-11-09T03:21:53.241Z",
+          "sha256": "96cc4a8eb403f7820768659211dce33379602bcdef0dae6611a9cbbd096929f8"
+        },
+        {
+          "path": "assets/v2/web/alpine-spruce.glb",
+          "bytes": 1712888,
+          "mtime": "2026-11-09T03:21:54.634Z",
+          "sha256": "80c44557e0c8ba8fdea69d946911c66f42ac7fb25c76d16d4c170c6192a73651"
+        },
+        {
+          "path": "assets/v2/web/alpine-turf-patch-v21-lod.glb",
+          "bytes": 2882944,
+          "mtime": "2026-11-09T03:21:57.955Z",
+          "sha256": "39d8f983d6137fc5eaa7b291c558125e2e240f9b126856e1d39d3a2ec705e1d8"
+        },
+        {
+          "path": "assets/v2/web/alpine-turf-patch-v21.glb",
+          "bytes": 2886792,
+          "mtime": "2026-11-09T03:22:01.639Z",
+          "sha256": "5eed2f51af1dd63f43535eb749d537dac6bf0fdf0454875666de77016ca2d95d"
+        },
+        {
+          "path": "assets/v2/web/bank-grass-lod.glb",
+          "bytes": 560612,
+          "mtime": "2026-11-09T03:22:02.530Z",
+          "sha256": "1f9bf75f4687359e99cbc1bc9bc6b554f2ddd03dc892e9ca165277d42e96e3ad"
+        },
+        {
+          "path": "assets/v2/web/bank-grass.glb",
+          "bytes": 560612,
+          "mtime": "2026-11-09T03:22:03.435Z",
+          "sha256": "1f9bf75f4687359e99cbc1bc9bc6b554f2ddd03dc892e9ca165277d42e96e3ad"
+        },
+        {
+          "path": "assets/v2/web/bark-flake-v11-lod.glb",
+          "bytes": 806900,
+          "mtime": "2026-11-09T03:22:04.371Z",
+          "sha256": "b04301536177ee598bdef54808275e48f0b5aea95eaf1286cf7b9e073516ee56"
+        },
+        {
+          "path": "assets/v2/web/bark-flake-v11.glb",
+          "bytes": 997988,
+          "mtime": "2026-11-09T03:22:05.505Z",
+          "sha256": "e235e61ff5f830446260363ee0758fa6e3327544b256a56df6a8af5f862fb6fe"
+        },
+        {
+          "path": "assets/v2/web/birch-v20.glb",
+          "bytes": 2544104,
+          "mtime": "2026-11-09T03:22:08.180Z",
+          "sha256": "b62fad1e1ef69ac2b3fd04b4b99fa300fd605b88f78fad499a1c51835801ebb1"
+        },
+        {
+          "path": "assets/v2/web/boreal-owl-v21-lod.glb",
+          "bytes": 1310136,
+          "mtime": "2026-11-09T03:22:10.610Z",
+          "sha256": "c1bdcd4a7fe7b2b8b0170829e2b4c76e0c81c3b219d93d0dee813d4ddcf3a86b"
+        },
+        {
+          "path": "assets/v2/web/boreal-owl-v21.glb",
+          "bytes": 1325804,
+          "mtime": "2026-11-09T03:22:13.245Z",
+          "sha256": "12e89761c62a57094d17ef959e116f07d36f746aaed67a15c2bbbdfdf1d90a07"
+        },
+        {
+          "path": "assets/v2/web/boulder-hero-v16-lod.glb",
+          "bytes": 1086824,
+          "mtime": "2026-11-09T03:22:14.843Z",
+          "sha256": "5b5bd033a330f7a97654326c32f67e3c80bdc0efb07be8da0b000293401c1a50"
+        },
+        {
+          "path": "assets/v2/web/boulder-hero-v16.glb",
+          "bytes": 1097044,
+          "mtime": "2026-11-09T03:22:16.550Z",
+          "sha256": "e44f6e617015bb3301d1dc4c559e92005bca85fa1b324411f3bcaf79ed898716"
+        },
+        {
+          "path": "assets/v2/web/broadleaf-v18.glb",
+          "bytes": 864104,
+          "mtime": "2026-11-09T03:22:18.372Z",
+          "sha256": "015c9656993cb4890eec0a62d7e916d0ace9983a739321f905743cfc607fffa6"
+        },
+        {
+          "path": "assets/v2/web/broken-stump-v5-lod.glb",
+          "bytes": 520912,
+          "mtime": "2026-11-09T03:22:19.298Z",
+          "sha256": "20b79c4ed568609af183e95bf5f313db00b9017835c6e61e4e3782ccf4fc980c"
+        },
+        {
+          "path": "assets/v2/web/broken-stump-v5.glb",
+          "bytes": 627440,
+          "mtime": "2026-11-09T03:22:20.682Z",
+          "sha256": "6992fea4a47992b68df70cc09daa2f27266960b7282107681ff5befa950d7736"
+        },
+        {
+          "path": "assets/v2/web/brook-trout-v18-lod.glb",
+          "bytes": 771572,
+          "mtime": "2026-11-09T03:22:23.321Z",
+          "sha256": "5d0893bfbd3f753f02cedd3ad9b1ff97b44e0e0f8e2fe0f54a8f4da998a66cdf"
+        },
+        {
+          "path": "assets/v2/web/brook-trout-v18.glb",
+          "bytes": 768344,
+          "mtime": "2026-11-09T03:22:24.866Z",
+          "sha256": "befeccd40378ed399c7e79efcfd7d76a0794b132c1ac5173e160fd27d019e996"
+        },
+        {
+          "path": "assets/v2/web/brown-bear-v21-lod.glb",
+          "bytes": 1391988,
+          "mtime": "2026-11-09T03:22:27.391Z",
+          "sha256": "06e83d6d57756bbbfd0c150031a55d08ec39b5fe15d1ab60a9dd8c08d3ec8285"
+        },
+        {
+          "path": "assets/v2/web/brown-bear-v21.glb",
+          "bytes": 1407792,
+          "mtime": "2026-11-09T03:22:30.029Z",
+          "sha256": "e71606111db226a34a3e248264faafb5959ca4408f7f724d1815123b7f063517"
+        },
+        {
+          "path": "assets/v2/web/chamois-v20.glb",
+          "bytes": 931796,
+          "mtime": "2026-11-09T03:22:32.432Z",
+          "sha256": "3ed9fb41d22cd54a1681b456772a1fdf74fd35092cd3f17f129b87d2503f0ad3"
+        },
+        {
+          "path": "assets/v2/web/common-reed-cluster-v21-lod.glb",
+          "bytes": 2052336,
+          "mtime": "2026-11-09T03:22:35.108Z",
+          "sha256": "b5437e1d269369947af4eb47e202173780f68d86491d82a2411325c287897721"
+        },
+        {
+          "path": "assets/v2/web/common-reed-cluster-v21.glb",
+          "bytes": 2075468,
+          "mtime": "2026-11-09T03:22:38.167Z",
+          "sha256": "4f7e3d3cc213c70a4c14e52a7a47cec42229ba22d383e2e95af7446ae850e975"
+        },
+        {
+          "path": "assets/v2/web/creek-fern-lod.glb",
+          "bytes": 463468,
+          "mtime": "2026-11-09T03:22:39.014Z",
+          "sha256": "305474f3bcddb62b93963181a85c71935f51fa5392830d52020f32e3b7754245"
+        },
+        {
+          "path": "assets/v2/web/creek-fern.glb",
+          "bytes": 464192,
+          "mtime": "2026-11-09T03:22:39.836Z",
+          "sha256": "03301cdacdc5e1ccbbfb07d9e657c8c2b5a744f1b4f68c679d216d6974b01096"
+        },
+        {
+          "path": "assets/v2/web/dead-snag-v13-lod.glb",
+          "bytes": 357956,
+          "mtime": "2026-11-09T03:22:40.640Z",
+          "sha256": "56f5a8e7192b7c9ab509771d760b9b7324f8979e7e59d21f16a4be2398ab684a"
+        },
+        {
+          "path": "assets/v2/web/dead-snag-v13.glb",
+          "bytes": 428420,
+          "mtime": "2026-11-09T03:22:41.666Z",
+          "sha256": "9e3bc0ea362fe482f20198e02965c21b9f57536686a13a9d2b3828b414c0b589"
+        },
+        {
+          "path": "assets/v2/web/decayed-wood-v11-lod.glb",
+          "bytes": 645056,
+          "mtime": "2026-11-09T03:22:42.560Z",
+          "sha256": "86b160a94cb5f7ee14cca66e4fd6edc753943ab47b664e7cce6ebfc128d5efce"
+        },
+        {
+          "path": "assets/v2/web/decayed-wood-v11.glb",
+          "bytes": 816024,
+          "mtime": "2026-11-09T03:22:43.668Z",
+          "sha256": "aa074a204ac7b209fa8761851968d92cb71029365ee90f94fbe8a2a25760beb1"
+        },
+        {
+          "path": "assets/v2/web/diatom-v18.glb",
+          "bytes": 1500556,
+          "mtime": "2026-11-09T03:22:46.196Z",
+          "sha256": "21199320c443da05faf8109c1eda23e761875ad1f346abfb242f8db59b8dc994"
+        },
+        {
+          "path": "assets/v2/web/dragonfly-perch-v21-lod.glb",
+          "bytes": 1260032,
+          "mtime": "2026-11-09T03:22:47.676Z",
+          "sha256": "17576f4296e099c86f8c4083e548df7ff8f99925ec8ab4fe08938b9e513cfaf3"
+        },
+        {
+          "path": "assets/v2/web/dragonfly-perch-v21.glb",
+          "bytes": 1284588,
+          "mtime": "2026-11-09T03:22:49.605Z",
+          "sha256": "070559de3990a529d3fb67bc4fcda2e3990d7b5e647435b1267aaba425e926ce"
+        },
+        {
+          "path": "assets/v2/web/driftwood-root-v21-lod.glb",
+          "bytes": 1660364,
+          "mtime": "2026-11-09T03:22:52.560Z",
+          "sha256": "9e54a82c38fcc423b22856f21fb663f591ece5442fadba89a1aa87fa76678f87"
+        },
+        {
+          "path": "assets/v2/web/driftwood-root-v21.glb",
+          "bytes": 1672704,
+          "mtime": "2026-11-09T03:22:55.467Z",
+          "sha256": "b14b3f675a9fac1af2a5038ebe8828e8bd5d209383f9e36c950052d37b2df9c2"
+        },
+        {
+          "path": "assets/v2/web/edelweiss-cluster-v21.glb",
+          "bytes": 1750348,
+          "mtime": "2026-11-09T03:22:58.465Z",
+          "sha256": "b30a743bae635bb0242b33f0b323ee98c3ed8619cfea606427a4001ecfa22a7a"
+        },
+        {
+          "path": "assets/v2/web/edelweiss-v20.glb",
+          "bytes": 1607748,
+          "mtime": "2026-11-09T03:23:01.304Z",
+          "sha256": "e19d6d6b7488f55859cf4b8a51fb3520ab56ba537f2ae12ece86831a12dcbb3a"
+        },
+        {
+          "path": "assets/v2/web/embedded-gravel-v10.glb",
+          "bytes": 1616472,
+          "mtime": "2026-11-09T03:23:02.897Z",
+          "sha256": "c9484d73f325e3eee9502e1bf258aef7206f190bb448147dee7e8349ce29b660"
+        },
+        {
+          "path": "assets/v2/web/eroded-granite-v10.glb",
+          "bytes": 495292,
+          "mtime": "2026-11-09T03:23:03.945Z",
+          "sha256": "14f755d0e69b7c57e67bf573a54c76314db338d162f63c11d4a59b09aac78c6a"
+        },
+        {
+          "path": "assets/v2/web/eurasian-beaver-v21-lod.glb",
+          "bytes": 1512324,
+          "mtime": "2026-11-09T03:23:06.498Z",
+          "sha256": "5ea5ea5145645e2c75d8fb0dcd30c5f7623e9fc8447998bebaf02fda13bbaf76"
+        },
+        {
+          "path": "assets/v2/web/eurasian-beaver-v21.glb",
+          "bytes": 1542420,
+          "mtime": "2026-11-09T03:23:09.344Z",
+          "sha256": "bef6504f3f1e6e3fee392051a5e3bcf69f4f381d27ce003556fc6b2d4871a675"
+        },
+        {
+          "path": "assets/v2/web/eurasian-lynx-v21-lod.glb",
+          "bytes": 967768,
+          "mtime": "2026-11-09T03:23:10.910Z",
+          "sha256": "d233f53b31034eebd075343ce23a0fc4dcb2eab15c782267211c5b0dbaae7113"
+        },
+        {
+          "path": "assets/v2/web/eurasian-lynx-v21.glb",
+          "bytes": 977680,
+          "mtime": "2026-11-09T03:23:12.732Z",
+          "sha256": "3fb1c65fdac7aae97d928eee1873ee9702e6544d58831d2ea3db9e3afc2b8da1"
+        },
+        {
+          "path": "assets/v2/web/eurasian-otter-v21-lod.glb",
+          "bytes": 1346220,
+          "mtime": "2026-11-09T03:23:15.145Z",
+          "sha256": "7135d9f3da1d9d8ae2134de84c3df21651db74af913e8d0a884263d8aa2bf8da"
+        },
+        {
+          "path": "assets/v2/web/eurasian-otter-v21.glb",
+          "bytes": 1364344,
+          "mtime": "2026-11-09T03:23:17.777Z",
+          "sha256": "7f1adf53d81f7eab9eeeb9ea3ccc460cfc0d4d66ff4d967224480f23d96d1736"
+        },
+        {
+          "path": "assets/v2/web/eurasian-wolf-v21-lod.glb",
+          "bytes": 1238636,
+          "mtime": "2026-11-09T03:23:20.307Z",
+          "sha256": "a3b454b16354aa7e62b42868ff7af2577ec6539408e52da6fd8505fe36f83ee9"
+        },
+        {
+          "path": "assets/v2/web/eurasian-wolf-v21.glb",
+          "bytes": 1252852,
+          "mtime": "2026-11-09T03:23:24.299Z",
+          "sha256": "234da50c4eb190a02ae512709a8933ec34274f252e47bd92cef5f0a90c24e9a4"
+        },
+        {
+          "path": "assets/v2/web/fallen-log-lod.glb",
+          "bytes": 213436,
+          "mtime": "2026-11-09T03:23:25.672Z",
+          "sha256": "78c394dfef8ccc414bfd0f5e700743d64b633fc6c7f7be0913a9243454d9d8db"
+        },
+        {
+          "path": "assets/v2/web/fallen-log.glb",
+          "bytes": 241844,
+          "mtime": "2026-11-09T03:23:26.391Z",
+          "sha256": "c7889bad4281ac410fae9023e492015824e663a7cc15ab1e3625304d30139654"
+        },
+        {
+          "path": "assets/v2/web/fallen-twig-v12-lod.glb",
+          "bytes": 354616,
+          "mtime": "2026-11-09T03:23:27.207Z",
+          "sha256": "8b6e43fc788aa2ccfecf5730f497dabb115465b7176b735f17d2175173a04ec5"
+        },
+        {
+          "path": "assets/v2/web/fallen-twig-v12.glb",
+          "bytes": 386796,
+          "mtime": "2026-11-09T03:23:28.166Z",
+          "sha256": "6e3b5ef100a957f3ab69f3ddbfca286a247bbf222c4f8cf379beda6c104c3fa7"
+        },
+        {
+          "path": "assets/v2/web/fern-curl-v12-lod.glb",
+          "bytes": 699716,
+          "mtime": "2026-11-09T03:23:29.094Z",
+          "sha256": "da72bc32b26c067947ca19b102ada18d71a404970b866eb7a6ddb6ab786dacb9"
+        },
+        {
+          "path": "assets/v2/web/fern-curl-v12.glb",
+          "bytes": 806172,
+          "mtime": "2026-11-09T03:23:30.263Z",
+          "sha256": "75e578ec771b4ff29221a9a3a7c1ec58ffb7866dc05070d9bad7f0b0726f5349"
+        },
+        {
+          "path": "assets/v2/web/fern-frond-v6-lod.glb",
+          "bytes": 381676,
+          "mtime": "2026-11-09T03:23:31.058Z",
+          "sha256": "8e06587d1641b140408701e33e442f0f539db38a209c33eae1146522fa99e067"
+        },
+        {
+          "path": "assets/v2/web/fern-frond-v6.glb",
+          "bytes": 502156,
+          "mtime": "2026-11-09T03:23:32.067Z",
+          "sha256": "4f567d1537f3b979767c133c3e1889f1057bcb531cb1dae50b2dbc24a0b3f105"
+        },
+        {
+          "path": "assets/v2/web/fire-salamander-v21-lod.glb",
+          "bytes": 765116,
+          "mtime": "2026-11-09T03:23:33.410Z",
+          "sha256": "b569bbc2e3cad6685afccf747c5ba8fefdcc7722f9b9cd5e7307d2a3e5e82783"
+        },
+        {
+          "path": "assets/v2/web/fire-salamander-v21.glb",
+          "bytes": 757024,
+          "mtime": "2026-11-09T03:23:35.032Z",
+          "sha256": "9b60bc33f4ea4faa6a2db28bd60e1829ed94943341495a06a16c8d5a99079044"
+        },
+        {
+          "path": "assets/v2/web/fractured-outcrop-v5-lod.glb",
+          "bytes": 648200,
+          "mtime": "2026-11-09T03:23:36.046Z",
+          "sha256": "5c262700680d61b8d0a0350690f48f1a2896da81153f126cb7c5b1ed2e706cd2"
+        },
+        {
+          "path": "assets/v2/web/fractured-outcrop-v5.glb",
+          "bytes": 788052,
+          "mtime": "2026-11-09T03:23:37.194Z",
+          "sha256": "1d9a78588674acf7d118222769ccec665418c2e526c61367578673acfe7add56"
+        },
+        {
+          "path": "assets/v2/web/glacier-serac-v21.glb",
+          "bytes": 2104152,
+          "mtime": "2026-11-09T03:23:40.097Z",
+          "sha256": "0804b706b13a5dda8e01a2067abe3e5943e4175ccaa62cb5e9957fe59c7ceef5"
+        },
+        {
+          "path": "assets/v2/web/golden-eagle-v21.glb",
+          "bytes": 937056,
+          "mtime": "2026-11-09T03:23:41.950Z",
+          "sha256": "862580741280393ba72f12762b7569f9d742ec6390f821397d1566b05bd509b8"
+        },
+        {
+          "path": "assets/v2/web/granite-cliff-v3-lod.glb",
+          "bytes": 1166988,
+          "mtime": "2026-11-09T03:23:43.106Z",
+          "sha256": "b76449aac110b9d0cdda3ab4948361a64785567aedfdf7928b84ac79419995ee"
+        },
+        {
+          "path": "assets/v2/web/granite-cliff-v3.glb",
+          "bytes": 1357136,
+          "mtime": "2026-11-09T03:23:44.389Z",
+          "sha256": "d5ea4aebde78777539a513933e4bce7aaa08e3eaa2a4b50b77640d9aa6c5f7bb"
+        },
+        {
+          "path": "assets/v2/web/great-spotted-woodpecker-v21-lod.glb",
+          "bytes": 1289980,
+          "mtime": "2026-11-09T03:23:46.941Z",
+          "sha256": "5c6c3938436572f960c84343427a298e38220dfe6c07c7f4f15f30835fe2ba6a"
+        },
+        {
+          "path": "assets/v2/web/great-spotted-woodpecker-v21.glb",
+          "bytes": 1305136,
+          "mtime": "2026-11-09T03:23:49.632Z",
+          "sha256": "6d31de5ada617eb3b58dc13199670cb6c736d92b675e98e95d09a4b729423382"
+        },
+        {
+          "path": "assets/v2/web/green-frog-v21-lod.glb",
+          "bytes": 1128324,
+          "mtime": "2026-11-09T03:23:51.201Z",
+          "sha256": "3c6b88c584686154cbc97dc7b8f6e6e1f611d46100613dd06f9158faa27a414f"
+        },
+        {
+          "path": "assets/v2/web/green-frog-v21.glb",
+          "bytes": 1129132,
+          "mtime": "2026-11-09T03:23:53.239Z",
+          "sha256": "46b89c6f3b7941826a6a5efefe4a6206ce086fcb681be9f50a4d5b54181544a2"
+        },
+        {
+          "path": "assets/v2/web/grey-heron-v21-lod.glb",
+          "bytes": 1008892,
+          "mtime": "2026-11-09T03:23:55.941Z",
+          "sha256": "b18ade0c2a479b60979904b39de3b006409c6b3a4f0b54a215eec39ac26d8182"
+        },
+        {
+          "path": "assets/v2/web/grey-heron-v21.glb",
+          "bytes": 1041036,
+          "mtime": "2026-11-09T03:23:58.375Z",
+          "sha256": "55a2ffef57838d011c019891530f18891d357cccfba847750bc9ccb34efc65bf"
+        },
+        {
+          "path": "assets/v2/web/hero-spruce-v4.glb",
+          "bytes": 1431408,
+          "mtime": "2026-11-09T03:23:59.839Z",
+          "sha256": "68f984bc57610f7db21b556b5b9a1060403ba21b8e1cf1addd5effa385f6c9a3"
+        },
+        {
+          "path": "assets/v2/web/larch-v20.glb",
+          "bytes": 2140336,
+          "mtime": "2026-11-09T03:24:02.351Z",
+          "sha256": "846532767f054baed477f6416688952b0e14f1ffc069c6893ce7b8f2a0b3ef30"
+        },
+        {
+          "path": "assets/v2/web/layered-slate-v10.glb",
+          "bytes": 552932,
+          "mtime": "2026-11-09T03:24:03.530Z",
+          "sha256": "fde9f33f1c6544a71b380fc86e7ad5eae343d6b6c73548c99238205e28cb30fc"
+        },
+        {
+          "path": "assets/v2/web/mallard-duck-v21-lod.glb",
+          "bytes": 886836,
+          "mtime": "2026-11-09T03:24:05.163Z",
+          "sha256": "ca7d2a04327b20a06a533ba22328cfd37409dc67d8ebb92270f3064eb963613d"
+        },
+        {
+          "path": "assets/v2/web/mallard-duck-v21.glb",
+          "bytes": 898388,
+          "mtime": "2026-11-09T03:24:07.535Z",
+          "sha256": "aab9888e0ef1229c0ab09bd57bd8d5a3d93619cc1b43b26235bc307bfd89a1a2"
+        },
+        {
+          "path": "assets/v2/web/meadow-flower-v3-lod.glb",
+          "bytes": 1022784,
+          "mtime": "2026-11-09T03:24:09.145Z",
+          "sha256": "fe2935c1da5a24be9f274788a19f138291a664df6e856afd859e469c3dfbb3bd"
+        },
+        {
+          "path": "assets/v2/web/meadow-flower-v3.glb",
+          "bytes": 1023432,
+          "mtime": "2026-11-09T03:24:10.256Z",
+          "sha256": "338342bd898d26100ca22510e527dcfc3a9fa0839e2da95611368bc4585e5232"
+        },
+        {
+          "path": "assets/v2/web/moss-bank-v3-lod.glb",
+          "bytes": 428980,
+          "mtime": "2026-11-09T03:24:11.108Z",
+          "sha256": "af87f7403bcf4324cb835e5feade1c27801e40bc77b4f3dd32af9ee2cfd70007"
+        },
+        {
+          "path": "assets/v2/web/moss-bank-v3.glb",
+          "bytes": 502944,
+          "mtime": "2026-11-09T03:24:12.091Z",
+          "sha256": "8efbb95cd4e27bbcdb50a3c936f6a9e2f2d7ffc78d780c8463cf4e41f9692126"
+        },
+        {
+          "path": "assets/v2/web/moss-cushion-v18.glb",
+          "bytes": 3454484,
+          "mtime": "2026-11-09T03:24:15.124Z",
+          "sha256": "76dd2b5f16326aad40b74c731ec379ad4b73080518f048cecd4b7d4f98af01da"
+        },
+        {
+          "path": "assets/v2/web/mossrock-hero-v16-lod.glb",
+          "bytes": 1395268,
+          "mtime": "2026-11-09T03:24:17.801Z",
+          "sha256": "adc983d86fc107d7bdf285730cd54f949552fbe0ca7deb922a7f3370dddedb6a"
+        },
+        {
+          "path": "assets/v2/web/mossrock-hero-v16.glb",
+          "bytes": 1405248,
+          "mtime": "2026-11-09T03:24:20.491Z",
+          "sha256": "2f63e3dee15c16f9b814cca37217dbf3d5e68fca9f28835b9acfac99c3daad0b"
+        },
+        {
+          "path": "assets/v2/web/mossy-granite-slab-v21-lod.glb",
+          "bytes": 1536524,
+          "mtime": "2026-11-09T03:24:23.305Z",
+          "sha256": "3e507bad5ff5c9338114199108cf959373149156bcf48f16487b75f749899684"
+        },
+        {
+          "path": "assets/v2/web/mossy-granite-slab-v21.glb",
+          "bytes": 1548072,
+          "mtime": "2026-11-09T03:24:26.278Z",
+          "sha256": "df30d6716810ab072f33c9fba89f7e3652c473d852672afacc9c6f8a820884c7"
+        },
+        {
+          "path": "assets/v2/web/mountain-hare-v20.glb",
+          "bytes": 1670396,
+          "mtime": "2026-11-09T03:24:28.610Z",
+          "sha256": "6fbb2b684b83706ef1af37958ade85157ed30478781d25229794f85a15ced915"
+        },
+        {
+          "path": "assets/v2/web/mycelium-network-v18.glb",
+          "bytes": 2742408,
+          "mtime": "2026-11-09T03:24:31.046Z",
+          "sha256": "3fe509297676c0d7ec6e034f7017971ab8d8bf0a6c326f234e4b87095cc702db"
+        },
+        {
+          "path": "assets/v2/web/pine-cone-v12-lod.glb",
+          "bytes": 1005924,
+          "mtime": "2026-11-09T03:24:32.223Z",
+          "sha256": "aeb8d6e80fe917564fadbc3b66274e68d45aa5cdc08c47eb2b16fb6ebe4bb76f"
+        },
+        {
+          "path": "assets/v2/web/pine-cone-v12.glb",
+          "bytes": 1232032,
+          "mtime": "2026-11-09T03:24:33.573Z",
+          "sha256": "15bdcba98ba9603311bd010ee919127b22c1f7fb8cabddb0a71bb4f0fd6c2331"
+        },
+        {
+          "path": "assets/v2/web/plant-cell-v18.glb",
+          "bytes": 1513128,
+          "mtime": "2026-11-09T03:24:36.264Z",
+          "sha256": "21e01a20d8a625424e7c2474509476cad215da6b0e94c16f84231fa8dd9af796"
+        },
+        {
+          "path": "assets/v2/web/r6-birch-autumn-r6.glb",
+          "bytes": 1986172,
+          "mtime": "2026-11-09T09:53:02.193Z",
+          "sha256": "28b9b6d5adb754aabad6bd6b3160faa1962a5f9612f18df72daabfb1bbfb7f43"
+        },
+        {
+          "path": "assets/v2/web/r6-fallen-log-r6.glb",
+          "bytes": 298312,
+          "mtime": "2026-11-09T09:53:03.977Z",
+          "sha256": "0ac212d46ade79ca101a39fa2686bdbc6383389a3905bace6c0098b22bc232bb"
+        },
+        {
+          "path": "assets/v2/web/r6-lichen-boulder-r6.glb",
+          "bytes": 260500,
+          "mtime": "2026-11-09T09:53:08.060Z",
+          "sha256": "4d1dcc69b4e63309d54f39d2ffef13553cea37de791cf3c4f0fed8352b071fec"
+        },
+        {
+          "path": "assets/v2/web/r6-mushroom-cluster-r6.glb",
+          "bytes": 161892,
+          "mtime": "2026-11-09T09:53:05.646Z",
+          "sha256": "6ec1e548b9af5c37f8bed0b8b955203ab4ea95b0ef6a7ccc6019c3a9093c7521"
+        },
+        {
+          "path": "assets/v2/web/r6-spruce-hero-r6.glb",
+          "bytes": 1518328,
+          "mtime": "2026-11-09T09:52:58.805Z",
+          "sha256": "54b9f0511278c14e5a8dd8de07e2c8107b0bc2845fe9453e472ac0bed7735d80"
+        },
+        {
+          "path": "assets/v2/web/r7-abies-fabri.glb",
+          "bytes": 1451824,
+          "mtime": "2026-11-09T13:42:09.617Z",
+          "sha256": "e159834cf1e327b2c4dff6be58a36a954ae2f2bea45f4db0bd7393a73a3381ff"
+        },
+        {
+          "path": "assets/v2/web/r7-betula-insignis.glb",
+          "bytes": 1388984,
+          "mtime": "2026-11-09T13:27:06.248Z",
+          "sha256": "c8b31a61a09103e069424d8d547795d2e0ac6b2107307f1066dd01f227c49fc4"
+        },
+        {
+          "path": "assets/v2/web/r7-betula-utilis.glb",
+          "bytes": 1470444,
+          "mtime": "2026-11-09T11:00:33.979Z",
+          "sha256": "957c625c2669c3be0dfff28612eaf768ef7493fa535d536f7eb36c03649fdbbc"
+        },
+        {
+          "path": "assets/v2/web/r7-biofilm-rock.glb",
+          "bytes": 235132,
+          "mtime": "2026-11-09T11:00:34.960Z",
+          "sha256": "a94133971840262f47536d4f8229397587f704a9bfcc7c6e7fc1d91c274c33b2"
+        },
+        {
+          "path": "assets/v2/web/r7-diatom.glb",
+          "bytes": 625892,
+          "mtime": "2026-11-09T13:42:11.427Z",
+          "sha256": "87c8390cac196bf2e5f039c2f85b493b9ac4d6b916475b77078da2b1daae30eb"
+        },
+        {
+          "path": "assets/v2/web/r7-fargesia-bamboo.glb",
+          "bytes": 1103248,
+          "mtime": "2026-11-09T11:00:38.053Z",
+          "sha256": "227d11290ecf24a54f147f2f6c6c7f4b7702fb7bca5d69a7a6d3bfa8327451de"
+        },
+        {
+          "path": "assets/v2/web/r7-moss-mat.glb",
+          "bytes": 961724,
+          "mtime": "2026-11-09T11:00:39.345Z",
+          "sha256": "69a9da011d21f3b788b0f02d6b7d17b44a9d45aacf89c4c2da934c753b94a27d"
+        },
+        {
+          "path": "assets/v2/web/r7-redstone.glb",
+          "bytes": 308132,
+          "mtime": "2026-11-09T11:00:40.338Z",
+          "sha256": "28375350ad9984183de18467973615635e5d38caf1158f14985e0bec3b7b14ff"
+        },
+        {
+          "path": "assets/v2/web/r7-snag.glb",
+          "bytes": 355664,
+          "mtime": "2026-11-09T11:00:41.548Z",
+          "sha256": "45c0421278270b7e486a5a09736bea076658c81ddf70a0dbcfcdbb249d1e906d"
+        },
+        {
+          "path": "assets/v2/web/r7-sorbus-hemsleyana.glb",
+          "bytes": 2024252,
+          "mtime": "2026-11-09T11:00:43.315Z",
+          "sha256": "64c16db31f1218c7d38af4922f67b2725cdcc232163bae88724e541ea8d416b8"
+        },
+        {
+          "path": "assets/v2/web/red-deer-stag-v21-lod.glb",
+          "bytes": 1072264,
+          "mtime": "2026-11-09T03:24:52.529Z",
+          "sha256": "1ea992de7d5fdb1f1c3f33f258fc9003cf4dd843149c29d4cffa8fc3574aeff5"
+        },
+        {
+          "path": "assets/v2/web/red-deer-stag-v21.glb",
+          "bytes": 1086344,
+          "mtime": "2026-11-09T03:24:55.295Z",
+          "sha256": "2f49108229811e4cff6dcf50e7f7ad0994671f01676587e211dd16d198edcfda"
+        },
+        {
+          "path": "assets/v2/web/red-fox-v21-lod.glb",
+          "bytes": 1258364,
+          "mtime": "2026-11-09T03:24:57.798Z",
+          "sha256": "00f136ae97d8e3e058453d2eb68f3f87d0cc16a90b73edfc2c9ec570e3d4463d"
+        },
+        {
+          "path": "assets/v2/web/red-fox-v21.glb",
+          "bytes": 1271480,
+          "mtime": "2026-11-09T03:25:00.500Z",
+          "sha256": "09925bb6f37f0f02c9ba032c16923507683931d7d3a55811f9b1f974c5a61ba0"
+        },
+        {
+          "path": "assets/v2/web/red-squirrel-v21-lod.glb",
+          "bytes": 3086480,
+          "mtime": "2026-11-09T03:25:03.348Z",
+          "sha256": "734dbc9cb6305cea48cc890459bb8b956ad22506ba948560739874ac3cc960c1"
+        },
+        {
+          "path": "assets/v2/web/red-squirrel-v21.glb",
+          "bytes": 3107556,
+          "mtime": "2026-11-09T03:25:06.495Z",
+          "sha256": "e02809f02fd1982bd88fd3adad29b9ca3ffa6d3ac60ad28a3eb1eee765b55129"
+        },
+        {
+          "path": "assets/v2/web/ribbon-grass-v10.glb",
+          "bytes": 740776,
+          "mtime": "2026-11-09T03:25:07.723Z",
+          "sha256": "7cf23adecaf91fe52c3b9c1048fcb0df4589d3c6034dca39c4f55da9c6405381"
+        },
+        {
+          "path": "assets/v2/web/riffle-bed-v6-lod.glb",
+          "bytes": 259604,
+          "mtime": "2026-11-09T03:25:08.491Z",
+          "sha256": "52e83c7893c9e386a50418811c8b590b3573414fe792bea116fe404d4b80b69b"
+        },
+        {
+          "path": "assets/v2/web/riffle-bed-v6.glb",
+          "bytes": 351748,
+          "mtime": "2026-11-09T03:25:09.390Z",
+          "sha256": "40f1bbef736a30b7b4e32556595005b209ed623caad294fb3a68ef11e8ee2bd7"
+        },
+        {
+          "path": "assets/v2/web/river-boulder-hero-v21-lod.glb",
+          "bytes": 793760,
+          "mtime": "2026-11-09T03:25:10.833Z",
+          "sha256": "60b9b723431ca8dcf381107b23e5e7872993170b6aff6c1e7b1864feb7a6087d"
+        },
+        {
+          "path": "assets/v2/web/river-boulder-hero-v21.glb",
+          "bytes": 778132,
+          "mtime": "2026-11-09T03:25:12.509Z",
+          "sha256": "29925452d058800c7b8fc3f754a2298adeec17f918ed2dbcefb3bc4689f655b8"
+        },
+        {
+          "path": "assets/v2/web/river-gravel-v5-lod.glb",
+          "bytes": 355048,
+          "mtime": "2026-11-09T03:25:13.307Z",
+          "sha256": "032a206dea76499afac3663c9f080d0519522a372cf6e5926b242325fb231f2c"
+        },
+        {
+          "path": "assets/v2/web/river-gravel-v5.glb",
+          "bytes": 412992,
+          "mtime": "2026-11-09T03:25:14.216Z",
+          "sha256": "01022024ccf245576b11f8abef66a54ff22dcca25e259388f09985ec3f7cec04"
+        },
+        {
+          "path": "assets/v2/web/rock-microstructure-v18.glb",
+          "bytes": 2051992,
+          "mtime": "2026-11-09T03:25:16.964Z",
+          "sha256": "98d699e15874e57444dd43914875e61e45d70655798ef757d340d56addb7d808"
+        },
+        {
+          "path": "assets/v2/web/rock-ptarmigan-v20.glb",
+          "bytes": 884288,
+          "mtime": "2026-11-09T03:25:18.691Z",
+          "sha256": "03ce5ef6bb94bd2cd24792ea4c786c29c8d09633ef308c2368fc1f73a014abaf"
+        },
+        {
+          "path": "assets/v2/web/roe-deer-v21-lod.glb",
+          "bytes": 641796,
+          "mtime": "2026-11-09T03:25:20.181Z",
+          "sha256": "0508ddb448f771dec76d3b112505477b4ced92122ea95a307556b2078bdc8435"
+        },
+        {
+          "path": "assets/v2/web/roe-deer-v21.glb",
+          "bytes": 639288,
+          "mtime": "2026-11-09T03:25:21.923Z",
+          "sha256": "9df3b545eb72d614908b58cb3dcf8d8ccd0085f6be107692ffd8b81dc4ba121d"
+        },
+        {
+          "path": "assets/v2/web/root-bank-v5-lod.glb",
+          "bytes": 928244,
+          "mtime": "2026-11-09T03:25:22.972Z",
+          "sha256": "516ef7876ae7554d766233e80e770df8ffa344421acccd40ff9c693025fbb591"
+        },
+        {
+          "path": "assets/v2/web/root-bank-v5.glb",
+          "bytes": 1012124,
+          "mtime": "2026-11-09T03:25:24.151Z",
+          "sha256": "b754a327db516e4076961cb98fcfa4b91c5d327a3ab12ba74e40bc392309cc37"
+        },
+        {
+          "path": "assets/v2/web/sedge-tuft-v12-lod.glb",
+          "bytes": 1970260,
+          "mtime": "2026-11-09T03:25:26.011Z",
+          "sha256": "c19b112d4475fbdca9d3ca7d0bcb271c7be391041a6cff9e39142f779eb596bf"
+        },
+        {
+          "path": "assets/v2/web/sedge-tuft-v12.glb",
+          "bytes": 2022308,
+          "mtime": "2026-11-09T03:25:27.663Z",
+          "sha256": "97993033d3fda3faa101ef67631c4d15acc84fd7cd111f47462f49a216a75f75"
+        },
+        {
+          "path": "assets/v2/web/shelf-fungus-v12-lod.glb",
+          "bytes": 941604,
+          "mtime": "2026-11-09T03:25:28.852Z",
+          "sha256": "2333f98683a543e89aa3ba7f17eb3852b380a1c0770d4e36abf2af6ee8135bfd"
+        },
+        {
+          "path": "assets/v2/web/shelf-fungus-v12.glb",
+          "bytes": 1037924,
+          "mtime": "2026-11-09T03:25:30.399Z",
+          "sha256": "4316ab73363a3fb3ade977cdacdc5091b05f163b28bdbd9facf08a87bb8bd101"
+        },
+        {
+          "path": "assets/v2/web/soil-aggregate-v18.glb",
+          "bytes": 2820620,
+          "mtime": "2026-11-09T03:25:33.386Z",
+          "sha256": "2f8cd99205fd9f5e37d813bd7412f878cb26fdee0603a58aeff7e86dae2e2adc"
+        },
+        {
+          "path": "assets/v2/web/soil-profile-v6.glb",
+          "bytes": 1109024,
+          "mtime": "2026-11-09T03:25:34.588Z",
+          "sha256": "0a29b87754bf79fc73e1fb588756fa23fefa1cfecd82ea6f82ea316b4121a7d7"
+        },
+        {
+          "path": "assets/v2/web/songbird-v18-lod.glb",
+          "bytes": 858576,
+          "mtime": "2026-11-09T03:25:36.100Z",
+          "sha256": "7e888df5174c4f711bba22e9291536134209dc8c87b6ff3ba0235b5da7098e34"
+        },
+        {
+          "path": "assets/v2/web/songbird-v18.glb",
+          "bytes": 865164,
+          "mtime": "2026-11-09T03:25:37.950Z",
+          "sha256": "9d3a256182eee94d203133208aeb64a85454d0d138b3f3a5d150c5b386b572e7"
+        },
+        {
+          "path": "assets/v2/web/spruce-branch-cluster-v21-lod.glb",
+          "bytes": 3176020,
+          "mtime": "2026-11-09T03:25:42.314Z",
+          "sha256": "f0fcaf65f9a0d416cdb3a1938f5d3426aed472ac10727bd6c447e5074e15cbe9"
+        },
+        {
+          "path": "assets/v2/web/spruce-branch-cluster-v21.glb",
+          "bytes": 3203792,
+          "mtime": "2026-11-09T03:25:45.849Z",
+          "sha256": "e8966b3b7a90fdbac0433806721a1bdbee249abd5f72c35ae3e06616d7ac1ebf"
+        },
+        {
+          "path": "assets/v2/web/spruce-branch-v6.glb",
+          "bytes": 919120,
+          "mtime": "2026-11-09T03:25:47.089Z",
+          "sha256": "261a9b10be948c99058dc9c21691894a5b0ff74499438f1eec63224193fac487"
+        },
+        {
+          "path": "assets/v2/web/stream-cobble-cluster-v21-lod.glb",
+          "bytes": 1939236,
+          "mtime": "2026-11-09T03:25:49.451Z",
+          "sha256": "7dfe0081df30cc58a87919f5b1f29bbd27afeae8d864babb5c9c556e885796e1"
+        },
+        {
+          "path": "assets/v2/web/stream-cobble-cluster-v21.glb",
+          "bytes": 1958296,
+          "mtime": "2026-11-09T03:25:51.635Z",
+          "sha256": "a8f8b9cd0cad1bb8e98ff246b1cc048922feba0736a3e13597d07a25febef580"
+        },
+        {
+          "path": "assets/v2/web/stream-slate-v3-lod.glb",
+          "bytes": 189020,
+          "mtime": "2026-11-09T03:25:52.349Z",
+          "sha256": "f8466705f2881b87c2e3e64601aba80cc9ff1377e92367409f07512cabb86d9b"
+        },
+        {
+          "path": "assets/v2/web/stream-slate-v3.glb",
+          "bytes": 223060,
+          "mtime": "2026-11-09T03:25:53.206Z",
+          "sha256": "2e954970b426fdfa762d4bc81475e970cdd1f3ac72ae52c80d8b16cbcdbfda1b"
+        },
+        {
+          "path": "assets/v2/web/submerged-plant-v9.glb",
+          "bytes": 1131004,
+          "mtime": "2026-11-09T03:25:54.560Z",
+          "sha256": "465b3e0f93e42978b833ba3485623ed9e2bc17f8c66d3e5c8d74abf3aaca3cc2"
+        },
+        {
+          "path": "assets/v2/web/underwater-stone-v9.glb",
+          "bytes": 538708,
+          "mtime": "2026-11-09T03:25:55.752Z",
+          "sha256": "ae3b04bca358c76f81a2cf902f0da8bfccd31747c91179436a5a93fb68da49f1"
+        },
+        {
+          "path": "assets/v2/web/water-lily-pad-v21-lod.glb",
+          "bytes": 1339996,
+          "mtime": "2026-11-09T03:25:58.677Z",
+          "sha256": "5a7f19f8c35a9c36ece8d938a064708b407fc5ac5340aa3ba8b0121b3602b273"
+        },
+        {
+          "path": "assets/v2/web/water-lily-pad-v21.glb",
+          "bytes": 1358484,
+          "mtime": "2026-11-09T03:26:02.197Z",
+          "sha256": "2bb3e8b66e7ab05776857a3e366dcde983c77632d499969dc2ffc4d6b9af955e"
+        },
+        {
+          "path": "assets/v2/web/wet-boulder-lod.glb",
+          "bytes": 383856,
+          "mtime": "2026-11-09T03:26:03.000Z",
+          "sha256": "e60acc9fdc3cdcedee0c7487b0e6f9a5c8b51803977ccdd008972a6459f5cd96"
+        },
+        {
+          "path": "assets/v2/web/wet-boulder.glb",
+          "bytes": 417844,
+          "mtime": "2026-11-09T03:26:03.827Z",
+          "sha256": "3247d9e2d62369b2825289b1bf110809270e60fb5b34a4aa0e0bfd81a77dfcc6"
+        },
+        {
+          "path": "assets/v2/web/wet-moss-v6-lod.glb",
+          "bytes": 320700,
+          "mtime": "2026-11-09T03:26:04.622Z",
+          "sha256": "e6b3a927bb829e0d80fb7d78d18e05ad34dd0102cd76b615c15c84c76aec5039"
+        },
+        {
+          "path": "assets/v2/web/wet-moss-v6.glb",
+          "bytes": 396052,
+          "mtime": "2026-11-09T03:26:05.605Z",
+          "sha256": "83adfa7118402e85b0c9628bee7ef5ed964ac04f63c820448e4f06f65ce36844"
+        },
+        {
+          "path": "assets/v2/web/white-throated-dipper-v21-lod.glb",
+          "bytes": 809692,
+          "mtime": "2026-11-09T03:26:07.607Z",
+          "sha256": "2b96a4abea1ae8864b8a9cbd2522bcfe89421648f2b2c140c87e5784d2f4976c"
+        },
+        {
+          "path": "assets/v2/web/white-throated-dipper-v21.glb",
+          "bytes": 821448,
+          "mtime": "2026-11-09T03:26:09.968Z",
+          "sha256": "f359b489b0e08e2d76d62299048dbd89ddf1f8566ff90264686d24014cb12a59"
+        },
+        {
+          "path": "assets/v2/web/wild-boar-v21-lod.glb",
+          "bytes": 1262496,
+          "mtime": "2026-11-09T03:26:12.788Z",
+          "sha256": "70b326f07ac3032680ea5f1cddb6719a27f7da2a6a415d47ee06f2c57e54eb71"
+        },
+        {
+          "path": "assets/v2/web/wild-boar-v21.glb",
+          "bytes": 1281880,
+          "mtime": "2026-11-09T03:26:16.381Z",
+          "sha256": "da2762c35585bde9f8e83d030be76ce3846e6da53f116299e0d87ddd4e0b860d"
+        },
+        {
+          "path": "assets/v2/web/willow-stems-v13-lod.glb",
+          "bytes": 1091156,
+          "mtime": "2026-11-09T03:26:17.577Z",
+          "sha256": "373588290674a0d7b76d67cd5e618b3b127a8ccb814fe170a1e63dbcfffe57cb"
+        },
+        {
+          "path": "assets/v2/web/willow-stems-v13.glb",
+          "bytes": 1376424,
+          "mtime": "2026-11-09T03:26:19.015Z",
+          "sha256": "9c6c4937f746231aa9abbfbbb6d8fe5b207ccbccdd36d2ae535a7d5c5808cca0"
+        },
+        {
+          "path": "assets/v2/wet-boulder.glb",
+          "bytes": 815860,
+          "mtime": "2026-11-09T03:26:20.251Z",
+          "sha256": "a859a69920a6dcfa462675be11bf7e350a242239df534cb8baf006cd8c103d89"
+        },
+        {
+          "path": "assets/v3/fir-mature.glb",
+          "bytes": 3343664,
+          "mtime": "2026-11-10T09:21:05.159Z",
+          "sha256": "1b77936caca940158462063c87b6957ef0cf3c3bdea593fe728a04bf0fba5268"
+        },
+        {
+          "path": "assets/v3/fir-sapling.glb",
+          "bytes": 3073976,
+          "mtime": "2026-11-10T09:21:06.519Z",
+          "sha256": "17fd9d490850cc75e9b737233c3f08b989f96412a43062c48738392d6f6ccc53"
+        },
+        {
+          "path": "assets/v3/fir-snag.glb",
+          "bytes": 2333668,
+          "mtime": "2026-11-10T09:21:07.746Z",
+          "sha256": "af5281006130409ba968902a6ba3e765f6015f50cd682cdd05326ab13fe1a9a8"
+        },
+        {
+          "path": "assets/v3/MANIFEST.json",
+          "bytes": 5263,
+          "mtime": "2026-11-10T09:21:13.889Z",
+          "sha256": "7649d2651ffe9443a67bddec4bcab54632384327cf1a3d50a0c761292ae69a2c"
+        },
+        {
+          "path": "assets/v3/wet-rock.glb",
+          "bytes": 2242948,
+          "mtime": "2026-11-10T09:21:08.816Z",
+          "sha256": "23a251ac58a79baafcd6fc6b28b7aed8c9bb978c6bf2206a380915815272cefd"
+        },
+        {
+          "path": "data/dem/gongga-farview.bin",
+          "bytes": 356352,
+          "mtime": "2026-11-10T09:21:25.339Z",
+          "sha256": "50d9a8d7c3b4f8657694620023bb8390fec61a82bc86bf1cfdbd0dc20ee45283"
+        },
+        {
+          "path": "data/dem/gongga-farview.json",
+          "bytes": 10905,
+          "mtime": "2026-11-10T09:21:25.340Z",
+          "sha256": "2d02b8946a043787ff5a58380e289e4fee03f65e3933a98bf8555d37d9a7e39b"
+        },
+        {
+          "path": "data/science/claims.json",
+          "bytes": 31071,
+          "mtime": "2026-11-10T09:19:50.532Z",
+          "sha256": "b72fb63c7d36e4e96ca0789fee2bf3e33f74587f115710313cbbe0f908209c63"
+        },
+        {
+          "path": "data/science/routes.json",
+          "bytes": 61882,
+          "mtime": "2026-11-10T14:02:10.217Z",
+          "sha256": "714a7813c526d6608ce77b499f1df27c607d30f93e476a0f79c9582536c8abbc"
+        },
+        {
+          "path": "data/science/samples.json",
+          "bytes": 14921,
+          "mtime": "2026-11-10T09:20:12.964Z",
+          "sha256": "558d049b4ce237a696ac1cc99ff99e3059db8cb5cb6304a8ce226fcf822e5e56"
+        },
+        {
+          "path": "data/science/site-notes.json",
+          "bytes": 18920,
+          "mtime": "2026-11-10T09:21:44.715Z",
+          "sha256": "e78f8d5156108fdb946979539e2b39bf2ad6decaef4e4a04de3004b7d5ec3521"
+        },
+        {
+          "path": "data/science/sources.json",
+          "bytes": 16460,
+          "mtime": "2026-11-10T09:15:48.827Z",
+          "sha256": "54f5a2d380b61bc57a55c0218eb13f08d48bc4a05fd4804f55fc759a42a74cbc"
+        },
+        {
+          "path": "data/spec/01_海螺沟场景与坐标清单.json",
+          "bytes": 5280,
+          "mtime": "2026-11-10T09:02:48.958Z",
+          "sha256": "832cbec53ee4b72405468f0e20c94aa46543eae87e4b8905528cc002e1dd3d3b"
+        },
+        {
+          "path": "data/spec/02_海螺沟微观路线.json",
+          "bytes": 5546,
+          "mtime": "2026-11-10T13:11:11.510Z",
+          "sha256": "488d1e85c97e2463733e9cb1e49ae3d52d75aad0009f341f2b6fcd6f381a02ef"
+        },
+        {
+          "path": "data/spec/03_UI交互与加载规范.json",
+          "bytes": 4263,
+          "mtime": "2026-11-10T09:02:48.973Z",
+          "sha256": "e140c09cd4fe42ac3ceac76cda8803777d8570104315424523bc7bbc18733f54"
+        },
+        {
+          "path": "data/spec/04_设计令牌.json",
+          "bytes": 1317,
+          "mtime": "2026-11-10T09:02:48.979Z",
+          "sha256": "d542f19d4c1ed3365e4356d80edd100efe77913b5704af11cd7cd4515fe25574"
+        },
+        {
+          "path": "data/spec/05_验收测试用例.json",
+          "bytes": 13712,
+          "mtime": "2026-11-10T09:02:48.984Z",
+          "sha256": "90d4fe3b90ab1bb15203109d54bc6e41b7393166d410e937cabd26b4a4ec62ca"
+        },
+        {
+          "path": "data/spec/06_来源与许可登记.csv",
+          "bytes": 2948,
+          "mtime": "2026-11-10T09:02:48.992Z",
+          "sha256": "0d203070f1fd314211109a109f6c7064373c23daa0829bbfc7757e83b8eb4aef"
+        },
+        {
+          "path": "draco/draco_decoder.js",
+          "bytes": 719410,
+          "mtime": "2026-11-08T04:53:27.902Z",
+          "sha256": "30e4d486fa020737af10e3c56197693e5b904bdc05b8bfa5d7b06751dec6da04"
+        },
+        {
+          "path": "draco/draco_decoder.wasm",
+          "bytes": 285747,
+          "mtime": "2026-11-08T04:53:28.848Z",
+          "sha256": "c55a594e8ffd18426d36b27fea9618af3df5e173640a3e56d46f09d76f0574f2"
+        },
+        {
+          "path": "draco/draco_wasm_wrapper.js",
+          "bytes": 58763,
+          "mtime": "2026-11-08T04:53:27.912Z",
+          "sha256": "e8049906ef3f8f75d3456c22a3f31bfdfe5b5b5bd09ccdec613b9e9a49d554d8"
+        },
+        {
+          "path": "index.html",
+          "bytes": 4227,
+          "mtime": "2026-11-11T10:44:55.276Z",
+          "sha256": "67ab60360d9dee3823bc49b02fd5ba99998b592d60dddd3e4795f3d7f428917b"
+        },
+        {
+          "path": "textures/flowers/daisy-card.png",
+          "bytes": 1490962,
+          "mtime": "2026-11-09T08:23:24.622Z",
+          "sha256": "ad1641e4a21aab6dcfcc7a00ec3d023d3793708551802c1882487cf0e0f75b46"
+        },
+        {
+          "path": "textures/flowers/gentian-card.png",
+          "bytes": 1116316,
+          "mtime": "2026-11-09T08:23:26.170Z",
+          "sha256": "c2e0503de394583a3a80ee2eef804163fb258fe1658aa694456e9511abeea599"
+        },
+        {
+          "path": "textures/flowers/reed-card.png",
+          "bytes": 1823494,
+          "mtime": "2026-11-09T08:23:27.156Z",
+          "sha256": "717bbb1cb8f6023f41bdb3badd6bd33ae0205034749101d0fb6aa321e15d0c32"
+        },
+        {
+          "path": "textures/flowers/waterlily-card.png",
+          "bytes": 1336474,
+          "mtime": "2026-11-09T08:23:28.526Z",
+          "sha256": "f05e050c78ccf0f77e0a45e8f5156b3d39e908c6293353281d332a91c0bd6936"
+        },
+        {
+          "path": "textures/forest/canopy.jpg",
+          "bytes": 155682,
+          "mtime": "2026-11-08T15:11:57.479Z",
+          "sha256": "94234a768c287f2972a0326dd93139331f3e96759733b3d31469e7854350708a"
+        },
+        {
+          "path": "textures/forest_ground_04-color.jpg",
+          "bytes": 346113,
+          "mtime": "2026-11-09T08:19:25.193Z",
+          "sha256": "8bfbbb8c00be66820922f71c736106585dab925bd5da27cd7bcde7eb3139fd45"
+        },
+        {
+          "path": "textures/forest_ground_04-normal.jpg",
+          "bytes": 379874,
+          "mtime": "2026-11-09T08:19:25.235Z",
+          "sha256": "fb865fb7054c5d71ae7edae5318bcec52cf14c7029871f8860a4a8efc91ad7f6"
+        },
+        {
+          "path": "textures/forest_ground_04-roughness.jpg",
+          "bytes": 168423,
+          "mtime": "2026-11-09T08:19:25.258Z",
+          "sha256": "9d1b708d3710fc8f847e432f89970611b598795237c159f68d86490b70f593d8"
+        },
+        {
+          "path": "textures/grass/fern-card.png",
+          "bytes": 1341834,
+          "mtime": "2026-11-09T08:23:30.115Z",
+          "sha256": "138433cfceb71f2c36128431dd2619c8d150aefdbf6bb62f2fe786679fc70d50"
+        },
+        {
+          "path": "textures/grass/grass-card.png",
+          "bytes": 1488857,
+          "mtime": "2026-11-09T08:23:31.280Z",
+          "sha256": "23935182c1d43a826ca973cd1a2cb6e013c299d25e91761fb72ac130f62702ba"
+        },
+        {
+          "path": "textures/grass/moss-card.png",
+          "bytes": 2121316,
+          "mtime": "2026-11-09T08:23:32.105Z",
+          "sha256": "c54be382a1198bab40185f8bd90ed2e874dc7e9cddb456b9f615c84a7c91b2a1"
+        },
+        {
+          "path": "textures/grass/pebble-card.png",
+          "bytes": 1074307,
+          "mtime": "2026-11-09T08:23:32.813Z",
+          "sha256": "732db53a615206363366a3bbdf933df9777011078223d24504556b19a1f05e02"
+        },
+        {
+          "path": "textures/grass-impostor.png",
+          "bytes": 405448,
+          "mtime": "2026-11-08T04:26:30.000Z",
+          "sha256": "376aa5c5940b021c8906bfcd18eef0f401dea9335ca23528880826cfb27f4009"
+        },
+        {
+          "path": "textures/grass_path_3-color.jpg",
+          "bytes": 275702,
+          "mtime": "2026-11-09T08:19:25.321Z",
+          "sha256": "65b0c54e56a8228fc3c6e81aa64a2e4494cd3079ed5d3a2787c9cc1ede50fbbe"
+        },
+        {
+          "path": "textures/grass_path_3-normal.jpg",
+          "bytes": 247437,
+          "mtime": "2026-11-09T08:19:25.356Z",
+          "sha256": "70bf1e3b69a6299fca3bf4e7ea51af6b0f84541ba42a6ea5ae9a502a42b0a1a1"
+        },
+        {
+          "path": "textures/grass_path_3-roughness.jpg",
+          "bytes": 589060,
+          "mtime": "2026-11-08T04:26:30.000Z",
+          "sha256": "660682fb61634be28416f2a45adb54329d2e8ce743ef225e40ee9a7a999c17e7"
+        },
+        {
+          "path": "textures/leafy_grass-color.jpg",
+          "bytes": 344683,
+          "mtime": "2026-11-09T08:19:25.398Z",
+          "sha256": "ee92a2f814b20ad7bc25ec2f547e6117a6d6855f95527862bec18692c908c7dd"
+        },
+        {
+          "path": "textures/leafy_grass-normal.jpg",
+          "bytes": 447272,
+          "mtime": "2026-11-09T08:19:25.443Z",
+          "sha256": "e1dcaa0620523b1adf48407755b0e8d15902becbadd44a08363584f57e579427"
+        },
+        {
+          "path": "textures/leafy_grass-roughness.jpg",
+          "bytes": 511385,
+          "mtime": "2026-11-08T04:26:30.000Z",
+          "sha256": "0c2a1d91aacb8e54a496051b59854e51e456fe858abeade778e308359ef16463"
+        },
+        {
+          "path": "textures/moss/moss-carpet.png",
+          "bytes": 796015,
+          "mtime": "2026-11-09T08:23:33.094Z",
+          "sha256": "08d5a37ddb557b594079f617c77a6ca11abd2605c6c947da951b4fea72969c25"
+        },
+        {
+          "path": "textures/moss/moss-clump.png",
+          "bytes": 1921288,
+          "mtime": "2026-11-09T08:23:33.939Z",
+          "sha256": "9de906b45290098384374189d087df1cd8f7cc0788df7eb5f80b146fa42d45d3"
+        },
+        {
+          "path": "textures/pbr/bank/albedo.jpg",
+          "bytes": 1146583,
+          "mtime": "2026-11-09T08:23:34.481Z",
+          "sha256": "a0f8c4b3a1bad42123904d9b0ba9eedd8a9fd3e6348dab9073722a7dab5e7a14"
+        },
+        {
+          "path": "textures/pbr/bank/ao.jpg",
+          "bytes": 209544,
+          "mtime": "2026-11-08T09:19:38.501Z",
+          "sha256": "078db895b9eb68c74615e27e7285822a837461398ec9bce41c0e2cfbc7359dd7"
+        },
+        {
+          "path": "textures/pbr/bank/normal.png",
+          "bytes": 6285991,
+          "mtime": "2026-11-09T08:23:37.190Z"
+        },
+        {
+          "path": "textures/pbr/bank/rough.jpg",
+          "bytes": 762561,
+          "mtime": "2026-11-09T08:23:37.506Z",
+          "sha256": "81395077a0f6e9c5d210b64e60369ac3d91ab912613e654577fba52519f86f68"
+        },
+        {
+          "path": "textures/pbr/firn/albedo-src.jpg",
+          "bytes": 1024312,
+          "mtime": "2026-11-10T15:42:25.730Z",
+          "sha256": "e498546379106b75f090287ac3323838c12049a82190281a217cd40bbac361e2"
+        },
+        {
+          "path": "textures/pbr/firn/albedo.jpg",
+          "bytes": 343984,
+          "mtime": "2026-11-10T15:42:26.185Z",
+          "sha256": "0c43e2f524a63fb219c822e234471dedf67e0445fd5a88ba252eeca04dd44fc6"
+        },
+        {
+          "path": "textures/pbr/granite/albedo.jpg",
+          "bytes": 357055,
+          "mtime": "2026-11-09T08:19:35.437Z",
+          "sha256": "63bf31804dd267e555ad1cf48c7c063aa221705429bfa61fea1aa9fc490de61f"
+        },
+        {
+          "path": "textures/pbr/granite/ao.jpg",
+          "bytes": 51734,
+          "mtime": "2026-11-08T09:19:37.637Z",
+          "sha256": "a5f1ca156f9faab896546d215f302640ae6f5935c756e5ef129c28969721021c"
+        },
+        {
+          "path": "textures/pbr/granite/normal.png",
+          "bytes": 1728672,
+          "mtime": "2026-11-09T08:23:38.565Z",
+          "sha256": "af2c3b256d2d0a7175978337c1d06e2edd37ac84cc665fc0e7d6c5b35a048d33"
+        },
+        {
+          "path": "textures/pbr/granite/rough.jpg",
+          "bytes": 332827,
+          "mtime": "2026-11-08T09:19:37.612Z",
+          "sha256": "8d292475882201a83b7309c981fe74c8e048aa59432961781823470975f2b6b8"
+        },
+        {
+          "path": "textures/pbr/meadow/albedo.jpg",
+          "bytes": 452203,
+          "mtime": "2026-11-09T08:19:35.800Z",
+          "sha256": "a426fc520b2b7bf87108dac401145a28bacd9e019f11b980cc146df17259d404"
+        },
+        {
+          "path": "textures/pbr/meadow/ao.jpg",
+          "bytes": 44388,
+          "mtime": "2026-11-08T09:19:37.401Z",
+          "sha256": "3082b7606775dc1bab225684aaccc0ebe19279bd0f7ac64ff1a08c2cb9cb6052"
+        },
+        {
+          "path": "textures/pbr/meadow/normal.png",
+          "bytes": 1632879,
+          "mtime": "2026-11-09T08:23:39.181Z",
+          "sha256": "8194b3c795d780606aa98456e305bb973afe797ac1c92456c393c8656a1cdcb0"
+        },
+        {
+          "path": "textures/pbr/meadow/rough.jpg",
+          "bytes": 404284,
+          "mtime": "2026-11-08T09:19:37.379Z",
+          "sha256": "8933344ed65db58c4d1761e6cf17ab433e43ff24004777359638fa678707122b"
+        },
+        {
+          "path": "textures/pbr/moss/albedo.jpg",
+          "bytes": 422290,
+          "mtime": "2026-11-09T08:19:36.288Z",
+          "sha256": "ffbd4d4ce62ec02b1b0aca0e2e92431411fc0f03dbae5567d468976cd632a102"
+        },
+        {
+          "path": "textures/pbr/moss/ao.jpg",
+          "bytes": 46849,
+          "mtime": "2026-11-08T09:19:37.151Z",
+          "sha256": "0da8b7376773754b3c44e75cf80cf5bdfb35c1ca55f508e093fb69d2ce136412"
+        },
+        {
+          "path": "textures/pbr/moss/normal.png",
+          "bytes": 1717239,
+          "mtime": "2026-11-09T08:23:39.898Z",
+          "sha256": "2df010b331f43acf1dfc171aead4ffd2bec5719c07adf2e34d54f0877e605004"
+        },
+        {
+          "path": "textures/pbr/moss/rough.jpg",
+          "bytes": 374054,
+          "mtime": "2026-11-08T09:19:37.128Z",
+          "sha256": "4f387389a419c8041a6c813bc068414b3f619e0e6d743624a5af4051250d47b5"
+        },
+        {
+          "path": "textures/pbr/riverbed/albedo.jpg",
+          "bytes": 313564,
+          "mtime": "2026-11-09T08:19:36.737Z",
+          "sha256": "c1af90e7be898f16a7d5358b55da72ba73954eab6c70e376efa1cd8dc099c559"
+        },
+        {
+          "path": "textures/pbr/riverbed/ao.jpg",
+          "bytes": 44258,
+          "mtime": "2026-11-08T09:19:36.916Z",
+          "sha256": "4aea27ed7df2db7186a78c7d765440757299aafd3d5e22403ce0f5d6dadbd09a"
+        },
+        {
+          "path": "textures/pbr/riverbed/normal.png",
+          "bytes": 1706164,
+          "mtime": "2026-11-09T08:23:40.484Z",
+          "sha256": "317edea7b9b051ffb598c6bb775ab6ab98696a8966ee591a56e1e14b40e32710"
+        },
+        {
+          "path": "textures/pbr/riverbed/rough.jpg",
+          "bytes": 282541,
+          "mtime": "2026-11-08T09:19:36.892Z",
+          "sha256": "b35b222040ebbf2bd448c3274639a2fafe1c08f2d6e9eb2a0052d11eafa761f9"
+        },
+        {
+          "path": "textures/pbr/rockdetail/albedo.jpg",
+          "bytes": 888472,
+          "mtime": "2026-11-09T08:23:40.747Z",
+          "sha256": "ebcb80befb6e5eebfe539220c8c9a1372d6c1f7c5871b5d1404ae16794ec7371"
+        },
+        {
+          "path": "textures/pbr/rockdetail/ao.jpg",
+          "bytes": 213760,
+          "mtime": "2026-11-08T09:19:39.595Z",
+          "sha256": "536edd48d588d6f92200c4626d0be0962107adf8101fba0dbb30c4371532bd78"
+        },
+        {
+          "path": "textures/pbr/rockdetail/normal.png",
+          "bytes": 6415941,
+          "mtime": "2026-11-09T08:23:42.740Z"
+        },
+        {
+          "path": "textures/pbr/rockdetail/rough.jpg",
+          "bytes": 647999,
+          "mtime": "2026-11-09T08:23:43.037Z",
+          "sha256": "d799f997f82db1367d25fec9c385dbf177b7eb1e34c1c9e58a0a18ff519a40fa"
+        },
+        {
+          "path": "textures/pbr/rockface/albedo.jpg",
+          "bytes": 378621,
+          "mtime": "2026-11-09T08:19:39.159Z",
+          "sha256": "e6a9798926958013e05672a72a760a5d3b588bcbd3eff9ccd56fe672023865b6"
+        },
+        {
+          "path": "textures/pbr/rockface/ao.jpg",
+          "bytes": 48566,
+          "mtime": "2026-11-08T09:19:38.740Z",
+          "sha256": "2e08402f77e6ee6c0ab071350182c20e31fa86217b4b658713bd1c4647c6f65f"
+        },
+        {
+          "path": "textures/pbr/rockface/normal.png",
+          "bytes": 1805035,
+          "mtime": "2026-11-09T08:23:43.412Z",
+          "sha256": "40ccb0e44b54bde7cf9cc181be204ca6879ca917dda86f5a44f2b31efb1d7db1"
+        },
+        {
+          "path": "textures/pbr/rockface/rough.jpg",
+          "bytes": 359498,
+          "mtime": "2026-11-08T09:19:38.717Z",
+          "sha256": "2aa8afcebf0cb31ba5fc8cfd81686b5a3e47aea904712bb71451ae6e47661fdc"
+        },
+        {
+          "path": "textures/pbr/rockmicro/albedo.jpg",
+          "bytes": 980432,
+          "mtime": "2026-11-09T08:23:43.694Z",
+          "sha256": "270025c18067dfa318bc89fff43a43e52606907eb3597130f6a80a932445658b"
+        },
+        {
+          "path": "textures/pbr/rockmicro/ao.jpg",
+          "bytes": 238680,
+          "mtime": "2026-11-08T09:19:41.351Z",
+          "sha256": "77892c42842094c5811a10be5481b75c0b114724f17d2b66f0e2078015210a62"
+        },
+        {
+          "path": "textures/pbr/rockmicro/normal.png",
+          "bytes": 6904940,
+          "mtime": "2026-11-09T08:23:45.463Z"
+        },
+        {
+          "path": "textures/pbr/rockmicro/rough.jpg",
+          "bytes": 690393,
+          "mtime": "2026-11-09T08:23:45.712Z",
+          "sha256": "77f5d9296323efc342a0f6fc52f5f33ec8288aa35a90af0eec94aac85594a8ef"
+        },
+        {
+          "path": "textures/pbr/soildetail/albedo.jpg",
+          "bytes": 959099,
+          "mtime": "2026-11-09T08:23:46.082Z",
+          "sha256": "9e521f12623afa3897bec6875e043c8e609596b96f65ec635435307279cc34a3"
+        },
+        {
+          "path": "textures/pbr/soildetail/ao.jpg",
+          "bytes": 204264,
+          "mtime": "2026-11-08T09:19:40.467Z",
+          "sha256": "3ac5855d5d0b52a16f49cc0333356e63c5736a237464027839d62b0af5b4a55b"
+        },
+        {
+          "path": "textures/pbr/soildetail/normal.png",
+          "bytes": 6037423,
+          "mtime": "2026-11-09T08:23:48.614Z"
+        },
+        {
+          "path": "textures/pbr/soildetail/rough.jpg",
+          "bytes": 662458,
+          "mtime": "2026-11-09T08:23:48.937Z",
+          "sha256": "cfce58f3e5912c6cff36acf0c644f1263799d37769ae7a8010bfb18729fc79af"
+        },
+        {
+          "path": "textures/river_small_rocks-color.jpg",
+          "bytes": 304847,
+          "mtime": "2026-11-09T08:19:25.481Z",
+          "sha256": "867797f5c419557826cef3fddb9dd0aad44ca24098482282376f638c69a366e5"
+        },
+        {
+          "path": "textures/river_small_rocks-normal.jpg",
+          "bytes": 401769,
+          "mtime": "2026-11-09T08:19:25.523Z",
+          "sha256": "f5ed35a59e0a10bc91d799a3d95ec70f50eb2f79c0346fd9de5c63debe09332e"
+        },
+        {
+          "path": "textures/river_small_rocks-roughness.jpg",
+          "bytes": 179300,
+          "mtime": "2026-11-09T08:19:25.547Z",
+          "sha256": "495aaefe6ab4ff98f4d7c72889e387da6883d23b230b762d602350a0558a9904"
+        },
+        {
+          "path": "textures/sources.json",
+          "bytes": 5741,
+          "mtime": "2026-11-08T04:26:30.000Z",
+          "sha256": "cb6bba845cbc44568bf11d83fe6fff7799f6ca48b7866e3dbbf2e67eb8976e75"
+        },
+        {
+          "path": "textures/trees/spruce-bark.png",
+          "bytes": 2700384,
+          "mtime": "2026-11-09T08:23:49.195Z",
+          "sha256": "2245ea8eee74db8b04df913d78dc886438120af2085dc6c0e9f55225ce9b1e38"
+        },
+        {
+          "path": "textures/trees/spruce-branch-a.png",
+          "bytes": 1272129,
+          "mtime": "2026-11-09T08:23:49.419Z",
+          "sha256": "fc28b970b5aa697dc0aec695c7bf67c2d1418ad55f1c32b0fccda6728e77f938"
+        },
+        {
+          "path": "textures/trees/spruce-branch-b.png",
+          "bytes": 1185449,
+          "mtime": "2026-11-09T08:23:49.697Z",
+          "sha256": "91d2d43732f89a093ab68fca98ce2e6caccd82fc95e6844db0e262fc877ed8b0"
+        },
+        {
+          "path": "textures/trees/spruce-branch-c.png",
+          "bytes": 955740,
+          "mtime": "2026-11-09T08:23:49.917Z",
+          "sha256": "ff8437b7c68f69fd2bcb6d4d7f600f520f3567e695d6a8efa4e83e21bd3a0f21"
+        }
+      ]
+    },
+    "data": {
+      "note": "科学数据与 DEM 源（public/data 为运行时数据源，已随构建拷入 dist/data）",
+      "root": "public/data",
+      "fileCount": 13,
+      "totalBytes": 543577,
+      "files": [
+        {
+          "path": "dem/gongga-farview.bin",
+          "bytes": 356352,
+          "mtime": "2026-11-10T09:21:25.339Z",
+          "sha256": "50d9a8d7c3b4f8657694620023bb8390fec61a82bc86bf1cfdbd0dc20ee45283"
+        },
+        {
+          "path": "dem/gongga-farview.json",
+          "bytes": 10905,
+          "mtime": "2026-11-10T09:21:25.340Z",
+          "sha256": "2d02b8946a043787ff5a58380e289e4fee03f65e3933a98bf8555d37d9a7e39b"
+        },
+        {
+          "path": "science/claims.json",
+          "bytes": 31071,
+          "mtime": "2026-11-10T09:19:50.532Z",
+          "sha256": "b72fb63c7d36e4e96ca0789fee2bf3e33f74587f115710313cbbe0f908209c63"
+        },
+        {
+          "path": "science/routes.json",
+          "bytes": 61882,
+          "mtime": "2026-11-10T14:02:10.217Z",
+          "sha256": "714a7813c526d6608ce77b499f1df27c607d30f93e476a0f79c9582536c8abbc"
+        },
+        {
+          "path": "science/samples.json",
+          "bytes": 14921,
+          "mtime": "2026-11-10T09:20:12.964Z",
+          "sha256": "558d049b4ce237a696ac1cc99ff99e3059db8cb5cb6304a8ce226fcf822e5e56"
+        },
+        {
+          "path": "science/site-notes.json",
+          "bytes": 18920,
+          "mtime": "2026-11-10T09:21:44.715Z",
+          "sha256": "e78f8d5156108fdb946979539e2b39bf2ad6decaef4e4a04de3004b7d5ec3521"
+        },
+        {
+          "path": "science/sources.json",
+          "bytes": 16460,
+          "mtime": "2026-11-10T09:15:48.827Z",
+          "sha256": "54f5a2d380b61bc57a55c0218eb13f08d48bc4a05fd4804f55fc759a42a74cbc"
+        },
+        {
+          "path": "spec/01_海螺沟场景与坐标清单.json",
+          "bytes": 5280,
+          "mtime": "2026-11-10T09:02:48.958Z",
+          "sha256": "832cbec53ee4b72405468f0e20c94aa46543eae87e4b8905528cc002e1dd3d3b"
+        },
+        {
+          "path": "spec/02_海螺沟微观路线.json",
+          "bytes": 5546,
+          "mtime": "2026-11-10T13:11:11.510Z",
+          "sha256": "488d1e85c97e2463733e9cb1e49ae3d52d75aad0009f341f2b6fcd6f381a02ef"
+        },
+        {
+          "path": "spec/03_UI交互与加载规范.json",
+          "bytes": 4263,
+          "mtime": "2026-11-10T09:02:48.973Z",
+          "sha256": "e140c09cd4fe42ac3ceac76cda8803777d8570104315424523bc7bbc18733f54"
+        },
+        {
+          "path": "spec/04_设计令牌.json",
+          "bytes": 1317,
+          "mtime": "2026-11-10T09:02:48.979Z",
+          "sha256": "d542f19d4c1ed3365e4356d80edd100efe77913b5704af11cd7cd4515fe25574"
+        },
+        {
+          "path": "spec/05_验收测试用例.json",
+          "bytes": 13712,
+          "mtime": "2026-11-10T09:02:48.984Z",
+          "sha256": "90d4fe3b90ab1bb15203109d54bc6e41b7393166d410e937cabd26b4a4ec62ca"
+        },
+        {
+          "path": "spec/06_来源与许可登记.csv",
+          "bytes": 2948,
+          "mtime": "2026-11-10T09:02:48.992Z",
+          "sha256": "0d203070f1fd314211109a109f6c7064373c23daa0829bbfc7757e83b8eb4aef"
+        }
+      ]
+    },
+    "tests": {
+      "note": "验收/冒烟/取证工具链（Node 脚本，CDP 驱动真实 Chrome）",
+      "root": "tools",
+      "fileCount": 27,
+      "totalBytes": 138620,
+      "files": [
+        {
+          "path": "a11y-audit.mjs",
+          "bytes": 5109,
+          "mtime": "2026-11-11T10:50:41.049Z",
+          "sha256": "39853cbcb0f8a35ce15d6561a96716db270052eeb527b128f724c4c6dc16a74d"
+        },
+        {
+          "path": "a11y-fontshot.mjs",
+          "bytes": 1485,
+          "mtime": "2026-11-11T10:51:12.720Z",
+          "sha256": "e06cd7591af8f7fd64c01e14a5f41d8d3f8d45835c2ffd1fc5f160aed8e4f19b"
+        },
+        {
+          "path": "acceptance.mjs",
+          "bytes": 26061,
+          "mtime": "2026-11-11T11:53:32.790Z",
+          "sha256": "4f50c6db5f10c64584c6f27e7e4b43bd4d430e9813d6c2cb6cd3999f7a91a69c"
+        },
+        {
+          "path": "aholo_lux3d.py",
+          "bytes": 4758,
+          "mtime": "2026-11-10T15:05:01.847Z",
+          "sha256": "4ec4cff1eaa4087c70639a68768b947cf4764b8214dc58c5d7963964628dc339"
+        },
+        {
+          "path": "asset-inventory.mjs",
+          "bytes": 3412,
+          "mtime": "2026-11-10T08:38:20.584Z",
+          "sha256": "f972d32ed4c7dee5f5d5592aa7300eed006c47197d54898f8d0247f160861faa"
+        },
+        {
+          "path": "asset-library.mjs",
+          "bytes": 7140,
+          "mtime": "2026-11-10T08:39:04.042Z",
+          "sha256": "53400461fc72314f9e9442033f3c56ed173b439853f4e932033d42b97d249fed"
+        },
+        {
+          "path": "capture.mjs",
+          "bytes": 2468,
+          "mtime": "2026-11-10T11:20:35.254Z",
+          "sha256": "901b0311f0e139bd3f44e670175896bcd84e496868a6e59d668c85446e1cfdf4"
+        },
+        {
+          "path": "cdp.mjs",
+          "bytes": 6572,
+          "mtime": "2026-11-11T00:33:15.712Z",
+          "sha256": "d8dc6ea62e68b8b43b4ed47b5aee69df29613c8beb59a3cf15c3445aac4674a5"
+        },
+        {
+          "path": "check-shell.mjs",
+          "bytes": 3857,
+          "mtime": "2026-11-10T10:04:13.518Z",
+          "sha256": "8e3d20941c7f9442cb21e6783d649b73607fe00373013d648e2c607851c6292a"
+        },
+        {
+          "path": "dem-ingest.mjs",
+          "bytes": 28242,
+          "mtime": "2026-11-10T09:21:13.328Z",
+          "sha256": "0aac61a4282bc0ae582a8c50eebc4e049f831b7175d3f2ec25d52541c935ec82"
+        },
+        {
+          "path": "evidence-load05-a11y06.mjs",
+          "bytes": 1811,
+          "mtime": "2026-11-11T11:00:50.950Z",
+          "sha256": "1150429725d790b831485b936a84ec09f6421f34497d4e3c4aed05a845372588"
+        },
+        {
+          "path": "evidence-load05.mjs",
+          "bytes": 1470,
+          "mtime": "2026-11-11T11:17:10.440Z",
+          "sha256": "ffc7af30cf385635ff5408f4465266eaf75ce297390956ba454bfee5e768c941"
+        },
+        {
+          "path": "evidence-w3d09.mjs",
+          "bytes": 1250,
+          "mtime": "2026-11-11T11:23:16.619Z",
+          "sha256": "2cc90b3e490ba4840e908b6e9eb8b6c07eaa91fe0749ea8ba1dedcec7dcb5080"
+        },
+        {
+          "path": "inspect-v3.mjs",
+          "bytes": 6728,
+          "mtime": "2026-11-10T09:13:02.895Z",
+          "sha256": "d74ebb5772424506869ee7c81ab26da065aaee86cbfcc3c49a3ad8ad37e2dab9"
+        },
+        {
+          "path": "md-lite-smoke.mjs",
+          "bytes": 5062,
+          "mtime": "2026-11-10T13:12:53.535Z",
+          "sha256": "14c73a83e60b0b1845207d3bc240afc822506a235a0baa98a7d7abc45cd9babd"
+        },
+        {
+          "path": "molecular-e2e.mjs",
+          "bytes": 3688,
+          "mtime": "2026-11-10T14:08:27.744Z",
+          "sha256": "51e82f165363d287d705e2a2c49f70e61f9c845eb34667f9a42b1f769abc9946"
+        },
+        {
+          "path": "molecular-smoke.mjs",
+          "bytes": 1865,
+          "mtime": "2026-11-10T14:03:51.176Z",
+          "sha256": "3d5acf844b250f4a67b0d355d98d4cd10b833115c7c745851d3de86aba4443e7"
+        },
+        {
+          "path": "optimize-v3.mjs",
+          "bytes": 3526,
+          "mtime": "2026-11-10T09:12:19.318Z",
+          "sha256": "aa26663ff72669c594a925a3951741d43a66fb0d558a1aa894acdeee326015d6"
+        },
+        {
+          "path": "probe-plot.mjs",
+          "bytes": 779,
+          "mtime": "2026-11-10T13:51:26.894Z",
+          "sha256": "5eba90041d4f35fa291e4d02108040de186d567196981f83d72c1d996a50e85a"
+        },
+        {
+          "path": "probe-terrain.mjs",
+          "bytes": 2275,
+          "mtime": "2026-11-10T11:21:44.442Z",
+          "sha256": "df43bad3f9e0749346b21032a7e5df522092ecc1bfb314e9cd13998b86382142"
+        },
+        {
+          "path": "probe.mjs",
+          "bytes": 635,
+          "mtime": "2026-11-10T16:54:25.181Z",
+          "sha256": "4bade6d9798b6bd4a6a98500e5eb5d57ea1d62c2441b452d9ca11a02702d8426"
+        },
+        {
+          "path": "release-manifest.mjs",
+          "bytes": 4480,
+          "mtime": "2026-11-11T10:46:05.099Z",
+          "sha256": "4de1bfadff4095ee01cc6f221ae6c742163fa35b7e962234e78fcdab4438db32"
+        },
+        {
+          "path": "shot-pose.mjs",
+          "bytes": 695,
+          "mtime": "2026-11-11T03:32:03.928Z",
+          "sha256": "248e77da7b768377b0226bf346f56ea1436dbc73868ebecdc08950022f5309db"
+        },
+        {
+          "path": "shot.mjs",
+          "bytes": 558,
+          "mtime": "2026-11-11T07:39:10.009Z",
+          "sha256": "572426c5e909e386cc21ef0c0dc2b2bf7630c4ca2af5a1ecfe124f49cbcab5a5"
+        },
+        {
+          "path": "smoke-tiers.mjs",
+          "bytes": 10708,
+          "mtime": "2026-11-10T13:12:53.572Z",
+          "sha256": "4381ff97190a9cc26c57c628f4ea6e328b81494bfac43731c14d4de7fc870987"
+        },
+        {
+          "path": "stub-gltf.ts",
+          "bytes": 1692,
+          "mtime": "2026-11-10T10:58:36.441Z",
+          "sha256": "7b76101fd405c7120e2cba57dee5d4e9f26722ad235749f44f7a318965762d67"
+        },
+        {
+          "path": "w3d01-figure.py",
+          "bytes": 2294,
+          "mtime": "2026-11-11T03:45:19.933Z",
+          "sha256": "7ad513ebdfb32e52bc340e050ef9126dd10624a08391d06045298190d2b6ec92"
+        }
+      ]
+    },
+    "evidence": {
+      "note": "照片对照、卫星比对、签核材料、验收报告与截图证据",
+      "root": "reports",
+      "fileCount": 116,
+      "totalBytes": 57938732,
+      "files": [
+        {
+          "path": "aholo-ledger.jsonl",
+          "bytes": 8181,
+          "mtime": "2026-11-11T07:55:17.701Z",
+          "sha256": "90ab6fc79f5e88c8d4497a4d1981c34e2215010ad1612e52f250401431561986"
+        },
+        {
+          "path": "photos/cableway-long.jpg",
+          "bytes": 20107,
+          "mtime": "2026-11-11T04:06:44.564Z",
+          "sha256": "98d41b9a48776faed535149aff1f55ad0b88d2820d035de42e48706c6b4de548"
+        },
+        {
+          "path": "photos/ctrip-canyon-before.jpg",
+          "bytes": 111011,
+          "mtime": "2026-11-11T04:06:45.776Z",
+          "sha256": "d3f2eff4a3f3fe9fe8cf24eb181105815ae7ed42d2047b5d8a74b1fbabf9ef40"
+        },
+        {
+          "path": "photos/ctrip-forest-glacier.jpg",
+          "bytes": 119809,
+          "mtime": "2026-11-11T04:06:45.143Z",
+          "sha256": "093c035112007bffd7572de5cd7b6c130db18768035a2468941c2f50f87d8325"
+        },
+        {
+          "path": "photos/ctrip-glacier-closeup-1.jpg",
+          "bytes": 237973,
+          "mtime": "2026-11-11T04:06:46.588Z",
+          "sha256": "54b9b9b35b7fed25099cb811e20c1522ef0abeb533127e0d1c5e37436320ecd2"
+        },
+        {
+          "path": "photos/ctrip-glacier-closeup-2.jpg",
+          "bytes": 100026,
+          "mtime": "2026-11-11T04:06:47.262Z",
+          "sha256": "cbc41690e79b752ecec438ddcfe6acfe5bf174e471ade74aae08d5cd53ee8dd0"
+        },
+        {
+          "path": "photos/ctrip-grand-canyon.jpg",
+          "bytes": 101274,
+          "mtime": "2026-11-11T04:06:46.307Z",
+          "sha256": "c18e228a976f304b65ab6fbd8c1edabe2ad68fbcab28fcca01631171594032b0"
+        },
+        {
+          "path": "photos/debris-covered-glacier.jpg",
+          "bytes": 112592,
+          "mtime": "2026-11-11T04:06:43.455Z",
+          "sha256": "2ea68519242c321d8fbd90968b79ab1069468eb94b32453c237e069c17e9de6c"
+        },
+        {
+          "path": "photos/forest-park-mala.jpg",
+          "bytes": 40540,
+          "mtime": "2026-11-11T04:06:24.579Z",
+          "sha256": "8fa6e392616bbc500ae9c77504062b84ab8ee3d70a7d8194f708d9d42875e5a5"
+        },
+        {
+          "path": "photos/glacier-cableway.jpg",
+          "bytes": 73198,
+          "mtime": "2026-11-11T04:06:24.772Z",
+          "sha256": "4ea5ae1c148addd04e61e1d8aa28de01ebbaf174e9faa288bba2260468d95e11"
+        },
+        {
+          "path": "photos/glacier-closeup-autohome.jpg",
+          "bytes": 53469,
+          "mtime": "2026-11-11T04:06:44.069Z",
+          "sha256": "45a2bd3fd6954ed4b465394237ace9e940c040a876d3f3f68817733f22bf76d9"
+        },
+        {
+          "path": "photos/glacier-in-forest.jpg",
+          "bytes": 49407,
+          "mtime": "2026-11-11T04:06:24.966Z",
+          "sha256": "1fa8c9a7cc2f2e441b03dfe2b41901930bf624d2b9349160654bd5fc5cec21ef"
+        },
+        {
+          "path": "photos/gongga-peak-closeup.jpg",
+          "bytes": 50620,
+          "mtime": "2026-11-11T04:06:23.671Z",
+          "sha256": "a2ae428994d03e21ecbd72778a3d17fb46aef685e775a2a1fb26390af181bec6"
+        },
+        {
+          "path": "photos/gongga-peak-from-camp4.jpg",
+          "bytes": 33272,
+          "mtime": "2026-11-11T04:05:37.583Z",
+          "sha256": "5250b29be7bcaaffc2d9e84b6229bd447203518e3377d623a83c6c45407e86ad"
+        },
+        {
+          "path": "photos/icefall-mala.jpg",
+          "bytes": 43792,
+          "mtime": "2026-11-11T04:06:24.395Z",
+          "sha256": "8d6cb7a312fd429148e8691e637ecbb6f9bc22974a49132644893de47819dac0"
+        },
+        {
+          "path": "photos/official-icefall-1.webp",
+          "bytes": 187882,
+          "mtime": "2026-11-11T04:06:47.513Z",
+          "sha256": "639946f35c3973175d78ec77f8640440da8bcfa013607dd7965681f96be57c2b"
+        },
+        {
+          "path": "photos/official-icefall-2.jpg",
+          "bytes": 3190402,
+          "mtime": "2026-11-11T04:06:25.254Z"
+        },
+        {
+          "path": "photos/sohu-icefall-01.jpg",
+          "bytes": 69737,
+          "mtime": "2026-11-11T04:03:01.969Z",
+          "sha256": "6c470744c5a6355fc63284decee75bbdb8f0b174a817e9cf469326bf7a5278f4"
+        },
+        {
+          "path": "photos/_view-official-icefall-2.jpg",
+          "bytes": 1121678,
+          "mtime": "2026-11-11T04:07:00.888Z",
+          "sha256": "d1e9a9eb4a45a85b3dfce73f2fe949624a9767e7ac90e9254518c4da11d184d4"
+        },
+        {
+          "path": "s2/hailuogou-esri-z15.png",
+          "bytes": 2478036,
+          "mtime": "2026-11-11T03:04:59.486Z",
+          "sha256": "0d7e48f4714cf781f0d8b6fab6d864fc8bc0cdf08e1f7d78ac581b942f7b8865"
+        },
+        {
+          "path": "s2/hailuogou-rot.png",
+          "bytes": 2443505,
+          "mtime": "2026-11-11T03:22:57.604Z",
+          "sha256": "a0855c056a6a16730544fccb9fc9b3502675bd6476955457889d95a153643dc6"
+        },
+        {
+          "path": "s2/photo-comparison.md",
+          "bytes": 8368,
+          "mtime": "2026-11-11T10:27:14.256Z",
+          "sha256": "d4f0b557fc281e6f6f76621a6beb1caeac8c665073229e3fffd33be1ea8c4aa5"
+        },
+        {
+          "path": "s2/signoff/our-farview9.png",
+          "bytes": 480914,
+          "mtime": "2026-11-11T10:33:13.611Z",
+          "sha256": "8ebc41d1af371370168d96323135c0476b8f07fcc0674c2b99140dde462cc8b2"
+        },
+        {
+          "path": "s2/signoff/our-forest2.png",
+          "bytes": 1879209,
+          "mtime": "2026-11-11T10:33:13.608Z",
+          "sha256": "4aac9d1a4f8abba7d8487db3a52db18f86c562d7b424abfcbe4f27e18516fbe3"
+        },
+        {
+          "path": "s2/signoff/our-stream-water2.png",
+          "bytes": 1171517,
+          "mtime": "2026-11-11T10:33:13.610Z",
+          "sha256": "d85c135f15abbe5db737c4b19046c3cfba518f5f6e16381f52abd6d0fd8f5ad7"
+        },
+        {
+          "path": "s2/signoff/our-valley-A5.png",
+          "bytes": 655901,
+          "mtime": "2026-11-11T10:33:13.600Z",
+          "sha256": "d13dd1031647873980c181fbb82654d7130889be421a06bb162bcea82d951ed7"
+        },
+        {
+          "path": "s2/signoff/our-valley-B4.png",
+          "bytes": 680829,
+          "mtime": "2026-11-11T10:33:13.602Z",
+          "sha256": "472b74985c1583dbd16af15124df553f86c2b110dcb36218b02d58f8bc606851"
+        },
+        {
+          "path": "s2/signoff/our-valley-C5.png",
+          "bytes": 565892,
+          "mtime": "2026-11-11T10:33:13.605Z",
+          "sha256": "ef6c70b64210e6141786afd081ccbfdeb404d7a90804fa6f279ce3129424f343"
+        },
+        {
+          "path": "s2/signoff/SIGNOFF-W3D-04-08.md",
+          "bytes": 2957,
+          "mtime": "2026-11-11T10:34:10.505Z",
+          "sha256": "c650f9e8d4d9931d967e60b55df46a85442e0e7920df39950a64ef3598b04c7a"
+        },
+        {
+          "path": "s2/t_0_0.jpg",
+          "bytes": 12730,
+          "mtime": "2026-11-11T03:04:31.336Z",
+          "sha256": "fa3cd376068a4e5b02e2ae3bb0a330a4fe192e91917d7fddf36b0a9b4191bac6"
+        },
+        {
+          "path": "s2/t_0_1.jpg",
+          "bytes": 16813,
+          "mtime": "2026-11-11T03:04:32.345Z",
+          "sha256": "371d5cf24059513962a3528a9eeb080e220d6db60eefdbc66cc55a8aba9eeb1c"
+        },
+        {
+          "path": "s2/t_0_2.jpg",
+          "bytes": 20785,
+          "mtime": "2026-11-11T03:04:35.074Z",
+          "sha256": "482d4ebd27266658c632bfea9eab9c1130acaeecdd11bde9047775cc0a166d38"
+        },
+        {
+          "path": "s2/t_0_3.jpg",
+          "bytes": 14104,
+          "mtime": "2026-11-11T03:04:35.868Z",
+          "sha256": "c52a918468037234c4432703546c1954ec0e2c7afc884d2dbc8878c032835fa4"
+        },
+        {
+          "path": "s2/t_0_4.jpg",
+          "bytes": 15307,
+          "mtime": "2026-11-11T03:04:37.353Z",
+          "sha256": "3abb30148a205749b41ae6904f651c0c9bd8a9f8b0fed3af249d2f753cfbcb2f"
+        },
+        {
+          "path": "s2/t_1_0.jpg",
+          "bytes": 12165,
+          "mtime": "2026-11-11T03:04:38.625Z",
+          "sha256": "f02bd3e6250af0fceaf5db23596e213bdbe64f36e31fb6b303b202ca7989e31a"
+        },
+        {
+          "path": "s2/t_1_1.jpg",
+          "bytes": 8986,
+          "mtime": "2026-11-11T03:04:39.730Z",
+          "sha256": "15a636b9c91a2ad02b7111f543e184167f7991eb99ba40347491209530cdca71"
+        },
+        {
+          "path": "s2/t_1_2.jpg",
+          "bytes": 18503,
+          "mtime": "2026-11-11T03:04:40.498Z",
+          "sha256": "e1fa8eba675bccd2b1c959cbeae506c71f22a891bf96e7dd75cf2ddfe6e0785d"
+        },
+        {
+          "path": "s2/t_1_3.jpg",
+          "bytes": 19419,
+          "mtime": "2026-11-11T03:04:41.253Z",
+          "sha256": "f0ecad7e78704b513bf38fcdb1b5cd6306516c9451ff1c5ca2839210b6c71bd7"
+        },
+        {
+          "path": "s2/t_1_4.jpg",
+          "bytes": 14533,
+          "mtime": "2026-11-11T03:04:42.181Z",
+          "sha256": "1d7ad11584e30f3375ed6c958327b75e12ed065d10fd637e52a303f9a602df56"
+        },
+        {
+          "path": "s2/t_2_0.jpg",
+          "bytes": 7360,
+          "mtime": "2026-11-11T03:04:43.184Z",
+          "sha256": "2b5f43b9cc3b6692e92e4ccf56859b140f42c3b3655f918a466056e1756f132e"
+        },
+        {
+          "path": "s2/t_2_1.jpg",
+          "bytes": 8395,
+          "mtime": "2026-11-11T03:04:44.653Z",
+          "sha256": "c3d45a3d68ee378bd36f97813f3887dfa7df5ecac917f84f8aeefa74858c5f22"
+        },
+        {
+          "path": "s2/t_2_2.jpg",
+          "bytes": 13022,
+          "mtime": "2026-11-11T03:04:45.482Z",
+          "sha256": "e54594f72f66b665156791fe971d44ff3f45cb369043129070774c7bed8c99a6"
+        },
+        {
+          "path": "s2/t_2_3.jpg",
+          "bytes": 18317,
+          "mtime": "2026-11-11T03:04:47.569Z",
+          "sha256": "6a99150239721ae3a81d28b9927e9d9ffcfe8ffd969aa4f6783baae81551a718"
+        },
+        {
+          "path": "s2/t_2_4.jpg",
+          "bytes": 15092,
+          "mtime": "2026-11-11T03:04:48.501Z",
+          "sha256": "aaff962812a963dc308bf71b94b11260c030b340d2b12f8889042eea4afdcaf9"
+        },
+        {
+          "path": "s2/t_3_0.jpg",
+          "bytes": 9759,
+          "mtime": "2026-11-11T03:04:49.654Z",
+          "sha256": "1c11ceba80f585392480636b0065a1028e7a9d359d6f05e11fe30d576df082c7"
+        },
+        {
+          "path": "s2/t_3_1.jpg",
+          "bytes": 9679,
+          "mtime": "2026-11-11T03:04:50.659Z",
+          "sha256": "1958244e2e02faca8cc1ae122d388841bc7173e09de1c76ee432bc27f61273f9"
+        },
+        {
+          "path": "s2/t_3_2.jpg",
+          "bytes": 19433,
+          "mtime": "2026-11-11T03:04:51.787Z",
+          "sha256": "eaa2897772926f9adfb2b707dec3422f6fe6f8553db6a5028950f9c4d7c2ef42"
+        },
+        {
+          "path": "s2/t_3_3.jpg",
+          "bytes": 19872,
+          "mtime": "2026-11-11T03:04:52.862Z",
+          "sha256": "a08f7e31d3734e714e88b7d66868443cfe8c89d42079b1cf9ea5efe5f55bebe9"
+        },
+        {
+          "path": "s2/t_3_4.jpg",
+          "bytes": 16437,
+          "mtime": "2026-11-11T03:04:54.126Z",
+          "sha256": "896c6c7b47cdf5c0056f18f10a4364ebeb53905903298992eb262af5b9339d77"
+        },
+        {
+          "path": "s2/t_4_0.jpg",
+          "bytes": 7175,
+          "mtime": "2026-11-11T03:04:55.368Z",
+          "sha256": "5ec6d79411ba71df9640e5444c664dbb7488d99826cd3058d6ff770943093283"
+        },
+        {
+          "path": "s2/t_4_1.jpg",
+          "bytes": 15441,
+          "mtime": "2026-11-11T03:04:56.349Z",
+          "sha256": "e24e332077ef293f4f3759adc1d17ae13d0b92580b73892c4ea3c0f64247ace3"
+        },
+        {
+          "path": "s2/t_4_2.jpg",
+          "bytes": 16927,
+          "mtime": "2026-11-11T03:04:57.322Z",
+          "sha256": "cf1f9f17de06fbe34dbeb21398463d85928c3c370f5e673dafdf6bc4d1ae61fb"
+        },
+        {
+          "path": "s2/t_4_3.jpg",
+          "bytes": 14194,
+          "mtime": "2026-11-11T03:04:58.450Z",
+          "sha256": "bfcea71570a34f54c0b601c44710ee351807a68aa0f2e15aa9a0230fa07c1b65"
+        },
+        {
+          "path": "s2/t_4_4.jpg",
+          "bytes": 13263,
+          "mtime": "2026-11-11T03:04:59.263Z",
+          "sha256": "53294e0f78b6403168548d383631bb87762e000448c57e18089b1fc7dca836e6"
+        },
+        {
+          "path": "s2/valley-topdown-scene.png",
+          "bytes": 644297,
+          "mtime": "2026-11-11T03:45:20.239Z",
+          "sha256": "c8b6a2f5a5685549b719e7a97fac36c7b6b1f5688699e0f51fb59555f83292e0"
+        },
+        {
+          "path": "s2/valley-topdown-v2.png",
+          "bytes": 796517,
+          "mtime": "2026-11-11T03:17:27.889Z",
+          "sha256": "c4ce66262705bef8098cba860bbc00bc24151428bf6fa4f03b10f20ac85ace0e"
+        },
+        {
+          "path": "s2/valley-topdown-v3.png",
+          "bytes": 747107,
+          "mtime": "2026-11-11T03:26:37.566Z",
+          "sha256": "8e298abf0d3a2f8dcee1302816cfa9dd0e2fcf97b65297803fbf7fcf4a7f2e3d"
+        },
+        {
+          "path": "s2/valley-topdown-v4.png",
+          "bytes": 793487,
+          "mtime": "2026-11-11T03:32:29.134Z",
+          "sha256": "347d3b65d2dddba4a12816bfeacc1394cb65ae8ed727ef833ee71c73f686d288"
+        },
+        {
+          "path": "s2/valley-topdown-v5.png",
+          "bytes": 679026,
+          "mtime": "2026-11-11T03:40:02.298Z",
+          "sha256": "54b3b14e027e360ac8627b599ad3de3a4e79535c43b97c4b8a547bbbc201caeb"
+        },
+        {
+          "path": "s2/valley-topdown.png",
+          "bytes": 824102,
+          "mtime": "2026-11-11T03:12:05.313Z",
+          "sha256": "d773303490105ad0c1ab5027ab9ed80e69419e04616511148f3cd9e5c81358f9"
+        },
+        {
+          "path": "s2/W3D-01-comparison.png",
+          "bytes": 1929202,
+          "mtime": "2026-11-11T03:45:36.320Z",
+          "sha256": "decc79a27cfb183289a6d11237791ef73e2db259ded6d2f852931b5f72375cc6"
+        },
+        {
+          "path": "s2/W3D-01-report.md",
+          "bytes": 2396,
+          "mtime": "2026-11-11T03:26:53.678Z",
+          "sha256": "01899d43196576684c332061382e0b9ae0b450af3e4a497761c0c999e2099e9e"
+        },
+        {
+          "path": "v3/acceptance/a11y-06-font-100.png",
+          "bytes": 566906,
+          "mtime": "2026-11-11T11:01:17.365Z",
+          "sha256": "ea0217372e7994e48aa3c90a1702fbdb323d209c09eb5ec4100cc72f16ff3914"
+        },
+        {
+          "path": "v3/acceptance/a11y-06-font-200.png",
+          "bytes": 598787,
+          "mtime": "2026-11-11T11:01:23.397Z",
+          "sha256": "5f14af55dd51e00fff74bf7a041225b8c0b2e8b45decdd955ac9654a560fe21a"
+        },
+        {
+          "path": "v3/acceptance/a11y-10-audit.json",
+          "bytes": 8135,
+          "mtime": "2026-11-11T10:51:47.501Z",
+          "sha256": "311346b939c8085d4d53760af26873407cfc96e0779cb64b2ae52dc479ab1dab"
+        },
+        {
+          "path": "v3/acceptance/a11y-10-audit.md",
+          "bytes": 1767,
+          "mtime": "2026-11-11T10:51:47.502Z",
+          "sha256": "e4922d30b90a5781db8bbe9d3d9377d8e9dbd62bae6db7a0d39e00200c6ef035"
+        },
+        {
+          "path": "v3/acceptance/load-05-archive-only.png",
+          "bytes": 267227,
+          "mtime": "2026-11-11T11:22:45.630Z",
+          "sha256": "72f3cf26f528199afd5a265b22450dcc5e4a5398eaf2b1d48f7fc6d764dc76ac"
+        },
+        {
+          "path": "v3/acceptance/load-05-slow-actions.png",
+          "bytes": 1597148,
+          "mtime": "2026-11-11T11:22:44.345Z",
+          "sha256": "c549d99912b4c90f4d4a0752c3282b1694cd2cd46e57fff523140f5ca24d24e9"
+        },
+        {
+          "path": "v3/acceptance/report.json",
+          "bytes": 10011,
+          "mtime": "2026-11-11T12:05:27.464Z",
+          "sha256": "bd16a6682f3415d90cb8c2e536ecd39b930a7d7c8c878c86fac48c49daed1e67"
+        },
+        {
+          "path": "v3/acceptance/REPORT.md",
+          "bytes": 6303,
+          "mtime": "2026-11-11T12:05:27.464Z",
+          "sha256": "cd07f9ed44ff1d13496995aae16f31fde42d6bb0a6dbd878fbf53e18bf710de1"
+        },
+        {
+          "path": "v3/acceptance/w3d-09-season-control.png",
+          "bytes": 464791,
+          "mtime": "2026-11-11T11:23:40.111Z",
+          "sha256": "77e336b27954caab09aed4bfc3cd5be30fb13a6749df9708d18393835985a251"
+        },
+        {
+          "path": "v3/acceptance/w3d-09-season-winter.png",
+          "bytes": 494048,
+          "mtime": "2026-11-11T11:23:45.110Z",
+          "sha256": "18071cddffb5d41528428ca8cca5f4a57e0023e3b88f63b81f4ec7e23f759fd0"
+        },
+        {
+          "path": "v3/acceptance/w3d-09-weather-modes.md",
+          "bytes": 1974,
+          "mtime": "2026-11-11T11:13:06.461Z",
+          "sha256": "cd9e6a3d5825a56fe6f1ca09863e6889132efbd809e73f3ded22650cc07cbc76"
+        },
+        {
+          "path": "v3/acceptance/w3d-10-animations.md",
+          "bytes": 2998,
+          "mtime": "2026-11-11T11:14:12.004Z",
+          "sha256": "aac1b5f02ffb1726776709e5afee92da9eb9bb09612c95cab78ad3db1845316d"
+        },
+        {
+          "path": "v3/README.md",
+          "bytes": 3589,
+          "mtime": "2026-11-10T12:25:15.502Z",
+          "sha256": "3aaef916f0fbbc1549dd7dab7315b8c3e220d71b791bbe4d6c555e674e903e83"
+        },
+        {
+          "path": "v3/release/manifest.json",
+          "bytes": 106445,
+          "mtime": "2026-11-11T10:46:11.620Z",
+          "sha256": "2c7ce59f559887fb5707a7678d382103f9c6af1dff3725596f15b07c006eab3f"
+        },
+        {
+          "path": "v3/release/MANIFEST.md",
+          "bytes": 2667,
+          "mtime": "2026-11-11T10:46:11.621Z",
+          "sha256": "fc24f83063a339d27f5ca731837dddd00bdb1162ab66f5d9e3d432ca455cf59d"
+        },
+        {
+          "path": "v3/shots/01-poster.png",
+          "bytes": 1587917,
+          "mtime": "2026-11-10T12:23:37.983Z",
+          "sha256": "d53449edd1dabd71e49604248a734a98f163d1b803764021abf95d80e559a7d2"
+        },
+        {
+          "path": "v3/shots/02-valley.png",
+          "bytes": 836740,
+          "mtime": "2026-11-10T12:23:47.114Z",
+          "sha256": "3836a51423450f13813311a1ad1d6d6eaf1339129054ac06ce76e72cf30ae77d"
+        },
+        {
+          "path": "v3/shots/03-stream-site.png",
+          "bytes": 821791,
+          "mtime": "2026-11-10T12:24:08.564Z",
+          "sha256": "ed90b7d0c4de57c28ea9e784c603c187feffe094126a15ab7321410ac271e57c"
+        },
+        {
+          "path": "v3/shots/04-micro-wet-rock.png",
+          "bytes": 333043,
+          "mtime": "2026-11-10T12:24:15.107Z",
+          "sha256": "768d65c0a34d400ff204947c1e2a9f022df3998c8689b098493c19d210a837e6"
+        },
+        {
+          "path": "v3/shots/05-farview.png",
+          "bytes": 362763,
+          "mtime": "2026-11-10T12:24:24.798Z",
+          "sha256": "624dce4475cab27a7ff478c27d68935d43e48b9c06a5ae918ac9f30db10ada02"
+        },
+        {
+          "path": "v3/shots/06-forest-site.png",
+          "bytes": 1243408,
+          "mtime": "2026-11-10T12:24:39.163Z",
+          "sha256": "9ac339dff494934fd5086ec8a010fa017fed57510e5bebe08dee58a6b2070461"
+        },
+        {
+          "path": "v3/shots/10-4k-valley.json",
+          "bytes": 294,
+          "mtime": "2026-11-11T12:04:47.080Z",
+          "sha256": "c4131c85bdec958d42465a6a46a6d860e34941b42c3b4c6708c36735adf65aac"
+        },
+        {
+          "path": "v3/shots/10-4k-valley.png",
+          "bytes": 5837567,
+          "mtime": "2026-11-11T12:04:42.497Z"
+        },
+        {
+          "path": "v3/shots/11-mobile-valley.png",
+          "bytes": 566304,
+          "mtime": "2026-11-11T12:05:27.424Z",
+          "sha256": "1ff34edd0bf7436d655750f90537e0c4971bb416400470178bb1b5316a25bea4"
+        },
+        {
+          "path": "v3/shots/plot-camB.png",
+          "bytes": 1330909,
+          "mtime": "2026-11-10T12:37:07.565Z",
+          "sha256": "bd3a60570d18c62d1cf9febafa16694e267f1f660d3e0ef59464c5be27dbf94d"
+        },
+        {
+          "path": "v3/shots/plot-debug.png",
+          "bytes": 909997,
+          "mtime": "2026-11-10T14:04:23.950Z",
+          "sha256": "167d5b659a1ac21035a60e3264f0e14e87c9c3dc2d32bb8e2378a173bb0b570b"
+        },
+        {
+          "path": "v3/shots/tmp-valley.png",
+          "bytes": 261819,
+          "mtime": "2026-11-10T11:24:36.577Z",
+          "sha256": "2661e29fd21de816459f8612f1dfde66159bec858ac28ad77420450b9183c942"
+        },
+        {
+          "path": "v3/shots/tmp-valley2.png",
+          "bytes": 508840,
+          "mtime": "2026-11-10T11:27:07.736Z",
+          "sha256": "109e415b294b244fc6e4cd0f11865718befe98c5081fb802415c7834aff7fd8e"
+        },
+        {
+          "path": "v3/shots/tmp-valley3.png",
+          "bytes": 556465,
+          "mtime": "2026-11-10T11:29:38.659Z",
+          "sha256": "ea4281293790a9fce4cd2a24bf3291bd213c3933026deb1e4d39b571e5690e46"
+        },
+        {
+          "path": "v3/shots/tmp-valley4.png",
+          "bytes": 536505,
+          "mtime": "2026-11-10T11:32:09.411Z",
+          "sha256": "3eab46f68c43e78c3a38e0a26ae14ced28305571d218cd38b12c830799d79112"
+        },
+        {
+          "path": "v3/shots/tmp-valley5.png",
+          "bytes": 496095,
+          "mtime": "2026-11-10T11:34:55.086Z",
+          "sha256": "6ab9bb389207cd028a1ffc3717423d4e9b02c926a907dc25ec57511fa77a58f2"
+        },
+        {
+          "path": "v3/shots/tmp-valley6.png",
+          "bytes": 447633,
+          "mtime": "2026-11-10T11:37:48.833Z",
+          "sha256": "42f62e3831f60bcc1fc67900f8bbbc756d980493b442370d5f98548e8ad21708"
+        },
+        {
+          "path": "v3/shots/tmp-valley7.png",
+          "bytes": 571271,
+          "mtime": "2026-11-10T11:41:06.340Z",
+          "sha256": "4bf0170d1f08cb751e137d0d9a824b1ef6270b86aa014eacee819eb7a714c9af"
+        },
+        {
+          "path": "v3/shots/tmp-valley8.png",
+          "bytes": 782592,
+          "mtime": "2026-11-10T11:43:42.931Z",
+          "sha256": "5851fbeff9c6e6bd292d7df1aa591aaf646af0057d20ee4428815e0e7728802d"
+        },
+        {
+          "path": "v3/shots/tmp-valley9.png",
+          "bytes": 854012,
+          "mtime": "2026-11-10T11:51:31.167Z",
+          "sha256": "241d07aa89ada3d24ae02e5db36de1a58cccef9c239f4e54b4a87d14ccbb846d"
+        },
+        {
+          "path": "v4/mol-glacier-e2e.png",
+          "bytes": 219224,
+          "mtime": "2026-11-10T14:09:02.219Z",
+          "sha256": "c3590d71c48a605580053c17351e04870df0304e725e96424fb1d2c397260487"
+        },
+        {
+          "path": "v4/sio2-md-ballstick.png",
+          "bytes": 392759,
+          "mtime": "2026-11-10T13:42:05.768Z",
+          "sha256": "fa46f821f19ad4deb2e691d8c83f98446f9065550d4b81f2dcc0ee09c65cb680"
+        },
+        {
+          "path": "v4/sio2-md-first.png",
+          "bytes": 446245,
+          "mtime": "2026-11-10T13:38:25.055Z",
+          "sha256": "3d1c18721ce0fe1a4f359822f51628c635837bcc76d0d2c334e532c96a5fd3aa"
+        },
+        {
+          "path": "v4/valley-4k-pass1-A.png",
+          "bytes": 787313,
+          "mtime": "2026-11-10T14:25:02.878Z",
+          "sha256": "4c7be5446c04a840a65ee9bd84f038a27ca7795e8ed477dabe8f1529c72d7c52"
+        },
+        {
+          "path": "v4/valley-4k-pass1-high.png",
+          "bytes": 858349,
+          "mtime": "2026-11-10T14:27:44.844Z",
+          "sha256": "213e25432bdb643ae2275b49c461a57a6214e01575c74ca9d9646cdf559034b9"
+        },
+        {
+          "path": "v4/valley-4k-pass10.png",
+          "bytes": 602506,
+          "mtime": "2026-11-10T15:33:24.089Z",
+          "sha256": "969afd5425d520839d4e0be576ee3e3a4b259d830b4868dd34cff4d3a502ea9f"
+        },
+        {
+          "path": "v4/valley-4k-pass11.png",
+          "bytes": 695775,
+          "mtime": "2026-11-10T15:39:18.601Z",
+          "sha256": "a8c087f81492ba47ee27e8002676fb1f433fe14ecde51defca1287564909875b"
+        },
+        {
+          "path": "v4/valley-4k-pass12-firn.png",
+          "bytes": 684187,
+          "mtime": "2026-11-10T15:45:47.602Z",
+          "sha256": "df51af78b09d93bd8f9bb6ef02a17cb3fd5151d63ed2defd6e5db49441ab41be"
+        },
+        {
+          "path": "v4/valley-4k-pass13-serac.png",
+          "bytes": 685645,
+          "mtime": "2026-11-10T15:57:40.218Z",
+          "sha256": "b7b0d7544c9da08ef62d8b9904b367d66f1a9d20b010342bb03fc8657ece23e6"
+        },
+        {
+          "path": "v4/valley-4k-pass14-cliff.png",
+          "bytes": 707821,
+          "mtime": "2026-11-10T16:14:25.438Z",
+          "sha256": "84bf911439c62958759d7b1dc6c986107752d60e7484f1a956821fa4798a42a9"
+        },
+        {
+          "path": "v4/valley-4k-pass15.png",
+          "bytes": 694615,
+          "mtime": "2026-11-11T03:26:30.776Z",
+          "sha256": "6f5aeaac53b11718d6809846d8a379c8ecfe34ed10059ef1c82e1ca2e15b2402"
+        },
+        {
+          "path": "v4/valley-4k-pass2-high.png",
+          "bytes": 683222,
+          "mtime": "2026-11-10T14:47:41.209Z",
+          "sha256": "824ba3330a83538043265898beae1a4e88ea6229c3bbc29e5c47be5a79396471"
+        },
+        {
+          "path": "v4/valley-4k-pass3-high.png",
+          "bytes": 689795,
+          "mtime": "2026-11-10T14:51:21.152Z",
+          "sha256": "8f4e36552e09cc502c33191f93e7440f5f35a45c6f9db2a096880bc6be26df5c"
+        },
+        {
+          "path": "v4/valley-4k-pass4-high.png",
+          "bytes": 683070,
+          "mtime": "2026-11-10T14:54:39.676Z",
+          "sha256": "d0452173a86ce8cf35f6e1e89e48d978a2013422000e5524214fd080ad276870"
+        },
+        {
+          "path": "v4/valley-4k-pass5-high.png",
+          "bytes": 658264,
+          "mtime": "2026-11-10T14:58:17.964Z",
+          "sha256": "ed344f29142eb85080ff7467a97528abafb92e75852b18986290dc88e83d79ec"
+        },
+        {
+          "path": "v4/valley-4k-pass6-erratic.png",
+          "bytes": 648109,
+          "mtime": "2026-11-10T15:13:23.842Z",
+          "sha256": "6e9e3ccbb2e515e9fb948ae275c5b932ea87a8973b3a240fe8c7a65c73cf9b22"
+        },
+        {
+          "path": "v4/valley-4k-pass7-erratic-web.png",
+          "bytes": 650516,
+          "mtime": "2026-11-10T15:21:34.672Z",
+          "sha256": "0f0c2694c4a50cd4b3793cd967133165b01dd500fac71ae99753ce84c488417e"
+        },
+        {
+          "path": "v4/valley-4k-pass8-erratic-30k.png",
+          "bytes": 659425,
+          "mtime": "2026-11-10T15:25:32.938Z",
+          "sha256": "8505f32fbc9b63a3ebc61d8ccbf0fcdf5c068530b61e56f783ceb56dfe35ee1e"
+        },
+        {
+          "path": "v4/valley-4k-pass9-hero-erratic.png",
+          "bytes": 647188,
+          "mtime": "2026-11-10T15:29:01.270Z",
+          "sha256": "6b0b229a0ea041c62c779c526e60d7d04abda5a2609091598ca7348ae87f7fe3"
+        }
+      ]
+    }
+  },
+  "knownIssues": [
+    {
+      "id": "W3D-01",
+      "note": "需要与同日 DEM 卫星影像做山脊/群峰遮挡比对；本轮无参考影像"
+    },
+    {
+      "id": "W3D-04",
+      "note": "森林群落结构差异需人工目视签核"
+    },
+    {
+      "id": "W3D-05",
+      "note": "林木分布均匀性需目视/统计签核"
+    },
+    {
+      "id": "W3D-06",
+      "note": "溪流水下河床与泡沫组织需目视签核"
+    },
+    {
+      "id": "W3D-07",
+      "note": "湿岩湿线与粗糙度需目视签核"
+    },
+    {
+      "id": "W3D-08",
+      "note": "冰退迹地路线关系需目视签核"
+    },
+    {
+      "id": "PERF-07",
+      "note": "进入三维 4397 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
+    },
+    {
+      "id": "LOAD-03",
+      "note": "换层时长需在目标硬件上测；本机软光栅下不具代表性（点击瞬间 phase=loading-next-level）"
+    },
+    {
+      "id": "PERF-06",
+      "note": "首内容时间在软光栅下无意义；海报为纯 DOM，无 JS 依赖（build 4.22 kB HTML）"
+    },
+    {
+      "id": "LOAD-09",
+      "note": "后台/锁屏暂停已接 visibilitychange，CDP 无法模拟真实锁屏"
+    },
+    {
+      "id": "PERF-01",
+      "note": "软光栅渲染，帧率不可作为证据"
+    },
+    {
+      "id": "PERF-02",
+      "note": "无中端真机"
+    },
+    {
+      "id": "PERF-03",
+      "note": "视图切换/内存增长需真实 GPU 与长时间采样"
+    },
+    {
+      "id": "PERF-04",
+      "note": "20 分钟长跑需真实 GPU"
+    },
+    {
+      "id": "PERF-10",
+      "note": "由外部复核者判定，不能自评"
+    }
+  ],
+  "scientificBoundary": "程序化图层 L4（雪/冰/表碛/林线/天气档位）非实测；DEM 为 SRTM30m 区域参考 L3；Aholo AI 资产已声明非实测证据；显微层坐标不伪造（UNKNOWN 合法）。"
+}

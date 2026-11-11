@@ -16,6 +16,7 @@ import { WorldApp } from './app/world-app';
 import { Shell } from './ui/shell';
 import { loadTierFor, tierKey, takeFromCache, putInCache, cacheSize, clearTierCache } from './app/tiers';
 import { findMolecularObject } from './micro/molecular';
+import { LAYER_PRESETS, type FarviewTier } from './world/farview';
 
 type LoadPhase =
   | 'idle'
@@ -39,8 +40,23 @@ let capability: Capability | null = null;
 let phase: LoadPhase = 'idle';
 let entered = false;
 let lowQuality = false;
+/** LOAD-05：轻量模式（低画质 + 关闭闲时预载）。由 ?quality=lite 或用户选择触发。 */
+let liteMode = false;
 let activeTier = 'none';
 let busy = false;
+/** W3D-09：当前安装的远景层实例（季节档位切换用），非远景层时为 null。 */
+let farTier: FarviewTier | null = null;
+let farSeasonDate = LAYER_PRESETS[0]?.date ?? '2026-11-10';
+
+/** LOAD-05：慢网信号（仅用于给出选择权，不改变默认画质策略）。 */
+function slowNetworkHint(): string | null {
+  try {
+    const c = (navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } }).connection;
+    if (c?.saveData) return '系统开了省流量模式。';
+    if (c?.effectiveType === 'slow-2g' || c?.effectiveType === '2g') return '当前网络较慢（' + c.effectiveType + '）。';
+  } catch { /* 不支持 Network Information API 就不提示 */ }
+  return null;
+}
 
 function setPhase(next: LoadPhase): void {
   phase = next;
@@ -55,6 +71,32 @@ async function start(): Promise<void> {
     onEnter: () => void enterWorld(),
     onResume: () => void enterWorld(true),
     onRetry: () => location.reload(),
+    // LOAD-05：轻量模式 = 低画质 + 关闭闲时预载；写入 sessionStorage 并带参重载，
+    // 保证所有层级（含已建立的）都按轻量路径重建，不留下半新半旧的混合状态。
+    onLiteMode: () => {
+      try { sessionStorage.setItem('niceterra.quality', 'lite'); } catch { /* 私密模式 */ }
+      const u = new URL(location.href);
+      u.searchParams.set('quality', 'lite');
+      location.href = u.toString();
+    },
+    // LOAD-05：只读科学档案——与无 WebGL 降级共用同一条静态探索路径。
+    onArchiveOnly: () => {
+      setPhase('static-mode');
+      shell.hideSlowActions();
+      shell.hidePoster();
+      shell.setStaticMode('你选择先读科学档案：三维场景没有加载，地点、样区与路线的档案可正常阅读。');
+    },
+    // W3D-09：季节档位只改远景渲染参数（setLayerDate 内部全部标注 L4），
+    // 不触碰科学基线，与假设实验沙盒互不相干。
+    onSeason: (date) => {
+      if (!farTier) return;
+      const preset = LAYER_PRESETS.find((p) => p.date === date);
+      if (!preset) return;
+      farSeasonDate = date;
+      farTier.setLayerDate(date);
+      shell.setSeasonControl({ presets: farTier.layerPresets, active: date });
+      shell.toast('已切到「' + preset.label + '」档位（L4 制作档位，非实测天气）。');
+    },
     onPrev: () => step(-1),
     onNext: () => step(1),
     onExit: () => goValley(),
@@ -90,6 +132,21 @@ async function start(): Promise<void> {
   shell.renderPosterStages(2, 0, 0);
   shell.setProgress(science.ok ? 0.2 : 0.12);
   if (!science.ok) shell.toast(MESSAGES.specMissing);
+
+  // LOAD-05：慢网哨兵（index.html 内联脚本）里用户已选「只看科学档案」，
+  // 应用就绪后直接进静态探索，不再要求第二次点击。
+  let archiveOnly = false;
+  try {
+    archiveOnly = sessionStorage.getItem('niceterra.archiveOnly') === '1';
+    if (archiveOnly) sessionStorage.removeItem('niceterra.archiveOnly');
+  } catch { /* 私密模式 */ }
+  if (archiveOnly && capability.webgl2) {
+    setPhase('static-mode');
+    shell.hideSlowActions();
+    shell.hidePoster();
+    shell.setStaticMode('你选择先读科学档案：三维场景没有加载，地点、样区与路线的档案可正常阅读。');
+    return;
+  }
 
   if (!capability.webgl2) {
     setPhase('static-mode');
@@ -130,8 +187,19 @@ async function enterWorld(resume = false): Promise<void> {
   const host = document.getElementById('scene');
   if (!host) throw new Error('missing #scene');
   const forced = new URLSearchParams(location.search).get('quality');
-  lowQuality = forced === 'high' ? false : forced === 'low' ? true : capability ? capability.software || capability.dpr > 2 : false;
+  let savedQuality: string | null = null;
+  try { savedQuality = sessionStorage.getItem('niceterra.quality'); } catch { /* 私密模式 */ }
+  liteMode = forced === 'lite' || savedQuality === 'lite';
+  lowQuality = liteMode ? true : forced === 'high' ? false : forced === 'low' ? true : capability ? capability.software || capability.dpr > 2 : false;
   setPhase('loading-core');
+
+  // LOAD-05：不永久等待。核心层 12 秒未就绪（或系统已声明慢网/省流）就给出真实选择权。
+  const slowHint = slowNetworkHint();
+  const slowTimer = window.setTimeout(() => {
+    if (phase === 'loading-core') {
+      shell.showSlowActions((slowHint ? slowHint + ' ' : '') + '三维场景加载比平时慢，你可以不等它：');
+    }
+  }, slowHint ? 3500 : 12000);
 
   world = new WorldApp({
     host,
@@ -170,6 +238,8 @@ async function enterWorld(resume = false): Promise<void> {
     window.__ntBuilds = (window.__ntBuilds ?? 0) + 1;
     activeTier = first.id;
     setPhase('interactive');
+    window.clearTimeout(slowTimer);
+    shell.hideSlowActions();
     shell.setProgress(1);
     shell.hidePoster();
     syncWorld();
@@ -189,6 +259,7 @@ async function enterWorld(resume = false): Promise<void> {
     if (!capability?.reducedMotion && params.get('tour') !== '0') startTour();
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
+    window.clearTimeout(slowTimer);
     setPhase('recoverable-error');
     shell.setProgress(0);
     shell.showLoadingText('三维场景没有启动：' + msg);
@@ -320,7 +391,7 @@ function goValley(): void {
 
 async function toggleFar(): Promise<void> {
   if (!world) return;
-  if (activeTier === 'farview') {
+  if (activeTier === 'far') {
     await applyTier('valley');
     shell.toast('已回到海螺沟谷地。');
     return;
@@ -347,6 +418,15 @@ async function applyTier(tier: string): Promise<void> {
     world.install(built, { fadeMs: 400 });
     window.__ntBuilds = (window.__ntBuilds ?? 0) + 1;
     activeTier = built.id;
+    // W3D-09：远景层装季节控制；其他层移除
+    if (built.id === 'far') {
+      farTier = built as unknown as FarviewTier;
+      farTier.setLayerDate(farSeasonDate);
+      shell.setSeasonControl({ presets: farTier.layerPresets, active: farSeasonDate });
+    } else {
+      farTier = null;
+      shell.setSeasonControl(null);
+    }
     setPhase('interactive');
     syncWorld();
     // Prefetch only once the swap has settled: two heavy builds at the same
@@ -412,6 +492,7 @@ store.subscribe(() => {
  * user-initiated swap is in flight, and failures are silent.
  */
 function schedulePrefetch(): void {
+  if (liteMode) return; // LOAD-05：轻量模式不做闲时预载，把带宽留给用户主动动作
   const state = store.get();
   const route = state.routeId ? ROUTES.find((r) => r.routeId === state.routeId) : undefined;
   if (!route || !state.levelId) return;

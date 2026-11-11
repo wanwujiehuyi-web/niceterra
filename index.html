@@ -66,6 +66,13 @@
           <button id="btn-resume" type="button" hidden>继续上次探索</button>
           <button class="ghost" id="btn-retry" type="button">重新检测图形</button>
         </div>
+        <div class="slow-actions" id="slow-actions" hidden>
+          <p class="slow-why">加载比平时慢。</p>
+          <div class="actions">
+            <button id="btn-lite" type="button">轻量模式继续</button>
+            <button class="ghost" id="btn-archive-only" type="button">只看科学档案</button>
+          </div>
+        </div>
         <ul class="stages" id="poster-stages"></ul>
         <p class="honesty" id="poster-honesty"></p>
         <p class="credit" id="poster-credit"></p>
@@ -75,6 +82,31 @@
     </div>
 
     <div id="toast" role="status" aria-live="polite"></div>
+    <script>
+      // LOAD-05 慢网哨兵：在模块下载完成之前就生效。
+      // main.ts 就绪后由 shell 接管同一组按钮；两个路径写入同一个选择。
+      (function () {
+        var box = function () { return document.getElementById('slow-actions'); };
+        var arm = function () {
+          setTimeout(function () { var b = box(); if (b) b.hidden = false; }, 12000);
+        };
+        if (new URLSearchParams(location.search).get('autostart') === '1') arm();
+        var enter = document.getElementById('btn-enter');
+        if (enter) enter.addEventListener('click', arm);
+        var lite = document.getElementById('btn-lite');
+        if (lite) lite.addEventListener('click', function () {
+          try { sessionStorage.setItem('niceterra.quality', 'lite'); } catch (e) {}
+          var u = new URL(location.href); u.searchParams.set('quality', 'lite');
+          location.href = u.toString();
+        });
+        var arch = document.getElementById('btn-archive-only');
+        if (arch) arch.addEventListener('click', function () {
+          try { sessionStorage.setItem('niceterra.archiveOnly', '1'); } catch (e) {}
+          var why = document.querySelector('#slow-actions .slow-why');
+          if (why) why.textContent = '已选择只读科学档案，应用就绪后直接进入。';
+        });
+      })();
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

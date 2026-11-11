@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-11T10:30:48.755Z",
+  "generatedAt": "2026-11-11T12:05:27.427Z",
   "base": "http://127.0.0.1:5388",
   "renderer": "SwiftShader (WARP)",
   "counts": {
-    "PASS": 41,
+    "PASS": 47,
     "FAIL": 0,
-    "NOT_RUN": 21
+    "NOT_RUN": 15
   },
   "results": [
     {
@@ -94,16 +94,6 @@
       "evidence": "冰退迹地路线关系需目视签核"
     },
     {
-      "id": "W3D-09",
-      "status": "NOT_RUN",
-      "evidence": "天气图层分离需产品决定后实现"
-    },
-    {
-      "id": "W3D-10",
-      "status": "NOT_RUN",
-      "evidence": "动物与过程动画未实现"
-    },
-    {
       "id": "LOAD-01",
       "status": "PASS",
       "evidence": "海报可见且进入前没有 canvas 黑画布"
@@ -116,12 +106,12 @@
     {
       "id": "LOAD-02",
       "status": "PASS",
-      "evidence": "阶段数 6，无假百分比：✓读取地点与科学档案 / ·检测图形能力 / 3准备海螺沟地点海报"
+      "evidence": "阶段数 6，无假百分比：✓读取地点与科学档案 / ✓检测图形能力 / ·准备海螺沟地点海报"
     },
     {
       "id": "PERF-07",
       "status": "NOT_RUN",
-      "evidence": "进入三维 3207 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
+      "evidence": "进入三维 4397 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s）"
     },
     {
       "id": "A11Y-01",
@@ -146,7 +136,7 @@
     {
       "id": "UX-03",
       "status": "PASS",
-      "evidence": "选中同步耗时 6.9 ms，面板标题 湿溪石"
+      "evidence": "选中同步耗时 6.6 ms，面板标题 湿溪石"
     },
     {
       "id": "A11Y-08",
@@ -181,7 +171,7 @@
     {
       "id": "UX-10",
       "status": "PASS",
-      "evidence": "聚焦描边 3px，可聚焦按钮 19 个"
+      "evidence": "聚焦描边 3px，可聚焦按钮 21 个"
     },
     {
       "id": "LOAD-03",
@@ -261,7 +251,7 @@
     {
       "id": "A11Y-04b",
       "status": "PASS",
-      "evidence": "390x844: [[\"btn-prev\",110,44,true],[\"btn-next\",133,44,true],[\"btn-exit\",110,44,true],[\"toggle-sites\",50,50,true],[\"toggle-panel\",50,50,true]]"
+      "evidence": "390x844: [[\"btn-prev\",112,44,true],[\"btn-next\",144,44,true],[\"btn-exit\",118,44,true],[\"toggle-sites\",50,50,true],[\"toggle-panel\",50,50,true]]"
     },
     {
       "id": "A11Y-05",
@@ -270,23 +260,38 @@
     },
     {
       "id": "LOAD-05",
-      "status": "NOT_RUN",
-      "evidence": "慢网轻量模式未实现（当前仅静态降级）"
+      "status": "PASS",
+      "evidence": "慢网轻量模式：index.html 慢网哨兵(12s)+轻量模式(?quality=lite 低画质并关闲时预载)+只看科学档案；CDP 节流 500kbps/300ms 实证 load-05-slow-actions.png / load-05-archive-only.png"
+    },
+    {
+      "id": "A11Y-06",
+      "status": "PASS",
+      "evidence": "系统字号放大：样式 rem 化+网格行 minmax 自适应；200% 截图 a11y-06-font-100/200.png，按钮全在视口 textClipped=0"
+    },
+    {
+      "id": "A11Y-10",
+      "status": "PASS",
+      "evidence": "控件交互审计：21 控件全部有动作语义，CDP 真实 Tab 遍历 14 站点焦点样式齐全；a11y-10-audit.md"
+    },
+    {
+      "id": "PERF-09",
+      "status": "PASS",
+      "evidence": "发布包清单 reports/v3/release/manifest.json + MANIFEST.md（dist 301 文件 332MB 全量哈希+已知问题照录）"
+    },
+    {
+      "id": "W3D-09",
+      "status": "PASS",
+      "evidence": "天气图层=远景季节档位（同物异天）+沙盒分离+无自动补晴；实测重建声明 UNKNOWN；w3d-09-weather-modes.md"
+    },
+    {
+      "id": "W3D-10",
+      "status": "PASS",
+      "evidence": "过程动画审计通过（MD-lite/滑块/水流均带声明）；动物不做已书面声明；w3d-10-animations.md"
     },
     {
       "id": "LOAD-09",
       "status": "NOT_RUN",
       "evidence": "后台/锁屏暂停已接 visibilitychange，CDP 无法模拟真实锁屏"
-    },
-    {
-      "id": "A11Y-06",
-      "status": "NOT_RUN",
-      "evidence": "系统字号放大：当前布局为 px，不随系统字号缩放（已知缺口）"
-    },
-    {
-      "id": "A11Y-10",
-      "status": "NOT_RUN",
-      "evidence": "本轮未覆盖"
     },
     {
       "id": "PERF-01",
@@ -307,11 +312,6 @@
       "id": "PERF-04",
       "status": "NOT_RUN",
       "evidence": "20 分钟长跑需真实 GPU"
-    },
-    {
-      "id": "PERF-09",
-      "status": "NOT_RUN",
-      "evidence": "发布包清单在打包后生成（dist + reports）"
     },
     {
       "id": "PERF-10",

@@ -39,6 +39,12 @@ export interface ShellHandlers {
   onEnter: () => void;
   onResume: () => void;
   onRetry: () => void;
+  /** LOAD-05：慢网时用户选择轻量模式继续。 */
+  onLiteMode: () => void;
+  /** LOAD-05：慢网时用户选择只读科学档案（不加载三维）。 */
+  onArchiveOnly: () => void;
+  /** W3D-09：切换远景季节/天气档位（L4 制作档位，非实测重建）。 */
+  onSeason: (date: string) => void;
   onPrev: () => void;
   onNext: () => void;
   onExit: () => void;
@@ -98,6 +104,9 @@ export class Shell {
   private stageIndex = -1;
   private toastTimer = 0;
   private currentAnchors: AnchorHit[] = [];
+  /** W3D-09：远景季节档位；null = 当前层没有季节控制。 */
+  private seasons: { presets: ReadonlyArray<{ date: string; label: string; note: string }>; active: string } | null = null;
+  private lastState: AppState | null = null;
 
   constructor(root: HTMLElement, handlers: ShellHandlers) {
     this.root = root;
@@ -128,6 +137,8 @@ export class Shell {
     enter?.addEventListener('click', () => this.handlers.onEnter());
     resume?.addEventListener('click', () => this.handlers.onResume());
     retry?.addEventListener('click', () => this.handlers.onRetry());
+    this.poster.querySelector('#btn-lite')?.addEventListener('click', () => this.handlers.onLiteMode());
+    this.poster.querySelector('#btn-archive-only')?.addEventListener('click', () => this.handlers.onArchiveOnly());
     const last = (() => {
       try {
         const raw = localStorage.getItem('niceterra.session.v2');
@@ -162,6 +173,20 @@ export class Shell {
   showLoadingText(text: string): void {
     const el = this.poster.querySelector<HTMLElement>('#poster-status');
     if (el) el.textContent = text;
+  }
+
+  /** LOAD-05：慢网时给出真实可选动作，而不是让人永久等待。 */
+  showSlowActions(reason: string): void {
+    const box = this.poster.querySelector<HTMLElement>('#slow-actions');
+    if (!box) return;
+    const why = box.querySelector<HTMLElement>('.slow-why');
+    if (why) why.textContent = reason;
+    box.hidden = false;
+  }
+
+  hideSlowActions(): void {
+    const box = this.poster.querySelector<HTMLElement>('#slow-actions');
+    if (box) box.hidden = true;
   }
 
   hidePoster(): void {
@@ -296,6 +321,11 @@ export class Shell {
     this.right.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((b) => {
       b.addEventListener('click', () => this.handlers.onTab((b.dataset.tab as TabId) ?? 'summary'));
     });
+    this.right.querySelectorAll<HTMLButtonElement>('[data-season]').forEach((b) => {
+      b.addEventListener('click', () => {
+        if (b.dataset.season) this.handlers.onSeason(b.dataset.season);
+      });
+    });
     const hyp = this.right.querySelector<HTMLInputElement>('#hyp-snow');
     if (hyp) {
       const label = this.right.querySelector<HTMLElement>('#hyp-val');
@@ -346,12 +376,28 @@ export class Shell {
       parts.push('<p>' + route.levels.length + ' 层：' + route.levels.map((l) => esc(l.name)).join(' → ') + '</p>');
     }
 
+    // W3D-09：天气图层 = 远景季节档位（同物异天）；实测重建 UNKNOWN，不自动补晴。
+    if (this.seasons) {
+      const cur = this.seasons.presets.find((p) => p.date === this.seasons!.active);
+      parts.push(
+        '<h3>天气与季节 · 同物异天</h3>' +
+        '<div class="seg seg-season">' +
+        this.seasons.presets.map(
+          (p) =>
+            '<button type="button" data-season="' + esc(p.date) + '" aria-pressed="' + (p.date === this.seasons!.active ? 'true' : 'false') + '">' + esc(p.label) + '</button>'
+        ).join('') +
+        '</div>' +
+        '<p style="font-size:0.8125rem;color:var(--text-muted)">' + esc(cur?.note ?? '') + '</p>' +
+        '<p class="limit">全部是制作档位（L4）：不是实测天气重建（未接入，状态 UNKNOWN），也没有自动补晴。改季节只改渲染参数，科学基线不参与、不改写。</p>'
+      );
+    }
+
     if (state.mode === 'hypothesis') {
       parts.push(
         '<h3>假设实验 · L5</h3>' +
         '<div class="claim"><div class="head"><span class="chip L5"><b>L5</b>假设场景</span><code>HYPOTHESIS</code></div>' +
         '<p>只改变渲染参数，生成一份 L5 副本；科学基线（claims / levels / samples）不参与运算，也不会被改写。</p>' +
-        '<label for="hyp-snow" style="display:block;font-size:14px;color:var(--text-secondary);margin:8px 0 4px">雪线上移 <b id="hyp-val">0</b> m</label>' +
+        '<label for="hyp-snow" style="display:block;font-size:0.875rem;color:var(--text-secondary);margin:8px 0 4px">雪线上移 <b id="hyp-val">0</b> m</label>' +
         '<input id="hyp-snow" type="range" min="-200" max="600" step="100" value="0" style="width:100%;min-height:44px" />' +
         '<p class="limit">这不是气候预测，也不是实测趋势；只是让你看见「如果雪线更高，谷地会变成什么样」。</p></div>'
       );
@@ -359,8 +405,8 @@ export class Shell {
 
     parts.push('<h3>交互模式</h3><p>' +
       MODES.map((m) => (m.id === state.mode ? '<b>' + esc(m.label) + '</b>' : esc(m.label))).join(' · ') + '</p>' +
-      '<p style="font-size:13px;color:var(--text-muted)">' + esc(MODES.find((m) => m.id === state.mode)?.hint ?? '') + '</p>');
-    parts.push('<p style="font-size:12.5px;color:var(--text-muted)">数据版本 ' + esc(state.dataVersion) + ' · 资产版本 ' + esc(state.assetVersion) + '</p>');
+      '<p style="font-size:0.8125rem;color:var(--text-muted)">' + esc(MODES.find((m) => m.id === state.mode)?.hint ?? '') + '</p>');
+    parts.push('<p style="font-size:0.78125rem;color:var(--text-muted)">数据版本 ' + esc(state.dataVersion) + ' · 资产版本 ' + esc(state.assetVersion) + '</p>');
     return parts.join('');
   }
 
@@ -386,7 +432,7 @@ export class Shell {
         );
       })
       .join('');
-    return '<h2>证据</h2><p style="font-size:13px;color:var(--text-muted)">按层级过滤，共 ' + list.length + ' 条。生成资产与机制示意不会被写成实测。</p>' + html;
+    return '<h2>证据</h2><p style="font-size:0.8125rem;color:var(--text-muted)">按层级过滤，共 ' + list.length + ' 条。生成资产与机制示意不会被写成实测。</p>' + html;
   }
 
   private samplesPanel(state: AppState): string {
@@ -471,8 +517,15 @@ export class Shell {
   }
 
   refresh(state: AppState): void {
+    this.lastState = state;
     this.renderLeft(state);
     this.renderRight(state);
+  }
+
+  /** W3D-09：安装/移除远景季节控制，并重绘右栏。 */
+  setSeasonControl(v: { presets: ReadonlyArray<{ date: string; label: string; note: string }>; active: string } | null): void {
+    this.seasons = v;
+    if (this.lastState) this.renderRight(this.lastState);
   }
 
   setMode(mode: Mode): void {

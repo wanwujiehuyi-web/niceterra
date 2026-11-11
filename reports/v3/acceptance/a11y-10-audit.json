@@ -1,0 +1,378 @@
+{
+  "at": "2026-11-11T10:51:47.499Z",
+  "controls": [
+    {
+      "tag": "button",
+      "id": null,
+      "text": "尺度旅程",
+      "role": null,
+      "w": 80,
+      "h": 36,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "自由探索",
+      "role": null,
+      "w": 80,
+      "h": 36,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "假设实验",
+      "role": null,
+      "w": 80,
+      "h": 36,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": "btn-far",
+      "text": "贡嘎远景",
+      "role": null,
+      "w": 98,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": "toggle-sites",
+      "text": "样区",
+      "role": null,
+      "w": 66,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": "toggle-panel",
+      "text": "档案",
+      "role": null,
+      "w": 66,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "峨眉冷杉成熟林森林样区 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 66,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "林溪与湿石溪流样区 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 66,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "冰舌与表碛冰舌样区 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 66,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "冰川退缩迹地迹地样区 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 66,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "A湿溪石—生物膜—硅藻—生物硅10 层 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 77,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "B冰退之后—土壤—根际—磷过程7 层 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 77,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "C苔藓—叶细胞—叶绿体—光合膜5 层 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 77,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "D冰表碎屑—微生物群落4 层 · PLANNED",
+      "role": null,
+      "w": 223,
+      "h": 55,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "冰舌与表碛（设计位置）",
+      "role": null,
+      "w": 180,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "概要",
+      "role": "tab",
+      "w": 112,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "证据",
+      "role": "tab",
+      "w": 112,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": null,
+      "text": "样本",
+      "role": "tab",
+      "w": 112,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": "btn-prev",
+      "text": "上一级",
+      "role": null,
+      "w": 112,
+      "h": 44,
+      "disabled": true,
+      "cursor": "not-allowed",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": "btn-next",
+      "text": "继续深入",
+      "role": null,
+      "w": 144,
+      "h": 44,
+      "disabled": false,
+      "cursor": "pointer",
+      "interactive": true
+    },
+    {
+      "tag": "button",
+      "id": "btn-exit",
+      "text": "退到谷地",
+      "role": null,
+      "w": 118,
+      "h": 44,
+      "disabled": true,
+      "cursor": "not-allowed",
+      "interactive": true
+    }
+  ],
+  "tabStops": [
+    {
+      "i": 0,
+      "tag": "button",
+      "id": null,
+      "text": "尺度旅程",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": true,
+      "focusVisible": true
+    },
+    {
+      "i": 1,
+      "tag": "button",
+      "id": null,
+      "text": "自由探索",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 2,
+      "tag": "button",
+      "id": null,
+      "text": "假设实验",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 3,
+      "tag": "button",
+      "id": "btn-far",
+      "text": "贡嘎远景",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 4,
+      "tag": "button",
+      "id": "toggle-sites",
+      "text": "样区",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 5,
+      "tag": "button",
+      "id": "toggle-panel",
+      "text": "档案",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 6,
+      "tag": "button",
+      "id": null,
+      "text": "峨眉冷杉成熟林森林样区 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 7,
+      "tag": "button",
+      "id": null,
+      "text": "林溪与湿石溪流样区 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 8,
+      "tag": "button",
+      "id": null,
+      "text": "冰舌与表碛冰舌样区 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 9,
+      "tag": "button",
+      "id": null,
+      "text": "冰川退缩迹地迹地样区 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 10,
+      "tag": "button",
+      "id": null,
+      "text": "A湿溪石—生物膜—硅藻—生物硅10 层 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 11,
+      "tag": "button",
+      "id": null,
+      "text": "B冰退之后—土壤—根际—磷过程7 层 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 12,
+      "tag": "button",
+      "id": null,
+      "text": "C苔藓—叶细胞—叶绿体—光合膜5 层 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    },
+    {
+      "i": 13,
+      "tag": "button",
+      "id": null,
+      "text": "D冰表碎屑—微生物群落4 层 · PLANNED",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "boxShadow": false,
+      "focusVisible": true
+    }
+  ]
+}

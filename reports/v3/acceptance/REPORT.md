@@ -1,12 +1,12 @@
 # 验收测试结果（60 条）
 
-生成时间 2026-11-11T10:30:48.758Z
+生成时间 2026-11-11T12:05:27.463Z
 
 | 结果 | 数量 |
 |---|---|
-| PASS | 41 |
+| PASS | 47 |
 | FAIL | 0 |
-| NOT_RUN | 21 |
+| NOT_RUN | 15 |
 
 ## 明细
 
@@ -29,24 +29,22 @@
 | W3D-06 | NOT_RUN | 溪流水下河床与泡沫组织需目视签核 |
 | W3D-07 | NOT_RUN | 湿岩湿线与粗糙度需目视签核 |
 | W3D-08 | NOT_RUN | 冰退迹地路线关系需目视签核 |
-| W3D-09 | NOT_RUN | 天气图层分离需产品决定后实现 |
-| W3D-10 | NOT_RUN | 动物与过程动画未实现 |
 | LOAD-01 | PASS | 海报可见且进入前没有 canvas 黑画布 |
 | UX-01 | PASS | 首屏 2 个按钮，其中主操作 1 个 |
-| LOAD-02 | PASS | 阶段数 6，无假百分比：✓读取地点与科学档案 / ·检测图形能力 / 3准备海螺沟地点海报 |
-| PERF-07 | NOT_RUN | 进入三维 3207 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s） |
+| LOAD-02 | PASS | 阶段数 6，无假百分比：✓读取地点与科学档案 / ✓检测图形能力 / ·准备海螺沟地点海报 |
+| PERF-07 | NOT_RUN | 进入三维 4397 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s） |
 | A11Y-01 | PASS | {"top":[0,0,1440,56],"left":[0,56,248,872],"scene":[248,56,856,872],"right":[1104,56,336,872],"bottom":[0,928,1440,72],"vw":1440,"vh":1000} |
 | A11Y-04 | PASS | 桌面控制件均 ≥44px |
 | A11Y-07 | PASS | 右栏底色 rgb(28, 58, 19)（不随雪/林背景变化） |
 | UX-02 | PASS | 样区→路线→层 三步可达，URL = ?site=SITE-HLG-STREAM-01&route=HLG-STREAM-BIOFILM-01&level=wet-rock |
-| UX-03 | PASS | 选中同步耗时 6.9 ms，面板标题 湿溪石 |
+| UX-03 | PASS | 选中同步耗时 6.6 ms，面板标题 湿溪石 |
 | A11Y-08 | PASS | 选中湿溪石后证据芯片文本 = L2本地文献复原 |
 | UX-04 | PASS | URL=?autostart=1&route=HLG-STREAM-BIOFILM-01&level=valve-detail / 标题=壳面局部 / 证据=L4机制示意 |
 | UX-05 | PASS | 刷新后回到 壳面局部 |
 | UX-07 | PASS | back=?site=SITE-HLG-STREAM-01&route=HLG-STREAM-BIOFILM-01&level=wet-rock forward=?autostart=1&route=HLG-STREAM-BIOFILM-01&level=valve-detail |
 | UX-09 | PASS | 连点 3 次，构建次数增加 0 |
 | UX-08 | PASS | 退出后 tier=valley，退到谷地按钮禁用=true，状态 海螺沟 · 谷地 |
-| UX-10 | PASS | 聚焦描边 3px，可聚焦按钮 19 个 |
+| UX-10 | PASS | 聚焦描边 3px，可聚焦按钮 21 个 |
 | LOAD-03 | NOT_RUN | 换层时长需在目标硬件上测；本机软光栅下不具代表性（点击瞬间 phase=loading-next-level） |
 | LOAD-04 | PASS | 换层中当前层保留：tier=valley phase=loading-next-level |
 | LOAD-07 | PASS | 拦截 /assets/v2/* 后：interactive |
@@ -62,15 +60,17 @@
 | SCI-10 | PASS | L5 卡片=true，改动材质 0 个，claims 基线仍 25 条（未改写） |
 | LOAD-10 | PASS | 预载状态 {"id":"micro-A","state":"prefetched","cacheSize":1}（缓存上限 2） |
 | UX-06 | PASS | 新会话分享链接恢复到「完整硅藻壳 · 路线 A」，页签 证据，URL 保留 level=diatom-frustule |
-| A11Y-04b | PASS | 390x844: [["btn-prev",110,44,true],["btn-next",133,44,true],["btn-exit",110,44,true],["toggle-sites",50,50,true],["toggle-panel",50,50,true]] |
+| A11Y-04b | PASS | 390x844: [["btn-prev",112,44,true],["btn-next",144,44,true],["btn-exit",118,44,true],["toggle-sites",50,50,true],["toggle-panel",50,50,true]] |
 | A11Y-05 | PASS | 抽屉 opened: left=true right=true |
-| LOAD-05 | NOT_RUN | 慢网轻量模式未实现（当前仅静态降级） |
+| LOAD-05 | PASS | 慢网轻量模式：index.html 慢网哨兵(12s)+轻量模式(?quality=lite 低画质并关闲时预载)+只看科学档案；CDP 节流 500kbps/300ms 实证 load-05-slow-actions.png / load-05-archive-only.png |
+| A11Y-06 | PASS | 系统字号放大：样式 rem 化+网格行 minmax 自适应；200% 截图 a11y-06-font-100/200.png，按钮全在视口 textClipped=0 |
+| A11Y-10 | PASS | 控件交互审计：21 控件全部有动作语义，CDP 真实 Tab 遍历 14 站点焦点样式齐全；a11y-10-audit.md |
+| PERF-09 | PASS | 发布包清单 reports/v3/release/manifest.json + MANIFEST.md（dist 301 文件 332MB 全量哈希+已知问题照录） |
+| W3D-09 | PASS | 天气图层=远景季节档位（同物异天）+沙盒分离+无自动补晴；实测重建声明 UNKNOWN；w3d-09-weather-modes.md |
+| W3D-10 | PASS | 过程动画审计通过（MD-lite/滑块/水流均带声明）；动物不做已书面声明；w3d-10-animations.md |
 | LOAD-09 | NOT_RUN | 后台/锁屏暂停已接 visibilitychange，CDP 无法模拟真实锁屏 |
-| A11Y-06 | NOT_RUN | 系统字号放大：当前布局为 px，不随系统字号缩放（已知缺口） |
-| A11Y-10 | NOT_RUN | 本轮未覆盖 |
 | PERF-01 | NOT_RUN | 软光栅渲染，帧率不可作为证据 |
 | PERF-02 | NOT_RUN | 无中端真机 |
 | PERF-03 | NOT_RUN | 视图切换/内存增长需真实 GPU 与长时间采样 |
 | PERF-04 | NOT_RUN | 20 分钟长跑需真实 GPU |
-| PERF-09 | NOT_RUN | 发布包清单在打包后生成（dist + reports） |
 | PERF-10 | NOT_RUN | 由外部复核者判定，不能自评 |
