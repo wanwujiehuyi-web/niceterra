@@ -117,14 +117,18 @@ type SurfaceClass = (typeof enumClass)[keyof typeof enumClass];
 
 const CLASS_COLOR: Record<number, THREE.Color> = {
   [enumClass.ROCK]: new THREE.Color(0x57524b),
-  [enumClass.FOREST]: new THREE.Color(0x3d5534),
+  [enumClass.FOREST]: new THREE.Color(0x33452c),
   [enumClass.FIRN]: new THREE.Color(0xf2f7fc),
   [enumClass.ICEFALL]: new THREE.Color(0xd8eaf6),
-  [enumClass.DEBRIS]: new THREE.Color(0x4a443b),
-  [enumClass.MORAINE]: new THREE.Color(0x5c574c),
+  // 表碛：真照片地面视角为浅-中暖灰（晴天 ~#8a8378 / 阴天 ~#5a544b），取中间值；
+  // 卫星影像读数偏深是视角+大气效应，W3D-01 报告已声明两种视角的容差。
+  [enumClass.DEBRIS]: new THREE.Color(0x655e52),
+  [enumClass.MORAINE]: new THREE.Color(0x6b655a),
   [enumClass.GRAVEL]: new THREE.Color(0x7d786c),
   [enumClass.CREVASSE]: new THREE.Color(0x5f84a0),
 };
+/** 冰瀑下段蓝冰出露带（真照片：白色冰瀑与灰色冰舌之间的蓝色过渡带） */
+const BLUE_ICE = new THREE.Color(0x83b4d4);
 
 interface Surface {
   y: number;
@@ -152,10 +156,12 @@ function surfaceAt(s: number, uRaw: number, detail: number): Surface {
   const patch = fbm2(uRaw * 0.007 + 3, s * 0.007);
 
   // ---- 6 森林坡面：谷壁下部、坡度较缓处
-  const forestLine = 3560 + (patch - 0.5) * 260;
+  // 真照片对照（glacier-in-forest / official-icefall-1）：暗绿针叶林直抵冰缘，
+  // 林线抬高 + 密度阈值放宽，让低海拔谷壁大面积郁闭。
+  const forestLine = 3640 + (patch - 0.5) * 260;
   if (y < forestLine && au > half * 0.82) {
-    const dens = Math.min(1, (forestLine - y) / 320) * (0.55 + 0.45 * clump) * Math.min(1, Math.max(0, (au - half * 0.82) / 90));
-    cls = dens > 0.34 ? enumClass.FOREST : enumClass.ROCK;
+    const dens = Math.min(1, (forestLine - y) / 300) * (0.55 + 0.45 * clump) * Math.min(1, Math.max(0, (au - half * 0.82) / 90));
+    cls = dens > 0.3 ? enumClass.FOREST : enumClass.ROCK;
   }
 
   if (au < half) {
@@ -334,6 +340,12 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
         shade -= Math.pow(slope, 1.3) * 0.2; // 岩/碛：陡壁压深（克制，保曝光）
       }
       tmp.copy(c).multiplyScalar(Math.max(0.55, Math.min(1.35, shade)));
+      // 冰瀑下段蓝冰出露带：s∈[540,720] 向蓝冰色渐变，噪声打散边界（真照片对照 G2）
+      if (cls === enumClass.ICEFALL) {
+        const sv = -positions[k + 2];
+        const bw = Math.max(0, Math.min(1, (720 - sv) / 180)) * (0.45 + 0.55 * fbm2(positions[k] * 0.02 + 5, sv * 0.02));
+        tmp.lerp(BLUE_ICE, Math.min(0.75, bw));
+      }
       colors[k] = tmp.r;
       colors[k + 1] = tmp.g;
       colors[k + 2] = tmp.b;
@@ -490,9 +502,10 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     cones.setMatrixAt(placed, placer.matrix);
     conesHigh.setMatrixAt(placed, placer.matrix);
     trunks.setMatrixAt(placed, placer.matrix);
-    // 每株色相抖动：暗绿 → 冷杉蓝绿 → 微黄绿，打破纯色地毯
+    // 每株色相抖动：暗冷杉绿为主（真照片的峨眉冷杉成熟林是深绿近墨绿），
+    // 少量蓝绿/黄绿变化打破纯色地毯
     const h = hash1(i * 11.3);
-    tint.setHSL(0.29 + h * 0.06, 0.34 + hash1(i * 13.1) * 0.18, 0.21 + hash1(i * 17.9) * 0.11);
+    tint.setHSL(0.32 + h * 0.04, 0.24 + hash1(i * 13.1) * 0.12, 0.08 + hash1(i * 17.9) * 0.07);
     cones.setColorAt(placed, tint);
     tint.multiplyScalar(1.22);
     conesHigh.setColorAt(placed, tint);
@@ -605,6 +618,71 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
     log('aholo serac 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
   }
 
+  // Aholo Lux3D 冰崩碎冰堆（taskId 6369583，AI 生成视觉资产）：冰瀑脚下的
+  // 冰崩堆积扇（真照片：白色冰瀑与灰色冰舌之间的碎冰堆积过渡带），
+  // 另在表碛冰舌上放两丘零星碎冰。粒雪盆崩落补给是海洋性冰川的真实机制。
+  try {
+    const gltf = await loadGLB('/assets/aholo/serac-rubble-01-web.glb');
+    const src = gltf.scene;
+    const nRubble = low ? 3 : 7;
+    for (let k = 0; k < nRubble; k++) {
+      const inst = src.clone(true);
+      const s = 470 + hash1(k * 27.1) * 170;
+      const uRaw = centerX(s) + (hash1(k * 9.7) - 0.5) * 2 * valleyHalf(s) * 0.8;
+      const surf = surfaceAt(s, uRaw, 1);
+      fitObject(inst, { targetLongest: 9 + hash1(k * 5.3) * 16, groundY: surf.y - 1.8, yaw: hash1(k * 3.7) * 6.28 });
+      inst.position.x = uRaw;
+      inst.position.z = -s;
+      group.add(inst);
+      heroTrees.push(inst);
+    }
+    if (!low) {
+      for (let k = 0; k < 2; k++) {
+        const inst = src.clone(true);
+        const s = 120 + hash1(k * 51.3) * 260;
+        const uRaw = centerX(s) + (hash1(k * 21.7) - 0.5) * 2 * valleyHalf(s) * 0.6;
+        const surf = surfaceAt(s, uRaw, 1);
+        fitObject(inst, { targetLongest: 6 + hash1(k * 33.1) * 7, groundY: surf.y - 1.2, yaw: hash1(k * 15.9) * 6.28 });
+        inst.position.x = uRaw;
+        inst.position.z = -s;
+        group.add(inst);
+        heroTrees.push(inst);
+      }
+    }
+    stats.assetsLoaded++;
+    log('aholo serac-rubble x' + nRubble + (low ? '' : ' +2 tongue'));
+  } catch (err) {
+    stats.assetsFailed++;
+    log('aholo serac-rubble 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
+  }
+
+  // Aholo Lux3D 高山杜鹃灌丛（taskId 6370613，AI 生成视觉资产）：林缘与碛垄
+  // 过渡带的杜鹃灌丛——六月杜鹃与冰川同框是海螺沟标志性景观（百度百科时令景观）。
+  try {
+    const gltf = await loadGLB('/assets/aholo/rhododendron-01-web.glb');
+    const src = gltf.scene;
+    const nRhodo = low ? 6 : 22;
+    for (let k = 0; k < nRhodo; k++) {
+      const inst = src.clone(true);
+      const s = -80 + hash1(k * 37.3) * 480;
+      const half = valleyHalf(s);
+      const sign = hash1(k * 7.9) > 0.5 ? 1 : -1;
+      const uRaw = centerX(s) + sign * (half + 30 + hash1(k * 13.7) * 150);
+      const surf = surfaceAt(s, uRaw, 1);
+      if (surf.cls !== enumClass.FOREST && surf.cls !== enumClass.MORAINE) continue;
+      fitObject(inst, { targetLongest: 1.2 + hash1(k * 3.3) * 2.2, groundY: surf.y - 0.15, yaw: hash1(k * 5.1) * 6.28 });
+      inst.position.x = uRaw;
+      inst.position.z = -s;
+      group.add(inst);
+      heroTrees.push(inst);
+    }
+    stats.assetsLoaded++;
+    log('aholo rhododendron x' + nRhodo);
+  } catch (err) {
+    stats.assetsFailed++;
+    log('aholo rhododendron 载入失败 :: ' + (err instanceof Error ? err.message : String(err)));
+  }
+
   // Aholo Lux3D 岩壁模块（taskId 6035905）：俯视取证发现 AI 生成件是平板状，
   // 放在坡上读作平铺板块，视觉不合格——从谷地撤下，母版保留在 assets-src 供
   // 未来近景层试用。2026-11-11 W3D-01 取证记录。
@@ -612,11 +690,12 @@ export async function createValleyTier(opts: TierOptions): Promise<ValleyTier> {
   /* ---- 5. 机位与锚点 ---- */
   const poses: Record<string, TierCameraPose> = {
     A: {
-      // 谷地总览：冰前砾石滩上回望表碛冰舌—冰瀑—粒雪盆
-      // 注意 z = -s：相机在下游 s=-600 处（z=+600），朝上游（-z）看。
-      // 视线近平（+170/+30）：近景 hero 漂砾与砾石滩进入画面下缘，前景-中景-远景三层齐全。
-      position: [centerX(-640) + 40, profileY(-640) + 170, 640],
-      target: [centerX(240), profileY(240) + 30, -240],
+      // 谷地总览（真照片对照重构，官方机位构图）：抬高+侧移，让画面 =
+      // 前景漂砾与砾石滩（下缘）→ 表碛冰舌纵深（中景引导线）→ 冰瀑+蓝冰带
+      // （视觉中心）→ 粒雪盆与远山（上缘），两侧谷壁森林夹景。
+      // 注意 z = -s：相机在下游 s=-640 处（z=+640），朝上游（-z）看。
+      position: [centerX(-640) + 240, profileY(-640) + 480, 640],
+      target: [centerX(660) - 60, profileY(660) + 10, -660],
     },
     B: {
       // 冰川到森林：贴着表碛冰舌侧缘，右壁针叶林入画

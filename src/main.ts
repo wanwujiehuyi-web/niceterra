@@ -185,7 +185,8 @@ async function enterWorld(resume = false): Promise<void> {
       const last = Store.lastSession();
       if (last?.siteId) selectSite(last.siteId);
     }
-    if (!capability?.reducedMotion) startTour();
+    // ?tour=0 skips the guided tour (evidence screenshots need a stable pose).
+    if (!capability?.reducedMotion && params.get('tour') !== '0') startTour();
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     setPhase('recoverable-error');

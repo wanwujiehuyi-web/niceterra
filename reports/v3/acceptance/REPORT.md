@@ -1,6 +1,6 @@
 # 验收测试结果（60 条）
 
-生成时间 2026-11-11T03:59:02.539Z
+生成时间 2026-11-11T05:18:40.804Z
 
 | 结果 | 数量 |
 |---|---|
@@ -34,19 +34,19 @@
 | LOAD-01 | PASS | 海报可见且进入前没有 canvas 黑画布 |
 | UX-01 | PASS | 首屏 2 个按钮，其中主操作 1 个 |
 | LOAD-02 | PASS | 阶段数 6，无假百分比：✓读取地点与科学档案 / ✓检测图形能力 / ·准备海螺沟地点海报 |
-| PERF-07 | NOT_RUN | 进入三维 3111 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s） |
+| PERF-07 | NOT_RUN | 进入三维 4683 ms（SwiftShader 软光栅，不能作为产品性能结论；目标桌面 5 s/手机 8 s） |
 | A11Y-01 | PASS | {"top":[0,0,1440,56],"left":[0,56,248,872],"scene":[248,56,856,872],"right":[1104,56,336,872],"bottom":[0,928,1440,72],"vw":1440,"vh":1000} |
 | A11Y-04 | PASS | 桌面控制件均 ≥44px |
 | A11Y-07 | PASS | 右栏底色 rgb(28, 58, 19)（不随雪/林背景变化） |
 | UX-02 | PASS | 样区→路线→层 三步可达，URL = ?site=SITE-HLG-STREAM-01&route=HLG-STREAM-BIOFILM-01&level=wet-rock |
-| UX-03 | PASS | 选中同步耗时 21.4 ms，面板标题 湿溪石 |
+| UX-03 | PASS | 选中同步耗时 13.6 ms，面板标题 湿溪石 |
 | A11Y-08 | PASS | 选中湿溪石后证据芯片文本 = L2本地文献复原 |
 | UX-04 | PASS | URL=?autostart=1&route=HLG-STREAM-BIOFILM-01&level=valve-detail / 标题=壳面局部 / 证据=L4机制示意 |
 | UX-05 | PASS | 刷新后回到 壳面局部 |
 | UX-07 | PASS | back=?site=SITE-HLG-STREAM-01&route=HLG-STREAM-BIOFILM-01&level=wet-rock forward=?autostart=1&route=HLG-STREAM-BIOFILM-01&level=valve-detail |
-| UX-09 | PASS | 连点 3 次，构建次数增加 1 |
+| UX-09 | PASS | 连点 3 次，构建次数增加 0 |
 | UX-08 | PASS | 退出后 tier=valley，退到谷地按钮禁用=true，状态 海螺沟 · 谷地 |
-| UX-10 | PASS | 聚焦描边 3px，可聚焦按钮 22 个 |
+| UX-10 | PASS | 聚焦描边 3px，可聚焦按钮 19 个 |
 | LOAD-03 | NOT_RUN | 换层时长需在目标硬件上测；本机软光栅下不具代表性（点击瞬间 phase=loading-next-level） |
 | LOAD-04 | PASS | 换层中当前层保留：tier=valley phase=loading-next-level |
 | LOAD-07 | PASS | 拦截 /assets/v2/* 后：interactive |
