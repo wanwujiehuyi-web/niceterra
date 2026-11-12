@@ -1,0 +1,554 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "hailuogou-site-notes-2026-11-10",
+  "baselineDate": "2026-11-10",
+  "canonicalSource": "public/data/spec/01_海螺沟场景与坐标清单.json（样区/样点/对象 ID 唯一事实来源）",
+  "siblingFiles": {
+    "specScene": "public/data/spec/01_海螺沟场景与坐标清单.json",
+    "sources": "public/data/science/sources.json",
+    "claims": "public/data/science/claims.json",
+    "samples": "public/data/science/samples.json",
+    "routes": "public/data/science/routes.json"
+  },
+  "place": {
+    "placeId": "PLACE-HAILUOGOU",
+    "name": "海螺沟",
+    "region": "贡嘎山东坡 · 冰川森林谷地",
+    "backgroundPlaceId": "WORLD-GONGGA-DISTANT",
+    "backgroundName": "贡嘎远景（三维远景）",
+    "backgroundWalkable": false,
+    "scopeNote": "唯一可探索地点为海螺沟谷地；贡嘎山脉仅为远景，不进入步行范围。",
+    "activeWorldBoundary": "excludedFromActiveWorld 共 6 项（非本地对象/路线/固定刷新点），见 spec 01；本数据层不包含其任何资产、路线、样本或 claim，也不为其保留占位。",
+    "frontendIdNote": "前端 src/app/content.ts 当前使用 placeId=PLACE-HLG-01；spec 01 与本文档使用 PLACE-HAILUOGOU。以 spec 为准则需 lead 统一，本层不擅自改前端。"
+  },
+  "coordinateSystem": {
+    "geographic": "EPSG:4326（经纬度，仅用于公开样点与区域描述）",
+    "regional": "EPSG:32647 候选（UTM 47N），未复核，不得作为已确认事实",
+    "siteLocal": "以样区锚点为原点的 ENU 米制，z = DEM + offset",
+    "objectLocal": "PARENT_RELATIVE / UV / IMAGE_PIXEL；显微对象不得伪造经纬度",
+    "ui": "CSS px（1440×1000 基准，非地理单位）",
+    "verticalDatum": "UNKNOWN",
+    "precisionPolicy": "坐标精度不得外推：PUBLIC_COORDINATE 只到公开字段精度；DESIGN_ONLY 不代表实地位置；UNKNOWN 不补默认值。"
+  },
+  "evidenceLevels": {
+    "L1": "本项目实测（含实测摄影测量/实测成像）",
+    "L2": "经同行评议文献或数据集支持",
+    "L3": "形态/结构示意，参照文献但非本地实测",
+    "L4": "机制示意或通用教材级结构模型",
+    "L5": "纯设计/艺术虚构，不得进入证据链"
+  },
+  "sampleStatusEnum": [
+    "PLANNED",
+    "COLLECTED",
+    "PROCESSED",
+    "IMAGED",
+    "IDENTIFIED",
+    "PUBLISHED"
+  ],
+  "dateFieldNote": "dates 五字段各自独立：exposureYear（出露年份）/ samplingYear（采样年份）/ reportedSoilAge（文献土壤年龄）/ publicationYear（发表年份）/ geometryDate（几何有效日期）。禁止互相替代，禁止把历史年龄当 2026 当前年龄。",
+  "mustNotClaimGlobal": [
+    "不得把 AI 生成资产、设计母体或机制示意图称为实测。",
+    "不得编造本地硅藻名录、丰度、优势种或分类鉴定结论。",
+    "不得给出 2026 年当前冰舌边界（无带日期的冰舌几何）。",
+    "不得发布未复核的功能基因结论（CLM-GENE 保持「待原始数据复核」）。",
+    "不得给出当前林分每木数据（GGFZH01 公开字段不是本轮实测）。",
+    "UNKNOWN 一律显示 UNKNOWN，不得以默认值/占位值替代。"
+  ],
+  "sites": [
+    {
+      "siteId": "SITE-HLG-FOREST-01",
+      "name": "峨眉冷杉成熟林",
+      "tier": "forest",
+      "coordinateStatus": "PUBLIC_COORDINATE",
+      "evidenceLevel": "L2",
+      "anchor": {
+        "anchorType": "PUBLIC_PLOT",
+        "plotId": "PLOT-HLG-GGFZH01",
+        "geographic": {
+          "longitude": 101.9886,
+          "latitude": 29.5731,
+          "elevationM": 3160,
+          "epsg": "EPSG:4326"
+        },
+        "slopeAspect": "SE",
+        "slopeDeg": "30-35",
+        "slopePosition": "中下部",
+        "coordinateStatus": "PUBLIC_COORDINATE",
+        "verticalDatum": "UNKNOWN",
+        "sourceId": "SRC-GGFZH01",
+        "limitation": "公开字段；不是本轮实测 GPS，也不是永久样地实测边界。"
+      },
+      "detailTile": {
+        "tileId": "TILE-HLG-FOREST-01",
+        "sizeM": 120,
+        "extentM": [
+          -60,
+          60
+        ],
+        "coordinateStatus": "DESIGN_ONLY",
+        "evidenceLevel": "L5",
+        "warning": "120×120 m 制作瓦片是设计制作范围，不是永久样地实测边界；不得与 GGFZH01 公开坐标合并叙述。"
+      },
+      "habitats": [
+        {
+          "habitatId": "HAB-FOREST-CANOPY-1",
+          "name": "乔木第一层",
+          "evidenceLevel": "L2",
+          "note": "峨眉冷杉主林层结构性描述；单株尺寸/密度属文献，不是本轮每木调查。"
+        },
+        {
+          "habitatId": "HAB-FOREST-CANOPY-2",
+          "name": "第二层及伴生乔木",
+          "evidenceLevel": "L2",
+          "note": "伴生种组成按文献；不得写成当前实测清单。"
+        },
+        {
+          "habitatId": "HAB-FOREST-BAMBOO",
+          "name": "竹灌层",
+          "evidenceLevel": "L2",
+          "note": "存在性按文献；盖度不得给全林统一值。"
+        },
+        {
+          "habitatId": "HAB-FOREST-HERB",
+          "name": "草本层",
+          "evidenceLevel": "L2",
+          "note": "组成按文献；不做本地名录宣称。"
+        },
+        {
+          "habitatId": "HAB-FOREST-MOSS",
+          "name": "苔藓地被",
+          "evidenceLevel": "L2",
+          "note": "种属 UNKNOWN；见路线 C。"
+        },
+        {
+          "habitatId": "HAB-FOREST-DEADWOOD",
+          "name": "倒木与枯立木",
+          "evidenceLevel": "L2",
+          "note": "结构存在按文献；数量/腐朽等级待测。"
+        },
+        {
+          "habitatId": "HAB-FOREST-GAP",
+          "name": "林窗",
+          "evidenceLevel": "L2",
+          "note": "林窗为结构性描述；面积/更新状态 UNKNOWN。"
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": "CAM-HLG-A",
+          "status": "DESIGN_ONLY",
+          "position": [
+            -42,
+            -48,
+            "DEM+1.65"
+          ],
+          "target": [
+            0,
+            10,
+            "DEM+8"
+          ],
+          "note": "设计机位；不代表实拍位置。"
+        }
+      ],
+      "objects": [
+        {
+          "objectId": "PLOT-HLG-GGFZH01",
+          "type": "public-plot-anchor",
+          "coordinateStatus": "PUBLIC_COORDINATE"
+        }
+      ],
+      "samples": [
+        "SAMPLE-HLG-MOSS-01"
+      ],
+      "routes": [
+        "HLG-MOSS-CHLOROPLAST-01"
+      ],
+      "claimIds": [
+        "CLM-FOREST-ANCHOR",
+        "CLM-FOREST-STRUCTURE",
+        "CLM-FOREST-PARAMS-NOT-GLOBAL",
+        "CLM-MOSS-HABITAT",
+        "CLM-TILE-DESIGN",
+        "CLM-IMG-B06-BOUNDARY"
+      ],
+      "mustNotClaim": [
+        "不得把 120×120 m 制作瓦片当永久样地实测边界（SCI-02）。",
+        "不得把 GGFZH01 公开字段当本轮实测坐标或实测边界。",
+        "不得给出全林统一的树高/胸径/盖度/竹层参数，或替代每木调查。",
+        "不得把文献群落结构叙述当作 GGFZH01 每木数据。",
+        "不得据 B06 图片推断种属、盖度或厚度。",
+        "不得宣称当前林分状态由 2026 影像实测。"
+      ],
+      "knownUnknowns": [
+        "永久样地实测边界",
+        "verticalDatum",
+        "当前每木数据（树高/胸径/密度）",
+        "苔藓种属",
+        "林窗更新状态",
+        "溪流是否流经样地（UNKNOWN）"
+      ]
+    },
+    {
+      "siteId": "SITE-HLG-STREAM-01",
+      "name": "林溪与湿石",
+      "tier": "stream",
+      "coordinateStatus": "UNKNOWN",
+      "evidenceLevel": "L2",
+      "anchor": {
+        "anchorType": "UNKNOWN",
+        "coordinateStatus": "UNKNOWN",
+        "note": "真实溪段选定前锚点保持 UNKNOWN；不得补默认坐标。",
+        "sourceId": "SRC-FOREST"
+      },
+      "designStream": {
+        "streamId": "STREAM-HLG-01",
+        "status": "DESIGN_ONLY",
+        "nodes": [
+          [
+            42,
+            -60
+          ],
+          [
+            36,
+            -38
+          ],
+          [
+            32,
+            -24
+          ],
+          [
+            30,
+            -16
+          ],
+          [
+            28,
+            0
+          ],
+          [
+            34,
+            22
+          ],
+          [
+            40,
+            44
+          ],
+          [
+            44,
+            60
+          ]
+        ],
+        "note": "设计溪线；不是实测河道，不得宣称穿过 GGFZH01（SCI-03）。"
+      },
+      "flagshipObject": {
+        "objectId": "ROCK-HLG-01",
+        "name": "湿溪石",
+        "coordinateStatus": "PARENT_RELATIVE",
+        "localPosition": [
+          30,
+          -16,
+          "zWater+0.12"
+        ],
+        "frame": "siteLocal",
+        "sampleStatus": "PLANNED",
+        "sampleId": "SAMPLE-HLG-ROCK-01",
+        "note": "设计溪线节点 (30,-16)；zWater 为设计水面高度。进入显微层后不得给经纬度。"
+      },
+      "habitats": [
+        {
+          "habitatId": "HAB-STREAM-CHANNEL",
+          "name": "水体与河床",
+          "evidenceLevel": "L2",
+          "note": "视觉流场不是水动力模拟。"
+        },
+        {
+          "habitatId": "HAB-STREAM-SURFACE",
+          "name": "水面与泡沫",
+          "evidenceLevel": "L2",
+          "note": "泡沫形态为视觉，不作物化测量。"
+        },
+        {
+          "habitatId": "HAB-STREAM-WETLINE",
+          "name": "湿线与湿石表面",
+          "evidenceLevel": "L2",
+          "note": "湿线位置随流量变化，图中为设计状态。"
+        },
+        {
+          "habitatId": "HAB-STREAM-BIOFILM",
+          "name": "生物膜与附着基质",
+          "evidenceLevel": "L4",
+          "note": "通用机制，非本地实测。"
+        },
+        {
+          "habitatId": "HAB-STREAM-SOUND",
+          "name": "声音环境",
+          "evidenceLevel": "L2",
+          "note": "声音只作氛围，不宣称声学测量。"
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": "CAM-HLG-B",
+          "status": "DESIGN_ONLY",
+          "position": [
+            24,
+            -34,
+            "DEM+0.75"
+          ],
+          "target": [
+            0,
+            20,
+            "DEM+4"
+          ],
+          "note": "设计低机位；不代表实拍位置。"
+        }
+      ],
+      "objects": [
+        {
+          "objectId": "ROCK-HLG-01",
+          "type": "wet-boulder",
+          "coordinateStatus": "PARENT_RELATIVE",
+          "sampleStatus": "PLANNED"
+        }
+      ],
+      "samples": [
+        "SAMPLE-HLG-ROCK-01"
+      ],
+      "routes": [
+        "HLG-STREAM-BIOFILM-01"
+      ],
+      "claimIds": [
+        "CLM-STREAM-DESIGN",
+        "CLM-WETROCK-PLACEMENT",
+        "CLM-BIOFILM-EPS",
+        "CLM-DIATOM-MORPH",
+        "CLM-DIATOM-SILICA",
+        "CLM-SILICA-CONDENSATION",
+        "CLM-SAMPLE-LIFECYCLE"
+      ],
+      "mustNotClaim": [
+        "不得宣称溪流穿过 GGFZH01 样地（SCI-03）。",
+        "不得把 STREAM-HLG-01 设计节点称为实测河道。",
+        "不得给 ROCK-HLG-01 或任何显微对象经纬度。",
+        "不得宣称本地硅藻名录、丰度或优势种（计划样本不形成名录，SCI-04）。",
+        "不得把视觉流场称为水动力模拟。",
+        "不得把 200 μm 生物膜示意说成 SEM 实测（§15.3）。"
+      ],
+      "knownUnknowns": [
+        "真实溪段位置",
+        "湿石实测几何与湿线",
+        "本地硅藻种属组成",
+        "水体理化参数",
+        "流速/流量",
+        "苔藓与生物膜实测厚度"
+      ]
+    },
+    {
+      "siteId": "SITE-HLG-GLACIER-01",
+      "name": "冰舌与表碛",
+      "tier": "glacier",
+      "coordinateStatus": "DATED_GEOMETRY",
+      "evidenceLevel": "L2",
+      "anchor": {
+        "anchorType": "DATED_GEOMETRY",
+        "coordinateStatus": "DATED_GEOMETRY",
+        "geometryDate": null,
+        "note": "冰舌几何必须绑定有效日期；当前无可用带日期几何，画面不得显示「2026 当前冰舌边界」。"
+      },
+      "requirements": [
+        "有效日期（冰舌边界/冰面地形/表碛覆盖/影像或 DEM 各自日期）",
+        "冰舌边界来源与不确定度",
+        "表碛覆盖范围与厚度定性描述",
+        "裂隙与陡冰区域（不开放自由步行）",
+        "冰前环境（冰前湖/河/植被过渡）",
+        "微生物样带位置与采样时间（若引用文献）"
+      ],
+      "habitats": [
+        {
+          "habitatId": "HAB-GLACIER-TONGUE",
+          "name": "冰舌",
+          "evidenceLevel": "L2",
+          "note": "几何日期 UNKNOWN；不得当当前状态。"
+        },
+        {
+          "habitatId": "HAB-GLACIER-DEBRIS-THIN",
+          "name": "薄表碛区",
+          "evidenceLevel": "L2",
+          "note": "文献支持薄碛多样性较低；不推断当前丰度。"
+        },
+        {
+          "habitatId": "HAB-GLACIER-DEBRIS-THICK",
+          "name": "近末端厚而移动慢的表碛",
+          "evidenceLevel": "L2",
+          "note": "文献支持多样性较高；不推断当前丰度。"
+        },
+        {
+          "habitatId": "HAB-GLACIER-CREVASSE",
+          "name": "裂隙与陡冰",
+          "evidenceLevel": "L2",
+          "note": "禁止自由步行进入。"
+        },
+        {
+          "habitatId": "HAB-GLACIER-FOREFIELD",
+          "name": "冰前环境",
+          "evidenceLevel": "L2",
+          "note": "与迹地样区分开叙述。"
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": "CAM-HLG-C",
+          "status": "REQUIRES_VIEWSHED",
+          "requestedStatus": "VIEWSHED_DERIVED→DATED_DEM_RIDGELINE",
+          "position": null,
+          "target": null,
+          "note": "必须完成 DEM 视线分析后才可启用；当前证据不足以放置机位。"
+        }
+      ],
+      "objects": [
+        {
+          "objectId": "DEBRIS-HLG-01",
+          "type": "ice-surface-debris",
+          "coordinateStatus": "UNKNOWN"
+        }
+      ],
+      "samples": [
+        "SAMPLE-HLG-DEBRIS-01"
+      ],
+      "routes": [
+        "HLG-DEBRIS-MICROBE-01"
+      ],
+      "claimIds": [
+        "CLM-GLACIER-DATED",
+        "CLM-DEBRIS-DIVERSITY",
+        "CLM-DEBRIS-MICROHABITAT",
+        "CLM-COMMUNITY-NETWORK",
+        "CLM-CAM-C-VIEWSHED",
+        "CLM-IMG-B01-BOUNDARY",
+        "CLM-IMG-B02-BOUNDARY"
+      ],
+      "mustNotClaim": [
+        "不得宣称 2026 年当前冰舌边界。",
+        "不得用 B02（2016-08-04）照片生成 2026 冰舌边界或当前表碛范围。",
+        "不得用 B01（2025-01-19）证明同期状态或雪线。",
+        "不得推断当前微生物丰度、多样性数值或群落组成。",
+        "不得做固定细菌/微生物动画并称为观测。",
+        "不得把裂隙与陡冰区域开放为自由步行（§9.4）。",
+        "共存网络边不是物理连线，禁用合作/竞争因果词（§18.2）。"
+      ],
+      "knownUnknowns": [
+        "冰舌几何有效日期",
+        "表碛覆盖面积与厚度",
+        "当前微生物丰度/多样性",
+        "样带位置与采样年份",
+        "冰前湖/河现状"
+      ]
+    },
+    {
+      "siteId": "SITE-HLG-CHRONO-01",
+      "name": "冰川退缩迹地",
+      "tier": "chrono",
+      "coordinateStatus": "HISTORICAL_SAMPLE",
+      "evidenceLevel": "L2",
+      "anchor": {
+        "anchorType": "HISTORICAL_SAMPLE",
+        "coordinateStatus": "HISTORICAL_SAMPLE",
+        "note": "历史研究采样点；不代表当前实测样地，也不提供 2026 当前坐标。",
+        "sourceId": "SRC-P-2023"
+      },
+      "requirements": [
+        "研究采样年份",
+        "出露年份",
+        "文献土壤年龄",
+        "土壤剖面",
+        "根际",
+        "磷过程"
+      ],
+      "habitats": [
+        {
+          "habitatId": "HAB-CHRONO-BARE",
+          "name": "裸地/初期定植面",
+          "evidenceLevel": "L2",
+          "note": "序列阶段按文献；具体位置待核。"
+        },
+        {
+          "habitatId": "HAB-CHRONO-MEADOW",
+          "name": "草本/灌丛阶段",
+          "evidenceLevel": "L2",
+          "note": "阶段划分按文献；不宣称本地实测样方。"
+        },
+        {
+          "habitatId": "HAB-CHRONO-SOIL",
+          "name": "土壤剖面与有机质层",
+          "evidenceLevel": "L2",
+          "note": "具体剖面待测（§10.3）。"
+        },
+        {
+          "habitatId": "HAB-CHRONO-RHIZO",
+          "name": "根际",
+          "evidenceLevel": "L2",
+          "note": "根—土—微生物界面为 L2+L4。"
+        },
+        {
+          "habitatId": "HAB-CHRONO-P",
+          "name": "磷过程（机制视图）",
+          "evidenceLevel": "L2",
+          "note": "机制图，非实时模拟。"
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": "CAM-HLG-CHRONO-01",
+          "status": "PENDING_SOURCE",
+          "position": null,
+          "target": null,
+          "note": "等待样点与几何来源。"
+        }
+      ],
+      "objects": [
+        {
+          "objectId": "CHRONO-HLG-01",
+          "type": "retreat-transect",
+          "coordinateStatus": "HISTORICAL_SAMPLE"
+        }
+      ],
+      "samples": [
+        "SAMPLE-HLG-SOIL-01",
+        "SAMPLE-HLG-RHIZO-01",
+        "SAMPLE-HLG-GENE-01"
+      ],
+      "routes": [
+        "HLG-CHRONO-P-01"
+      ],
+      "claimIds": [
+        "CLM-P-MECHANISM",
+        "CLM-P-TIME-BASIS",
+        "CLM-GENE",
+        "CLM-SAMPLE-LIFECYCLE",
+        "CLM-IMAGING-COLOR"
+      ],
+      "mustNotClaim": [
+        "不得把历史土壤年龄当作 2026 当前年龄（SCI-06）。",
+        "不得用发表年份替代采样年份。",
+        "不得发布未复核功能基因结论；gene-evidence 只显示「待原始数据复核」。",
+        "不得把磷过程机制图当实时模拟或实测速率。",
+        "不得在磷过程视图做可拖动时间滑块（§16.2）。",
+        "不得把基因/网络数据视图伪装成连续物理缩放。"
+      ],
+      "knownUnknowns": [
+        "出露年份",
+        "采样年份",
+        "文献土壤年龄",
+        "发表年份（部分来源仅线索）",
+        "具体剖面",
+        "样点坐标",
+        "基因定量与统计显著性"
+      ]
+    }
+  ],
+  "crossSiteRules": [
+    "四条路线分属四样区；路线 A 与 B 为旗舰（flagship）。",
+    "任何 enterSite 后都必须能逐级返回，且返回不重建整场景（§14 交互要求）。",
+    "证据页签按 claim 逐条列 sourceId 与 limitation；未复核 claim 显示 reviewStatus。",
+    "样本页签只显示已登记样本；计划样本显示 PLANNED，不显示采集日期。"
+  ]
+}

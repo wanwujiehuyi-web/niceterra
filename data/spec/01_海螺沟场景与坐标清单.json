@@ -1,0 +1,235 @@
+{
+  "schemaVersion": "1.0.0",
+  "dataVersion": "hailuogou-design-2026-11-10",
+  "place": {
+    "placeId": "PLACE-HAILUOGOU",
+    "name": "海螺沟",
+    "scope": "唯一可探索地点",
+    "backgroundPlaceId": "WORLD-GONGGA-DISTANT"
+  },
+  "coordinateSystems": {
+    "geographic": {
+      "crs": "EPSG:4326",
+      "order": [
+        "longitude",
+        "latitude"
+      ],
+      "datumNote": "原始资料未说明 datum 时标记待核"
+    },
+    "regional": {
+      "candidate": "EPSG:32647",
+      "status": "正式测量前复核"
+    },
+    "siteLocal": {
+      "type": "ENU",
+      "unit": "m",
+      "axes": {
+        "x": "east",
+        "y": "north",
+        "z": "up"
+      },
+      "zRule": "DEM(x,y)+offset"
+    },
+    "objectLocal": {
+      "types": [
+        "PARENT_RELATIVE",
+        "UV",
+        "IMAGE_PIXEL"
+      ],
+      "rule": "显微对象不得伪造经纬度"
+    },
+    "ui": {
+      "unit": "CSS px",
+      "origin": "viewport top-left"
+    }
+  },
+  "layers": [
+    {
+      "id": "WORLD-GONGGA-DISTANT",
+      "name": "贡嘎山脉远景",
+      "walkable": false,
+      "source": "有来源、日期与许可的 DEM",
+      "requirements": [
+        "真实山脊与群峰关系",
+        "三维 LOD",
+        "日期化雪线与地表图层",
+        "不得将区域代表点当主峰坐标"
+      ]
+    },
+    {
+      "id": "VALLEY-HLG-MID",
+      "name": "海螺沟谷地中景",
+      "walkable": "导览机位与样区跳转",
+      "requirements": [
+        "粒雪盆",
+        "冰瀑与裂隙",
+        "表碛冰舌",
+        "侧碛与终碛",
+        "冰前河道",
+        "森林坡面",
+        "谷地云雾"
+      ]
+    }
+  ],
+  "sites": [
+    {
+      "siteId": "SITE-HLG-FOREST-01",
+      "name": "峨眉冷杉成熟林",
+      "anchor": {
+        "id": "PLOT-HLG-GGFZH01",
+        "longitude": 101.9886,
+        "latitude": 29.5731,
+        "altitudeM": 3160,
+        "slopeDegrees": "30-35",
+        "aspect": "SE",
+        "position": "中下部",
+        "verticalDatum": "UNKNOWN",
+        "coordinateStatus": "PUBLIC_COORDINATE"
+      },
+      "detailTile": {
+        "bounds": "[-60,60]×[-60,60] m",
+        "status": "DESIGN_ONLY",
+        "warning": "不是永久样地实测边界"
+      },
+      "habitats": [
+        "乔木第一层",
+        "第二层及伴生乔木",
+        "竹灌层",
+        "草本层",
+        "苔藓地被",
+        "倒木与枯立木",
+        "林窗"
+      ]
+    },
+    {
+      "siteId": "SITE-HLG-STREAM-01",
+      "name": "林溪与湿石",
+      "anchor": {
+        "coordinateStatus": "UNKNOWN",
+        "rule": "真实溪段选定前独立设站，不宣称穿过 GGFZH01"
+      },
+      "designStream": {
+        "id": "STREAM-HLG-01",
+        "points": [
+          [
+            42,
+            -60
+          ],
+          [
+            36,
+            -38
+          ],
+          [
+            32,
+            -24
+          ],
+          [
+            30,
+            -16
+          ],
+          [
+            28,
+            0
+          ],
+          [
+            34,
+            22
+          ],
+          [
+            40,
+            44
+          ],
+          [
+            44,
+            60
+          ]
+        ],
+        "status": "DESIGN_ONLY"
+      },
+      "flagshipObject": {
+        "id": "ROCK-HLG-01",
+        "localPoint": [
+          30,
+          -16,
+          "zWater+0.12"
+        ],
+        "sampleStatus": "PLANNED"
+      }
+    },
+    {
+      "siteId": "SITE-HLG-GLACIER-01",
+      "name": "冰舌与表碛",
+      "anchor": {
+        "coordinateStatus": "DATED_GEOMETRY"
+      },
+      "requirements": [
+        "有效日期",
+        "冰舌边界",
+        "表碛覆盖",
+        "裂隙",
+        "冰前环境",
+        "微生物样带"
+      ]
+    },
+    {
+      "siteId": "SITE-HLG-CHRONO-01",
+      "name": "冰川退缩迹地",
+      "anchor": {
+        "coordinateStatus": "HISTORICAL_SAMPLE"
+      },
+      "requirements": [
+        "研究采样年份",
+        "出露年份",
+        "文献土壤年龄",
+        "土壤剖面",
+        "根际",
+        "磷过程"
+      ]
+    }
+  ],
+  "cameras": [
+    {
+      "cameraId": "CAM-HLG-A",
+      "siteId": "SITE-HLG-FOREST-01",
+      "position": "(-42,-48,DEM+1.65)",
+      "target": "(0,10,DEM+8)",
+      "status": "DESIGN_ONLY"
+    },
+    {
+      "cameraId": "CAM-HLG-B",
+      "siteId": "SITE-HLG-STREAM-01",
+      "position": "(24,-34,DEM+0.75)",
+      "target": "(0,20,DEM+4)",
+      "status": "DESIGN_ONLY"
+    },
+    {
+      "cameraId": "CAM-HLG-C",
+      "siteId": "VALLEY-HLG-MID",
+      "position": "VIEWSHED_DERIVED",
+      "target": "DATED_DEM_RIDGELINE",
+      "status": "REQUIRES_VIEWSHED"
+    },
+    {
+      "cameraId": "CAM-HLG-CHRONO-01",
+      "siteId": "SITE-HLG-CHRONO-01",
+      "position": "PENDING_SOURCE",
+      "target": "SOIL_PROFILE_AND_SUCCESSION",
+      "status": "PENDING_SOURCE"
+    }
+  ],
+  "excludedFromActiveWorld": [
+    "YJG-HOLO-SC2011001",
+    "ROCK-YJG-DESIGN-01",
+    "ALGA-YJG-MAT-01",
+    "CELL-YJG-01",
+    "雅家埂红石路线",
+    "非本地动物固定刷新点"
+  ],
+  "evidenceLevels": {
+    "L1": "本地实测重建",
+    "L2": "本地文献复原",
+    "L3": "区域参考",
+    "L4": "机制示意",
+    "L5": "假设场景"
+  }
+}
