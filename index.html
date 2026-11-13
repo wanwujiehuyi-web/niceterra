@@ -1,113 +1,19 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="dark" />
-    <title>海螺沟：从冰川森林，走进一滴水 · NICETERRA</title>
-    <meta
-      name="description"
-      content="海螺沟旗舰世界：一个地点、四个样区、四条可检验的深入路线。贡嘎山脉只是三维远景，不能步行。证据等级 L1–L5 逐层标注。"
-    />
-    <meta property="og:title" content="海螺沟：从冰川森林，走进一滴水" />
-    <meta property="og:description" content="从谷底冷杉林、冰融溪湿石，一路走到硅藻壳壁与硅酸缩合。所有微观层标注视场、成像与证据等级。" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/poster/poster-hlg.jpg" />
-    <link rel="preload" as="image" href="/assets/poster/poster-hlg.jpg" />
-    <script type="module" crossorigin src="/assets/index-Cr6d5YG7.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-G6raof-6.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#152d2b" />
+    <meta name="description" content="从一条溪流出发，探索自然与物质的尺度。" />
+    <link rel="icon" href="data:," />
+    <title>NiceTerra · 高山溪谷</title>
+    <script type="module" crossorigin src="/assets/main-CZ34b_WM.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/three.module-BM-6qIyv.js">
+    <link rel="modulepreload" crossorigin href="/assets/lattices-D-sMMi1y.js">
+    <link rel="modulepreload" crossorigin href="/assets/gongga-baseline-BTTaHN9J.js">
+    <link rel="modulepreload" crossorigin href="/assets/engine-BpIReOJy.js">
+    <link rel="modulepreload" crossorigin href="/assets/journey-DgYEQ5Sq.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-DPTJ-6fm.css">
   </head>
-  <body>
-    <div id="app">
-      <header id="top">
-        <div class="brand"><b>NICETERRA</b><span>near-earth worlds</span></div>
-        <div class="top-place">
-          <b>海螺沟</b>
-          <span>贡嘎山东坡 · 冰川森林谷地 · PLACE-HAILUOGOU</span>
-        </div>
-        <div class="top-spacer"></div>
-        <div class="seg" id="mode-seg" role="group" aria-label="交互模式"></div>
-        <button class="ghost" id="btn-far" type="button" title="贡嘎山脉只是三维远景，不能步行">贡嘎远景</button>
-        <button class="ghost" id="toggle-sites" type="button" aria-label="打开样区列表">样区</button>
-        <button class="ghost" id="toggle-panel" type="button" aria-label="打开档案面板">档案</button>
-        <span class="badge" id="top-credit"><span class="dot"></span>L1–L5 逐层标注</span>
-      </header>
-
-      <nav id="left" aria-label="地点与路线"></nav>
-
-      <main id="scene" aria-label="三维场景">
-        <div id="anchor-layer"></div>
-        <div class="scene-meta" id="scene-meta"></div>
-        <div class="scene-hint" id="scene-hints"></div>
-        <div class="scene-foot" id="scene-foot"></div>
-        <div class="loadbar" id="loadbar" hidden><i></i></div>
-      </main>
-
-      <section id="static-mode" aria-label="静态档案"></section>
-
-      <aside id="right" aria-label="档案面板"></aside>
-
-      <footer id="bottom">
-        <span class="status" id="bottom-status">海螺沟 · 谷地</span>
-        <div class="spacer"></div>
-        <button class="btn-prev" id="btn-prev" type="button">上一级</button>
-        <button class="primary btn-next" id="btn-next" type="button">继续深入</button>
-        <button class="btn-exit" id="btn-exit" type="button">退到谷地</button>
-        <div class="spacer"></div>
-        <span class="status" id="bottom-hint">视觉参数：DEM 派生 · 坐标状态逐层显示</span>
-      </footer>
-    </div>
-
-    <div id="poster" role="dialog" aria-modal="true" aria-labelledby="poster-title">
-      <div class="poster-inner">
-        <div class="eyebrow">一个地点 · 四个样区 · 四条可检验的深入路线</div>
-        <h1 id="poster-title">海螺沟：从冰川森林，走进一滴水</h1>
-        <p class="lead">贡嘎山脉只是三维远景，不能步行。可探索的地方只有一处：海螺沟谷地。</p>
-        <div class="actions">
-          <button class="primary" id="btn-enter" type="button">开始探索</button>
-          <button id="btn-resume" type="button" hidden>继续上次探索</button>
-          <button class="ghost" id="btn-retry" type="button">重新检测图形</button>
-        </div>
-        <div class="slow-actions" id="slow-actions" hidden>
-          <p class="slow-why">加载比平时慢。</p>
-          <div class="actions">
-            <button id="btn-lite" type="button">轻量模式继续</button>
-            <button class="ghost" id="btn-archive-only" type="button">只看科学档案</button>
-          </div>
-        </div>
-        <ul class="stages" id="poster-stages"></ul>
-        <p class="honesty" id="poster-honesty"></p>
-        <p class="credit" id="poster-credit"></p>
-        <p class="sr" id="poster-status" aria-live="polite"></p>
-        <div class="loadbar" id="poster-bar"><i></i></div>
-      </div>
-    </div>
-
-    <div id="toast" role="status" aria-live="polite"></div>
-    <script>
-      // LOAD-05 慢网哨兵：在模块下载完成之前就生效。
-      // main.ts 就绪后由 shell 接管同一组按钮；两个路径写入同一个选择。
-      (function () {
-        var box = function () { return document.getElementById('slow-actions'); };
-        var arm = function () {
-          setTimeout(function () { var b = box(); if (b) b.hidden = false; }, 12000);
-        };
-        if (new URLSearchParams(location.search).get('autostart') === '1') arm();
-        var enter = document.getElementById('btn-enter');
-        if (enter) enter.addEventListener('click', arm);
-        var lite = document.getElementById('btn-lite');
-        if (lite) lite.addEventListener('click', function () {
-          try { sessionStorage.setItem('niceterra.quality', 'lite'); } catch (e) {}
-          var u = new URL(location.href); u.searchParams.set('quality', 'lite');
-          location.href = u.toString();
-        });
-        var arch = document.getElementById('btn-archive-only');
-        if (arch) arch.addEventListener('click', function () {
-          try { sessionStorage.setItem('niceterra.archiveOnly', '1'); } catch (e) {}
-          var why = document.querySelector('#slow-actions .slow-why');
-          if (why) why.textContent = '已选择只读科学档案，应用就绪后直接进入。';
-        });
-      })();
-    </script>
-  </body>
+  <body><div id="app"></div></body>
 </html>
