@@ -1,0 +1,87 @@
+{
+ "policy": "AI 生成的 3D 树木（aholo Lux3D 资产）经减面/贴图压缩得到；视觉参考，非实测标本",
+ "generatedAt": "2026-11-16T10:15:38.715Z",
+ "items": [
+  {
+   "species": "abies-fabri",
+   "lod": 0,
+   "file": "abies-fabri-l0.glb",
+   "tris": 90866,
+   "bytes": 954664,
+   "srcTris": 184698,
+   "srcBytes": 1488584
+  },
+  {
+   "species": "abies-fabri",
+   "lod": 1,
+   "file": "abies-fabri-l1.glb",
+   "tris": 90700,
+   "bytes": 810680,
+   "srcTris": 184698,
+   "srcBytes": 1488584
+  },
+  {
+   "species": "abies-fabri",
+   "lod": 2,
+   "file": "abies-fabri-l2.glb",
+   "tris": 90698,
+   "bytes": 810672,
+   "srcTris": 184698,
+   "srcBytes": 1488584
+  },
+  {
+   "species": "betula-utilis",
+   "lod": 0,
+   "file": "betula-utilis-l0.glb",
+   "tris": 35920,
+   "bytes": 989676,
+   "srcTris": 91408,
+   "srcBytes": 1297752
+  },
+  {
+   "species": "betula-utilis",
+   "lod": 1,
+   "file": "betula-utilis-l1.glb",
+   "tris": 35718,
+   "bytes": 519052,
+   "srcTris": 91408,
+   "srcBytes": 1297752
+  },
+  {
+   "species": "betula-utilis",
+   "lod": 2,
+   "file": "betula-utilis-l2.glb",
+   "tris": 35716,
+   "bytes": 519064,
+   "srcTris": 91408,
+   "srcBytes": 1297752
+  },
+  {
+   "species": "abies-sapling",
+   "lod": 0,
+   "file": "abies-sapling-l0.glb",
+   "tris": 76856,
+   "bytes": 1531152,
+   "srcTris": 102184,
+   "srcBytes": 1722688
+  },
+  {
+   "species": "abies-sapling",
+   "lod": 1,
+   "file": "abies-sapling-l1.glb",
+   "tris": 76604,
+   "bytes": 903992,
+   "srcTris": 102184,
+   "srcBytes": 1722688
+  },
+  {
+   "species": "abies-sapling",
+   "lod": 2,
+   "file": "abies-sapling-l2.glb",
+   "tris": 76604,
+   "bytes": 903992,
+   "srcTris": 102184,
+   "srcBytes": 1722688
+  }
+ ]
+}

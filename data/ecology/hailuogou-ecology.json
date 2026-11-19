@@ -1,0 +1,1818 @@
+{
+  "meta": {
+    "title": "海螺沟（贡嘎山东坡）生态与地质结构化数据",
+    "region": "四川省甘孜州泸定县磨西镇 海螺沟 / 贡嘎山东坡",
+    "center": {
+      "lat": 29.5706,
+      "lng": 102.0264
+    },
+    "elevationSpanM": {
+      "min": 1096,
+      "max": 7508.9
+    },
+    "compiled": "2026-11-17",
+    "evidenceLevels": {
+      "L1": "本地实测",
+      "L2": "本地文献",
+      "L3": "区域参考",
+      "L4": "机制示意",
+      "L5": "假设"
+    }
+  },
+  "bands": [
+    {
+      "id": "band-valley-scrub",
+      "nameZh": "亚热带半干旱河谷稀疏灌丛带",
+      "minM": 1200,
+      "maxM": 1500,
+      "evidenceLevel": "L2"
+    },
+    {
+      "id": "band-evergreen-broadleaf",
+      "nameZh": "亚热带常绿阔叶林带",
+      "minM": 1500,
+      "maxM": 1900,
+      "evidenceLevel": "L2"
+    },
+    {
+      "id": "band-mixed-broadleaf",
+      "nameZh": "亚热带山地常绿阔叶、落叶阔叶与针叶混交林带",
+      "minM": 1900,
+      "maxM": 2600,
+      "evidenceLevel": "L2"
+    },
+    {
+      "id": "band-conifer-mixed",
+      "nameZh": "暖温带针阔混交林带",
+      "minM": 2600,
+      "maxM": 3000,
+      "evidenceLevel": "L2"
+    },
+    {
+      "id": "band-dark-conifer",
+      "nameZh": "寒温带暗针叶林带（峨眉冷杉林）",
+      "minM": 3000,
+      "maxM": 3800,
+      "evidenceLevel": "L2"
+    },
+    {
+      "id": "band-alpine-shrub",
+      "nameZh": "高山杜鹃灌丛",
+      "minM": 3700,
+      "maxM": 4400,
+      "evidenceLevel": "L2"
+    },
+    {
+      "id": "band-alpine-meadow",
+      "nameZh": "高山草甸",
+      "minM": 4200,
+      "maxM": 4700,
+      "evidenceLevel": "L3"
+    },
+    {
+      "id": "band-scree",
+      "nameZh": "高山流石滩稀疏植被",
+      "minM": 4600,
+      "maxM": 5000,
+      "evidenceLevel": "L3"
+    },
+    {
+      "id": "band-snow",
+      "nameZh": "雪线以上永久冰雪带",
+      "minM": 4800,
+      "maxM": 7508,
+      "evidenceLevel": "L2"
+    }
+  ],
+  "taxa": [
+    {
+      "id": "band-valley-scrub",
+      "nameZh": "亚热带半干旱河谷稀疏灌丛带",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 1200,
+        "maxM": 1500
+      },
+      "habitat": "大渡河谷及海螺沟沟口半干旱坡地，日照强、土壤瘠薄；灌丛斑块化",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "band-valley-scrub-L1",
+          "label": "河谷带谱",
+          "scale": "10–100 km",
+          "note": "沿大渡河—海螺沟口的水热梯度带"
+        },
+        {
+          "id": "band-valley-scrub-L2",
+          "label": "灌丛斑块",
+          "scale": "1–10 m",
+          "note": "坡面斑块与裸地/农地镶嵌"
+        },
+        {
+          "id": "band-valley-scrub-L3",
+          "label": "叶片抗蒸腾结构",
+          "scale": "10 µm–1 mm",
+          "note": "小叶、革质、绒毛与厚角质层"
+        }
+      ]
+    },
+    {
+      "id": "band-evergreen-broadleaf",
+      "nameZh": "亚热带常绿阔叶林带",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 1500,
+        "maxM": 1900
+      },
+      "habitat": "沟谷下部湿润坡面，暗棕壤；以青冈属、栲属及樟科为主的常绿阔叶林",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "band-evergreen-broadleaf-L1",
+          "label": "群落层片",
+          "scale": "10–30 m",
+          "note": "乔木层—灌木层—草本层三层结构"
+        },
+        {
+          "id": "band-evergreen-broadleaf-L2",
+          "label": "单株冠层",
+          "scale": "5–20 m",
+          "note": "常绿革质叶冠层郁闭"
+        },
+        {
+          "id": "band-evergreen-broadleaf-L3",
+          "label": "叶片与叶脉",
+          "scale": "1 cm–10 µm",
+          "note": "革质叶片、全缘叶、羽状脉与蜡质层"
+        }
+      ]
+    },
+    {
+      "id": "band-mixed-broadleaf",
+      "nameZh": "亚热带山地常绿阔叶、落叶阔叶与针叶混交林带",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 1900,
+        "maxM": 2600
+      },
+      "habitat": "海螺沟基带森林（古冰碛台地，暗棕壤，南坡5–25°）；常绿与落叶阔叶混交，上部混入针叶树",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "band-mixed-broadleaf-L1",
+          "label": "群落镶嵌",
+          "scale": "100 m–1 km",
+          "note": "常绿、落叶、针叶三类树种的坡面镶嵌"
+        },
+        {
+          "id": "band-mixed-broadleaf-L2",
+          "label": "群落分层",
+          "scale": "5–30 m",
+          "note": "苞檞柯/香桦/扇叶槭林 2200–2400m、青冈/化香林 1600–1800m"
+        },
+        {
+          "id": "band-mixed-broadleaf-L3",
+          "label": "叶与树皮",
+          "scale": "1 mm–5 cm",
+          "note": "季相叶色、树皮附生地衣苔藓"
+        }
+      ]
+    },
+    {
+      "id": "band-conifer-mixed",
+      "nameZh": "暖温带针阔混交林带",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 2600,
+        "maxM": 3000
+      },
+      "habitat": "沟谷中上部，云雾带；针叶树与桦、槭等阔叶树混交",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "band-conifer-mixed-L1",
+          "label": "坡面林分",
+          "scale": "100 m–1 km",
+          "note": "针阔比随海拔升高而增大"
+        },
+        {
+          "id": "band-conifer-mixed-L2",
+          "label": "针阔镶嵌",
+          "scale": "5–30 m",
+          "note": "麦吊云杉、铁杉与桦、槭混生"
+        },
+        {
+          "id": "band-conifer-mixed-L3",
+          "label": "针叶与球果",
+          "scale": "1–10 cm",
+          "note": "下垂麦穗状叶、球果鳞片"
+        }
+      ]
+    },
+    {
+      "id": "band-dark-conifer",
+      "nameZh": "寒温带暗针叶林带（峨眉冷杉林）",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 3000,
+        "maxM": 3800
+      },
+      "habitat": "阴湿坡面与谷底，林内苔藓深厚、松萝挂枝；贡嘎山东坡亚高山针叶林优势带，上达林线",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "band-dark-conifer-L1",
+          "label": "林分",
+          "scale": "100 m–1 km",
+          "note": "Abies fabri 占优，平均材积约846 m³/hm²"
+        },
+        {
+          "id": "band-dark-conifer-L2",
+          "label": "林冠与树干",
+          "scale": "10–30 m",
+          "note": "塔形冠、下垂枝、树干附生苔藓地衣"
+        },
+        {
+          "id": "band-dark-conifer-L3",
+          "label": "针叶与气孔",
+          "scale": "1 cm–20 µm",
+          "note": "扁平针叶、气孔带、树脂道"
+        }
+      ]
+    },
+    {
+      "id": "band-alpine-shrub",
+      "nameZh": "高山杜鹃灌丛",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 3700,
+        "maxM": 4400
+      },
+      "habitat": "林线以上至草甸下部，冰缘碎石坡与阴湿谷地；杜鹃灌丛密布",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "band-alpine-shrub-L1",
+          "label": "灌丛斑块",
+          "scale": "1–50 m",
+          "note": "杜鹃单优或与高山柳混生"
+        },
+        {
+          "id": "band-alpine-shrub-L2",
+          "label": "单丛",
+          "scale": "0.3–3 m",
+          "note": "匍匐—直立型枝系"
+        },
+        {
+          "id": "band-alpine-shrub-L3",
+          "label": "叶与花",
+          "scale": "1 cm–1 mm",
+          "note": "革质小叶、鳞片状毛、伞形花序"
+        }
+      ]
+    },
+    {
+      "id": "band-alpine-meadow",
+      "nameZh": "高山草甸",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 4200,
+        "maxM": 4700
+      },
+      "habitat": "高山平缓坡面、古冰斗底与河谷滩地，高山草甸土；嵩草—杂类草草甸",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "band-alpine-meadow-L1",
+          "label": "草甸斑块",
+          "scale": "10–100 m",
+          "note": "嵩草草甸与杂类草斑块镶嵌"
+        },
+        {
+          "id": "band-alpine-meadow-L2",
+          "label": "草毡层",
+          "scale": "10–50 cm",
+          "note": "根系密集的草毡与冻融斑"
+        },
+        {
+          "id": "band-alpine-meadow-L3",
+          "label": "单株与根",
+          "scale": "1 cm–1 mm",
+          "note": "嵩草三棱茎、须根系"
+        }
+      ]
+    },
+    {
+      "id": "band-scree",
+      "nameZh": "高山流石滩稀疏植被",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 4600,
+        "maxM": 5000
+      },
+      "habitat": "雪线下方冻融碎石坡（流石滩），基质移动频繁、风大紫外强；植被盖度极低",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "band-scree-L1",
+          "label": "流石滩面",
+          "scale": "10–100 m",
+          "note": "碎石粒径与坡度分带"
+        },
+        {
+          "id": "band-scree-L2",
+          "label": "石缝植物斑",
+          "scale": "10 cm–1 m",
+          "note": "垫状/莲座状小斑块"
+        },
+        {
+          "id": "band-scree-L3",
+          "label": "垫状体与毛被",
+          "scale": "1 cm–10 µm",
+          "note": "垫状体、绵毛、肉质根"
+        }
+      ]
+    },
+    {
+      "id": "band-snow",
+      "nameZh": "雪线以上永久冰雪带",
+      "nameLatin": "",
+      "group": "植被带",
+      "band": {
+        "minM": 4800,
+        "maxM": 7508
+      },
+      "habitat": "粒雪盆、冰川积累区与裸岩角峰；雪线约4800 m，无高等植物",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "band-snow-L1",
+          "label": "冰川系统",
+          "scale": "1–10 km",
+          "note": "粒雪盆—冰瀑—冰舌—冰前"
+        },
+        {
+          "id": "band-snow-L2",
+          "label": "雪层剖面",
+          "scale": "10 cm–10 m",
+          "note": "新雪—粒雪—附加冰层序"
+        },
+        {
+          "id": "band-snow-L3",
+          "label": "雪粒与气泡",
+          "scale": "10 µm–1 mm",
+          "note": "雪晶形态、气泡与污化层"
+        }
+      ]
+    },
+    {
+      "id": "pl-abies-fabri",
+      "nameZh": "峨眉冷杉",
+      "nameLatin": "Abies fabri",
+      "group": "乔木",
+      "band": {
+        "minM": 2800,
+        "maxM": 3800
+      },
+      "habitat": "暗针叶林建群种，贡嘎山东坡亚高山针叶林优势种并达林线；3300 m以上组成趋同，3550 m以上树高受限",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-abies-fabri-L1",
+          "label": "林分",
+          "scale": "100 m–1 km",
+          "note": "与麦吊云杉、云南铁杉混交或纯林"
+        },
+        {
+          "id": "pl-abies-fabri-L2",
+          "label": "树冠与树干",
+          "scale": "10–30 m",
+          "note": "塔形树冠、下垂枝、树干苔藓"
+        },
+        {
+          "id": "pl-abies-fabri-L3",
+          "label": "针叶与树脂道",
+          "scale": "1 cm–10 µm",
+          "note": "扁平针叶、气孔带、树脂道与叶横切面"
+        }
+      ]
+    },
+    {
+      "id": "pl-picea-brachytyla",
+      "nameZh": "麦吊云杉（麦吊杉）",
+      "nameLatin": "Picea brachytyla",
+      "group": "乔木",
+      "band": {
+        "minM": 2400,
+        "maxM": 3000
+      },
+      "habitat": "针阔混交林与暗针叶林下段；海螺沟2600–2900 m集中分布，有胸围约15 m的“麦吊杉王”",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-picea-brachytyla-L1",
+          "label": "林分",
+          "scale": "100 m–1 km",
+          "note": "沿沟谷成带或散生"
+        },
+        {
+          "id": "pl-picea-brachytyla-L2",
+          "label": "树冠与下垂枝",
+          "scale": "5–30 m",
+          "note": "枝条下垂、叶呈麦穗状"
+        },
+        {
+          "id": "pl-picea-brachytyla-L3",
+          "label": "针叶与小枝",
+          "scale": "1–3 cm",
+          "note": "四棱状钻形叶、叶枕"
+        }
+      ]
+    },
+    {
+      "id": "pl-tsuga-dumosa",
+      "nameZh": "云南铁杉",
+      "nameLatin": "Tsuga dumosa",
+      "group": "乔木",
+      "band": {
+        "minM": 2400,
+        "maxM": 3200
+      },
+      "habitat": "针阔混交林及暗针叶林下段，与冷杉、云杉混生",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "pl-tsuga-dumosa-L1",
+          "label": "混交林分",
+          "scale": "100 m–1 km",
+          "note": "与 Abies/Picea 混交"
+        },
+        {
+          "id": "pl-tsuga-dumosa-L2",
+          "label": "树冠",
+          "scale": "10–25 m",
+          "note": "小枝细柔下垂"
+        },
+        {
+          "id": "pl-tsuga-dumosa-L3",
+          "label": "针叶与芽",
+          "scale": "5 mm–2 cm",
+          "note": "扁平叶、叶端钝、小芽"
+        }
+      ]
+    },
+    {
+      "id": "pl-betula-insignis",
+      "nameZh": "香桦",
+      "nameLatin": "Betula insignis",
+      "group": "乔木",
+      "band": {
+        "minM": 2000,
+        "maxM": 2600
+      },
+      "habitat": "常绿落叶阔叶混交林落叶层优势种之一（与苞檞柯、扇叶槭同林）",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-betula-insignis-L1",
+          "label": "混交林分",
+          "scale": "100 m–1 km",
+          "note": "落叶阔叶层片"
+        },
+        {
+          "id": "pl-betula-insignis-L2",
+          "label": "树干",
+          "scale": "5–20 m",
+          "note": "树皮横裂、纸质剥落"
+        },
+        {
+          "id": "pl-betula-insignis-L3",
+          "label": "叶与芽",
+          "scale": "1–10 cm",
+          "note": "羽状脉叶、冬芽树脂"
+        }
+      ]
+    },
+    {
+      "id": "pl-lithocarpus",
+      "nameZh": "苞檞柯（包檞柯）",
+      "nameLatin": "Lithocarpus cleistocarpus",
+      "group": "乔木",
+      "band": {
+        "minM": 1900,
+        "maxM": 2500
+      },
+      "habitat": "常绿落叶阔叶混交林常绿层片主要树种（2200–2400 m 群落）",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-lithocarpus-L1",
+          "label": "混交林分",
+          "scale": "100 m–1 km",
+          "note": "常绿层片主体"
+        },
+        {
+          "id": "pl-lithocarpus-L2",
+          "label": "冠层",
+          "scale": "8–20 m",
+          "note": "革质常绿叶冠"
+        },
+        {
+          "id": "pl-lithocarpus-L3",
+          "label": "叶与壳斗",
+          "scale": "1–15 cm",
+          "note": "革质叶、壳斗与坚果"
+        }
+      ]
+    },
+    {
+      "id": "pl-cyclobalanopsis",
+      "nameZh": "青冈（青冈栎）",
+      "nameLatin": "Cyclobalanopsis glauca",
+      "group": "乔木",
+      "band": {
+        "minM": 1500,
+        "maxM": 2000
+      },
+      "habitat": "常绿阔叶林与混交林下部（青冈+化香林 1600–1800 m）",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-cyclobalanopsis-L1",
+          "label": "林分",
+          "scale": "100 m–1 km",
+          "note": "沟谷下部常绿层片"
+        },
+        {
+          "id": "pl-cyclobalanopsis-L2",
+          "label": "冠层",
+          "scale": "5–15 m",
+          "note": "常绿阔叶冠"
+        },
+        {
+          "id": "pl-cyclobalanopsis-L3",
+          "label": "叶与壳斗",
+          "scale": "1–10 cm",
+          "note": "叶背灰白、环状壳斗"
+        }
+      ]
+    },
+    {
+      "id": "pl-acer-flabellatum",
+      "nameZh": "扇叶槭",
+      "nameLatin": "Acer flabellatum",
+      "group": "乔木",
+      "band": {
+        "minM": 2000,
+        "maxM": 2600
+      },
+      "habitat": "常绿落叶阔叶混交林落叶层片；季相变化显著",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-acer-flabellatum-L1",
+          "label": "混交林分",
+          "scale": "100 m–1 km",
+          "note": "落叶层片"
+        },
+        {
+          "id": "pl-acer-flabellatum-L2",
+          "label": "冠层",
+          "scale": "5–15 m",
+          "note": "扇形叶冠"
+        },
+        {
+          "id": "pl-acer-flabellatum-L3",
+          "label": "叶与翅果",
+          "scale": "1–10 cm",
+          "note": "扇状浅裂叶、双翅果"
+        }
+      ]
+    },
+    {
+      "id": "pl-larix-potaninii",
+      "nameZh": "红杉（落叶松属）",
+      "nameLatin": "Larix potaninii",
+      "group": "乔木",
+      "band": {
+        "minM": 3200,
+        "maxM": 4000
+      },
+      "habitat": "海螺沟仅局部形成小块落叶针叶林（3200–4000 m）",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-larix-potaninii-L1",
+          "label": "小片林",
+          "scale": "10–100 m",
+          "note": "局限分布的小块林"
+        },
+        {
+          "id": "pl-larix-potaninii-L2",
+          "label": "树干与枝",
+          "scale": "5–25 m",
+          "note": "落叶针叶、枝干红褐"
+        },
+        {
+          "id": "pl-larix-potaninii-L3",
+          "label": "针叶与短枝",
+          "scale": "1–3 cm",
+          "note": "簇生针叶、短枝"
+        }
+      ]
+    },
+    {
+      "id": "pl-taxus",
+      "nameZh": "红豆杉（南方红豆杉类）",
+      "nameLatin": "Taxus wallichiana var. mairei",
+      "group": "乔木",
+      "band": {
+        "minM": 2000,
+        "maxM": 2700
+      },
+      "habitat": "沟谷阔叶林与混交林下木层；含紫杉醇，保护植物",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-taxus-L1",
+          "label": "林下种群",
+          "scale": "10–100 m",
+          "note": "零散分布"
+        },
+        {
+          "id": "pl-taxus-L2",
+          "label": "个体",
+          "scale": "3–15 m",
+          "note": "树皮紫红、枝叶秀丽"
+        },
+        {
+          "id": "pl-taxus-L3",
+          "label": "叶与假种皮",
+          "scale": "1–3 cm",
+          "note": "条形叶、红色假种皮"
+        }
+      ]
+    },
+    {
+      "id": "pl-hippophae",
+      "nameZh": "沙棘（中国沙棘）",
+      "nameLatin": "Hippophae rhamnoides ssp. sinensis",
+      "group": "灌木",
+      "band": {
+        "minM": 2900,
+        "maxM": 3200
+      },
+      "habitat": "冰川退缩迹地先锋灌丛，19年生群落中枝繁叶茂、大量结果",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-hippophae-L1",
+          "label": "先锋斑块",
+          "scale": "1–50 m",
+          "note": "冰碛垄上的固氮灌丛"
+        },
+        {
+          "id": "pl-hippophae-L2",
+          "label": "个体",
+          "scale": "1–4 m",
+          "note": "多刺分枝、根蘖扩展"
+        },
+        {
+          "id": "pl-hippophae-L3",
+          "label": "叶与果实",
+          "scale": "1–30 mm",
+          "note": "银白色鳞毛叶、橙黄浆果"
+        }
+      ]
+    },
+    {
+      "id": "pl-populus-purdomii",
+      "nameZh": "冬瓜杨",
+      "nameLatin": "Populus purdomii",
+      "group": "乔木",
+      "band": {
+        "minM": 2900,
+        "maxM": 3200
+      },
+      "habitat": "冰川退缩迹地演替中期上冲林冠的先锋乔木",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-populus-purdomii-L1",
+          "label": "演替林分",
+          "scale": "10–100 m",
+          "note": "与沙棘混生的早期林"
+        },
+        {
+          "id": "pl-populus-purdomii-L2",
+          "label": "个体",
+          "scale": "5–20 m",
+          "note": "直干、萌蘖强"
+        },
+        {
+          "id": "pl-populus-purdomii-L3",
+          "label": "叶与皮孔",
+          "scale": "3–15 cm",
+          "note": "三角状卵形叶、皮孔"
+        }
+      ]
+    },
+    {
+      "id": "pl-fargesia",
+      "nameZh": "冷箭竹（箭竹类）",
+      "nameLatin": "Arundinaria faberi",
+      "group": "竹类",
+      "band": {
+        "minM": 2000,
+        "maxM": 3400
+      },
+      "habitat": "混交林与暗针叶林下木层优势（灌木层盖度70–80%），大熊猫主食类群之一",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "pl-fargesia-L1",
+          "label": "竹层",
+          "scale": "10–100 m",
+          "note": "林下连续竹层"
+        },
+        {
+          "id": "pl-fargesia-L2",
+          "label": "竹丛",
+          "scale": "0.5–3 m",
+          "note": "地下茎串联的竹丛"
+        },
+        {
+          "id": "pl-fargesia-L3",
+          "label": "竹叶与节",
+          "scale": "1–15 cm",
+          "note": "披针形竹叶、秆节与箨"
+        }
+      ]
+    },
+    {
+      "id": "pl-rhodo-cephalanthum",
+      "nameZh": "毛喉杜鹃",
+      "nameLatin": "Rhododendron cephalanthum",
+      "group": "灌木",
+      "band": {
+        "minM": 3600,
+        "maxM": 4600
+      },
+      "habitat": "高山灌丛草甸带主要建群种，阴湿坡面与冰缘碎石",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-rhodo-cephalanthum-L1",
+          "label": "灌丛斑块",
+          "scale": "1–50 m",
+          "note": "杜鹃单优斑块"
+        },
+        {
+          "id": "pl-rhodo-cephalanthum-L2",
+          "label": "单丛",
+          "scale": "0.2–1 m",
+          "note": "匍匐密枝"
+        },
+        {
+          "id": "pl-rhodo-cephalanthum-L3",
+          "label": "叶与花",
+          "scale": "5 mm–2 cm",
+          "note": "小叶鳞毛、花冠喉部有毛"
+        }
+      ]
+    },
+    {
+      "id": "pl-rhodo-phaeochrysum",
+      "nameZh": "凝毛金褐杜鹃",
+      "nameLatin": "Rhododendron phaeochrysum var. agglutinatum",
+      "group": "灌木",
+      "band": {
+        "minM": 3800,
+        "maxM": 4600
+      },
+      "habitat": "高山灌丛带建群种之一，与毛喉杜鹃、高山柳混生",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-rhodo-phaeochrysum-L1",
+          "label": "灌丛斑块",
+          "scale": "1–50 m",
+          "note": "高寒灌丛主体"
+        },
+        {
+          "id": "pl-rhodo-phaeochrysum-L2",
+          "label": "单丛",
+          "scale": "0.3–1.5 m",
+          "note": "密集分枝"
+        },
+        {
+          "id": "pl-rhodo-phaeochrysum-L3",
+          "label": "叶背毛被",
+          "scale": "1–5 cm",
+          "note": "叶背锈金色绒毛"
+        }
+      ]
+    },
+    {
+      "id": "pl-salix",
+      "nameZh": "高山柳（多种）",
+      "nameLatin": "Salix spp.",
+      "group": "灌木",
+      "band": {
+        "minM": 3800,
+        "maxM": 4600
+      },
+      "habitat": "高山灌丛草甸带湿生谷地与冰缘滩地",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "pl-salix-L1",
+          "label": "灌丛斑块",
+          "scale": "1–50 m",
+          "note": "河谷与洼地柳灌丛"
+        },
+        {
+          "id": "pl-salix-L2",
+          "label": "单丛",
+          "scale": "0.3–2 m",
+          "note": "细枝密集"
+        },
+        {
+          "id": "pl-salix-L3",
+          "label": "叶与柔荑花序",
+          "scale": "1–5 cm",
+          "note": "披针形叶、柳絮"
+        }
+      ]
+    },
+    {
+      "id": "hb-saussurea",
+      "nameZh": "苞叶雪莲（雪兔子类）",
+      "nameLatin": "Saussurea obvallata",
+      "group": "草本",
+      "band": {
+        "minM": 4500,
+        "maxM": 5000
+      },
+      "habitat": "高山流石滩稀疏植被，碎石缝隙；大型半透明苞叶保温",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "hb-saussurea-L1",
+          "label": "流石滩斑块",
+          "scale": "10 cm–10 m",
+          "note": "石缝小斑块"
+        },
+        {
+          "id": "hb-saussurea-L2",
+          "label": "莲座状个体",
+          "scale": "5–30 cm",
+          "note": "苞叶包裹花序"
+        },
+        {
+          "id": "hb-saussurea-L3",
+          "label": "苞叶与毛被",
+          "scale": "1 cm–50 µm",
+          "note": "半透明苞叶、密绵毛"
+        }
+      ]
+    },
+    {
+      "id": "hb-meconopsis",
+      "nameZh": "绿绒蒿（多刺/全缘叶类）",
+      "nameLatin": "Meconopsis spp.",
+      "group": "草本",
+      "band": {
+        "minM": 4300,
+        "maxM": 5000
+      },
+      "habitat": "流石滩与高山草甸，蓝紫色花、全株被毛",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "hb-meconopsis-L1",
+          "label": "高山斑块",
+          "scale": "10 cm–10 m",
+          "note": "草甸—流石滩过渡"
+        },
+        {
+          "id": "hb-meconopsis-L2",
+          "label": "莲座个体",
+          "scale": "10–60 cm",
+          "note": "基生叶莲座、花葶"
+        },
+        {
+          "id": "hb-meconopsis-L3",
+          "label": "花与毛",
+          "scale": "1 cm–10 µm",
+          "note": "花瓣薄、茎叶密被硬毛"
+        }
+      ]
+    },
+    {
+      "id": "hb-rhodiola",
+      "nameZh": "大花红景天",
+      "nameLatin": "Rhodiola crenulata",
+      "group": "草本",
+      "band": {
+        "minM": 4400,
+        "maxM": 5200
+      },
+      "habitat": "流石滩与高山草甸碎石，肉质根茎、垫状生长",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "hb-rhodiola-L1",
+          "label": "高山斑块",
+          "scale": "10 cm–5 m",
+          "note": "碎石间小斑"
+        },
+        {
+          "id": "hb-rhodiola-L2",
+          "label": "垫状个体",
+          "scale": "5–20 cm",
+          "note": "肉质根茎、匍匐"
+        },
+        {
+          "id": "hb-rhodiola-L3",
+          "label": "叶与根茎切面",
+          "scale": "1 cm–10 µm",
+          "note": "肉质叶、根茎次生代谢物"
+        }
+      ]
+    },
+    {
+      "id": "hb-kobresia",
+      "nameZh": "高山嵩草（嵩草类）",
+      "nameLatin": "Kobresia pygmaea",
+      "group": "草本",
+      "band": {
+        "minM": 4200,
+        "maxM": 4800
+      },
+      "habitat": "高山草甸建群种，形成草毡层",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "hb-kobresia-L1",
+          "label": "草甸斑块",
+          "scale": "10–100 m",
+          "note": "嵩草草毡"
+        },
+        {
+          "id": "hb-kobresia-L2",
+          "label": "草毡层",
+          "scale": "10–50 cm",
+          "note": "根系密集层"
+        },
+        {
+          "id": "hb-kobresia-L3",
+          "label": "单株与根",
+          "scale": "1 cm–1 mm",
+          "note": "三棱小穗、须根"
+        }
+      ]
+    },
+    {
+      "id": "al-trentepohlia",
+      "nameZh": "乔利橘色藻（雅家埂变种）",
+      "nameLatin": "Trentepohlia jolithus var. yajiagengensis",
+      "group": "藻类",
+      "band": {
+        "minM": 1900,
+        "maxM": 3900
+      },
+      "habitat": "红石滩：气生丝状绿藻，仅着生于原生岩石表面；红色来自次生类胡萝卜素，离原生生境褪为绿色",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "al-trentepohlia-L1",
+          "label": "红石滩面",
+          "scale": "10–100 m",
+          "note": "沿河谷的原生砾石滩"
+        },
+        {
+          "id": "al-trentepohlia-L2",
+          "label": "红色藻毡",
+          "scale": "1 mm–1 cm",
+          "note": "石面橙红色藻膜"
+        },
+        {
+          "id": "al-trentepohlia-L3",
+          "label": "丝状体与色素",
+          "scale": "10–100 µm",
+          "note": "丝状藻丝、类胡萝卜素/油脂滴"
+        }
+      ]
+    },
+    {
+      "id": "an-macaca-thibetana",
+      "nameZh": "藏酋猴（毛面短尾猴）",
+      "nameLatin": "Macaca thibetana",
+      "group": "兽类",
+      "band": {
+        "minM": 1200,
+        "maxM": 2800
+      },
+      "habitat": "常绿阔叶林与混交林，岩壁—林缘活动，国家二级保护",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "an-macaca-thibetana-L1",
+          "label": "猴群",
+          "scale": "100 m–2 km",
+          "note": "家域与岩壁夜宿点"
+        },
+        {
+          "id": "an-macaca-thibetana-L2",
+          "label": "个体与社群",
+          "scale": "0.5–1 m",
+          "note": "等级序位、理毛行为"
+        },
+        {
+          "id": "an-macaca-thibetana-L3",
+          "label": "毛被与面部",
+          "scale": "1 cm–0.1 mm",
+          "note": "毛干鳞片、面部皮肤色斑"
+        }
+      ]
+    },
+    {
+      "id": "an-macaca-mulatta",
+      "nameZh": "猕猴",
+      "nameLatin": "Macaca mulatta",
+      "group": "兽类",
+      "band": {
+        "minM": 1000,
+        "maxM": 2500
+      },
+      "habitat": "沟谷阔叶林、林缘与农田边，常结群",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "an-macaca-mulatta-L1",
+          "label": "猴群",
+          "scale": "100 m–1 km",
+          "note": "沿沟谷移动"
+        },
+        {
+          "id": "an-macaca-mulatta-L2",
+          "label": "个体",
+          "scale": "0.4–0.7 m",
+          "note": "尾长、颊囊"
+        },
+        {
+          "id": "an-macaca-mulatta-L3",
+          "label": "毛与皮肤",
+          "scale": "1 cm–0.1 mm",
+          "note": "毛色分带、掌垫纹"
+        }
+      ]
+    },
+    {
+      "id": "an-ailurus-fulgens",
+      "nameZh": "小熊猫",
+      "nameLatin": "Ailurus fulgens",
+      "group": "兽类",
+      "band": {
+        "minM": 2200,
+        "maxM": 3800
+      },
+      "habitat": "暗针叶林与混交林下竹层，树栖；景区吉祥物，尾具9个环纹",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "an-ailurus-fulgens-L1",
+          "label": "家域",
+          "scale": "10–100 m",
+          "note": "竹层碎片化家域"
+        },
+        {
+          "id": "an-ailurus-fulgens-L2",
+          "label": "个体",
+          "scale": "40–60 cm",
+          "note": "树栖、尾环纹"
+        },
+        {
+          "id": "an-ailurus-fulgens-L3",
+          "label": "爪与齿",
+          "scale": "1–5 cm",
+          "note": "半伸缩爪、臼齿咀嚼面"
+        }
+      ]
+    },
+    {
+      "id": "an-budorcas",
+      "nameZh": "羚牛（四川亚种）",
+      "nameLatin": "Budorcas taxicolor tibetana",
+      "group": "兽类",
+      "band": {
+        "minM": 2000,
+        "maxM": 4000
+      },
+      "habitat": "针阔混交林—暗针叶林—高山灌丛，季节性垂直迁移，国家一级",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "an-budorcas-L1",
+          "label": "迁移群",
+          "scale": "1–10 km",
+          "note": "随季节上下迁移的兽径"
+        },
+        {
+          "id": "an-budorcas-L2",
+          "label": "个体",
+          "scale": "1.5–2 m",
+          "note": "粗壮体型、角基"
+        },
+        {
+          "id": "an-budorcas-L3",
+          "label": "角与蹄",
+          "scale": "10–30 cm",
+          "note": "角棱纹、蹄底防滑"
+        }
+      ]
+    },
+    {
+      "id": "an-pseudois",
+      "nameZh": "岩羊",
+      "nameLatin": "Pseudois nayaur",
+      "group": "兽类",
+      "band": {
+        "minM": 3000,
+        "maxM": 5500
+      },
+      "habitat": "高山草甸、流石滩与裸岩峭壁，善攀岩，国家二级",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "an-pseudois-L1",
+          "label": "峭壁群",
+          "scale": "100 m–1 km",
+          "note": "岩壁—草甸间移动"
+        },
+        {
+          "id": "an-pseudois-L2",
+          "label": "个体",
+          "scale": "1–1.4 m",
+          "note": "灰蓝毛色、短角"
+        },
+        {
+          "id": "an-pseudois-L3",
+          "label": "蹄与毛",
+          "scale": "5–15 cm",
+          "note": "蹄缘软垫、毛被中空"
+        }
+      ]
+    },
+    {
+      "id": "an-tragopan",
+      "nameZh": "红腹角雉",
+      "nameLatin": "Tragopan temminckii",
+      "group": "鸟类",
+      "band": {
+        "minM": 1950,
+        "maxM": 3450
+      },
+      "habitat": "针叶林与针阔混交林下木层；正选择针叶林、回避箭竹林；国家二级",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "an-tragopan-L1",
+          "label": "家域",
+          "scale": "10–100 m",
+          "note": "林下活动范围"
+        },
+        {
+          "id": "an-tragopan-L2",
+          "label": "个体",
+          "scale": "50–70 cm",
+          "note": "雄鸟肉角与肉裙"
+        },
+        {
+          "id": "an-tragopan-L3",
+          "label": "羽与肉角",
+          "scale": "1–10 cm",
+          "note": "羽小枝结构、肉角色泽"
+        }
+      ]
+    },
+    {
+      "id": "an-ithaginis",
+      "nameZh": "血雉",
+      "nameLatin": "Ithaginis cruentus",
+      "group": "鸟类",
+      "band": {
+        "minM": 2760,
+        "maxM": 3800
+      },
+      "habitat": "暗针叶林与混交林，偏好西南坡；正选择针叶林、回避箭竹林；国家二级",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "an-ithaginis-L1",
+          "label": "群",
+          "scale": "10–100 m",
+          "note": "林下小群觅食"
+        },
+        {
+          "id": "an-ithaginis-L2",
+          "label": "个体",
+          "scale": "40–50 cm",
+          "note": "雄鸟红绿羽色"
+        },
+        {
+          "id": "an-ithaginis-L3",
+          "label": "羽与喙",
+          "scale": "1–5 cm",
+          "note": "羽枝、喙缘锯齿"
+        }
+      ]
+    },
+    {
+      "id": "an-tamiops",
+      "nameZh": "隐纹花松鼠",
+      "nameLatin": "Tamiops swinhoei",
+      "group": "兽类",
+      "band": {
+        "minM": 1500,
+        "maxM": 3000
+      },
+      "habitat": "阔叶林与混交林冠层，树栖；景区“松鼠闹林”常见类群",
+      "evidenceLevel": "L3",
+      "microLevels": [
+        {
+          "id": "an-tamiops-L1",
+          "label": "树冠活动区",
+          "scale": "10–50 m",
+          "note": "树干—冠层通道"
+        },
+        {
+          "id": "an-tamiops-L2",
+          "label": "个体",
+          "scale": "10–15 cm",
+          "note": "背部纵纹"
+        },
+        {
+          "id": "an-tamiops-L3",
+          "label": "毛与臼齿",
+          "scale": "5 mm–1 mm",
+          "note": "纵纹毛色、臼齿齿脊"
+        }
+      ]
+    },
+    {
+      "id": "fi-schizothorax-prenanti",
+      "nameZh": "齐口裂腹鱼",
+      "nameLatin": "Schizothorax prenanti",
+      "group": "鱼类",
+      "band": {
+        "minM": 1500,
+        "maxM": 3000
+      },
+      "habitat": "大渡河及海螺沟冰川融水溪流的急流砾石底质河段，刮食藻类",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "fi-schizothorax-prenanti-L1",
+          "label": "河段",
+          "scale": "10–100 m",
+          "note": "急滩—深潭交替的溪流段"
+        },
+        {
+          "id": "fi-schizothorax-prenanti-L2",
+          "label": "个体",
+          "scale": "20–40 cm",
+          "note": "下位口、须2对"
+        },
+        {
+          "id": "fi-schizothorax-prenanti-L3",
+          "label": "咽齿与鳞",
+          "scale": "1 mm–1 cm",
+          "note": "咽齿、细鳞与侧线"
+        }
+      ]
+    },
+    {
+      "id": "fi-schizopygopsis",
+      "nameZh": "大渡裸裂尻鱼",
+      "nameLatin": "Schizopygopsis malacanthus chengi",
+      "group": "鱼类",
+      "band": {
+        "minM": 2000,
+        "maxM": 3500
+      },
+      "habitat": "高海拔河段与冰川融水溪流，耐低温",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "fi-schizopygopsis-L1",
+          "label": "河段",
+          "scale": "10–100 m",
+          "note": "高海拔急流段"
+        },
+        {
+          "id": "fi-schizopygopsis-L2",
+          "label": "个体",
+          "scale": "10–30 cm",
+          "note": "体裸、臀鳞"
+        },
+        {
+          "id": "fi-schizopygopsis-L3",
+          "label": "鳞与鳃",
+          "scale": "1–5 mm",
+          "note": "臀鳞、鳃耙"
+        }
+      ]
+    },
+    {
+      "id": "fi-euchiloglanis",
+      "nameZh": "青石爬鳅",
+      "nameLatin": "Euchiloglanis davidi",
+      "group": "鱼类",
+      "band": {
+        "minM": 1500,
+        "maxM": 3000
+      },
+      "habitat": "溪流急滩石缝，吸附型底栖",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "fi-euchiloglanis-L1",
+          "label": "急滩石缝",
+          "scale": "1–10 m",
+          "note": "砾石缝微生境"
+        },
+        {
+          "id": "fi-euchiloglanis-L2",
+          "label": "个体",
+          "scale": "10–20 cm",
+          "note": "扁平头、吸盘状胸腹"
+        },
+        {
+          "id": "fi-euchiloglanis-L3",
+          "label": "吸盘与须",
+          "scale": "1–10 mm",
+          "note": "胸腹吸盘褶、须"
+        }
+      ]
+    },
+    {
+      "id": "al-snow-algae",
+      "nameZh": "雪藻（极地雪藻类）",
+      "nameLatin": "Chlamydomonas nivalis (s.l.)",
+      "group": "藻类",
+      "band": {
+        "minM": 4800,
+        "maxM": 5500
+      },
+      "habitat": "雪线以上雪面与粒雪层；春季融雪期形成红雪/绿雪，降低反照率、加速消融。海螺沟本地未做藻种鉴定，仅作机制示意",
+      "evidenceLevel": "L4",
+      "microLevels": [
+        {
+          "id": "al-snow-algae-L1",
+          "label": "雪面斑块",
+          "scale": "1–50 m",
+          "note": "红雪/绿雪斑与融雪水膜"
+        },
+        {
+          "id": "al-snow-algae-L2",
+          "label": "雪层藻带",
+          "scale": "1 cm–1 m",
+          "note": "雪层内藻细胞富集带、融雪孔洞"
+        },
+        {
+          "id": "al-snow-algae-L3",
+          "label": "细胞与色素",
+          "scale": "5–50 µm",
+          "note": "游动孢子、细胞壁与虾青素/叶绿体"
+        }
+      ]
+    },
+    {
+      "id": "an-glacier-flea",
+      "nameZh": "冰川跳蚤（雪地跳虫类）",
+      "nameLatin": "Desoria saltans (s.l.)",
+      "group": "无脊椎动物",
+      "band": {
+        "minM": 2900,
+        "maxM": 3500
+      },
+      "habitat": "冰川表面、冰前湿雪与冰碛石面，低温下仍活动；属冰川“冰尘/冰面生态”示意类群，海螺沟本地无专项调查",
+      "evidenceLevel": "L4",
+      "microLevels": [
+        {
+          "id": "an-glacier-flea-L1",
+          "label": "冰面群",
+          "scale": "1 cm–1 m",
+          "note": "冰尘、冰面沟槽与融水膜聚集"
+        },
+        {
+          "id": "an-glacier-flea-L2",
+          "label": "个体",
+          "scale": "0.5–2 mm",
+          "note": "弹器跳跃、体色深暗吸热"
+        },
+        {
+          "id": "an-glacier-flea-L3",
+          "label": "体表与肠道",
+          "scale": "10–100 µm",
+          "note": "表皮蜡质、肠道内容物（冰尘/藻类）"
+        }
+      ]
+    },
+    {
+      "id": "an-snow-leopard",
+      "nameZh": "雪豹",
+      "nameLatin": "Panthera uncia",
+      "group": "兽类",
+      "band": {
+        "minM": 3500,
+        "maxM": 5000
+      },
+      "habitat": "高山裸岩、流石滩与雪线附近峭壁；贡嘎山保护区一级保护名录有记录，但海螺沟景区内无稳定观测，仅可作“偶见/传说层”",
+      "evidenceLevel": "L5",
+      "microLevels": [
+        {
+          "id": "an-snow-leopard-L1",
+          "label": "岩壁痕迹",
+          "scale": "10–100 m",
+          "note": "刨痕、粪点与巡视路径"
+        },
+        {
+          "id": "an-snow-leopard-L2",
+          "label": "足迹",
+          "scale": "5–10 cm",
+          "note": "掌垫印与尾拖痕"
+        },
+        {
+          "id": "an-snow-leopard-L3",
+          "label": "毛与爪",
+          "scale": "1–10 cm",
+          "note": "毛鳞片、爪鞘与爪痕"
+        }
+      ]
+    }
+  ],
+  "habitats": [
+    {
+      "id": "hab-glacier-1",
+      "nameZh": "海螺沟1号冰川（冰川舌—大冰瀑布）",
+      "type": "冰川地貌",
+      "elevation": {
+        "minM": 2940,
+        "maxM": 4800
+      },
+      "description": "海洋性山谷冰川：长约12.9–13.1 km、面积24.27–25.71 km²；冰舌末端海拔2940 m（张文敬测得约2980 m）；大冰瀑布高1080 m、宽500–1100 m，为中国最大冰瀑；冰川舌长约4 km伸入峨眉冷杉林，“绿海冰川”；雪线约4800 m。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-glacier-1-L1",
+          "label": "冰川系统",
+          "scale": "1–10 km",
+          "note": "粒雪盆—冰瀑—冰舌—冰前湖（月亮湖）"
+        },
+        {
+          "id": "hab-glacier-1-L2",
+          "label": "冰面微地貌",
+          "scale": "1–100 m",
+          "note": "冰裂隙、冰井、冰面湖、表碛"
+        },
+        {
+          "id": "hab-glacier-1-L3",
+          "label": "冰晶与气泡",
+          "scale": "10 µm–1 cm",
+          "note": "冰晶粒间、气泡与污化层（可含冰尘/雪藻）"
+        }
+      ]
+    },
+    {
+      "id": "hab-glacier-foreland",
+      "nameZh": "冰川退缩迹地（原生演替序列）",
+      "type": "演替序列",
+      "elevation": {
+        "minM": 2900,
+        "maxM": 3200
+      },
+      "description": "现代冰川退缩留下的冰碛台地与垄岗，形成约120年的原生演替时间序列：裸冰碛/漂砾→沙棘、冬瓜杨先锋灌丛与早期林→桦木类→云杉、冷杉侵入→暗针叶林。19年生群落中沙棘繁茂结果，冬瓜杨上冲林冠。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-glacier-foreland-L1",
+          "label": "退缩序列",
+          "scale": "100 m–2 km",
+          "note": "按距冰舌距离排出的年代序列带"
+        },
+        {
+          "id": "hab-glacier-foreland-L2",
+          "label": "先锋斑块与幼树",
+          "scale": "0.1–10 m",
+          "note": "沙棘根蘖、冬瓜杨萌蘖、地表结皮"
+        },
+        {
+          "id": "hab-glacier-foreland-L3",
+          "label": "土壤剖面与根瘤",
+          "scale": "1 cm–1 mm",
+          "note": "薄层粗骨土、沙棘根瘤固氮、菌根"
+        }
+      ]
+    },
+    {
+      "id": "hab-moraine",
+      "nameZh": "冰碛物（侧碛垄、终碛垄、漂砾）",
+      "type": "第四纪/现代冰川地貌",
+      "elevation": {
+        "minM": 1600,
+        "maxM": 3600
+      },
+      "description": "古冰川与现代冰川堆积：侧碛垄、终碛垄、漂砾、角峰、刃脊、U型谷；磨西一带的台地即为古冰碛台地（贡嘎山站样地地貌记录）。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-moraine-L1",
+          "label": "垄岗与台地",
+          "scale": "10 m–1 km",
+          "note": "终碛垄弧、侧碛垄脊、冰碛台地"
+        },
+        {
+          "id": "hab-moraine-L2",
+          "label": "砾石组构",
+          "scale": "1 cm–1 m",
+          "note": "磨圆度、擦痕、叠瓦状排列"
+        },
+        {
+          "id": "hab-moraine-L3",
+          "label": "石英颗粒表面",
+          "scale": "10–500 µm",
+          "note": "贝壳状断口、撞击坑（SEM微形态）"
+        }
+      ]
+    },
+    {
+      "id": "hab-terrace",
+      "nameZh": "河流阶地与磨西台地",
+      "type": "河流/冰水地貌",
+      "elevation": {
+        "minM": 1096,
+        "maxM": 2400
+      },
+      "description": "海螺沟河与大渡河的阶地序列；磨西台地为古冰碛/冰水堆积台地，贡嘎山站常绿落叶阔叶混交林样地（2141.2 m）即位于古冰碛台地上，暗棕壤。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-terrace-L1",
+          "label": "台面与陡坎",
+          "scale": "10–100 m",
+          "note": "阶地面、阶坡与沟谷切蚀"
+        },
+        {
+          "id": "hab-terrace-L2",
+          "label": "沉积层序",
+          "scale": "0.1–5 m",
+          "note": "砾石层—砂层—古土壤层韵律"
+        },
+        {
+          "id": "hab-terrace-L3",
+          "label": "砂粒矿物",
+          "scale": "0.1–1 mm",
+          "note": "石英、长石、云母与重矿物组合"
+        }
+      ]
+    },
+    {
+      "id": "hab-hot-spring",
+      "nameZh": "温泉（沸泉、钙华/泉华）",
+      "type": "地热/水文地质",
+      "elevation": {
+        "minM": 1580,
+        "maxM": 2660
+      },
+      "description": "二号营地（约2580 m）出水口约83℃，流量约0.35 m³/s，属冰融型碳酸钠钙中性医疗热矿泉，与大冰瀑布直线距离仅约1.2 km；沟内有大流量热沸温泉。钙华/泉华为碳酸盐过饱和沉淀机制（本地实测文献有限，按L4处理）。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-hot-spring-L1",
+          "label": "泉群与泉池",
+          "scale": "1–100 m",
+          "note": "泉眼—泉池—排水沟的钙华台"
+        },
+        {
+          "id": "hab-hot-spring-L2",
+          "label": "钙华层理",
+          "scale": "1–50 cm",
+          "note": "纹层状/蜂窝状钙华、藻席"
+        },
+        {
+          "id": "hab-hot-spring-L3",
+          "label": "方解石晶体",
+          "scale": "10 µm–1 cm",
+          "note": "针状/柱状方解石、晶体生长纹"
+        }
+      ]
+    },
+    {
+      "id": "hab-red-stone",
+      "nameZh": "红石滩（气生丝状绿藻群落）",
+      "type": "生境/微生物",
+      "elevation": {
+        "minM": 1900,
+        "maxM": 3900
+      },
+      "description": "雅家埂—燕子沟一带河谷原生砾石滩；红色来自乔利橘色藻（Trentepohlia jolithus，雅家埂变种 var. yajiagengensis）的次生类胡萝卜素；只在原生岩石表面生长，脱离原生生境即褪色变绿；2005年泥石流与修路暴露的新鲜岩石为其提供基质。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-red-stone-L1",
+          "label": "红石滩面",
+          "scale": "10–100 m",
+          "note": "沿河的橙红色砾石带"
+        },
+        {
+          "id": "hab-red-stone-L2",
+          "label": "藻毡",
+          "scale": "0.1–10 mm",
+          "note": "石面绒状橙红藻膜、湿度分带"
+        },
+        {
+          "id": "hab-red-stone-L3",
+          "label": "藻丝与色素",
+          "scale": "5–50 µm",
+          "note": "丝状体、细胞壁、类胡萝卜素/油脂滴"
+        }
+      ]
+    },
+    {
+      "id": "hab-caohazi",
+      "nameZh": "草海子（冰川湖沼）",
+      "type": "冰川湖/湿地",
+      "elevation": {
+        "minM": 2700,
+        "maxM": 2850
+      },
+      "description": "海拔2761 m的冰川湖泊—沼泽湿地，观光车终点；湖畔暗针叶林与杜鹃，是海螺沟徒步起点。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-caohazi-L1",
+          "label": "湖沼与林缘",
+          "scale": "10–100 m",
+          "note": "水面—沼泽—林缘带"
+        },
+        {
+          "id": "hab-caohazi-L2",
+          "label": "水生植物与泥炭",
+          "scale": "0.1–1 m",
+          "note": "水生草本、苔藓与泥炭层"
+        },
+        {
+          "id": "hab-caohazi-L3",
+          "label": "藻类与花粉",
+          "scale": "10–100 µm",
+          "note": "硅藻壳、花粉粒（可做古环境）"
+        }
+      ]
+    },
+    {
+      "id": "hab-moon-lake",
+      "nameZh": "月亮湖（冰川退缩洼地湖）",
+      "type": "冰川退缩地貌",
+      "elevation": {
+        "minM": 2900,
+        "maxM": 3000
+      },
+      "description": "1号冰川末端退缩后留下的冰前湖/洼地湖，官方徒步线路的重要观景点，是“冰川正在退缩”的直接证据。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-moon-lake-L1",
+          "label": "冰前湖盆",
+          "scale": "10–100 m",
+          "note": "冰水扇—湖盆—冰碛坝"
+        },
+        {
+          "id": "hab-moon-lake-L2",
+          "label": "湖岸沉积",
+          "scale": "1 cm–1 m",
+          "note": "纹泥、漂砾与冰筏沉积"
+        },
+        {
+          "id": "hab-moon-lake-L3",
+          "label": "纹层与颗粒",
+          "scale": "10 µm–1 mm",
+          "note": "季纹层、粉砂与黏土矿物"
+        }
+      ]
+    },
+    {
+      "id": "hab-timberline",
+      "nameZh": "林线/树线交错带",
+      "type": "生态过渡带",
+      "elevation": {
+        "minM": 3600,
+        "maxM": 3800
+      },
+      "description": "峨眉冷杉林上限与高山灌丛交错；3550 m以上树高与胸径受限，3300 m以上物种组成差异变小。",
+      "evidenceLevel": "L2",
+      "microLevels": [
+        {
+          "id": "hab-timberline-L1",
+          "label": "林线锯齿",
+          "scale": "10–100 m",
+          "note": "孤立树—树岛—郁闭林"
+        },
+        {
+          "id": "hab-timberline-L2",
+          "label": "旗形树与更新苗",
+          "scale": "0.1–5 m",
+          "note": "风旗形冠、雪压、幼苗更新"
+        },
+        {
+          "id": "hab-timberline-L3",
+          "label": "年轮与霜冻",
+          "scale": "0.1–1 mm",
+          "note": "年轮宽度、霜轮与冻裂"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "海螺沟景区官网：徒步之旅攻略（垂直带谱、草海子、月亮湖）",
+      "url": "https://www.hailuogou.com/zh/strategy/1013689587964624896"
+    },
+    {
+      "id": "S2",
+      "title": "海螺沟景区官网：海螺沟海拔多少？（营地海拔、1号冰川指标、温泉性质）",
+      "url": "https://www.hailuogou.com/zh/overview-altitude/911116752954327040"
+    },
+    {
+      "id": "S3",
+      "title": "中国科普博览·张文敬：蜀山之王贡嘎山（冰川长度/雪线/末端/温泉83℃/麦吊杉）",
+      "url": "https://www.kepu.net.cn//blog/zhangwenjing/201903/t20190329_475913.html"
+    },
+    {
+      "id": "S4",
+      "title": "自然资源部：唯美四川--海螺沟（大冰瀑布1080 m、古冰川地貌、热沸温泉）",
+      "url": "http://app.m.mnr.gov.cn/zt/hd/dqr/48dqr/ts/201807/t20180709_2060627.html"
+    },
+    {
+      "id": "S5",
+      "title": "osgeo：中国四川省贡嘎山自然保护区动植物资源概况",
+      "url": "https://osgeo.cn/post/4fa9b/"
+    },
+    {
+      "id": "S6",
+      "title": "中国科学院贡嘎山森林生态系统国家野外科学观测研究站·样地资源（古冰碛台地、基带混交林群落）",
+      "url": "https://ggf.cern.ac.cn/content?cid=ggf22&id=233"
+    },
+    {
+      "id": "S7",
+      "title": "沈泽昊等(2004) 贡嘎山东坡亚高山针叶林群落与峨眉冷杉林线，生物多样性",
+      "url": "https://www.biodiversity-science.net/EN/10.17520/biods.2004028"
+    },
+    {
+      "id": "S8",
+      "title": "中国地质调查局科普：红石滩的红色从何而来（乔利橘色藻）",
+      "url": "https://www.cgs.gov.cn/kpzs/202512/t20251206_845916.html"
+    },
+    {
+      "id": "S9",
+      "title": "Liu et al.(2012) PLoS ONE: Trentepohlia jolithus var. yajiagengensis 与雅家埂红石滩",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3398038/"
+    },
+    {
+      "id": "S10",
+      "title": "崔鹏等(2008) 四川栗子坪红腹角雉与血雉生境选择，生物多样性",
+      "url": "https://www.biodiversity-science.net/CN/abstract/abstract7016.shtml"
+    },
+    {
+      "id": "S11",
+      "title": "海螺沟景区官网：动物概述（贡嘎山322种野生动物、保护级别名录）",
+      "url": "https://www.hailuogou.com/zh/animal-overview/939743863302520832"
+    },
+    {
+      "id": "S12",
+      "title": "李逊, 熊尚发(1995) 贡嘎山海螺沟冰川退却迹地植被原生演替，山地学报",
+      "url": "http://shandixb.paperonce.org/oa/DArticle.aspx?type=view&id=199518"
+    },
+    {
+      "id": "S13",
+      "title": "四川林业科技(2013) 海螺沟主要植被类型（红杉落叶针叶林 3200–4000 m）",
+      "url": "https://www.sjfsci.com/cn/article/pdf/preview/10.16779/j.cnki.1003-5508.2013.05.013.pdf"
+    },
+    {
+      "id": "S14",
+      "title": "四川贡嘎山国家级自然保护区环评报告（植被垂直带谱、高山灌丛草甸带物种）",
+      "url": "http://www.chinagongga.cn/Upload/file/20210108/1610076184478900.pdf"
+    }
+  ]
+}
